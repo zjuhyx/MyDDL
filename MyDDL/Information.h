@@ -10,4 +10,8 @@
 
 @interface Information : NSObject
 
+@property (nonatomic) NSString *username;
+
++ (Information *)getInformation;
+
 @end

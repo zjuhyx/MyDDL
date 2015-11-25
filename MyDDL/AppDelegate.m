@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "UndoneTableViewController.h"
+#import "DoneTableViewController.h"
+#import "GroupTableViewController.h"
+#import "MeTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +20,27 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    CGRect frame = [[UIScreen mainScreen] bounds];
+    self.window = [[UIWindow alloc] initWithFrame:frame];
+    
+    NSArray *tableViews = @[[[UndoneTableViewController alloc] init],
+                            [[DoneTableViewController alloc] init],
+                            [[GroupTableViewController alloc] init],
+                            [[MeTableViewController alloc] init]];
+    NSArray *tabTitle = @[@"未完成", @"已完成", @"小组", @"我"];
+    NSMutableArray *navigationControllers = [[NSMutableArray alloc] init];
+    for (int i = 0; i < 4; ++i) {
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:tableViews[i]];
+        navigationController.tabBarItem.title = tabTitle[i];
+        [navigationControllers addObject:navigationController];
+    }
+    
+    UITabBarController *rootViewController = [[UITabBarController alloc] init];
+    rootViewController.viewControllers = navigationControllers;
+    self.window.rootViewController = rootViewController;
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

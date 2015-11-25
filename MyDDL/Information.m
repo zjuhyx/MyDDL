@@ -10,4 +10,22 @@
 
 @implementation Information
 
++ (Information *)getInformation {
+    static Information *instance = nil;
+    if (instance == nil) {
+        instance = [[Information alloc] initPrivate];
+    }
+    return instance;
+}
+
+- (instancetype)init {
+    @throw [NSException exceptionWithName:@"Singleton" reason:@"Use +[Information getInformation" userInfo:nil];
+    return nil;
+}
+
+- (instancetype)initPrivate {
+    self = [super init];
+    return self;
+}
+
 @end
