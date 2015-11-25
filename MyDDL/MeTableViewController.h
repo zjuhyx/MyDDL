@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MeViewController.h
 //  MyDDL
 //
 //  Created by 柯瀚仰 on 11/25/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface MeTableViewController : UITableViewController
 
 @end
-
