@@ -10,6 +10,28 @@
 
 @implementation SettingTableViewController
 
+- (instancetype)init {
+    self = [super initWithStyle:UITableViewStyleGrouped];
+    return self;
+}
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 5;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 3;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSArray *texts = @[@"修改头像", @"修改密码", @"退出账号"];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
+    cell.textLabel.text = texts[indexPath.section];
+    return cell;
+}
 
 @end

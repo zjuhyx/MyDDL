@@ -7,37 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18386BAA1C0849AC00F44092 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18386BA91C0849AC00F44092 /* MainTabBarController.m */; };
+		18386BAD1C08B3A000F44092 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18386BAC1C08B3A000F44092 /* LoginViewController.m */; };
+		18386BB01C08BC4400F44092 /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 18386BAF1C08BC4400F44092 /* Configuration.m */; };
+		18386BB31C08C83F00F44092 /* Information.m in Sources */ = {isa = PBXBuildFile; fileRef = 18386BB21C08C83F00F44092 /* Information.m */; };
 		189D2E3E1C05A105002A15D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D2E3D1C05A105002A15D5 /* main.m */; };
 		189D2E411C05A105002A15D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D2E401C05A105002A15D5 /* AppDelegate.m */; };
-		189D2E491C05A105002A15D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189D2E481C05A105002A15D5 /* Assets.xcassets */; };
 		189D2E4C1C05A105002A15D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 189D2E4A1C05A105002A15D5 /* LaunchScreen.storyboard */; };
-		189D2E5B1C05A171002A15D5 /* DoneTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D2E541C05A171002A15D5 /* DoneTableViewController.m */; };
-		189D2E5C1C05A171002A15D5 /* GroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D2E561C05A171002A15D5 /* GroupTableViewController.m */; };
-		189D2E5E1C05A171002A15D5 /* UndoneTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D2E5A1C05A171002A15D5 /* UndoneTableViewController.m */; };
-		189D2E891C05A69B002A15D5 /* Information.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D2E881C05A69B002A15D5 /* Information.m */; };
+		189D2E5B1C05A171002A15D5 /* DoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D2E541C05A171002A15D5 /* DoneViewController.m */; };
+		189D2E5E1C05A171002A15D5 /* UndoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D2E5A1C05A171002A15D5 /* UndoneViewController.m */; };
 		189D2EAC1C05B42E002A15D5 /* CourseAndProjectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D2EA31C05B42E002A15D5 /* CourseAndProjectTableViewController.m */; };
 		189D2EAD1C05B42E002A15D5 /* CourseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D2EA51C05B42E002A15D5 /* CourseTableViewController.m */; };
 		189D2EAE1C05B42E002A15D5 /* MeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D2EA71C05B42E002A15D5 /* MeTableViewController.m */; };
 		189D2EAF1C05B42E002A15D5 /* ProjectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D2EA91C05B42E002A15D5 /* ProjectTableViewController.m */; };
 		189D2EB01C05B42E002A15D5 /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D2EAB1C05B42E002A15D5 /* SettingTableViewController.m */; };
+		189D2EB41C07000A002A15D5 /* CourseAndProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D2EB31C07000A002A15D5 /* CourseAndProject.m */; };
+		189D2EB71C07001C002A15D5 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D2EB61C07001C002A15D5 /* Course.m */; };
+		189D2EBA1C070029002A15D5 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D2EB91C070029002A15D5 /* Project.m */; };
+		189D2EBF1C072707002A15D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189D2EBE1C072707002A15D5 /* Assets.xcassets */; };
+		189D2EC21C076356002A15D5 /* GroupDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D2EC11C076356002A15D5 /* GroupDetailTableViewController.m */; };
+		189D2EC51C076370002A15D5 /* GroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D2EC41C076370002A15D5 /* GroupTableViewController.m */; };
+		189D2EC81C076F80002A15D5 /* CourseDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D2EC71C076F80002A15D5 /* CourseDetailTableViewController.m */; };
+		189D2ECB1C0772C1002A15D5 /* ProjectDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D2ECA1C0772C1002A15D5 /* ProjectDetailTableViewController.m */; };
+		189D2ECE1C07FDD8002A15D5 /* CourseAndProjectDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D2ECD1C07FDD8002A15D5 /* CourseAndProjectDetailTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18386BA81C0849AC00F44092 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
+		18386BA91C0849AC00F44092 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
+		18386BAB1C08B3A000F44092 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		18386BAC1C08B3A000F44092 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		18386BAE1C08BC4400F44092 /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Configuration.h; path = Util/Configuration.h; sourceTree = "<group>"; };
+		18386BAF1C08BC4400F44092 /* Configuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Configuration.m; path = Util/Configuration.m; sourceTree = "<group>"; };
+		18386BB11C08C83F00F44092 /* Information.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Information.h; path = Util/Information.h; sourceTree = "<group>"; };
+		18386BB21C08C83F00F44092 /* Information.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Information.m; path = Util/Information.m; sourceTree = "<group>"; };
 		189D2E391C05A105002A15D5 /* MyDDL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDDL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		189D2E3D1C05A105002A15D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		189D2E3F1C05A105002A15D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		189D2E401C05A105002A15D5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		189D2E481C05A105002A15D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		189D2E4B1C05A105002A15D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		189D2E4D1C05A105002A15D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		189D2E531C05A171002A15D5 /* DoneTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoneTableViewController.h; sourceTree = "<group>"; };
-		189D2E541C05A171002A15D5 /* DoneTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoneTableViewController.m; sourceTree = "<group>"; };
-		189D2E551C05A171002A15D5 /* GroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupTableViewController.h; sourceTree = "<group>"; };
-		189D2E561C05A171002A15D5 /* GroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupTableViewController.m; sourceTree = "<group>"; };
-		189D2E591C05A171002A15D5 /* UndoneTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UndoneTableViewController.h; sourceTree = "<group>"; };
-		189D2E5A1C05A171002A15D5 /* UndoneTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UndoneTableViewController.m; sourceTree = "<group>"; };
-		189D2E871C05A69B002A15D5 /* Information.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Information.h; sourceTree = "<group>"; };
-		189D2E881C05A69B002A15D5 /* Information.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Information.m; sourceTree = "<group>"; };
+		189D2E531C05A171002A15D5 /* DoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoneViewController.h; sourceTree = "<group>"; };
+		189D2E541C05A171002A15D5 /* DoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoneViewController.m; sourceTree = "<group>"; };
+		189D2E591C05A171002A15D5 /* UndoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UndoneViewController.h; sourceTree = "<group>"; };
+		189D2E5A1C05A171002A15D5 /* UndoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UndoneViewController.m; sourceTree = "<group>"; };
 		189D2EA21C05B42E002A15D5 /* CourseAndProjectTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CourseAndProjectTableViewController.h; path = Me/CourseAndProjectTableViewController.h; sourceTree = "<group>"; };
 		189D2EA31C05B42E002A15D5 /* CourseAndProjectTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CourseAndProjectTableViewController.m; path = Me/CourseAndProjectTableViewController.m; sourceTree = "<group>"; };
 		189D2EA41C05B42E002A15D5 /* CourseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CourseTableViewController.h; path = Me/CourseTableViewController.h; sourceTree = "<group>"; };
@@ -48,6 +61,23 @@
 		189D2EA91C05B42E002A15D5 /* ProjectTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectTableViewController.m; path = Me/ProjectTableViewController.m; sourceTree = "<group>"; };
 		189D2EAA1C05B42E002A15D5 /* SettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingTableViewController.h; path = Me/SettingTableViewController.h; sourceTree = "<group>"; };
 		189D2EAB1C05B42E002A15D5 /* SettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingTableViewController.m; path = Me/SettingTableViewController.m; sourceTree = "<group>"; };
+		189D2EB21C07000A002A15D5 /* CourseAndProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CourseAndProject.h; path = Me/Entity/CourseAndProject.h; sourceTree = "<group>"; };
+		189D2EB31C07000A002A15D5 /* CourseAndProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CourseAndProject.m; path = Me/Entity/CourseAndProject.m; sourceTree = "<group>"; };
+		189D2EB51C07001C002A15D5 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Course.h; path = Me/Entity/Course.h; sourceTree = "<group>"; };
+		189D2EB61C07001C002A15D5 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Course.m; path = Me/Entity/Course.m; sourceTree = "<group>"; };
+		189D2EB81C070029002A15D5 /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Project.h; path = Me/Entity/Project.h; sourceTree = "<group>"; };
+		189D2EB91C070029002A15D5 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Project.m; path = Me/Entity/Project.m; sourceTree = "<group>"; };
+		189D2EBE1C072707002A15D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		189D2EC01C076356002A15D5 /* GroupDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GroupDetailTableViewController.h; path = Group/GroupDetailTableViewController.h; sourceTree = "<group>"; };
+		189D2EC11C076356002A15D5 /* GroupDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroupDetailTableViewController.m; path = Group/GroupDetailTableViewController.m; sourceTree = "<group>"; };
+		189D2EC31C076370002A15D5 /* GroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GroupTableViewController.h; path = Group/GroupTableViewController.h; sourceTree = "<group>"; };
+		189D2EC41C076370002A15D5 /* GroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroupTableViewController.m; path = Group/GroupTableViewController.m; sourceTree = "<group>"; };
+		189D2EC61C076F80002A15D5 /* CourseDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CourseDetailTableViewController.h; path = Me/CourseAndProjectDetail/CourseDetailTableViewController.h; sourceTree = "<group>"; };
+		189D2EC71C076F80002A15D5 /* CourseDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CourseDetailTableViewController.m; path = Me/CourseAndProjectDetail/CourseDetailTableViewController.m; sourceTree = "<group>"; };
+		189D2EC91C0772C1002A15D5 /* ProjectDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectDetailTableViewController.h; path = Me/CourseAndProjectDetail/ProjectDetailTableViewController.h; sourceTree = "<group>"; };
+		189D2ECA1C0772C1002A15D5 /* ProjectDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectDetailTableViewController.m; path = Me/CourseAndProjectDetail/ProjectDetailTableViewController.m; sourceTree = "<group>"; };
+		189D2ECC1C07FDD8002A15D5 /* CourseAndProjectDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CourseAndProjectDetailTableViewController.h; path = Me/CourseAndProjectDetail/CourseAndProjectDetailTableViewController.h; sourceTree = "<group>"; };
+		189D2ECD1C07FDD8002A15D5 /* CourseAndProjectDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CourseAndProjectDetailTableViewController.m; path = Me/CourseAndProjectDetail/CourseAndProjectDetailTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +117,11 @@
 				189D2E5F1C05A18D002A15D5 /* Me */,
 				189D2E3F1C05A105002A15D5 /* AppDelegate.h */,
 				189D2E401C05A105002A15D5 /* AppDelegate.m */,
-				189D2E481C05A105002A15D5 /* Assets.xcassets */,
+				18386BA81C0849AC00F44092 /* MainTabBarController.h */,
+				18386BA91C0849AC00F44092 /* MainTabBarController.m */,
+				18386BAB1C08B3A000F44092 /* LoginViewController.h */,
+				18386BAC1C08B3A000F44092 /* LoginViewController.m */,
+				189D2EBE1C072707002A15D5 /* Assets.xcassets */,
 				189D2E4A1C05A105002A15D5 /* LaunchScreen.storyboard */,
 				189D2E4D1C05A105002A15D5 /* Info.plist */,
 				189D2E3C1C05A105002A15D5 /* Supporting Files */,
@@ -106,6 +140,10 @@
 		189D2E5F1C05A18D002A15D5 /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				189D2EBD1C07047E002A15D5 /* Model */,
+				189D2EBC1C0701C4002A15D5 /* CourseAndProjectDetail */,
+				189D2EBB1C0700E4002A15D5 /* SettingDetail */,
+				189D2EB11C06FFB3002A15D5 /* Entity */,
 				189D2EA21C05B42E002A15D5 /* CourseAndProjectTableViewController.h */,
 				189D2EA31C05B42E002A15D5 /* CourseAndProjectTableViewController.m */,
 				189D2EA41C05B42E002A15D5 /* CourseTableViewController.h */,
@@ -123,8 +161,10 @@
 		189D2E601C05A196002A15D5 /* Group */ = {
 			isa = PBXGroup;
 			children = (
-				189D2E551C05A171002A15D5 /* GroupTableViewController.h */,
-				189D2E561C05A171002A15D5 /* GroupTableViewController.m */,
+				189D2EC31C076370002A15D5 /* GroupTableViewController.h */,
+				189D2EC41C076370002A15D5 /* GroupTableViewController.m */,
+				189D2EC01C076356002A15D5 /* GroupDetailTableViewController.h */,
+				189D2EC11C076356002A15D5 /* GroupDetailTableViewController.m */,
 			);
 			name = Group;
 			sourceTree = "<group>";
@@ -132,8 +172,8 @@
 		189D2E611C05A1A6002A15D5 /* Undone */ = {
 			isa = PBXGroup;
 			children = (
-				189D2E591C05A171002A15D5 /* UndoneTableViewController.h */,
-				189D2E5A1C05A171002A15D5 /* UndoneTableViewController.m */,
+				189D2E591C05A171002A15D5 /* UndoneViewController.h */,
+				189D2E5A1C05A171002A15D5 /* UndoneViewController.m */,
 			);
 			name = Undone;
 			sourceTree = "<group>";
@@ -141,8 +181,8 @@
 		189D2E621C05A1AD002A15D5 /* Done */ = {
 			isa = PBXGroup;
 			children = (
-				189D2E531C05A171002A15D5 /* DoneTableViewController.h */,
-				189D2E541C05A171002A15D5 /* DoneTableViewController.m */,
+				189D2E531C05A171002A15D5 /* DoneViewController.h */,
+				189D2E541C05A171002A15D5 /* DoneViewController.m */,
 			);
 			name = Done;
 			sourceTree = "<group>";
@@ -150,10 +190,52 @@
 		189D2E861C05A671002A15D5 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				189D2E871C05A69B002A15D5 /* Information.h */,
-				189D2E881C05A69B002A15D5 /* Information.m */,
+				18386BB11C08C83F00F44092 /* Information.h */,
+				18386BB21C08C83F00F44092 /* Information.m */,
+				18386BAE1C08BC4400F44092 /* Configuration.h */,
+				18386BAF1C08BC4400F44092 /* Configuration.m */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		189D2EB11C06FFB3002A15D5 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				189D2EB21C07000A002A15D5 /* CourseAndProject.h */,
+				189D2EB31C07000A002A15D5 /* CourseAndProject.m */,
+				189D2EB51C07001C002A15D5 /* Course.h */,
+				189D2EB61C07001C002A15D5 /* Course.m */,
+				189D2EB81C070029002A15D5 /* Project.h */,
+				189D2EB91C070029002A15D5 /* Project.m */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
+		189D2EBB1C0700E4002A15D5 /* SettingDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SettingDetail;
+			sourceTree = "<group>";
+		};
+		189D2EBC1C0701C4002A15D5 /* CourseAndProjectDetail */ = {
+			isa = PBXGroup;
+			children = (
+				189D2EC61C076F80002A15D5 /* CourseDetailTableViewController.h */,
+				189D2EC71C076F80002A15D5 /* CourseDetailTableViewController.m */,
+				189D2EC91C0772C1002A15D5 /* ProjectDetailTableViewController.h */,
+				189D2ECA1C0772C1002A15D5 /* ProjectDetailTableViewController.m */,
+				189D2ECC1C07FDD8002A15D5 /* CourseAndProjectDetailTableViewController.h */,
+				189D2ECD1C07FDD8002A15D5 /* CourseAndProjectDetailTableViewController.m */,
+			);
+			name = CourseAndProjectDetail;
+			sourceTree = "<group>";
+		};
+		189D2EBD1C07047E002A15D5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,8 +295,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				189D2EBF1C072707002A15D5 /* Assets.xcassets in Resources */,
 				189D2E4C1C05A105002A15D5 /* LaunchScreen.storyboard in Resources */,
-				189D2E491C05A105002A15D5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,16 +308,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				189D2E411C05A105002A15D5 /* AppDelegate.m in Sources */,
-				189D2E5C1C05A171002A15D5 /* GroupTableViewController.m in Sources */,
-				189D2E5B1C05A171002A15D5 /* DoneTableViewController.m in Sources */,
-				189D2E891C05A69B002A15D5 /* Information.m in Sources */,
+				189D2EB71C07001C002A15D5 /* Course.m in Sources */,
+				189D2ECB1C0772C1002A15D5 /* ProjectDetailTableViewController.m in Sources */,
+				18386BB31C08C83F00F44092 /* Information.m in Sources */,
+				189D2E5B1C05A171002A15D5 /* DoneViewController.m in Sources */,
+				18386BAD1C08B3A000F44092 /* LoginViewController.m in Sources */,
+				189D2EBA1C070029002A15D5 /* Project.m in Sources */,
+				18386BB01C08BC4400F44092 /* Configuration.m in Sources */,
+				189D2EC81C076F80002A15D5 /* CourseDetailTableViewController.m in Sources */,
+				189D2EB41C07000A002A15D5 /* CourseAndProject.m in Sources */,
 				189D2E3E1C05A105002A15D5 /* main.m in Sources */,
+				189D2ECE1C07FDD8002A15D5 /* CourseAndProjectDetailTableViewController.m in Sources */,
 				189D2EB01C05B42E002A15D5 /* SettingTableViewController.m in Sources */,
+				189D2EC51C076370002A15D5 /* GroupTableViewController.m in Sources */,
+				18386BAA1C0849AC00F44092 /* MainTabBarController.m in Sources */,
 				189D2EAC1C05B42E002A15D5 /* CourseAndProjectTableViewController.m in Sources */,
 				189D2EAD1C05B42E002A15D5 /* CourseTableViewController.m in Sources */,
 				189D2EAF1C05B42E002A15D5 /* ProjectTableViewController.m in Sources */,
+				189D2EC21C076356002A15D5 /* GroupDetailTableViewController.m in Sources */,
 				189D2EAE1C05B42E002A15D5 /* MeTableViewController.m in Sources */,
-				189D2E5E1C05A171002A15D5 /* UndoneTableViewController.m in Sources */,
+				189D2E5E1C05A171002A15D5 /* UndoneViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +466,7 @@
 				189D2E521C05A105002A15D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

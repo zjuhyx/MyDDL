@@ -19,7 +19,7 @@
 }
 
 - (instancetype)init {
-    @throw [NSException exceptionWithName:@"Singleton" reason:@"Use +[Information getInformation" userInfo:nil];
+    @throw [NSException exceptionWithName:@"Singleton" reason:@"Can not create a instance of this class" userInfo:nil];
     return nil;
 }
 

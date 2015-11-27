@@ -10,4 +10,8 @@
 
 @interface CourseAndProjectTableViewController : UITableViewController
 
+@property (nonatomic, readonly) UITableViewController *nextViewController;
+
+- (UIImage *)cellImageAtIndexPath:(NSIndexPath *)indexPath;
+
 @end

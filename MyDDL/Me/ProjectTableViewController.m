@@ -7,7 +7,24 @@
 //
 
 #import "ProjectTableViewController.h"
+#import "ProjectDetailTableViewController.h"
 
 @implementation ProjectTableViewController
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.navigationItem.title = @"项目";
+    }
+    return self;
+}
+
+- (UITableViewController *)nextViewController {
+    return [[ProjectDetailTableViewController alloc] init];
+}
+
+- (UIImage *)cellImageAtIndexPath:(NSIndexPath *)indexPath {
+    return [UIImage imageNamed:@"project_default"];
+}
 
 @end
