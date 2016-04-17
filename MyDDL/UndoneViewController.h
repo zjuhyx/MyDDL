@@ -6,8 +6,13 @@
 //  Copyright © 2015 柯瀚仰. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "DeadlineController.h"
 
-@interface UndoneViewController : UIViewController
-
+@interface UndoneViewController : DeadlineController{
+    //图片2进制路径
+    NSString* filePath;
+}
 @end
+
+
+

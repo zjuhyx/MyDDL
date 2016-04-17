@@ -6,8 +6,10 @@
 //  Copyright © 2015 柯瀚仰. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "DeadlineController.h"
 
-@interface DoneViewController : UIViewController
+@interface DoneViewController : DeadlineController
+
++ (DoneViewController *)setAndGetInstance:(DoneViewController *)doneViewController;
 
 @end

@@ -20,7 +20,7 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;   // 第一个section显示课程图标和课程名称，第二个section显示课程的备注
+    return 3;   // 第一个section显示课程图标和课程名称，第二个section显示课程的备注
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -28,7 +28,8 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60.0;
+    CGFloat height[3] = {60, 120, 44};
+    return height[indexPath.section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -39,13 +40,18 @@
         CALayer *layer = cell.imageView.layer;
         layer.masksToBounds = YES;
         layer.cornerRadius = 25.0;
-    } else {
+        cell.userInteractionEnabled = NO;
+    } else if (indexPath.section == 1) {
         cell.textLabel.text = self.itemDetail;
+        cell.userInteractionEnabled = NO;
+    } else {
+        cell.textLabel.text = self.deleteItem;
     }
     return cell;
 }
 
 - (void)editItem {
+    @throw [NSException exceptionWithName:@"Uncallable method" reason:@"Please call the subclass' method" userInfo:nil];
 }
 
 @end

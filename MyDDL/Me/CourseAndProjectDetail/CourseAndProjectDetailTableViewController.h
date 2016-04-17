@@ -13,5 +13,8 @@
 @property (nonatomic, readonly) NSString *itemName;
 @property (nonatomic, readonly) NSString *itemImageName;
 @property (nonatomic, readonly) NSString *itemDetail;
+@property (nonatomic, readonly) NSString *deleteItem;
+
+- (void)editItem;
 
 @end

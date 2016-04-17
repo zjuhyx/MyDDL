@@ -17,6 +17,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [NSThread sleepForTimeInterval:1];
+    
     CGRect frame = [[UIScreen mainScreen] bounds];
     self.window = [[UIWindow alloc] initWithFrame:frame];
     

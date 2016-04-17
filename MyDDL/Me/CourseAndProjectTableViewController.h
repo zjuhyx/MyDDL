@@ -13,5 +13,6 @@
 @property (nonatomic, readonly) UITableViewController *nextViewController;
 
 - (UIImage *)cellImageAtIndexPath:(NSIndexPath *)indexPath;
+- (void)addNewItem;
 
 @end

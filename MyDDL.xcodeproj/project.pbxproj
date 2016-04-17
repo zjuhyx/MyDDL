@@ -7,10 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		183246831C0AEE570002A61A /* CreateGroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183246821C0AEE570002A61A /* CreateGroupController.m */; };
+		183246861C0AEF0C0002A61A /* JoinGroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183246851C0AEF0C0002A61A /* JoinGroupController.m */; };
+		1832468C1C0AF4C00002A61A /* AddGroupMemberController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1832468B1C0AF4C00002A61A /* AddGroupMemberController.m */; };
+		1832468F1C0B59370002A61A /* DeadlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1832468E1C0B59370002A61A /* DeadlineView.m */; };
 		18386BAA1C0849AC00F44092 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18386BA91C0849AC00F44092 /* MainTabBarController.m */; };
 		18386BAD1C08B3A000F44092 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18386BAC1C08B3A000F44092 /* LoginViewController.m */; };
 		18386BB01C08BC4400F44092 /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 18386BAF1C08BC4400F44092 /* Configuration.m */; };
 		18386BB31C08C83F00F44092 /* Information.m in Sources */ = {isa = PBXBuildFile; fileRef = 18386BB21C08C83F00F44092 /* Information.m */; };
+		185C51E11C09F39F0034A88A /* CourseAndProjectModificationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185C51E01C09F39F0034A88A /* CourseAndProjectModificationTableViewController.m */; };
+		185C51E41C09F3B70034A88A /* AddCourseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185C51E31C09F3B70034A88A /* AddCourseController.m */; };
+		185C51E71C09FCE30034A88A /* ChangeCourseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185C51E61C09FCE30034A88A /* ChangeCourseController.m */; };
+		185C51EA1C0A00110034A88A /* AddProjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185C51E91C0A00110034A88A /* AddProjectController.m */; };
+		185C51ED1C0A00270034A88A /* ChangeProjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185C51EC1C0A00270034A88A /* ChangeProjectController.m */; };
+		189138931C10A6FB003B347A /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 189138921C10A6FB003B347A /* Group.m */; };
+		189138961C111890003B347A /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 189138951C111890003B347A /* Person.m */; };
 		189D2E3E1C05A105002A15D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D2E3D1C05A105002A15D5 /* main.m */; };
 		189D2E411C05A105002A15D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D2E401C05A105002A15D5 /* AppDelegate.m */; };
 		189D2E4C1C05A105002A15D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 189D2E4A1C05A105002A15D5 /* LaunchScreen.storyboard */; };
@@ -30,9 +41,36 @@
 		189D2EC81C076F80002A15D5 /* CourseDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D2EC71C076F80002A15D5 /* CourseDetailTableViewController.m */; };
 		189D2ECB1C0772C1002A15D5 /* ProjectDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D2ECA1C0772C1002A15D5 /* ProjectDetailTableViewController.m */; };
 		189D2ECE1C07FDD8002A15D5 /* CourseAndProjectDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D2ECD1C07FDD8002A15D5 /* CourseAndProjectDetailTableViewController.m */; };
+		18A4DA0A1C0C3944001CD648 /* AxisView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A4DA091C0C3944001CD648 /* AxisView.m */; };
+		18A4DA0D1C0C434D001CD648 /* CreateDeadlineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A4DA0C1C0C434D001CD648 /* CreateDeadlineController.m */; };
+		18A4DA101C0C45A5001CD648 /* CreateCourseDeadlineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A4DA0F1C0C45A5001CD648 /* CreateCourseDeadlineController.m */; };
+		18A4DA131C0CB1B8001CD648 /* PointView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A4DA121C0CB1B8001CD648 /* PointView.m */; };
+		18A4DA161C0CB645001CD648 /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A4DA151C0CB645001CD648 /* Circle.m */; };
+		18A4DA191C0CE1D9001CD648 /* DeadlineDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A4DA181C0CE1D9001CD648 /* DeadlineDetailController.m */; };
+		18BAB9DF1C0CE79900B41D61 /* CreateProjectDeadlineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BAB9DE1C0CE79900B41D61 /* CreateProjectDeadlineController.m */; };
+		18BAB9E21C0CE8A500B41D61 /* DeadlineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BAB9E11C0CE8A500B41D61 /* DeadlineController.m */; };
+		18BAB9E51C0CEDC800B41D61 /* DeadlineModificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BAB9E41C0CEDC800B41D61 /* DeadlineModificationController.m */; };
+		18BAB9E81C0CF00C00B41D61 /* EditDeadlineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BAB9E71C0CF00C00B41D61 /* EditDeadlineController.m */; };
+		18BAB9F11C0CF20B00B41D61 /* SearchDeadlineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BAB9F01C0CF20B00B41D61 /* SearchDeadlineController.m */; };
+		18BAB9F41C0CFCAF00B41D61 /* LineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BAB9F31C0CFCAF00B41D61 /* LineView.m */; };
+		18BAB9F71C0D792E00B41D61 /* DeadlineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BAB9F61C0D792E00B41D61 /* DeadlineModel.m */; };
+		18BAB9FC1C0D796600B41D61 /* Deadline.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BAB9FB1C0D796600B41D61 /* Deadline.m */; };
+		A5DF2BC994E337394C755CE3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0614B55CD2387BAFD9CC2075 /* libPods.a */; };
+		C38C68441CBDFFA300932369 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38C68431CBDFFA300932369 /* FilterViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C3BDDE8E1CBE3A4600470886 /* DeadlineModificationController2.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDE8D1CBE3A4600470886 /* DeadlineModificationController2.m */; settings = {ASSET_TAGS = (); }; };
+		C3BDDE911CC1BCFB00470886 /* DeleteDeadlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDE901CC1BCFB00470886 /* DeleteDeadlineViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0614B55CD2387BAFD9CC2075 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		183246811C0AEE570002A61A /* CreateGroupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateGroupController.h; path = Group/CreateGroupController.h; sourceTree = "<group>"; };
+		183246821C0AEE570002A61A /* CreateGroupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateGroupController.m; path = Group/CreateGroupController.m; sourceTree = "<group>"; };
+		183246841C0AEF0C0002A61A /* JoinGroupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JoinGroupController.h; path = Group/JoinGroupController.h; sourceTree = "<group>"; };
+		183246851C0AEF0C0002A61A /* JoinGroupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JoinGroupController.m; path = Group/JoinGroupController.m; sourceTree = "<group>"; };
+		1832468A1C0AF4C00002A61A /* AddGroupMemberController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddGroupMemberController.h; path = Group/AddGroupMemberController.h; sourceTree = "<group>"; };
+		1832468B1C0AF4C00002A61A /* AddGroupMemberController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddGroupMemberController.m; path = Group/AddGroupMemberController.m; sourceTree = "<group>"; };
+		1832468D1C0B59370002A61A /* DeadlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeadlineView.h; sourceTree = "<group>"; };
+		1832468E1C0B59370002A61A /* DeadlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeadlineView.m; sourceTree = "<group>"; };
 		18386BA81C0849AC00F44092 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		18386BA91C0849AC00F44092 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		18386BAB1C08B3A000F44092 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -41,6 +79,20 @@
 		18386BAF1C08BC4400F44092 /* Configuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Configuration.m; path = Util/Configuration.m; sourceTree = "<group>"; };
 		18386BB11C08C83F00F44092 /* Information.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Information.h; path = Util/Information.h; sourceTree = "<group>"; };
 		18386BB21C08C83F00F44092 /* Information.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Information.m; path = Util/Information.m; sourceTree = "<group>"; };
+		185C51DF1C09F39F0034A88A /* CourseAndProjectModificationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CourseAndProjectModificationTableViewController.h; path = Me/CourseAndProjectModification/CourseAndProjectModificationTableViewController.h; sourceTree = "<group>"; };
+		185C51E01C09F39F0034A88A /* CourseAndProjectModificationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CourseAndProjectModificationTableViewController.m; path = Me/CourseAndProjectModification/CourseAndProjectModificationTableViewController.m; sourceTree = "<group>"; };
+		185C51E21C09F3B70034A88A /* AddCourseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddCourseController.h; path = Me/CourseAndProjectModification/AddCourseController.h; sourceTree = "<group>"; };
+		185C51E31C09F3B70034A88A /* AddCourseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddCourseController.m; path = Me/CourseAndProjectModification/AddCourseController.m; sourceTree = "<group>"; };
+		185C51E51C09FCE30034A88A /* ChangeCourseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangeCourseController.h; path = Me/CourseAndProjectModification/ChangeCourseController.h; sourceTree = "<group>"; };
+		185C51E61C09FCE30034A88A /* ChangeCourseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChangeCourseController.m; path = Me/CourseAndProjectModification/ChangeCourseController.m; sourceTree = "<group>"; };
+		185C51E81C0A00110034A88A /* AddProjectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddProjectController.h; path = Me/CourseAndProjectModification/AddProjectController.h; sourceTree = "<group>"; };
+		185C51E91C0A00110034A88A /* AddProjectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddProjectController.m; path = Me/CourseAndProjectModification/AddProjectController.m; sourceTree = "<group>"; };
+		185C51EB1C0A00270034A88A /* ChangeProjectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangeProjectController.h; path = Me/CourseAndProjectModification/ChangeProjectController.h; sourceTree = "<group>"; };
+		185C51EC1C0A00270034A88A /* ChangeProjectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChangeProjectController.m; path = Me/CourseAndProjectModification/ChangeProjectController.m; sourceTree = "<group>"; };
+		189138911C10A6FB003B347A /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Group.h; path = Group/Entity/Group.h; sourceTree = "<group>"; };
+		189138921C10A6FB003B347A /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Group.m; path = Group/Entity/Group.m; sourceTree = "<group>"; };
+		189138941C111890003B347A /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Person.h; path = Group/Entity/Person.h; sourceTree = "<group>"; };
+		189138951C111890003B347A /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Person.m; path = Group/Entity/Person.m; sourceTree = "<group>"; };
 		189D2E391C05A105002A15D5 /* MyDDL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDDL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		189D2E3D1C05A105002A15D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		189D2E3F1C05A105002A15D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -78,6 +130,42 @@
 		189D2ECA1C0772C1002A15D5 /* ProjectDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectDetailTableViewController.m; path = Me/CourseAndProjectDetail/ProjectDetailTableViewController.m; sourceTree = "<group>"; };
 		189D2ECC1C07FDD8002A15D5 /* CourseAndProjectDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CourseAndProjectDetailTableViewController.h; path = Me/CourseAndProjectDetail/CourseAndProjectDetailTableViewController.h; sourceTree = "<group>"; };
 		189D2ECD1C07FDD8002A15D5 /* CourseAndProjectDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CourseAndProjectDetailTableViewController.m; path = Me/CourseAndProjectDetail/CourseAndProjectDetailTableViewController.m; sourceTree = "<group>"; };
+		18A4DA081C0C3944001CD648 /* AxisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxisView.h; sourceTree = "<group>"; };
+		18A4DA091C0C3944001CD648 /* AxisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxisView.m; sourceTree = "<group>"; };
+		18A4DA0B1C0C434D001CD648 /* CreateDeadlineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateDeadlineController.h; sourceTree = "<group>"; };
+		18A4DA0C1C0C434D001CD648 /* CreateDeadlineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateDeadlineController.m; sourceTree = "<group>"; };
+		18A4DA0E1C0C45A5001CD648 /* CreateCourseDeadlineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateCourseDeadlineController.h; sourceTree = "<group>"; };
+		18A4DA0F1C0C45A5001CD648 /* CreateCourseDeadlineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateCourseDeadlineController.m; sourceTree = "<group>"; };
+		18A4DA111C0CB1B8001CD648 /* PointView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointView.h; sourceTree = "<group>"; };
+		18A4DA121C0CB1B8001CD648 /* PointView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointView.m; sourceTree = "<group>"; };
+		18A4DA141C0CB645001CD648 /* Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Circle.h; sourceTree = "<group>"; };
+		18A4DA151C0CB645001CD648 /* Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Circle.m; sourceTree = "<group>"; };
+		18A4DA171C0CE1D9001CD648 /* DeadlineDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeadlineDetailController.h; sourceTree = "<group>"; };
+		18A4DA181C0CE1D9001CD648 /* DeadlineDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeadlineDetailController.m; sourceTree = "<group>"; };
+		18BAB9DD1C0CE79900B41D61 /* CreateProjectDeadlineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateProjectDeadlineController.h; sourceTree = "<group>"; };
+		18BAB9DE1C0CE79900B41D61 /* CreateProjectDeadlineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateProjectDeadlineController.m; sourceTree = "<group>"; };
+		18BAB9E01C0CE8A500B41D61 /* DeadlineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeadlineController.h; sourceTree = "<group>"; };
+		18BAB9E11C0CE8A500B41D61 /* DeadlineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeadlineController.m; sourceTree = "<group>"; };
+		18BAB9E31C0CEDC800B41D61 /* DeadlineModificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeadlineModificationController.h; sourceTree = "<group>"; };
+		18BAB9E41C0CEDC800B41D61 /* DeadlineModificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeadlineModificationController.m; sourceTree = "<group>"; };
+		18BAB9E61C0CF00C00B41D61 /* EditDeadlineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditDeadlineController.h; sourceTree = "<group>"; };
+		18BAB9E71C0CF00C00B41D61 /* EditDeadlineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditDeadlineController.m; sourceTree = "<group>"; };
+		18BAB9EF1C0CF20B00B41D61 /* SearchDeadlineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchDeadlineController.h; sourceTree = "<group>"; };
+		18BAB9F01C0CF20B00B41D61 /* SearchDeadlineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchDeadlineController.m; sourceTree = "<group>"; };
+		18BAB9F21C0CFCAF00B41D61 /* LineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineView.h; sourceTree = "<group>"; };
+		18BAB9F31C0CFCAF00B41D61 /* LineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineView.m; sourceTree = "<group>"; };
+		18BAB9F51C0D792E00B41D61 /* DeadlineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeadlineModel.h; sourceTree = "<group>"; };
+		18BAB9F61C0D792E00B41D61 /* DeadlineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeadlineModel.m; sourceTree = "<group>"; };
+		18BAB9FA1C0D796600B41D61 /* Deadline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deadline.h; sourceTree = "<group>"; };
+		18BAB9FB1C0D796600B41D61 /* Deadline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deadline.m; sourceTree = "<group>"; };
+		19FD0105F71C1C7F905E1A1F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C38C68421CBDFFA300932369 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
+		C38C68431CBDFFA300932369 /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
+		C3BDDE8C1CBE3A4600470886 /* DeadlineModificationController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeadlineModificationController2.h; sourceTree = "<group>"; };
+		C3BDDE8D1CBE3A4600470886 /* DeadlineModificationController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeadlineModificationController2.m; sourceTree = "<group>"; };
+		C3BDDE8F1CC1BCFB00470886 /* DeleteDeadlineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteDeadlineViewController.h; sourceTree = "<group>"; };
+		C3BDDE901CC1BCFB00470886 /* DeleteDeadlineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteDeadlineViewController.m; sourceTree = "<group>"; };
+		E23334C294643886EEACACFC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,17 +173,57 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5DF2BC994E337394C755CE3 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E0C6CEA96C25FA64124B2A9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E23334C294643886EEACACFC /* Pods.debug.xcconfig */,
+				19FD0105F71C1C7F905E1A1F /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		185C51DE1C09F3720034A88A /* CourseAndProjectModification */ = {
+			isa = PBXGroup;
+			children = (
+				185C51DF1C09F39F0034A88A /* CourseAndProjectModificationTableViewController.h */,
+				185C51E01C09F39F0034A88A /* CourseAndProjectModificationTableViewController.m */,
+				185C51E81C0A00110034A88A /* AddProjectController.h */,
+				185C51E91C0A00110034A88A /* AddProjectController.m */,
+				185C51EB1C0A00270034A88A /* ChangeProjectController.h */,
+				185C51EC1C0A00270034A88A /* ChangeProjectController.m */,
+				185C51E21C09F3B70034A88A /* AddCourseController.h */,
+				185C51E31C09F3B70034A88A /* AddCourseController.m */,
+				185C51E51C09FCE30034A88A /* ChangeCourseController.h */,
+				185C51E61C09FCE30034A88A /* ChangeCourseController.m */,
+			);
+			name = CourseAndProjectModification;
+			sourceTree = "<group>";
+		};
+		189138901C10A6DF003B347A /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				189138911C10A6FB003B347A /* Group.h */,
+				189138921C10A6FB003B347A /* Group.m */,
+				189138941C111890003B347A /* Person.h */,
+				189138951C111890003B347A /* Person.m */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
 		189D2E301C05A105002A15D5 = {
 			isa = PBXGroup;
 			children = (
 				189D2E3B1C05A105002A15D5 /* MyDDL */,
 				189D2E3A1C05A105002A15D5 /* Products */,
+				0E0C6CEA96C25FA64124B2A9 /* Pods */,
+				6E2DB064BD097DE5C64ECFA0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,9 +238,8 @@
 		189D2E3B1C05A105002A15D5 /* MyDDL */ = {
 			isa = PBXGroup;
 			children = (
+				18A4DA071C0C3914001CD648 /* DoneAndUndone */,
 				189D2E861C05A671002A15D5 /* Util */,
-				189D2E611C05A1A6002A15D5 /* Undone */,
-				189D2E621C05A1AD002A15D5 /* Done */,
 				189D2E601C05A196002A15D5 /* Group */,
 				189D2E5F1C05A18D002A15D5 /* Me */,
 				189D2E3F1C05A105002A15D5 /* AppDelegate.h */,
@@ -140,6 +267,7 @@
 		189D2E5F1C05A18D002A15D5 /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				185C51DE1C09F3720034A88A /* CourseAndProjectModification */,
 				189D2EBD1C07047E002A15D5 /* Model */,
 				189D2EBC1C0701C4002A15D5 /* CourseAndProjectDetail */,
 				189D2EBB1C0700E4002A15D5 /* SettingDetail */,
@@ -161,10 +289,17 @@
 		189D2E601C05A196002A15D5 /* Group */ = {
 			isa = PBXGroup;
 			children = (
+				189138901C10A6DF003B347A /* Entity */,
 				189D2EC31C076370002A15D5 /* GroupTableViewController.h */,
 				189D2EC41C076370002A15D5 /* GroupTableViewController.m */,
 				189D2EC01C076356002A15D5 /* GroupDetailTableViewController.h */,
 				189D2EC11C076356002A15D5 /* GroupDetailTableViewController.m */,
+				183246811C0AEE570002A61A /* CreateGroupController.h */,
+				183246821C0AEE570002A61A /* CreateGroupController.m */,
+				183246841C0AEF0C0002A61A /* JoinGroupController.h */,
+				183246851C0AEF0C0002A61A /* JoinGroupController.m */,
+				1832468A1C0AF4C00002A61A /* AddGroupMemberController.h */,
+				1832468B1C0AF4C00002A61A /* AddGroupMemberController.m */,
 			);
 			name = Group;
 			sourceTree = "<group>";
@@ -174,6 +309,16 @@
 			children = (
 				189D2E591C05A171002A15D5 /* UndoneViewController.h */,
 				189D2E5A1C05A171002A15D5 /* UndoneViewController.m */,
+				18A4DA0B1C0C434D001CD648 /* CreateDeadlineController.h */,
+				18A4DA0C1C0C434D001CD648 /* CreateDeadlineController.m */,
+				18A4DA0E1C0C45A5001CD648 /* CreateCourseDeadlineController.h */,
+				18A4DA0F1C0C45A5001CD648 /* CreateCourseDeadlineController.m */,
+				18BAB9DD1C0CE79900B41D61 /* CreateProjectDeadlineController.h */,
+				18BAB9DE1C0CE79900B41D61 /* CreateProjectDeadlineController.m */,
+				18BAB9EF1C0CF20B00B41D61 /* SearchDeadlineController.h */,
+				18BAB9F01C0CF20B00B41D61 /* SearchDeadlineController.m */,
+				C38C68421CBDFFA300932369 /* FilterViewController.h */,
+				C38C68431CBDFFA300932369 /* FilterViewController.m */,
 			);
 			name = Undone;
 			sourceTree = "<group>";
@@ -183,6 +328,8 @@
 			children = (
 				189D2E531C05A171002A15D5 /* DoneViewController.h */,
 				189D2E541C05A171002A15D5 /* DoneViewController.m */,
+				C3BDDE8F1CC1BCFB00470886 /* DeleteDeadlineViewController.h */,
+				C3BDDE901CC1BCFB00470886 /* DeleteDeadlineViewController.m */,
 			);
 			name = Done;
 			sourceTree = "<group>";
@@ -238,6 +385,63 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		18A4DA071C0C3914001CD648 /* DoneAndUndone */ = {
+			isa = PBXGroup;
+			children = (
+				18BAB9F91C0D795300B41D61 /* Entity */,
+				18BAB9F81C0D793F00B41D61 /* Model */,
+				1832468D1C0B59370002A61A /* DeadlineView.h */,
+				1832468E1C0B59370002A61A /* DeadlineView.m */,
+				18A4DA081C0C3944001CD648 /* AxisView.h */,
+				18A4DA091C0C3944001CD648 /* AxisView.m */,
+				18BAB9F21C0CFCAF00B41D61 /* LineView.h */,
+				18BAB9F31C0CFCAF00B41D61 /* LineView.m */,
+				18A4DA111C0CB1B8001CD648 /* PointView.h */,
+				18A4DA121C0CB1B8001CD648 /* PointView.m */,
+				18A4DA141C0CB645001CD648 /* Circle.h */,
+				18A4DA151C0CB645001CD648 /* Circle.m */,
+				18A4DA171C0CE1D9001CD648 /* DeadlineDetailController.h */,
+				18A4DA181C0CE1D9001CD648 /* DeadlineDetailController.m */,
+				18BAB9E01C0CE8A500B41D61 /* DeadlineController.h */,
+				18BAB9E11C0CE8A500B41D61 /* DeadlineController.m */,
+				C3BDDE8C1CBE3A4600470886 /* DeadlineModificationController2.h */,
+				C3BDDE8D1CBE3A4600470886 /* DeadlineModificationController2.m */,
+				18BAB9E31C0CEDC800B41D61 /* DeadlineModificationController.h */,
+				18BAB9E41C0CEDC800B41D61 /* DeadlineModificationController.m */,
+				18BAB9E61C0CF00C00B41D61 /* EditDeadlineController.h */,
+				18BAB9E71C0CF00C00B41D61 /* EditDeadlineController.m */,
+				189D2E611C05A1A6002A15D5 /* Undone */,
+				189D2E621C05A1AD002A15D5 /* Done */,
+			);
+			name = DoneAndUndone;
+			sourceTree = "<group>";
+		};
+		18BAB9F81C0D793F00B41D61 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18BAB9F51C0D792E00B41D61 /* DeadlineModel.h */,
+				18BAB9F61C0D792E00B41D61 /* DeadlineModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		18BAB9F91C0D795300B41D61 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				18BAB9FA1C0D796600B41D61 /* Deadline.h */,
+				18BAB9FB1C0D796600B41D61 /* Deadline.m */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
+		6E2DB064BD097DE5C64ECFA0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0614B55CD2387BAFD9CC2075 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -245,9 +449,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 189D2E501C05A105002A15D5 /* Build configuration list for PBXNativeTarget "MyDDL" */;
 			buildPhases = (
+				0DD0085EC4AF39E65868A3C1 /* Check Pods Manifest.lock */,
 				189D2E351C05A105002A15D5 /* Sources */,
 				189D2E361C05A105002A15D5 /* Frameworks */,
 				189D2E371C05A105002A15D5 /* Resources */,
+				3EA82A9F9349DD5AB976A8A5 /* Embed Pods Frameworks */,
+				462FB0DAFCA730120E26934B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -302,32 +509,108 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0DD0085EC4AF39E65868A3C1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3EA82A9F9349DD5AB976A8A5 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		462FB0DAFCA730120E26934B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		189D2E351C05A105002A15D5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				189D2E411C05A105002A15D5 /* AppDelegate.m in Sources */,
+				1832468F1C0B59370002A61A /* DeadlineView.m in Sources */,
+				185C51EA1C0A00110034A88A /* AddProjectController.m in Sources */,
+				18A4DA0D1C0C434D001CD648 /* CreateDeadlineController.m in Sources */,
+				183246831C0AEE570002A61A /* CreateGroupController.m in Sources */,
 				189D2EB71C07001C002A15D5 /* Course.m in Sources */,
 				189D2ECB1C0772C1002A15D5 /* ProjectDetailTableViewController.m in Sources */,
 				18386BB31C08C83F00F44092 /* Information.m in Sources */,
+				185C51ED1C0A00270034A88A /* ChangeProjectController.m in Sources */,
 				189D2E5B1C05A171002A15D5 /* DoneViewController.m in Sources */,
+				18BAB9F11C0CF20B00B41D61 /* SearchDeadlineController.m in Sources */,
+				18BAB9F41C0CFCAF00B41D61 /* LineView.m in Sources */,
+				18A4DA191C0CE1D9001CD648 /* DeadlineDetailController.m in Sources */,
+				C3BDDE8E1CBE3A4600470886 /* DeadlineModificationController2.m in Sources */,
+				C3BDDE911CC1BCFB00470886 /* DeleteDeadlineViewController.m in Sources */,
 				18386BAD1C08B3A000F44092 /* LoginViewController.m in Sources */,
+				183246861C0AEF0C0002A61A /* JoinGroupController.m in Sources */,
+				18BAB9E21C0CE8A500B41D61 /* DeadlineController.m in Sources */,
+				185C51E71C09FCE30034A88A /* ChangeCourseController.m in Sources */,
+				18A4DA131C0CB1B8001CD648 /* PointView.m in Sources */,
+				18BAB9DF1C0CE79900B41D61 /* CreateProjectDeadlineController.m in Sources */,
 				189D2EBA1C070029002A15D5 /* Project.m in Sources */,
+				C38C68441CBDFFA300932369 /* FilterViewController.m in Sources */,
 				18386BB01C08BC4400F44092 /* Configuration.m in Sources */,
+				18BAB9F71C0D792E00B41D61 /* DeadlineModel.m in Sources */,
 				189D2EC81C076F80002A15D5 /* CourseDetailTableViewController.m in Sources */,
 				189D2EB41C07000A002A15D5 /* CourseAndProject.m in Sources */,
+				185C51E11C09F39F0034A88A /* CourseAndProjectModificationTableViewController.m in Sources */,
 				189D2E3E1C05A105002A15D5 /* main.m in Sources */,
 				189D2ECE1C07FDD8002A15D5 /* CourseAndProjectDetailTableViewController.m in Sources */,
+				189138931C10A6FB003B347A /* Group.m in Sources */,
 				189D2EB01C05B42E002A15D5 /* SettingTableViewController.m in Sources */,
+				18A4DA161C0CB645001CD648 /* Circle.m in Sources */,
+				1832468C1C0AF4C00002A61A /* AddGroupMemberController.m in Sources */,
 				189D2EC51C076370002A15D5 /* GroupTableViewController.m in Sources */,
+				18BAB9E51C0CEDC800B41D61 /* DeadlineModificationController.m in Sources */,
 				18386BAA1C0849AC00F44092 /* MainTabBarController.m in Sources */,
+				185C51E41C09F3B70034A88A /* AddCourseController.m in Sources */,
 				189D2EAC1C05B42E002A15D5 /* CourseAndProjectTableViewController.m in Sources */,
 				189D2EAD1C05B42E002A15D5 /* CourseTableViewController.m in Sources */,
+				18A4DA0A1C0C3944001CD648 /* AxisView.m in Sources */,
 				189D2EAF1C05B42E002A15D5 /* ProjectTableViewController.m in Sources */,
+				18BAB9E81C0CF00C00B41D61 /* EditDeadlineController.m in Sources */,
 				189D2EC21C076356002A15D5 /* GroupDetailTableViewController.m in Sources */,
 				189D2EAE1C05B42E002A15D5 /* MeTableViewController.m in Sources */,
+				18A4DA101C0C45A5001CD648 /* CreateCourseDeadlineController.m in Sources */,
 				189D2E5E1C05A171002A15D5 /* UndoneViewController.m in Sources */,
+				189138961C111890003B347A /* Person.m in Sources */,
+				18BAB9FC1C0D796600B41D61 /* Deadline.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,9 +710,11 @@
 		};
 		189D2E511C05A105002A15D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E23334C294643886EEACACFC /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MyDDL/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.myddl.MyDDL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -438,9 +723,11 @@
 		};
 		189D2E521C05A105002A15D5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19FD0105F71C1C7F905E1A1F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MyDDL/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.myddl.MyDDL;
 				PRODUCT_NAME = "$(TARGET_NAME)";

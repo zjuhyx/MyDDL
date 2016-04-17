@@ -8,6 +8,7 @@
 
 #import "CourseTableViewController.h"
 #import "CourseDetailTableViewController.h"
+#import "AddCourseController.h"
 
 @implementation CourseTableViewController
 
@@ -25,6 +26,10 @@
 
 - (UIImage *)cellImageAtIndexPath:(NSIndexPath *)indexPath {
     return [UIImage imageNamed:@"course_default"];
+}
+
+- (void)addNewItem {
+    [self.navigationController pushViewController:[[AddCourseController alloc] init] animated:YES];
 }
 
 @end

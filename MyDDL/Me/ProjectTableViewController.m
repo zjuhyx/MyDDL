@@ -8,6 +8,7 @@
 
 #import "ProjectTableViewController.h"
 #import "ProjectDetailTableViewController.h"
+#import "AddProjectController.h"
 
 @implementation ProjectTableViewController
 
@@ -25,6 +26,10 @@
 
 - (UIImage *)cellImageAtIndexPath:(NSIndexPath *)indexPath {
     return [UIImage imageNamed:@"project_default"];
+}
+
+- (void)addNewItem {
+    [self.navigationController pushViewController:[[AddProjectController alloc] init] animated:YES];
 }
 
 @end

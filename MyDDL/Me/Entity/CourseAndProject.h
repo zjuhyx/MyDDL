@@ -10,4 +10,9 @@
 
 @interface CourseAndProject : NSObject
 
+@property (nonatomic) NSString *name;
+@property (nonatomic) NSString *detail;
+
+- (instancetype)initWithName:(NSString *)name;
+
 @end

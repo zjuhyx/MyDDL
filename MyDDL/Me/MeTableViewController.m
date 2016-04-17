@@ -40,32 +40,57 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return indexPath.section == 0 ? 70 : 44;
+    return indexPath.section == 0 ? 180 : 44;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *tableViewCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
     if (indexPath.section != 0) {
-        tableViewCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     NSString *username = [Information getInformation].username;
-    NSArray *texts = @[@[username], @[@"课程", @"项目"], @[@"设置"]];
-    tableViewCell.textLabel.text = texts[indexPath.section][indexPath.row];
-    tableViewCell.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    
     if (indexPath.section == 0) {
-        CGFloat radius = 25.0;
-        tableViewCell.imageView.image = [UIImage imageNamed:@"avatar_default"];
-        CALayer *layer = tableViewCell.imageView.layer;
+        CGFloat radius = 40.0;
+        //cell.imageView.image = [UIImage imageNamed:@"avatar_default"];
+        CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+        UIImageView *imageView=[[UIImageView alloc] initWithFrame:CGRectMake(screenWidth/2.0-radius, 20, 80, 80)];
+        //CALayer *layer = cell.imageView.layer;
+        CALayer *layer = imageView.layer;
         layer.masksToBounds = YES;
         layer.cornerRadius = radius;
+        imageView.image=[UIImage imageNamed:@"avatar_default"];
+        [cell addSubview:imageView];
+        [imageView addGestureRecognizer:[[UIGestureRecognizer alloc] initWithTarget:self action:@selector(pickImage:)]];
+        //不知道为什么没有用？？！！
+        
+        UILabel *label=[[UILabel alloc] initWithFrame:CGRectMake(screenWidth/2.0-100, 20+radius*2, 200, 50)];
+        label.text=username;
+        label.textAlignment = UITextAlignmentCenter;
+        label.font=[UIFont systemFontOfSize:19];
+        [cell addSubview:label];
+        //cell.userInteractionEnabled = NO;
+        
+        UILabel *subLabel=[[UILabel alloc] initWithFrame:CGRectMake(screenWidth/2.0-100, 20+radius*2+25, 200, 50)];
+        subLabel.text=@"账号：523074";
+        subLabel.textAlignment = UITextAlignmentCenter;
+        subLabel.font=[UIFont systemFontOfSize:13];
+        subLabel.textColor=[UIColor grayColor];
+        [cell addSubview:subLabel];
+
+        
     } else if (indexPath.section == 1 && indexPath.row == 0) {
-        tableViewCell.imageView.image = [UIImage imageNamed:@"course"];
+        cell.textLabel.text = @"课程";
+        cell.imageView.image = [UIImage imageNamed:@"course"];
     } else if (indexPath.section == 1 && indexPath.row == 1) {
-        tableViewCell.imageView.image = [UIImage imageNamed:@"project"];
+        cell.textLabel.text = @"项目";
+        cell.imageView.image = [UIImage imageNamed:@"project"];
     } else if (indexPath.section == 2) {
-        tableViewCell.imageView.image = [UIImage imageNamed:@"setting"];
+        cell.textLabel.text = @"设置";
+        cell.imageView.image = [UIImage imageNamed:@"setting"];
     }
-    return tableViewCell;
+    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -74,8 +99,12 @@
                                      [ProjectTableViewController class]],
                                    @[[SettingTableViewController class]]];
     if (indexPath.section != 0) {
-        [self.navigationController pushViewController:[[controllerClasses[indexPath.section] [indexPath.row] alloc] init] animated:YES];
+        [self.navigationController pushViewController:[[controllerClasses[indexPath.section][indexPath.row] alloc] init] animated:YES];
     }
+}
+
+-(void)pickImage:(UIImage *) image{
+    NSLog(@"pickImage!!");
 }
 
 @end

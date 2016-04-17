@@ -46,7 +46,8 @@
     [super viewDidAppear:animated];
     NSString *username = [Information getInformation].username;
     if (username == nil || [username isEqualToString:@""]) {
-        [self presentViewController:[[LoginViewController alloc] init] animated:YES completion:nil];
+//        [self presentViewController:[[LoginViewController alloc] init] animated:YES completion:nil];
+        [Information getInformation].username = @"admin";
     }
 }
 

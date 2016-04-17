@@ -54,7 +54,7 @@
 }
 
 - (void)addNewItem {
-    // will override by subclass
+    @throw [NSException exceptionWithName:@"Uncallable method" reason:@"Please call the subclass' method" userInfo:nil];
 }
 
 @end

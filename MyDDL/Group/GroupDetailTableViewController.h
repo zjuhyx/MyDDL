@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Group.h"
 
 @interface GroupDetailTableViewController : UITableViewController
+
+@property (nonatomic) Group *group;
+
+- (instancetype)initWithGroup:(Group *)group;
 
 @end
