@@ -6,9 +6,9 @@
 //  Copyright © 2015 柯瀚仰. All rights reserved.
 //
 
-#import "ChangeCourseController.h"
+#import "EditCourseController.h"
 
-@implementation ChangeCourseController
+@implementation EditCourseController
 
 - (instancetype)init {
     self = [super init];

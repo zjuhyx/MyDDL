@@ -6,8 +6,8 @@
 //  Copyright © 2015 柯瀚仰. All rights reserved.
 //
 
-#import "CourseAndProjectModificationTableViewController.h"
+#import "CourseProjectModificationViewController.h"
 
-@interface ChangeProjectController : CourseAndProjectModificationTableViewController
+@interface EditProjectController : CourseProjectModificationViewController
 
 @end

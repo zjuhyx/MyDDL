@@ -5,11 +5,10 @@
 //  Created by 胡譯心 on 16/4/13.
 //  Copyright © 2016年 柯瀚仰. All rights reserved.
 //
+#import "DeadlineController.h"
 
 #import "XLForm.h"
 #import "XLFormViewController.h"
-
-#import "DeadlineController.h"
 
 @interface DeadlineModificationController2 : XLFormViewController
 

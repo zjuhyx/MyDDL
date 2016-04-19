@@ -6,9 +6,9 @@
 //  Copyright © 2015 柯瀚仰. All rights reserved.
 //
 
-#import "ChangeProjectController.h"
+#import "EditProjectController.h"
 
-@implementation ChangeProjectController
+@implementation EditProjectController
 
 - (instancetype)init {
     self = [super init];

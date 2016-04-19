@@ -95,17 +95,14 @@ NSString *const kCountDownTimer = @"countDownTimer";
         [form addFormSection:section];
         //联系人
         row = [XLFormRowDescriptor formRowDescriptorWithTag:@"teacher" rowType:XLFormRowDescriptorTypeText title:@"联系人"];
-        //[row.cellConfig setObject:[UIFont boldSystemFontOfSize:17] forKey:@"textLabel.font"];
         [row.cellConfigAtConfigure setObject:@"（选填）" forKey:@"textField.placeholder"];
         [section addFormRow:row];
         //联系方式-手机
         row = [XLFormRowDescriptor formRowDescriptorWithTag:@"integer" rowType:XLFormRowDescriptorTypeInteger title:@"联系电话"];
-        //[row.cellConfig setObject:[UIFont boldSystemFontOfSize:17] forKey:@"textLabel.font"];
         [row.cellConfigAtConfigure setObject:@"（选填）" forKey:@"textField.placeholder"];
         [section addFormRow:row];
         // Email
         row = [XLFormRowDescriptor formRowDescriptorWithTag:@"email" rowType:XLFormRowDescriptorTypeEmail title:@"邮箱"];
-        //[row.cellConfig setObject:[UIFont boldSystemFontOfSize:17] forKey:@"textLabel.font"];
         [row.cellConfigAtConfigure setObject:@"（选填）" forKey:@"textField.placeholder"];
         // validate the email
         [row addValidator:[XLFormValidator emailValidator]];

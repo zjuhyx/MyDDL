@@ -7,7 +7,7 @@
 //
 
 #import "MeTableViewController.h"
-#import "SettingTableViewController.h"
+#import "SettingViewController.h"
 #import "CourseTableViewController.h"
 #import "ProjectTableViewController.h"
 #import "Information.h"
@@ -45,6 +45,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
+    cell.selectionStyle=UITableViewCellSelectionStyleNone;
     if (indexPath.section != 0) {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
@@ -78,7 +79,6 @@
         subLabel.font=[UIFont systemFontOfSize:13];
         subLabel.textColor=[UIColor grayColor];
         [cell addSubview:subLabel];
-
         
     } else if (indexPath.section == 1 && indexPath.row == 0) {
         cell.textLabel.text = @"课程";
@@ -97,7 +97,7 @@
     NSArray *controllerClasses = @[@[],
                                    @[[CourseTableViewController class],
                                      [ProjectTableViewController class]],
-                                   @[[SettingTableViewController class]]];
+                                   @[[SettingViewController class]]];
     if (indexPath.section != 0) {
         [self.navigationController pushViewController:[[controllerClasses[indexPath.section][indexPath.row] alloc] init] animated:YES];
     }

@@ -65,6 +65,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
     if (indexPath.section == 0) {
+        cell.selectionStyle=UITableViewCellSelectionStyleNone;
         if (indexPath.row == 0) {
             //cell.textLabel.text = self.deadline.name;
             cell=[cell initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"UITableViewCell"];
@@ -99,34 +100,25 @@
             //cell.textLabel.text = self.deadline.owner.name;
             cell.textLabel.text = self.deadline.detail;
         }
-        cell.userInteractionEnabled = NO;
-    } else if (indexPath.section == 1) {
-        //cell.textLabel.text = self.deadline.detail;
         //cell.userInteractionEnabled = NO;
+    } else if (indexPath.section == 1) {
+        cell.selectionStyle=UITableViewCellSelectionStyleNone;
+        cell=[cell initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"UITableViewCell"];
+        cell.textLabel.font = [UIFont systemFontOfSize:13];
+        cell.textLabel.textColor=_blueColor;
+        cell.detailTextLabel.font = [UIFont systemFontOfSize:17];
+        
         if(indexPath.row==0){
-            cell=[cell initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"UITableViewCell"];
             cell.textLabel.text=@"联系人";
-            cell.textLabel.font = [UIFont systemFontOfSize:13];
-            cell.textLabel.textColor=_blueColor;
             cell.detailTextLabel.text=@"刘老师";
-            cell.detailTextLabel.font = [UIFont systemFontOfSize:17];
         }
         else if(indexPath.row==1){
-            cell=[cell initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"UITableViewCell"];
             cell.textLabel.text=@"联系电话";
-            cell.textLabel.font = [UIFont systemFontOfSize:13];
-            cell.textLabel.textColor=_blueColor;
             cell.detailTextLabel.text=@"18868101111";
-            cell.detailTextLabel.font = [UIFont systemFontOfSize:17];
         }
         else{
-            cell=[cell initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"UITableViewCell"];
             cell.textLabel.text=@"邮箱";
-            cell.textLabel.font = [UIFont systemFontOfSize:13];
-            cell.textLabel.textColor=_blueColor;
             cell.detailTextLabel.text=@"liu@hotmail.com";
-            cell.detailTextLabel.font = [UIFont systemFontOfSize:17];
-            cell.selectionStyle=UITableViewCellSelectionStyleNone;
         }
     } else if (indexPath.section == 2) {
         cell.textLabel.text = @"标记为完成";
@@ -143,12 +135,12 @@
     } else if (indexPath.section == 3) {
         cell.textLabel.text = @"共享给...";
         cell.textLabel.textColor = _blueColor;
-        cell.textAlignment = UITextAlignmentCenter;
+        cell.textLabel.textAlignment = NSTextAlignmentCenter;
     }
     else if(indexPath.section==4){
         cell.textLabel.text = @"删除Deadline";
         cell.textLabel.textColor = [UIColor redColor];
-        cell.textAlignment = UITextAlignmentCenter;
+        cell.textLabel.textAlignment = NSTextAlignmentCenter;
     }
     return cell;
 }

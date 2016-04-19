@@ -12,6 +12,7 @@
 
 - (instancetype)init {
     self = [super initWithStyle:UITableViewStyleGrouped];
+    self.navigationItem.title=@"设置";
     return self;
 }
 

@@ -15,6 +15,8 @@
 @property (nonatomic, readonly) NSString *itemDetail;
 @property (nonatomic, readonly) NSString *deleteItem;
 
+@property(nonatomic) UIColor *blueColor;
+
 - (void)editItem;
 
 @end

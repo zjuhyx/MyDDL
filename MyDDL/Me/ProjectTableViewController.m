@@ -24,9 +24,9 @@
     return [[ProjectDetailTableViewController alloc] init];
 }
 
-- (UIImage *)cellImageAtIndexPath:(NSIndexPath *)indexPath {
-    return [UIImage imageNamed:@"project_default"];
-}
+//- (UIImage *)cellImageAtIndexPath:(NSIndexPath *)indexPath {
+//    return [UIImage imageNamed:@"project_default"];
+//}
 
 - (void)addNewItem {
     [self.navigationController pushViewController:[[AddProjectController alloc] init] animated:YES];

@@ -24,9 +24,9 @@
     return [[CourseDetailTableViewController alloc] init];
 }
 
-- (UIImage *)cellImageAtIndexPath:(NSIndexPath *)indexPath {
-    return [UIImage imageNamed:@"course_default"];
-}
+//- (UIImage *)cellImageAtIndexPath:(NSIndexPath *)indexPath {
+//    return [UIImage imageNamed:@"course_default"];
+//}
 
 - (void)addNewItem {
     [self.navigationController pushViewController:[[AddCourseController alloc] init] animated:YES];

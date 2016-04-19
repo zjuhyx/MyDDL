@@ -15,37 +15,68 @@
     if (self) {
         self.navigationItem.title = self.itemName;
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editItem)];
+        _blueColor = [UIColor colorWithRed:50./255 green:130./255 blue:255./255 alpha:1.];
     }
     return self;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;   // 第一个section显示课程图标和课程名称，第二个section显示课程的备注
+    return 3;   
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    int numberOfRows[3] = {3, 3, 1};
+    return numberOfRows[section];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat height[3] = {60, 120, 44};
-    return height[indexPath.section];
+    if(indexPath.section==0 && indexPath.row==0)
+        return 70;
+    if(indexPath.section==0 && indexPath.row==2)
+        return 200;
+    return 50;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
+    cell.selectionStyle=UITableViewCellSelectionStyleNone;
+    
     if (indexPath.section == 0) {
-        cell.textLabel.text = self.itemName;
-        cell.imageView.image = [UIImage imageNamed:self.itemImageName];
-        CALayer *layer = cell.imageView.layer;
-        layer.masksToBounds = YES;
-        layer.cornerRadius = 25.0;
+        if(indexPath.row==0){
+            cell.textLabel.text = self.itemName;
+            cell.textLabel.font = [UIFont systemFontOfSize:25];
+        }
+        else if(indexPath.row==1){
+            cell.textLabel.text=@"查看deadlines";
+            cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+        }
+        else{
+            cell.textLabel.text = self.itemDetail;
+        }
         cell.userInteractionEnabled = NO;
-    } else if (indexPath.section == 1) {
-        cell.textLabel.text = self.itemDetail;
-        cell.userInteractionEnabled = NO;
+    } else if (indexPath.section == 1) {        
+        cell=[cell initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"UITableViewCell"];
+        cell.textLabel.font = [UIFont systemFontOfSize:13];
+        cell.textLabel.textColor=_blueColor;
+        cell.detailTextLabel.font = [UIFont systemFontOfSize:17];
+        
+        if(indexPath.row==0){
+            cell.textLabel.text=@"联系人";
+            cell.detailTextLabel.text=@"刘老师";
+        }
+        else if(indexPath.row==1){
+            cell.textLabel.text=@"联系电话";
+            cell.detailTextLabel.text=@"18868101111";
+        }
+        else{
+            cell.textLabel.text=@"邮箱";
+            cell.detailTextLabel.text=@"liu@hotmail.com";
+        }
+        
     } else {
         cell.textLabel.text = self.deleteItem;
+        cell.textLabel.textColor = [UIColor redColor];
+        cell.textLabel.textAlignment = NSTextAlignmentCenter;
     }
     return cell;
 }

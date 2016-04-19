@@ -7,20 +7,20 @@
 //
 
 #import "ProjectDetailTableViewController.h"
-#import "ChangeProjectController.h"
+#import "EditProjectController.h"
 
 @implementation ProjectDetailTableViewController
 
 - (NSString *)itemName {
-    return @"这里将显示项目名称";
+    return @"项目名称";
 }
 
-- (NSString *)itemImageName {
-    return @"project_default";
-}
+//- (NSString *)itemImageName {
+//    return @"project_default";
+//}
 
 - (NSString *)itemDetail {
-    return @"这里将显示项目备注";
+    return @"项目备注";
 }
 
 - (NSString *)deleteItem {
@@ -28,11 +28,11 @@
 }
 
 - (void)editItem {
-    ChangeProjectController *changeController = [[ChangeProjectController alloc] init];
-    changeController.itemName = self.itemName;
-    changeController.itemImageName = self.itemImageName;
-    changeController.itemDetail = self.itemDetail;
-    [self.navigationController pushViewController:changeController animated:YES];
+    EditProjectController *editController = [[EditProjectController alloc] init];
+    editController.itemName = self.itemName;
+    editController.itemImageName = self.itemImageName;
+    editController.itemDetail = self.itemDetail;
+    [self.navigationController pushViewController:editController animated:YES];
 }
 
 @end

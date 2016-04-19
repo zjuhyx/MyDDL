@@ -7,20 +7,20 @@
 //
 
 #import "CourseDetailTableViewController.h"
-#import "ChangeCourseController.h"
+#import "EditCourseController.h"
 
 @implementation CourseDetailTableViewController
 
 - (NSString *)itemName {
-    return @"这里将显示课程名称";
+    return @"课程名称";
 }
 
-- (NSString *)itemImageName {
-    return @"course_default";
-}
+//- (NSString *)itemImageName {
+//    return @"course_default";
+//}
 
 - (NSString *)itemDetail {
-    return @"这里将显示课程备注";
+    return @"课程备注";
 }
 
 - (NSString *)deleteItem {
@@ -28,11 +28,11 @@
 }
 
 - (void)editItem {
-    ChangeCourseController *changeController = [[ChangeCourseController alloc] init];
-    changeController.itemName = self.itemName;
-    changeController.itemImageName = self.itemImageName;
-    changeController.itemDetail = self.itemDetail;
-    [self.navigationController pushViewController:changeController animated:YES];
+    EditCourseController *editController = [[EditCourseController alloc] init];
+    editController.itemName = self.itemName;
+    editController.itemImageName = self.itemImageName;
+    editController.itemDetail = self.itemDetail;
+    [self.navigationController pushViewController:editController animated:YES];
 }
 
 @end

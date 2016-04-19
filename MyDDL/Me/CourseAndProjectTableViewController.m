@@ -23,17 +23,17 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60;
+    return 50;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.textLabel.text = @"test";
-    cell.imageView.image = [self cellImageAtIndexPath:indexPath];
-    CALayer *layer = cell.imageView.layer;
-    layer.masksToBounds = YES;
-    layer.cornerRadius = 25.0;
+//    cell.imageView.image = [self cellImageAtIndexPath:indexPath];
+//    CALayer *layer = cell.imageView.layer;
+//    layer.masksToBounds = YES;
+//    layer.cornerRadius = 25.0;
     return cell;
 }
 
