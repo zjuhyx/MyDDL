@@ -20,16 +20,17 @@
     self = [super initWithStyle:UITableViewStyleGrouped];
     if (self) {
         self.navigationItem.title = @"我";
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"退出" style:UIBarButtonItemStylePlain target:self action:@selector(toLogOut)];
     }
     return self;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    int numberOfRowsInSection[3] = {1, 2, 1};
+    int numberOfRowsInSection[4] = {1, 1, 2, 1};
     return numberOfRowsInSection[section];
 }
 
@@ -56,17 +57,19 @@
     NSString *username = [Information getInformation].username;
     
     if (indexPath.section == 0) {
-        IntroCell *intro_cell = [[IntroCell alloc] initWithStyle:UITableViewCellStyleDefault   reuseIdentifier:@"UITableViewCell"];
+        IntroCell *intro_cell = [[IntroCell alloc] init];
         [intro_cell setCellLabel1:username label2:@"账号：624509"];
         [intro_cell setCellImage:nil imageName:@"avatar_default"];
         return intro_cell;
-    } else if (indexPath.section == 1 && indexPath.row == 0) {
+    } else if(indexPath.section==1){
+        cell.textLabel.text=@"消息";
+    } else if (indexPath.section == 2 && indexPath.row == 0) {
         cell.textLabel.text = @"课程";
         cell.imageView.image = [UIImage imageNamed:@"course"];
-    } else if (indexPath.section == 1 && indexPath.row == 1) {
+    } else if (indexPath.section == 2 && indexPath.row == 1) {
         cell.textLabel.text = @"项目";
         cell.imageView.image = [UIImage imageNamed:@"project"];
-    } else if (indexPath.section == 2) {
+    } else if (indexPath.section == 3) {
         cell.textLabel.text = @"设置";
         cell.imageView.image = [UIImage imageNamed:@"setting"];
     }
@@ -75,6 +78,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSArray *controllerClasses = @[@[],
+                                   @[],
                                    @[[CourseTableViewController class],
                                      [ProjectTableViewController class]],
                                    @[[SettingViewController class]]];
@@ -83,5 +87,8 @@
     }
 }
 
+- (void) toLogOut{
+    //...
+}
 
 @end

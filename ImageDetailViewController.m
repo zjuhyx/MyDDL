@@ -8,6 +8,8 @@
 
 #import "ImageDetailViewController.h"
 
+#import "DeadlineCell.h"
+
 @interface ImageDetailViewController ()
 
 @end

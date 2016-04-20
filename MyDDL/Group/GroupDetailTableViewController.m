@@ -9,7 +9,10 @@
 #import "GroupDetailTableViewController.h"
 #import "AddGroupMemberController.h"
 
+#import "DeadlineListViewController.h"
 #import "IntroCell.h"
+
+#import "UserDetailViewController.h"
 
 @implementation GroupDetailTableViewController
 
@@ -62,7 +65,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.section==0 && indexPath.row==0){
-        IntroCell *intro_cell = [[IntroCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell1"];
+        IntroCell *intro_cell = [[IntroCell alloc] init];
         [intro_cell setCellLabel1:self.group.name label2:@"xx课程"];
         [intro_cell setCellImage:self.group.avatar imageName:nil];
         return intro_cell;
@@ -91,7 +94,8 @@
             CALayer *layer = cell.imageView.layer;
             layer.masksToBounds = YES;
             layer.cornerRadius = 25;
-            cell.userInteractionEnabled = NO;
+            cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+            //cell.userInteractionEnabled = NO;
         }
         return cell;
     }
@@ -100,6 +104,15 @@
 
 - (void)addGroupMember {
     [self.navigationController pushViewController:[[AddGroupMemberController alloc] init] animated:YES];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 1) {
+        [self.navigationController pushViewController:[[DeadlineListViewController alloc] init] animated:YES];
+    }
+    else if(indexPath.section==2){
+        [self.navigationController pushViewController:[[UserDetailViewController alloc] init] animated:YES];
+    }
 }
 
 @end

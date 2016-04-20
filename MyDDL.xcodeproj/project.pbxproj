@@ -62,7 +62,8 @@
 		C3BDDE9E1CC7290600470886 /* DeadlineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDE9D1CC7290600470886 /* DeadlineCell.m */; settings = {ASSET_TAGS = (); }; };
 		C3BDDEA11CC7298900470886 /* IntroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDEA01CC7298900470886 /* IntroCell.m */; settings = {ASSET_TAGS = (); }; };
 		C3BDDEA41CC730DE00470886 /* ImageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDEA31CC730DE00470886 /* ImageDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
-		C3BDDEA71CC738AF00470886 /* LeftImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDEA61CC738AF00470886 /* LeftImageCell.m */; settings = {ASSET_TAGS = (); }; };
+		C3BDDEAD1CC7540600470886 /* DeadlineListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDEAC1CC7540600470886 /* DeadlineListViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C3BDDEB01CC75A2500470886 /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDEAF1CC75A2500470886 /* UserDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -175,8 +176,10 @@
 		C3BDDEA01CC7298900470886 /* IntroCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroCell.m; sourceTree = "<group>"; };
 		C3BDDEA21CC730DE00470886 /* ImageDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDetailViewController.h; sourceTree = "<group>"; };
 		C3BDDEA31CC730DE00470886 /* ImageDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDetailViewController.m; sourceTree = "<group>"; };
-		C3BDDEA51CC738AF00470886 /* LeftImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftImageCell.h; sourceTree = "<group>"; };
-		C3BDDEA61CC738AF00470886 /* LeftImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftImageCell.m; sourceTree = "<group>"; };
+		C3BDDEAB1CC7540600470886 /* DeadlineListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeadlineListViewController.h; sourceTree = "<group>"; };
+		C3BDDEAC1CC7540600470886 /* DeadlineListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeadlineListViewController.m; sourceTree = "<group>"; };
+		C3BDDEAE1CC75A2500470886 /* UserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailViewController.h; sourceTree = "<group>"; };
+		C3BDDEAF1CC75A2500470886 /* UserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailViewController.m; sourceTree = "<group>"; };
 		E23334C294643886EEACACFC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -313,6 +316,8 @@
 				183246851C0AEF0C0002A61A /* JoinGroupController.m */,
 				1832468A1C0AF4C00002A61A /* AddGroupMemberController.h */,
 				1832468B1C0AF4C00002A61A /* AddGroupMemberController.m */,
+				C3BDDEAE1CC75A2500470886 /* UserDetailViewController.h */,
+				C3BDDEAF1CC75A2500470886 /* UserDetailViewController.m */,
 			);
 			name = Group;
 			sourceTree = "<group>";
@@ -462,10 +467,10 @@
 				C3BDDE9D1CC7290600470886 /* DeadlineCell.m */,
 				C3BDDE9F1CC7298900470886 /* IntroCell.h */,
 				C3BDDEA01CC7298900470886 /* IntroCell.m */,
-				C3BDDEA51CC738AF00470886 /* LeftImageCell.h */,
-				C3BDDEA61CC738AF00470886 /* LeftImageCell.m */,
 				C3BDDEA21CC730DE00470886 /* ImageDetailViewController.h */,
 				C3BDDEA31CC730DE00470886 /* ImageDetailViewController.m */,
+				C3BDDEAB1CC7540600470886 /* DeadlineListViewController.h */,
+				C3BDDEAC1CC7540600470886 /* DeadlineListViewController.m */,
 			);
 			name = Cells;
 			path = ..;
@@ -607,8 +612,9 @@
 				C3BDDE8E1CBE3A4600470886 /* DeadlineModificationController2.m in Sources */,
 				C3BDDE911CC1BCFB00470886 /* DeleteDeadlineViewController.m in Sources */,
 				18386BAD1C08B3A000F44092 /* LoginViewController.m in Sources */,
-				C3BDDEA71CC738AF00470886 /* LeftImageCell.m in Sources */,
+				C3BDDEB01CC75A2500470886 /* UserDetailViewController.m in Sources */,
 				183246861C0AEF0C0002A61A /* JoinGroupController.m in Sources */,
+				C3BDDEAD1CC7540600470886 /* DeadlineListViewController.m in Sources */,
 				18BAB9E21C0CE8A500B41D61 /* DeadlineController.m in Sources */,
 				185C51E71C09FCE30034A88A /* EditCourseController.m in Sources */,
 				18A4DA131C0CB1B8001CD648 /* PointView.m in Sources */,

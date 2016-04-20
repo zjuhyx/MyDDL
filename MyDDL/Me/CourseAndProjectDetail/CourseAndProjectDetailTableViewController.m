@@ -8,6 +8,10 @@
 
 #import "CourseAndProjectDetailTableViewController.h"
 
+#import "DeadlineListViewController.h"
+#import "UserDetailViewController.h"
+
+
 @implementation CourseAndProjectDetailTableViewController
 
 - (instancetype)init {
@@ -53,7 +57,7 @@
         else{
             cell.textLabel.text = self.itemDetail;
         }
-        cell.userInteractionEnabled = NO;
+        //cell.userInteractionEnabled = NO;
     } else if (indexPath.section == 1) {        
         cell=[cell initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"UITableViewCell"];
         cell.textLabel.font = [UIFont systemFontOfSize:13];
@@ -87,5 +91,12 @@
 - (void)editItem {
     @throw [NSException exceptionWithName:@"Uncallable method" reason:@"Please call the subclass' method" userInfo:nil];
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0 && indexPath.row==1) {
+        [self.navigationController pushViewController:[[DeadlineListViewController alloc] init] animated:YES];
+    }
+}
+
 
 @end

@@ -1,5 +1,5 @@
 //
-//  LeftImageCell.h
+//  DeadlineListViewController.h
 //  MyDDL
 //
 //  Created by 胡譯心 on 16/4/20.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LeftImageCell : UITableViewCell
+@interface DeadlineListViewController : UITableViewController
 
 @end

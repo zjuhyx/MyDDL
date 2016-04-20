@@ -45,6 +45,21 @@
         row.value=@"123456";
         [section addFormRow:row];
         
+        
+        //section1
+        section = [XLFormSectionDescriptor formSection];
+        [form addFormSection:section];
+        // 账号
+        row = [XLFormRowDescriptor formRowDescriptorWithTag:@"phone" rowType:XLFormRowDescriptorTypeText];
+        row.title=@"电话";
+        row.value=@"18868101111";
+        [section addFormRow:row];
+        //昵称
+        row = [XLFormRowDescriptor formRowDescriptorWithTag:@"email" rowType:XLFormRowDescriptorTypeText];
+        row.title=@"邮箱";
+        row.value=@"hehe@hotmail.com";
+        [section addFormRow:row];
+        
         //头像
         section = [XLFormSectionDescriptor formSection];
         [form addFormSection:section];

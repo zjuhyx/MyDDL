@@ -10,4 +10,7 @@
 
 @interface DeadlineCell : UITableViewCell
 
+- (void)setDDLStatus:(int)status;
+- (void)setDDLTitle:(NSString *)title date:(NSString *)date;
+
 @end
