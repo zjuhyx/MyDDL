@@ -14,18 +14,18 @@
     self = [super initWithStyle:UITableViewStyleGrouped];
     if (self) {
         self.navigationItem.title = self.itemName;
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editItem)];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(editItem)];
         _blueColor = [UIColor colorWithRed:50./255 green:130./255 blue:255./255 alpha:1.];
     }
     return self;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;   
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    int numberOfRows[3] = {3, 3, 1};
+    int numberOfRows[4] = {3, 3, 1, 1};
     return numberOfRows[section];
 }
 
@@ -73,6 +73,9 @@
             cell.detailTextLabel.text=@"liu@hotmail.com";
         }
         
+    } else if(indexPath.section==2) {
+        cell.textLabel.text=@"新建小组";//or @"查看小组"
+        cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
     } else {
         cell.textLabel.text = self.deleteItem;
         cell.textLabel.textColor = [UIColor redColor];

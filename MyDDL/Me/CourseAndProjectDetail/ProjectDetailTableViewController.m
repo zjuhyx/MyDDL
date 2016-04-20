@@ -27,6 +27,11 @@
     return @"删除项目";
 }
 
+//直接来一个type好了。。
+- (NSString *)cpType {
+    return @"项目";
+}
+
 - (void)editItem {
     EditProjectController *editController = [[EditProjectController alloc] init];
     editController.itemName = self.itemName;

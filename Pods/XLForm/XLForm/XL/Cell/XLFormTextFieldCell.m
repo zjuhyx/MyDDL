@@ -79,6 +79,7 @@ NSString *const XLFormTextFieldLengthPercentage = @"textFieldLengthPercentage";
     [super configure];
     [self setSelectionStyle:UITableViewCellSelectionStyleNone];
     [self.contentView addSubview:self.textLabel];
+    //self.textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     [self.contentView addSubview:self.textField];
     [self.contentView addConstraints:[self layoutConstraints]];
     [self.textLabel addObserver:self forKeyPath:@"text" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:0];

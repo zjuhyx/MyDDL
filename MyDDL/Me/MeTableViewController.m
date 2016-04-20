@@ -12,6 +12,8 @@
 #import "ProjectTableViewController.h"
 #import "Information.h"
 
+#import "IntroCell.h"
+
 @implementation MeTableViewController
 
 - (instancetype)init {
@@ -44,42 +46,20 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
+    
     if (indexPath.section != 0) {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     NSString *username = [Information getInformation].username;
-    cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
     
     if (indexPath.section == 0) {
-        CGFloat radius = 40.0;
-        //cell.imageView.image = [UIImage imageNamed:@"avatar_default"];
-        CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
-        UIImageView *imageView=[[UIImageView alloc] initWithFrame:CGRectMake(screenWidth/2.0-radius, 20, 80, 80)];
-        //CALayer *layer = cell.imageView.layer;
-        CALayer *layer = imageView.layer;
-        layer.masksToBounds = YES;
-        layer.cornerRadius = radius;
-        imageView.image=[UIImage imageNamed:@"avatar_default"];
-        [cell addSubview:imageView];
-        [imageView addGestureRecognizer:[[UIGestureRecognizer alloc] initWithTarget:self action:@selector(pickImage:)]];
-        //不知道为什么没有用？？！！
-        
-        UILabel *label=[[UILabel alloc] initWithFrame:CGRectMake(screenWidth/2.0-100, 20+radius*2, 200, 50)];
-        label.text=username;
-        label.textAlignment = UITextAlignmentCenter;
-        label.font=[UIFont systemFontOfSize:19];
-        [cell addSubview:label];
-        //cell.userInteractionEnabled = NO;
-        
-        UILabel *subLabel=[[UILabel alloc] initWithFrame:CGRectMake(screenWidth/2.0-100, 20+radius*2+25, 200, 50)];
-        subLabel.text=@"账号：523074";
-        subLabel.textAlignment = UITextAlignmentCenter;
-        subLabel.font=[UIFont systemFontOfSize:13];
-        subLabel.textColor=[UIColor grayColor];
-        [cell addSubview:subLabel];
-        
+        IntroCell *intro_cell = [[IntroCell alloc] initWithStyle:UITableViewCellStyleDefault   reuseIdentifier:@"UITableViewCell"];
+        [intro_cell setCellLabel1:username label2:@"账号：624509"];
+        [intro_cell setCellImage:nil imageName:@"avatar_default"];
+        return intro_cell;
     } else if (indexPath.section == 1 && indexPath.row == 0) {
         cell.textLabel.text = @"课程";
         cell.imageView.image = [UIImage imageNamed:@"course"];
@@ -103,8 +83,5 @@
     }
 }
 
--(void)pickImage:(UIImage *) image{
-    NSLog(@"pickImage!!");
-}
 
 @end

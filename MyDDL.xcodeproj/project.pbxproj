@@ -59,6 +59,10 @@
 		C3BDDE911CC1BCFB00470886 /* DeleteDeadlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDE901CC1BCFB00470886 /* DeleteDeadlineViewController.m */; settings = {ASSET_TAGS = (); }; };
 		C3BDDE971CC6209700470886 /* CourseProjectModificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDE961CC6209700470886 /* CourseProjectModificationViewController.m */; settings = {ASSET_TAGS = (); }; };
 		C3BDDE9A1CC6253800470886 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDE991CC6253800470886 /* SettingViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C3BDDE9E1CC7290600470886 /* DeadlineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDE9D1CC7290600470886 /* DeadlineCell.m */; settings = {ASSET_TAGS = (); }; };
+		C3BDDEA11CC7298900470886 /* IntroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDEA01CC7298900470886 /* IntroCell.m */; settings = {ASSET_TAGS = (); }; };
+		C3BDDEA41CC730DE00470886 /* ImageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDEA31CC730DE00470886 /* ImageDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C3BDDEA71CC738AF00470886 /* LeftImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDEA61CC738AF00470886 /* LeftImageCell.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -165,6 +169,14 @@
 		C3BDDE961CC6209700470886 /* CourseProjectModificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseProjectModificationViewController.m; sourceTree = "<group>"; };
 		C3BDDE981CC6253800470886 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		C3BDDE991CC6253800470886 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		C3BDDE9C1CC7290600470886 /* DeadlineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeadlineCell.h; sourceTree = "<group>"; };
+		C3BDDE9D1CC7290600470886 /* DeadlineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeadlineCell.m; sourceTree = "<group>"; };
+		C3BDDE9F1CC7298900470886 /* IntroCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroCell.h; sourceTree = "<group>"; };
+		C3BDDEA01CC7298900470886 /* IntroCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroCell.m; sourceTree = "<group>"; };
+		C3BDDEA21CC730DE00470886 /* ImageDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDetailViewController.h; sourceTree = "<group>"; };
+		C3BDDEA31CC730DE00470886 /* ImageDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDetailViewController.m; sourceTree = "<group>"; };
+		C3BDDEA51CC738AF00470886 /* LeftImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftImageCell.h; sourceTree = "<group>"; };
+		C3BDDEA61CC738AF00470886 /* LeftImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftImageCell.m; sourceTree = "<group>"; };
 		E23334C294643886EEACACFC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -238,6 +250,7 @@
 		189D2E3B1C05A105002A15D5 /* MyDDL */ = {
 			isa = PBXGroup;
 			children = (
+				C3BDDE9B1CC7288000470886 /* Cells */,
 				18A4DA071C0C3914001CD648 /* DoneAndUndone */,
 				189D2E861C05A671002A15D5 /* Util */,
 				189D2E601C05A196002A15D5 /* Group */,
@@ -442,6 +455,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C3BDDE9B1CC7288000470886 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C3BDDE9C1CC7290600470886 /* DeadlineCell.h */,
+				C3BDDE9D1CC7290600470886 /* DeadlineCell.m */,
+				C3BDDE9F1CC7298900470886 /* IntroCell.h */,
+				C3BDDEA01CC7298900470886 /* IntroCell.m */,
+				C3BDDEA51CC738AF00470886 /* LeftImageCell.h */,
+				C3BDDEA61CC738AF00470886 /* LeftImageCell.m */,
+				C3BDDEA21CC730DE00470886 /* ImageDetailViewController.h */,
+				C3BDDEA31CC730DE00470886 /* ImageDetailViewController.m */,
+			);
+			name = Cells;
+			path = ..;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -578,6 +607,7 @@
 				C3BDDE8E1CBE3A4600470886 /* DeadlineModificationController2.m in Sources */,
 				C3BDDE911CC1BCFB00470886 /* DeleteDeadlineViewController.m in Sources */,
 				18386BAD1C08B3A000F44092 /* LoginViewController.m in Sources */,
+				C3BDDEA71CC738AF00470886 /* LeftImageCell.m in Sources */,
 				183246861C0AEF0C0002A61A /* JoinGroupController.m in Sources */,
 				18BAB9E21C0CE8A500B41D61 /* DeadlineController.m in Sources */,
 				185C51E71C09FCE30034A88A /* EditCourseController.m in Sources */,
@@ -585,6 +615,7 @@
 				18BAB9DF1C0CE79900B41D61 /* CreateProjectDeadlineController.m in Sources */,
 				189D2EBA1C070029002A15D5 /* Project.m in Sources */,
 				C38C68441CBDFFA300932369 /* FilterViewController.m in Sources */,
+				C3BDDEA11CC7298900470886 /* IntroCell.m in Sources */,
 				18386BB01C08BC4400F44092 /* Configuration.m in Sources */,
 				18BAB9F71C0D792E00B41D61 /* DeadlineModel.m in Sources */,
 				189D2EC81C076F80002A15D5 /* CourseDetailTableViewController.m in Sources */,
@@ -595,6 +626,7 @@
 				189138931C10A6FB003B347A /* Group.m in Sources */,
 				18A4DA161C0CB645001CD648 /* Circle.m in Sources */,
 				1832468C1C0AF4C00002A61A /* AddGroupMemberController.m in Sources */,
+				C3BDDE9E1CC7290600470886 /* DeadlineCell.m in Sources */,
 				189D2EC51C076370002A15D5 /* GroupTableViewController.m in Sources */,
 				18BAB9E51C0CEDC800B41D61 /* DeadlineModificationController.m in Sources */,
 				18386BAA1C0849AC00F44092 /* MainTabBarController.m in Sources */,
@@ -607,6 +639,7 @@
 				18BAB9E81C0CF00C00B41D61 /* EditDeadlineController.m in Sources */,
 				189D2EC21C076356002A15D5 /* GroupDetailTableViewController.m in Sources */,
 				189D2EAE1C05B42E002A15D5 /* MeTableViewController.m in Sources */,
+				C3BDDEA41CC730DE00470886 /* ImageDetailViewController.m in Sources */,
 				18A4DA101C0C45A5001CD648 /* CreateCourseDeadlineController.m in Sources */,
 				189D2E5E1C05A171002A15D5 /* UndoneViewController.m in Sources */,
 				189138961C111890003B347A /* Person.m in Sources */,
