@@ -2,17 +2,18 @@
 //  GroupDetailTableViewController.m
 //  MyDDL
 //
-//  Created by 柯瀚仰 on 11/26/15.
-//  Copyright © 2015 柯瀚仰. All rights reserved.
+//  Created by 胡譯心 on 16/4/28.
+//  Copyright © 2016年 柯瀚仰. All rights reserved.
 //
 
 #import "GroupDetailTableViewController.h"
-#import "AddGroupMemberController.h"
-
 #import "DeadlineListViewController.h"
 #import "IntroCell.h"
-
 #import "UserDetailViewController.h"
+#import "ImageDetailViewController.h"
+#import "QRcodeViewController.h"
+#import "UpdatesTableViewController.h"
+#import "GroupSettingViewController.h"
 
 @implementation GroupDetailTableViewController
 
@@ -22,7 +23,7 @@
         self.group = group;
         
         self.navigationItem.title = group.name;
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addGroupMember)];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(toEdit)];
     }
     return self;
 }
@@ -33,13 +34,13 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 4;
+    return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    int numberOfRows[4] = {2, 1, 0, 1};
+    int numberOfRows[5] = {2, 1, 1, 0, 1};
     int numberOfMembers = 2;    // 获取小组成员数量
-    numberOfRows[2] = numberOfMembers;
+    numberOfRows[3] = numberOfMembers;
     return numberOfRows[section];
 }
 
@@ -47,7 +48,7 @@
     if(indexPath.section==0 && indexPath.row==0){
         return 180;
     }
-    else if(indexPath.section==2){
+    else if(indexPath.section==3){
         return 60;
     }
     else{
@@ -68,6 +69,14 @@
         IntroCell *intro_cell = [[IntroCell alloc] init];
         [intro_cell setCellLabel1:self.group.name label2:@"xx课程"];
         [intro_cell setCellImage:self.group.avatar imageName:nil];
+        
+        UITapGestureRecognizer* singleRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickImage)];
+        singleRecognizer.numberOfTapsRequired = 1; // 单击
+        [intro_cell.intro_image_view addGestureRecognizer:singleRecognizer];
+        [intro_cell.intro_image_view setUserInteractionEnabled:YES];//这句话一定要加！！！
+        
+        _avater_image=intro_cell.intro_image_view.image;
+        
         return intro_cell;
     }
     
@@ -78,18 +87,28 @@
             cell.textLabel.text = @"二维码";
             cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
         } else if(indexPath.section==1){
+            cell=[cell initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"UITableViewCell"];
+            cell.detailTextLabel.text=@"05/23/2016";
+            cell.textLabel.text=@"这是一条最新的群动态！！";
+            cell.imageView.image=[UIImage imageNamed:@"unread1"];
+            cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+        } else if(indexPath.section==2){
             cell.textLabel.text = @"查看Deadlines";
             cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
-        } else if(indexPath.section == 3) {
+        } else if(indexPath.section == 4) {
             cell.textLabel.text = @"退出小组";
             cell.textLabel.textColor=[UIColor redColor];
             cell.textLabel.textAlignment=NSTextAlignmentCenter;
         } else {
+            cell=[cell initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"UITableViewCell"];
             if (indexPath.row == 0) {
                 cell.textLabel.text = @"胡译心";
+                cell.detailTextLabel.text=@"群主";
             } else {
                 cell.textLabel.text = @"柯瀚仰";
+                cell.detailTextLabel.text=@"成员";
             }
+            cell.detailTextLabel.textColor=[UIColor grayColor];
             cell.imageView.image = [UIImage imageNamed:@"avatar_default"];
             CALayer *layer = cell.imageView.layer;
             layer.masksToBounds = YES;
@@ -102,17 +121,35 @@
     
 }
 
-- (void)addGroupMember {
-    [self.navigationController pushViewController:[[AddGroupMemberController alloc] init] animated:YES];
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 1) {
+    if(indexPath.section==0 && indexPath.row==1){
+        QRcodeViewController *QRViewController = [[QRcodeViewController alloc] init];
+        [self presentViewController:QRViewController animated:YES completion:^{//备注2
+            NSLog(@"showQR!");
+        }];
+    }
+    else if(indexPath.section==1){
+        [self.navigationController pushViewController:[[UpdatesTableViewController alloc] init] animated:YES];
+    }
+    else if (indexPath.section == 2) {
         [self.navigationController pushViewController:[[DeadlineListViewController alloc] init] animated:YES];
     }
-    else if(indexPath.section==2){
+    else if(indexPath.section==3){
         [self.navigationController pushViewController:[[UserDetailViewController alloc] init] animated:YES];
     }
+}
+
+- (void)pickImage{
+    ImageDetailViewController *imageDetailViewController = [[ImageDetailViewController alloc] init];
+    imageDetailViewController.image=_avater_image;
+    [self presentViewController:imageDetailViewController animated:YES completion:^{//备注2
+        NSLog(@"showImage!");
+    }];
+    
+}
+
+-(void)toEdit{
+    [self.navigationController pushViewController:[[GroupSettingViewController alloc] init] animated:YES];
 }
 
 @end

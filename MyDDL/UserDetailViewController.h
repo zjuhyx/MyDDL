@@ -10,4 +10,6 @@
 
 @interface UserDetailViewController : UITableViewController
 
+@property(nonatomic)UIImage *avater_image;
+
 @end

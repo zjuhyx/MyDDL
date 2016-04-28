@@ -2,8 +2,8 @@
 //  GroupDetailTableViewController.h
 //  MyDDL
 //
-//  Created by 柯瀚仰 on 11/26/15.
-//  Copyright © 2015 柯瀚仰. All rights reserved.
+//  Created by 胡譯心 on 16/4/28.
+//  Copyright © 2016年 柯瀚仰. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -12,6 +12,7 @@
 @interface GroupDetailTableViewController : UITableViewController
 
 @property (nonatomic) Group *group;
+@property (nonatomic) UIImage *avater_image;
 
 - (instancetype)initWithGroup:(Group *)group;
 

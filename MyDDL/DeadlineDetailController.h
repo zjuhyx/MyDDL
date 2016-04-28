@@ -14,6 +14,7 @@
 @property (nonatomic) Deadline *deadline;
 @property (nonatomic) UIColor *blueColor;
 @property (nonatomic) UISwitch *switchview;
+@property (nonatomic) UIImage *avater_image;
 
 - (instancetype)initWithDeadlineController:(DeadlineController *)deadlineController deadline:(Deadline *)deadline;
 

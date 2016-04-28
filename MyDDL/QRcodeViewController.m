@@ -1,34 +1,26 @@
 //
-//  ImageDetailViewController.m
+//  QRcodeViewController.m
 //  MyDDL
 //
-//  Created by 胡譯心 on 16/4/20.
+//  Created by 胡譯心 on 16/4/28.
 //  Copyright © 2016年 柯瀚仰. All rights reserved.
 //
 
-#import "ImageDetailViewController.h"
+#import "QRcodeViewController.h"
 
-#import "DeadlineCell.h"
-
-@interface ImageDetailViewController ()
+@interface QRcodeViewController ()
 
 @end
 
-@implementation ImageDetailViewController
+@implementation QRcodeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
-    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
-    CGFloat height=_image.size.height*(screenWidth/_image.size.width);
-    UIImageView *image_view=[[UIImageView alloc] initWithFrame:CGRectMake(0,(screenHeight-height)/2,screenWidth,height)];
-    image_view.image=_image;
-    [self.view addSubview:image_view];
-    
+    // Do any additional setup after loading the view.
     UINavigationBar *navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 64)];
     //创建一个导航栏集合
     UINavigationItem *navigationItem = [[UINavigationItem alloc] init];
+    navigationItem.title=@"二维码";
     //创建一个左边按钮
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"关闭" style:UIBarButtonItemStylePlain target:self action:@selector(toCancel)];
     [navigationBar pushNavigationItem:navigationItem animated:YES];
@@ -44,16 +36,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 -(void) toCancel{
     [self dismissViewControllerAnimated:YES completion:nil];

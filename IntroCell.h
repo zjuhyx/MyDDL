@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IntroCell : UITableViewCell{
-    UIImageView *intro_image_view;
-    UILabel *intro_label1;
-    UILabel *intro_label2;
-}
+@interface IntroCell : UITableViewCell
+@property (nonatomic)UIImageView *intro_image_view;
+@property (nonatomic)UILabel *intro_label1;
+@property (nonatomic)UILabel *intro_label2;
+
 
 - (void)setCellImage:(UIImage *)image imageName:(NSString *)name;
 - (void)setCellLabel1:(NSString *)text1 label2:(NSString *)text2;

@@ -11,6 +11,8 @@
 #import "EditDeadlineController.h"
 #import "DeadlineModel.h"
 #import "DoneViewController.h"
+#import "ImageDetailViewController.h"
+#import "QRcodeViewController.h"
 
 @interface DeadlineDetailController ()
 
@@ -28,7 +30,7 @@
     if (self) {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(editDeadline)];
         
-        _blueColor = [UIColor colorWithRed:50./255 green:130./255 blue:255./255 alpha:1.];//???
+        _blueColor = [UIColor colorWithRed:0 green:91./255 blue:255./255 alpha:1.];//???
     }
     return self;
 }
@@ -70,7 +72,8 @@
             //cell.textLabel.text = self.deadline.name;
             cell=[cell initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"UITableViewCell"];
             
-            UIImage *icon = [UIImage imageNamed:@"background1"];
+            UIImage *icon = [UIImage imageNamed:@"background2"];
+            _avater_image=icon;
             cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
             CGSize itemSize = CGSizeMake(70, 70);
             UIGraphicsBeginImageContextWithOptions(itemSize, NO, 0.0);
@@ -92,6 +95,10 @@
             cell.detailTextLabel.font = [UIFont systemFontOfSize:13];
             
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            
+            UITapGestureRecognizer* singleRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickImage)];
+            singleRecognizer.numberOfTapsRequired = 1; // 单击
+            [cell addGestureRecognizer:singleRecognizer];//按两下才有反应？？！！
             
         } else if (indexPath.row == 1) {
             cell.textLabel.text = @"二维码";
@@ -146,7 +153,15 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 4) {//删除ddl
+    if(indexPath.section==0){
+        if(indexPath.row==1){
+            QRcodeViewController *QRViewController = [[QRcodeViewController alloc] init];
+            [self presentViewController:QRViewController animated:YES completion:^{//备注2
+                NSLog(@"showQR!");
+            }];
+        }
+    }
+    else if (indexPath.section == 4) {//删除ddl
         //[switchView setOn:NO animated:YES];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"删除该deadline？" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
         alert.tag=2;
@@ -211,6 +226,15 @@
             [self.navigationController popViewControllerAnimated:YES];
         }
     }
+}
+
+- (void)pickImage{
+    ImageDetailViewController *imageDetailViewController = [[ImageDetailViewController alloc] init];
+    imageDetailViewController.image=_avater_image;
+    [self presentViewController:imageDetailViewController animated:YES completion:^{//备注2
+        NSLog(@"showImage!");
+    }];
+    
 }
 
 @end

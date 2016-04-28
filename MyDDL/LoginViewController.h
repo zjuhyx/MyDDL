@@ -12,6 +12,8 @@
 
 @property (nonatomic) UITextField *usernameTextField;
 @property (nonatomic) UITextField *passwordTextField;
-@property (nonatomic) UIButton *loginButton;
+@property (nonatomic) UIButton *log_btn;
+@property (nonatomic) UIButton *reg_btn;
+@property (nonatomic) UIButton *forget_btn;
 
 @end

@@ -10,4 +10,6 @@
 
 @interface DeadlineListViewController : UITableViewController
 
+@property (nonatomic, retain) NSMutableArray *dataArray; 
+
 @end

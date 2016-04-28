@@ -19,7 +19,7 @@
     if (self) {
         self.navigationItem.title = self.itemName;
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(editItem)];
-        _blueColor = [UIColor colorWithRed:50./255 green:130./255 blue:255./255 alpha:1.];
+        _blueColor = [UIColor colorWithRed:0 green:91./255 blue:255./255 alpha:1.];
     }
     return self;
 }

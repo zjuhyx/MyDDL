@@ -5,12 +5,16 @@
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
-      "filename" : "background1@2x.jpeg",
+      "idiom" : "iphone",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "1436952925223.jpg",
       "scale" : "2x"
     },
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "3x"
     }
   ],

@@ -9,6 +9,7 @@
 #import "UserDetailViewController.h"
 
 #import "IntroCell.h"
+#import "ImageDetailViewController.h"
 
 @interface UserDetailViewController ()
 
@@ -60,7 +61,15 @@
     if(indexPath.section==0){
         IntroCell *intro_cell = [[IntroCell alloc] init];
         [intro_cell setCellLabel1:@"UserName" label2:@"账号：624509"];
-        [intro_cell setCellImage:nil imageName:@"background1"];
+        [intro_cell setCellImage:nil imageName:@"background2"];
+        
+        UITapGestureRecognizer* singleRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickImage)];
+        singleRecognizer.numberOfTapsRequired = 1; // 单击
+        [intro_cell.intro_image_view addGestureRecognizer:singleRecognizer];
+        [intro_cell.intro_image_view setUserInteractionEnabled:YES];//这句话一定要加！！！
+        
+        _avater_image=intro_cell.intro_image_view.image;
+        
         return intro_cell;
     }
     else{
@@ -75,49 +84,13 @@
     }
 }
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)pickImage{
+    ImageDetailViewController *imageDetailViewController = [[ImageDetailViewController alloc] init];
+    imageDetailViewController.image=_avater_image;
+    [self presentViewController:imageDetailViewController animated:YES completion:^{//备注2
+        NSLog(@"showImage!");
+    }];
+    
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
