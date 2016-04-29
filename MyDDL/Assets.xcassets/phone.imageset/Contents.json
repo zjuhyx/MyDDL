@@ -6,23 +6,11 @@
     },
     {
       "idiom" : "universal",
+      "filename" : "phone.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x"
-    },
-    {
-      "idiom" : "iphone",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "iphone",
-      "filename" : "1436952925223.jpg",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "iphone",
       "scale" : "3x"
     }
   ],

@@ -10,6 +10,7 @@
 #import "Information.h"
 
 #import "MainTabBarController.h"
+#import "RegisterViewController.h"
 
 #define ITEM_WIDTH 300.0
 #define ITEM_HEIGHT 50.0
@@ -44,10 +45,10 @@
         self.passwordTextField = [[UITextField alloc] initWithFrame:CGRectMake(baseX+60, baseY + ITEM_HEIGHT + 20, ITEM_WIDTH-60, ITEM_HEIGHT)];
         self.usernameTextField.borderStyle = UITextBorderStyleNone;
         self.passwordTextField.borderStyle = UITextBorderStyleNone;
-        UIView *view1=[[UIView alloc]initWithFrame:CGRectMake(baseX, baseY+ITEM_HEIGHT, ITEM_WIDTH, 2)];
+        UIView *view1=[[UIView alloc]initWithFrame:CGRectMake(baseX, baseY+ITEM_HEIGHT, ITEM_WIDTH, 1.5)];
         view1.backgroundColor=[UIColor whiteColor];
         [self.view addSubview:view1];
-        UIView *view2=[[UIView alloc]initWithFrame:CGRectMake(baseX, baseY + 2 * ITEM_HEIGHT+20, ITEM_WIDTH, 2)];
+        UIView *view2=[[UIView alloc]initWithFrame:CGRectMake(baseX, baseY + 2 * ITEM_HEIGHT+20, ITEM_WIDTH, 1.5)];
         view2.backgroundColor=[UIColor whiteColor];
         [self.view addSubview:view2];
         
@@ -135,7 +136,13 @@
 }
 
 -(void)toRegister{
+    [self.navigationController pushViewController:[[RegisterViewController alloc] init] animated:YES];
     
+    RegisterViewController *regViewController = [[RegisterViewController alloc] init];
+    regViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;//设置动画效果
+    [self presentViewController:regViewController animated:YES completion:^{//备注2
+        NSLog(@"reg view!");
+    }];
 }
 
 @end

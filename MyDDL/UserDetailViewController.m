@@ -75,9 +75,11 @@
     else{
         UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
         if(indexPath.row==0){
+             cell.imageView.image=[UIImage imageNamed:@"phone"];
             cell.textLabel.text=@"18868101111";
         }
         else{
+            cell.imageView.image=[UIImage imageNamed:@"email"];
             cell.textLabel.text=@"hehe@hotmail.com";
         }
         return cell;

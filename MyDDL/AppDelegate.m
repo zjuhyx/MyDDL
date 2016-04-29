@@ -10,6 +10,7 @@
 #import "MainTabBarController.h"
 
 #import "LoginViewController.h"
+#import "Configuration.h"
 
 @interface AppDelegate ()
 
@@ -28,7 +29,8 @@
     //MainTabBarController *rootViewController = [[MainTabBarController alloc] init];
     LoginViewController *rootViewController=[[LoginViewController alloc] init];
     self.window.rootViewController = rootViewController;
-    
+    Configuration *config;
+    self.window.tintColor=config.blueColor;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

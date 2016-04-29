@@ -39,6 +39,8 @@
         navigationBar.barStyle = UIBarStyleBlack;
     }
     self.viewControllers = navigationControllers;
+    Configuration *config;
+    self.tabBarController.tabBar.tintColor=config.blueColor;//???没用？？！！
     return self;
 }
 

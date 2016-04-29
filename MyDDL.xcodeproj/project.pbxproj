@@ -51,6 +51,7 @@
 		18BAB9F71C0D792E00B41D61 /* DeadlineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BAB9F61C0D792E00B41D61 /* DeadlineModel.m */; };
 		18BAB9FC1C0D796600B41D61 /* Deadline.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BAB9FB1C0D796600B41D61 /* Deadline.m */; };
 		A5DF2BC994E337394C755CE3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0614B55CD2387BAFD9CC2075 /* libPods.a */; };
+		C30F2E291CD2EB0500068C37 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C30F2E281CD2EB0500068C37 /* RegisterViewController.m */; settings = {ASSET_TAGS = (); }; };
 		C3776A721CD2370B001B0FE5 /* QRcodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3776A711CD2370B001B0FE5 /* QRcodeViewController.m */; settings = {ASSET_TAGS = (); }; };
 		C3776A751CD23DED001B0FE5 /* NoticeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3776A741CD23DED001B0FE5 /* NoticeTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		C3776A781CD24657001B0FE5 /* UpdatesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3776A771CD24657001B0FE5 /* UpdatesTableViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -156,6 +157,8 @@
 		18BAB9FA1C0D796600B41D61 /* Deadline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deadline.h; sourceTree = "<group>"; };
 		18BAB9FB1C0D796600B41D61 /* Deadline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deadline.m; sourceTree = "<group>"; };
 		19FD0105F71C1C7F905E1A1F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C30F2E271CD2EB0500068C37 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		C30F2E281CD2EB0500068C37 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		C3776A701CD2370B001B0FE5 /* QRcodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRcodeViewController.h; sourceTree = "<group>"; };
 		C3776A711CD2370B001B0FE5 /* QRcodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRcodeViewController.m; sourceTree = "<group>"; };
 		C3776A731CD23DED001B0FE5 /* NoticeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeTableViewController.h; sourceTree = "<group>"; };
@@ -270,6 +273,8 @@
 				18386BA91C0849AC00F44092 /* MainTabBarController.m */,
 				18386BAB1C08B3A000F44092 /* LoginViewController.h */,
 				18386BAC1C08B3A000F44092 /* LoginViewController.m */,
+				C30F2E271CD2EB0500068C37 /* RegisterViewController.h */,
+				C30F2E281CD2EB0500068C37 /* RegisterViewController.m */,
 				C3776A701CD2370B001B0FE5 /* QRcodeViewController.h */,
 				C3776A711CD2370B001B0FE5 /* QRcodeViewController.m */,
 				189D2EBE1C072707002A15D5 /* Assets.xcassets */,
@@ -636,6 +641,7 @@
 				189D2EAD1C05B42E002A15D5 /* CourseTableViewController.m in Sources */,
 				18A4DA0A1C0C3944001CD648 /* AxisView.m in Sources */,
 				189D2EAF1C05B42E002A15D5 /* ProjectTableViewController.m in Sources */,
+				C30F2E291CD2EB0500068C37 /* RegisterViewController.m in Sources */,
 				18BAB9E81C0CF00C00B41D61 /* EditDeadlineController.m in Sources */,
 				189D2EAE1C05B42E002A15D5 /* MeTableViewController.m in Sources */,
 				C3776A781CD24657001B0FE5 /* UpdatesTableViewController.m in Sources */,
