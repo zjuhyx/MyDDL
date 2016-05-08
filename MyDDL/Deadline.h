@@ -15,9 +15,13 @@
 
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSDate *date;
-@property (nonatomic) CourseAndProject *owner;
+//@property (nonatomic) CourseAndProject *owner;
+@property (nonatomic) NSString *courseProjectName;
+@property (nonatomic) NSString *courseProjectType;
 @property (nonatomic) NSString *detail;
 
 @property (nonatomic) BOOL isCompleted;
+
+- (instancetype)initWithJSON:(NSDictionary *)json;
 
 @end

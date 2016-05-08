@@ -86,7 +86,7 @@
             cell.textLabel.font = [UIFont systemFontOfSize:25];
             //cell.textLabel.textColor=_blueColor;
             
-            NSString *detailStr=self.deadline.owner.name;
+            NSString *detailStr=self.deadline.courseProjectName;
             NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
             cell.detailTextLabel.numberOfLines = 0;//要多行显示 则设置为零
             formatter.dateFormat = @"\n截止时间：yyyy/MM/dd HH:mm";

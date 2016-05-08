@@ -28,10 +28,6 @@
     return self.deadline.date;
 }
 
-- (CourseAndProject *)deadlineOwner {
-    return self.deadline.owner;
-}
-
 - (NSString *)deadlineDetail {
     return self.deadline.detail;
 }

@@ -7,15 +7,30 @@
 //
 
 #import "Deadline.h"
+#import "Course.h"
+#import "Project.h"
 
 @implementation Deadline
 
-- (instancetype)init {
-    static NSInteger idAllocator = 0;
+- (instancetype)initWithJSON:(NSDictionary *)json {
     self = [super init];
-    if (self) {
-        _deadlineId = idAllocator++;
-    }
+    
+    _deadlineId = [[json objectForKey:@"deadlineId"] intValue];
+    _name = [json objectForKey:@"deadlineName"];
+    _detail = [json objectForKey:@"deadlineNote"];
+    _courseProjectName = [[json objectForKey:@"courseProject"] objectForKey:@"courseProjectName"];
+    _courseProjectType = [[json objectForKey:@"courseProject"] objectForKey:@"courseProjectType"];
+//    if ([[[json objectForKey:@"courseProject"] objectForKey:@"courseProjectType"] compare:@"course"] == NSOrderedSame) {
+//        _owner = [[Course alloc] initWithName:[[json objectForKey:@"courseProject"] objectForKey:@"courseProjectName"]];
+//    } else {
+//        _owner = [[Project alloc] initWithName:[[json objectForKey:@"courseProject"] objectForKey:@"courseProjectName"]];
+//    }
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    NSTimeZone *timeZone = [NSTimeZone localTimeZone];
+    [formatter setTimeZone:timeZone];
+    [formatter setDateFormat : @"yyyy-MM-dd/hh:mm"];
+    _date = [formatter dateFromString:[json objectForKey:@"time"]];
     return self;
 }
 

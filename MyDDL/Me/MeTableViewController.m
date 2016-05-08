@@ -10,10 +10,10 @@
 #import "SettingViewController.h"
 #import "CourseTableViewController.h"
 #import "ProjectTableViewController.h"
-#import "Information.h"
 #import "IntroCell.h"
 #import "ImageDetailViewController.h"
 #import "NoticeTableViewController.h"
+#import "Model.h"
 
 @implementation MeTableViewController
 
@@ -55,7 +55,7 @@
     if (indexPath.section != 0) {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-    NSString *username = [Information getInformation].username;
+    NSString *username = [Model getInstance].username;
     
     if (indexPath.section == 0) {
         IntroCell *intro_cell = [[IntroCell alloc] init];

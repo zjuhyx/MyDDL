@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-#import "Information.h"
+#import "Model.h"
 
 #import "MainTabBarController.h"
 #import "RegisterViewController.h"
@@ -125,7 +125,17 @@
 }
 
 - (void)toLogin {
-    [Information getInformation].username = self.usernameTextField.text;
+    NSString *username = self.usernameTextField.text;
+    NSString *password = self.passwordTextField.text;
+    if (!(username != nil && username.length > 0 && password != nil && password.length > 0)) {
+        return;
+    }
+    
+    bool loginResult = [[Model getInstance] loginWithUsername:username password:password];
+    if (loginResult == false) {
+        return;
+    }
+    [Model getInstance].username = self.usernameTextField.text;
 
     MainTabBarController *mainViewController = [[MainTabBarController alloc] init];
     mainViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;//设置动画效果
@@ -133,6 +143,7 @@
         NSLog(@"main view!");
     }];
 
+    self.passwordTextField.text = nil;
 }
 
 -(void)toRegister{
