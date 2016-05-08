@@ -16,6 +16,7 @@
 @property (nonatomic) UserInfo *userInfo;
 @property (nonatomic) DeadlineModel *deadlineModel;
 
+- (void)clearData;
 + (instancetype)getInstance;
 - (bool)loginWithUsername:(NSString *)username password:(NSString *)password;
 

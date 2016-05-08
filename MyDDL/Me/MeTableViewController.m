@@ -106,6 +106,7 @@
 }
 
 - (void) toLogOut{
+    [[Model getInstance] clearData];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

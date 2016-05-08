@@ -18,6 +18,10 @@
 
 @implementation DeadlineModel
 
+- (void)clearData {
+    self.allDeadlines = [[NSMutableArray alloc] init];
+}
+
 + (instancetype)getDeadlineModel {
     static DeadlineModel *instance = nil;
     if (instance == nil) {

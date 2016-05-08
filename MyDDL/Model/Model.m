@@ -15,6 +15,12 @@
 
 @implementation Model
 
+- (void)clearData {
+    self.username = nil;
+    self.userInfo = nil;
+    [self.deadlineModel clearData];
+}
+
 - (instancetype)initPrivate {
     self = [super init];
     self.deadlineModel = [DeadlineModel getDeadlineModel];

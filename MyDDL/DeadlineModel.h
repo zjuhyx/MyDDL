@@ -14,6 +14,7 @@
 @property (nonatomic, readonly) NSArray *allUndoneDeadlines;
 @property (nonatomic, readonly) NSArray *allDoneDeadlines;
 
+- (void)clearData;
 + (instancetype)getDeadlineModel;
 - (void)addDeadline:(Deadline *)deadline;
 - (Deadline *)getDeadlineById:(NSInteger)deadlineId;
