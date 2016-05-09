@@ -14,9 +14,9 @@
 
 @property (nonatomic) NSString *name;
 @property (nonatomic) UIImage *avatar;
-@property (nonatomic) Deadline *deadline;
+@property (nonatomic) NSArray<Deadline *> *deadlines;
 @property (nonatomic) NSArray<Person *> *members;
 
-- (instancetype)initWithName:(NSString *)name deadline:(Deadline *)deadline;
+- (instancetype)initWithName:(NSString *)name deadlines:(NSArray<Deadline *> *)deadlines;
 
 @end

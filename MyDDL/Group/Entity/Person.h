@@ -6,8 +6,13 @@
 //  Copyright © 2015 柯瀚仰. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface Person : NSObject
+
+@property (nonatomic) NSString *name;
+@property (nonatomic) NSString *phone;
+@property (nonatomic) NSString *email;
+@property (nonatomic) UIImage *avatar;
 
 @end

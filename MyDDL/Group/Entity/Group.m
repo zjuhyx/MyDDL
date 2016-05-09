@@ -10,11 +10,11 @@
 
 @implementation Group
 
-- (instancetype)initWithName:(NSString *)name deadline:(Deadline *)deadline {
+- (instancetype)initWithName:(NSString *)name deadlines:(NSArray<Deadline *> *)deadlines {
     self = [super init];
     if (self) {
         self.name = name;
-        self.deadline = deadline;
+        self.deadlines = deadlines;
     }
     return self;
 }

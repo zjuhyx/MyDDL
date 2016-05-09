@@ -63,7 +63,7 @@
     NSArray<NSString *> *groupName = @[@"毛概讨论组", @"软件工程小组", @"省创", @"国创"];
     NSArray<NSString *> *groupImageName = @[@"毛概讨论组", @"软件工程小组", @"省创", @"group_default"];
     
-    Group *group = [[Group alloc] initWithName:groupName[indexPath.row] deadline:nil];
+    Group *group = [[Group alloc] initWithName:groupName[indexPath.row] deadlines:nil];
     group.avatar = [UIImage imageNamed:groupImageName[indexPath.row]];
     GroupDetailTableViewController *detailViewController = [[GroupDetailTableViewController alloc] initWithGroup:group];
     [self.navigationController pushViewController:detailViewController animated:YES];
