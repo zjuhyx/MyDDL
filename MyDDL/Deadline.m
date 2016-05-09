@@ -29,7 +29,7 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     NSTimeZone *timeZone = [NSTimeZone localTimeZone];
     [formatter setTimeZone:timeZone];
-    [formatter setDateFormat : @"yyyy-MM-dd/hh:mm"];
+    [formatter setDateFormat : @"yyyy-MM-dd/HH:mm"];
     _date = [formatter dateFromString:[json objectForKey:@"time"]];
     return self;
 }
