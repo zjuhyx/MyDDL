@@ -24,6 +24,7 @@
 - (instancetype)initPrivate {
     self = [super init];
     self.deadlineModel = [DeadlineModel getDeadlineModel];
+    self.configuration = [Configuration getConfiguration];
     return self;
 }
 
@@ -36,7 +37,7 @@
 }
 
 - (bool)loginWithUsername:(NSString *)username password:(NSString *)password {
-    NSString *urlString = [NSString stringWithFormat:@"http://localhost:8080/user/login?username=%@&password=%@", username, password];
+    NSString *urlString = [NSString stringWithFormat:@"%@/user/login?username=%@&password=%@", self.configuration.serverAddress, username, password];
     NSURL *url = [NSURL URLWithString:urlString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:5];
     NSDictionary *jsonObject = [WebUtil webAPICallWithRequest:request];

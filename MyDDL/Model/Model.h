@@ -9,12 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "UserInfo.h"
 #import "DeadlineModel.h"
+#import "Configuration.h"
 
 @interface Model : NSObject
 
 @property (nonatomic) NSString *username;
 @property (nonatomic) UserInfo *userInfo;
 @property (nonatomic) DeadlineModel *deadlineModel;
+@property (nonatomic) Configuration *configuration;
 
 - (void)clearData;
 + (instancetype)getInstance;
