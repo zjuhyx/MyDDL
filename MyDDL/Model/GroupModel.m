@@ -24,4 +24,13 @@
     return self;
 }
 
+- (Group *)getGroupById:(long)groupId {
+    for (Group *group in self.groups) {
+        if (group.groupId == groupId) {
+            return group;
+        }
+    }
+    return nil;
+}
+
 @end

@@ -12,11 +12,12 @@
 
 @interface Group : NSObject
 
+@property (nonatomic) long groupId;
 @property (nonatomic) NSString *name;
 @property (nonatomic) UIImage *avatar;
 @property (nonatomic) NSArray<Deadline *> *deadlines;
 @property (nonatomic) NSArray<Person *> *members;
 
-- (instancetype)initWithName:(NSString *)name deadlines:(NSArray<Deadline *> *)deadlines;
+- (instancetype)initWithJSON:(NSDictionary *)json;
 
 @end

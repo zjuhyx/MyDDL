@@ -18,4 +18,12 @@
     return self;
 }
 
+- (instancetype)initWithJSON:(NSDictionary *)json {
+    self = [super init];
+    self.courseProjectId = [[json objectForKey:@"courseProjectId"] intValue];
+    self.name = [json objectForKey:@"courseProjectName"];
+    self.detail = [json objectForKey:@"courseProjectNote"];
+    return self;
+}
+
 @end

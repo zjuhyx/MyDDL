@@ -10,12 +10,10 @@
 
 @implementation Group
 
-- (instancetype)initWithName:(NSString *)name deadlines:(NSArray<Deadline *> *)deadlines {
-    self = [super init];
-    if (self) {
-        self.name = name;
-        self.deadlines = deadlines;
-    }
+- (instancetype)initWithJSON:(NSDictionary *)json {
+    self = [self init];
+    self.groupId = [[json objectForKey:@"groupId"] intValue];
+    self.name = [json objectForKey:@"groupName"];
     return self;
 }
 

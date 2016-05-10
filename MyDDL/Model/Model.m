@@ -8,6 +8,8 @@
 
 #import "Model.h"
 #import "WebUtil.h"
+#import "Course.h"
+#import "Project.h"
 
 @interface Model ()
 
@@ -24,6 +26,8 @@
 - (instancetype)initPrivate {
     self = [super init];
     self.deadlineModel = [DeadlineModel getDeadlineModel];
+    self.groupModel = [GroupModel getInstance];
+    self.courseProjectModel = [CourseProjectModel getInstance];
     self.configuration = [Configuration getConfiguration];
     return self;
 }
@@ -60,7 +64,19 @@
     for (NSDictionary *deadline in deadlines) {
         [self.deadlineModel addDeadline:[[Deadline alloc] initWithJSON:deadline]];
     }
-    // todo
+    NSArray *groups = [jsonResult objectForKey:@"groups"];
+    for (NSDictionary *group in groups) {
+        [self.groupModel.groups addObject:[[Group alloc] initWithJSON:group]];
+    }
+    NSArray *courseProjects = [jsonResult objectForKey:@"courseProjects"];
+    for (NSDictionary *courseProject in courseProjects) {
+        NSString *type = [courseProject objectForKey:@"courseProjectType"];
+        if ([type compare:@"course"] == NSOrderedSame) {
+            [self.courseProjectModel.courses addObject:[[Course alloc] initWithJSON:courseProject]];
+        } else {
+            [self.courseProjectModel.projects addObject:[[Project alloc] initWithJSON:courseProject]];
+        }
+    }
     return true;
 }
 

@@ -10,9 +10,11 @@
 
 @interface CourseAndProject : NSObject
 
+@property (nonatomic) long courseProjectId;
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSString *detail;
 
 - (instancetype)initWithName:(NSString *)name;
+- (instancetype)initWithJSON:(NSDictionary *)json;
 
 @end

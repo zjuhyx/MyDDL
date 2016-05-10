@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Group.h"
 
 @interface GroupModel : NSObject
 
 @property (nonatomic) NSMutableArray *groups;
 
 + (instancetype)getInstance;
+- (Group *)getGroupById:(long)groupId;
 
 @end
