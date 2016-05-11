@@ -15,7 +15,6 @@
 
 + (instancetype)getInstance;
 - (Group *)getGroupById:(long)groupId;
-- (Group *)getGroupDetailById:(long)groupId;
 - (void)changeGroup:(Group *)group;
 - (void)addGroup:(Group *)group;
 - (void)deleteGroup:(long)groupId;

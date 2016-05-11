@@ -35,13 +35,6 @@
     return nil;
 }
 
-- (Group *)getGroupDetailById:(long)groupId {
-    NSString *urlString = [NSString stringWithFormat:@"%@/group/%ld", [Configuration getConfiguration].serverAddress, groupId];
-    NSDictionary *jsonObject = [WebUtil webAPICallWithGetMethod:urlString];
-    NSDictionary *json = [jsonObject objectForKey:@"result"];
-    return [[Group alloc] initWithJSON:json];
-}
-
 - (void)changeGroup:(Group *)group {
     for (int i = 0; i < self.groups.count; ++i) {
         if (self.groups[i].groupId == group.groupId) {

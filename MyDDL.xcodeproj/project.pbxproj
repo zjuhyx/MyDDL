@@ -53,7 +53,7 @@
 		18D910D91CE0C2A50010218F /* CourseProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D910D81CE0C2A50010218F /* CourseProjectModel.m */; };
 		A5DF2BC994E337394C755CE3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0614B55CD2387BAFD9CC2075 /* libPods.a */; };
 		C30F2E291CD2EB0500068C37 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C30F2E281CD2EB0500068C37 /* RegisterViewController.m */; };
-		C36A433E1CE31B8D0039187C /* EditGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C36A433D1CE31B8D0039187C /* EditGroupViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C36A433E1CE31B8D0039187C /* EditGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C36A433D1CE31B8D0039187C /* EditGroupViewController.m */; };
 		C3776A721CD2370B001B0FE5 /* QRcodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3776A711CD2370B001B0FE5 /* QRcodeViewController.m */; };
 		C3776A751CD23DED001B0FE5 /* NoticeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3776A741CD23DED001B0FE5 /* NoticeTableViewController.m */; };
 		C3776A781CD24657001B0FE5 /* UpdatesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3776A771CD24657001B0FE5 /* UpdatesTableViewController.m */; };
@@ -298,7 +298,6 @@
 				C3BDDE991CC6253800470886 /* SettingViewController.m */,
 				185C51DE1C09F3720034A88A /* CourseAndProjectModification */,
 				189D2EBC1C0701C4002A15D5 /* CourseAndProjectDetail */,
-				189D2EB11C06FFB3002A15D5 /* Entity */,
 				189D2EA21C05B42E002A15D5 /* CourseAndProjectTableViewController.h */,
 				189D2EA31C05B42E002A15D5 /* CourseAndProjectTableViewController.m */,
 				189D2EA41C05B42E002A15D5 /* CourseTableViewController.h */,
@@ -363,19 +362,6 @@
 				18B031D41CDE62990086E9EC /* WebUtil.m */,
 			);
 			name = Util;
-			sourceTree = "<group>";
-		};
-		189D2EB11C06FFB3002A15D5 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				189D2EB21C07000A002A15D5 /* CourseAndProject.h */,
-				189D2EB31C07000A002A15D5 /* CourseAndProject.m */,
-				189D2EB51C07001C002A15D5 /* Course.h */,
-				189D2EB61C07001C002A15D5 /* Course.m */,
-				189D2EB81C070029002A15D5 /* Project.h */,
-				189D2EB91C070029002A15D5 /* Project.m */,
-			);
-			name = Entity;
 			sourceTree = "<group>";
 		};
 		189D2EBC1C0701C4002A15D5 /* CourseAndProjectDetail */ = {
@@ -444,6 +430,12 @@
 				188FA7BF1CE1F1F8009D3132 /* Deadline.m */,
 				189138911C10A6FB003B347A /* Group.h */,
 				189138921C10A6FB003B347A /* Group.m */,
+				189D2EB21C07000A002A15D5 /* CourseAndProject.h */,
+				189D2EB31C07000A002A15D5 /* CourseAndProject.m */,
+				189D2EB51C07001C002A15D5 /* Course.h */,
+				189D2EB61C07001C002A15D5 /* Course.m */,
+				189D2EB81C070029002A15D5 /* Project.h */,
+				189D2EB91C070029002A15D5 /* Project.m */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
