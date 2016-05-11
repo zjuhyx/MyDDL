@@ -10,6 +10,13 @@
 
 @implementation Group
 
+- (instancetype)init {
+    self = [super init];
+    self.members = [[NSMutableArray alloc] init];
+    self.deadlines = [[NSMutableArray alloc] init];
+    return self;
+}
+
 - (instancetype)initWithName:(NSString *)name deadlines:(NSMutableArray *)deadlines {
     self = [self init];
     self.name = name;
