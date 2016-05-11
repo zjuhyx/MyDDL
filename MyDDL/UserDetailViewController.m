@@ -60,7 +60,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.section==0){
         IntroCell *intro_cell = [[IntroCell alloc] init];
-        [intro_cell setCellLabel1:_user.userName label2:[NSString stringWithFormat:@"%ld", _user.userId]];
+        [intro_cell setCellLabel1:_user.userName label2:@"该用户还没有填写自我介绍"];
         [intro_cell setCellImage:_user.userImage imageName:nil];//@"background2"
         
         UITapGestureRecognizer* singleRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickImage)];

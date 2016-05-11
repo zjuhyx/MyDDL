@@ -23,7 +23,6 @@
     if (self) {
         _group = group;
         GroupModel* groupModel=[GroupModel getInstance];
-        _group=[groupModel getGroupDetailById:_group.groupId];
         self.navigationItem.title = _group.name;
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(toEdit)];
     }
