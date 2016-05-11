@@ -14,7 +14,7 @@
     self = [super init];
     self.userId = [[json objectForKey:@"userId"] longValue];
     self.userName = [json objectForKey:@"userName"];
-    self.userImage = [json objectForKey:@"userImage"];
+//    self.userImage = [json objectForKey:@"userImage"];
     self.userPhone = [json objectForKey:@"userPhone"];
     self.userEmail = [json objectForKey:@"userEmail"];
     self.mainScreenImage = [[json objectForKey:@"mainScreenImage"] intValue];

@@ -36,4 +36,11 @@
     return self;
 }
 
+- (NSDictionary *)toDictionary {
+    NSMutableDictionary *result = [[NSMutableDictionary alloc] init];
+    [result setValue:[NSString stringWithFormat:@"%ld", _groupId] forKey:@"groupId"];
+    [result setValue:_name forKey:@"groupName"];
+    return result;
+}
+
 @end

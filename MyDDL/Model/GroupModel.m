@@ -42,4 +42,35 @@
     return [[Group alloc] initWithJSON:json];
 }
 
+- (void)changeGroup:(Group *)group {
+    for (int i = 0; i < self.groups.count; ++i) {
+        if (self.groups[i].groupId == group.groupId) {
+            self.groups[i] = group;
+        }
+    }
+    
+    NSString *urlString = [NSString stringWithFormat:@"%@/group/%ld", [Configuration getConfiguration].serverAddress, group.groupId];
+    NSDictionary *parameters = [group toDictionary];
+    [WebUtil webAPICallWithPostMethod:urlString parameters:parameters];
+}
+
+- (void)addGroup:(Group *)group {
+    [self.groups addObject:group];
+    
+    NSString *urlString = [NSString stringWithFormat:@"%@/group", [Configuration getConfiguration].serverAddress];
+    NSDictionary *parameters = [group toDictionary];
+    [WebUtil webAPICallWithPutMethod:urlString parameters:parameters];
+}
+
+- (void)deleteGroup:(long)groupId {
+    for (int i = 0; i < self.groups.count; ++i) {
+        if (self.groups[i].groupId == groupId) {
+            [self.groups removeObjectAtIndex:i];
+        }
+    }
+    
+    NSString *urlString = [NSString stringWithFormat:@"%@/group/%ld", [Configuration getConfiguration].serverAddress, groupId];
+    [WebUtil webAPICallWithDeleteMethod:urlString];
+}
+
 @end

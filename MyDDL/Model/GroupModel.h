@@ -11,10 +11,13 @@
 
 @interface GroupModel : NSObject
 
-@property (nonatomic) NSMutableArray *groups;
+@property (nonatomic) NSMutableArray<Group *> *groups;
 
 + (instancetype)getInstance;
 - (Group *)getGroupById:(long)groupId;
 - (Group *)getGroupDetailById:(long)groupId;
+- (void)changeGroup:(Group *)group;
+- (void)addGroup:(Group *)group;
+- (void)deleteGroup:(long)groupId;
 
 @end
