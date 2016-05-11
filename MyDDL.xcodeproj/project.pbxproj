@@ -17,7 +17,7 @@
 		185C51E71C09FCE30034A88A /* EditCourseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185C51E61C09FCE30034A88A /* EditCourseController.m */; };
 		185C51EA1C0A00110034A88A /* AddProjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185C51E91C0A00110034A88A /* AddProjectController.m */; };
 		185C51ED1C0A00270034A88A /* EditProjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185C51EC1C0A00270034A88A /* EditProjectController.m */; };
-		188FA7C01CE1F1F8009D3132 /* DeadlineDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 188FA7BF1CE1F1F8009D3132 /* DeadlineDetail.m */; };
+		188FA7C01CE1F1F8009D3132 /* Deadline.m in Sources */ = {isa = PBXBuildFile; fileRef = 188FA7BF1CE1F1F8009D3132 /* Deadline.m */; };
 		189138931C10A6FB003B347A /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 189138921C10A6FB003B347A /* Group.m */; };
 		189138961C111890003B347A /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 189138951C111890003B347A /* Person.m */; };
 		189D2E3E1C05A105002A15D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D2E3D1C05A105002A15D5 /* main.m */; };
@@ -52,7 +52,6 @@
 		18BAB9F11C0CF20B00B41D61 /* SearchDeadlineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BAB9F01C0CF20B00B41D61 /* SearchDeadlineController.m */; };
 		18BAB9F41C0CFCAF00B41D61 /* LineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BAB9F31C0CFCAF00B41D61 /* LineView.m */; };
 		18BAB9F71C0D792E00B41D61 /* DeadlineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BAB9F61C0D792E00B41D61 /* DeadlineModel.m */; };
-		18BAB9FC1C0D796600B41D61 /* Deadline.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BAB9FB1C0D796600B41D61 /* Deadline.m */; };
 		18D910D61CE0C1EA0010218F /* GroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D910D51CE0C1EA0010218F /* GroupModel.m */; };
 		18D910D91CE0C2A50010218F /* CourseProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D910D81CE0C2A50010218F /* CourseProjectModel.m */; };
 		A5DF2BC994E337394C755CE3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0614B55CD2387BAFD9CC2075 /* libPods.a */; };
@@ -96,8 +95,8 @@
 		185C51E91C0A00110034A88A /* AddProjectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddProjectController.m; path = Me/CourseAndProjectModification/AddProjectController.m; sourceTree = "<group>"; };
 		185C51EB1C0A00270034A88A /* EditProjectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditProjectController.h; path = Me/CourseAndProjectModification/EditProjectController.h; sourceTree = "<group>"; };
 		185C51EC1C0A00270034A88A /* EditProjectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditProjectController.m; path = Me/CourseAndProjectModification/EditProjectController.m; sourceTree = "<group>"; };
-		188FA7BE1CE1F1F8009D3132 /* DeadlineDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeadlineDetail.h; path = Entity/DeadlineDetail.h; sourceTree = "<group>"; };
-		188FA7BF1CE1F1F8009D3132 /* DeadlineDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeadlineDetail.m; path = Entity/DeadlineDetail.m; sourceTree = "<group>"; };
+		188FA7BE1CE1F1F8009D3132 /* Deadline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Deadline.h; path = Entity/Deadline.h; sourceTree = "<group>"; };
+		188FA7BF1CE1F1F8009D3132 /* Deadline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Deadline.m; path = Entity/Deadline.m; sourceTree = "<group>"; };
 		189138911C10A6FB003B347A /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Group.h; path = Group/Entity/Group.h; sourceTree = "<group>"; };
 		189138921C10A6FB003B347A /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Group.m; path = Group/Entity/Group.m; sourceTree = "<group>"; };
 		189138941C111890003B347A /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Person.h; path = Group/Entity/Person.h; sourceTree = "<group>"; };
@@ -165,8 +164,6 @@
 		18BAB9F31C0CFCAF00B41D61 /* LineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineView.m; sourceTree = "<group>"; };
 		18BAB9F51C0D792E00B41D61 /* DeadlineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeadlineModel.h; sourceTree = "<group>"; };
 		18BAB9F61C0D792E00B41D61 /* DeadlineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeadlineModel.m; sourceTree = "<group>"; };
-		18BAB9FA1C0D796600B41D61 /* Deadline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deadline.h; sourceTree = "<group>"; };
-		18BAB9FB1C0D796600B41D61 /* Deadline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deadline.m; sourceTree = "<group>"; };
 		18D910D41CE0C1EA0010218F /* GroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GroupModel.h; path = Model/GroupModel.h; sourceTree = "<group>"; };
 		18D910D51CE0C1EA0010218F /* GroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroupModel.m; path = Model/GroupModel.m; sourceTree = "<group>"; };
 		18D910D71CE0C2A50010218F /* CourseProjectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CourseProjectModel.h; path = Model/CourseProjectModel.h; sourceTree = "<group>"; };
@@ -424,7 +421,6 @@
 		18A4DA071C0C3914001CD648 /* DoneAndUndone */ = {
 			isa = PBXGroup;
 			children = (
-				18BAB9F81C0D793F00B41D61 /* Model */,
 				1832468D1C0B59370002A61A /* DeadlineView.h */,
 				1832468E1C0B59370002A61A /* DeadlineView.m */,
 				18A4DA081C0C3944001CD648 /* AxisView.h */,
@@ -458,6 +454,8 @@
 				18D910D51CE0C1EA0010218F /* GroupModel.m */,
 				18D910D71CE0C2A50010218F /* CourseProjectModel.h */,
 				18D910D81CE0C2A50010218F /* CourseProjectModel.m */,
+				18BAB9F51C0D792E00B41D61 /* DeadlineModel.h */,
+				18BAB9F61C0D792E00B41D61 /* DeadlineModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -467,21 +465,10 @@
 			children = (
 				18B031DE1CDE6C700086E9EC /* UserInfo.h */,
 				18B031DF1CDE6C700086E9EC /* UserInfo.m */,
-				18BAB9FA1C0D796600B41D61 /* Deadline.h */,
-				18BAB9FB1C0D796600B41D61 /* Deadline.m */,
-				188FA7BE1CE1F1F8009D3132 /* DeadlineDetail.h */,
-				188FA7BF1CE1F1F8009D3132 /* DeadlineDetail.m */,
+				188FA7BE1CE1F1F8009D3132 /* Deadline.h */,
+				188FA7BF1CE1F1F8009D3132 /* Deadline.m */,
 			);
 			name = Entity;
-			sourceTree = "<group>";
-		};
-		18BAB9F81C0D793F00B41D61 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				18BAB9F51C0D792E00B41D61 /* DeadlineModel.h */,
-				18BAB9F61C0D792E00B41D61 /* DeadlineModel.m */,
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 		6E2DB064BD097DE5C64ECFA0 /* Frameworks */ = {
@@ -654,7 +641,7 @@
 				C3776A721CD2370B001B0FE5 /* QRcodeViewController.m in Sources */,
 				18BAB9DF1C0CE79900B41D61 /* CreateProjectDeadlineController.m in Sources */,
 				189D2EBA1C070029002A15D5 /* Project.m in Sources */,
-				188FA7C01CE1F1F8009D3132 /* DeadlineDetail.m in Sources */,
+				188FA7C01CE1F1F8009D3132 /* Deadline.m in Sources */,
 				C38C68441CBDFFA300932369 /* FilterViewController.m in Sources */,
 				C3BDDEA11CC7298900470886 /* IntroCell.m in Sources */,
 				18B031E01CDE6C700086E9EC /* UserInfo.m in Sources */,
@@ -689,7 +676,6 @@
 				C3776A7B1CD246ED001B0FE5 /* GroupDetailTableViewController.m in Sources */,
 				C3776A751CD23DED001B0FE5 /* NoticeTableViewController.m in Sources */,
 				189138961C111890003B347A /* Person.m in Sources */,
-				18BAB9FC1C0D796600B41D61 /* Deadline.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

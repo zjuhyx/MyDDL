@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DeadlineDetail : NSObject
+@interface Deadline : NSObject
 
 @property (nonatomic) long deadlineId;
 @property (nonatomic) NSString *name;
@@ -19,7 +19,7 @@
 @property (nonatomic) NSString *contactPhone;
 @property (nonatomic) NSString *contactEmail;
 @property (nonatomic) NSString *detail;
-@property (nonatomic) BOOL isCompleted;
+@property (nonatomic) bool isCompleted;
 
 - (instancetype)initWithJSON:(NSDictionary *)json;
 

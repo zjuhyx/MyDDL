@@ -41,9 +41,8 @@
     self = [self init];
     if (self) {
         self.deadlineController = deadlineController;
-        self.deadline = deadline;
         self.navigationItem.title = deadline.name;
-        NSString *urlString = [NSString stringWithFormat:@"%@/deadline/%ld", [Configuration getConfiguration].serverAddress, deadline.deadlineId];
+        self.deadline = deadline;
     }
     return self;
 }
@@ -120,15 +119,24 @@
         
         if(indexPath.row==0){
             cell.textLabel.text=@"联系人";
-            cell.detailTextLabel.text=@"刘老师";
+            cell.detailTextLabel.text=self.deadline.contactName;
+            if (cell.detailTextLabel.text == nil) {
+                cell.detailTextLabel.text = @"未填";
+            }
         }
         else if(indexPath.row==1){
             cell.textLabel.text=@"联系电话";
-            cell.detailTextLabel.text=@"18868101111";
+            cell.detailTextLabel.text=self.deadline.contactPhone;
+            if (cell.detailTextLabel.text == nil) {
+                cell.detailTextLabel.text = @"未填";
+            }
         }
         else{
             cell.textLabel.text=@"邮箱";
-            cell.detailTextLabel.text=@"liu@hotmail.com";
+            cell.detailTextLabel.text=self.deadline.contactEmail;
+            if (cell.detailTextLabel.text == nil) {
+                cell.detailTextLabel.text = @"未填";
+            }
         }
     } else if (indexPath.section == 2) {
         cell.textLabel.text = @"标记为完成";

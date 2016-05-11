@@ -78,8 +78,4 @@
     return true;
 }
 
-- (void)loadUserWithId:(long) userId {
-    
-}
-
 @end
