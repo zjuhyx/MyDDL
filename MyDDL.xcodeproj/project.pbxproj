@@ -51,13 +51,14 @@
 		18BAB9F71C0D792E00B41D61 /* DeadlineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BAB9F61C0D792E00B41D61 /* DeadlineModel.m */; };
 		18D910D61CE0C1EA0010218F /* GroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D910D51CE0C1EA0010218F /* GroupModel.m */; };
 		18D910D91CE0C2A50010218F /* CourseProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D910D81CE0C2A50010218F /* CourseProjectModel.m */; };
-		A5DF2BC994E337394C755CE3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0614B55CD2387BAFD9CC2075 /* libPods.a */; };
+		A5DF2BC994E337394C755CE3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0614B55CD2387BAFD9CC2075 /* libPods.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		C30F2E291CD2EB0500068C37 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C30F2E281CD2EB0500068C37 /* RegisterViewController.m */; };
 		C36A433E1CE31B8D0039187C /* EditGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C36A433D1CE31B8D0039187C /* EditGroupViewController.m */; };
 		C3776A721CD2370B001B0FE5 /* QRcodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3776A711CD2370B001B0FE5 /* QRcodeViewController.m */; };
 		C3776A751CD23DED001B0FE5 /* NoticeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3776A741CD23DED001B0FE5 /* NoticeTableViewController.m */; };
 		C3776A781CD24657001B0FE5 /* UpdatesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3776A771CD24657001B0FE5 /* UpdatesTableViewController.m */; };
 		C3776A7B1CD246ED001B0FE5 /* GroupDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3776A7A1CD246ED001B0FE5 /* GroupDetailTableViewController.m */; };
+		C3B19BE31CE3AA2200E5F63A /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B19BE21CE3AA2200E5F63A /* CoreFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C3BDDE8E1CBE3A4600470886 /* DeadlineModificationController2.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDE8D1CBE3A4600470886 /* DeadlineModificationController2.m */; };
 		C3BDDE911CC1BCFB00470886 /* DeleteDeadlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDE901CC1BCFB00470886 /* DeleteDeadlineViewController.m */; };
 		C3BDDE971CC6209700470886 /* CourseProjectModificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDE961CC6209700470886 /* CourseProjectModificationViewController.m */; };
@@ -171,6 +172,7 @@
 		C3776A771CD24657001B0FE5 /* UpdatesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatesTableViewController.m; sourceTree = "<group>"; };
 		C3776A791CD246ED001B0FE5 /* GroupDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupDetailTableViewController.h; sourceTree = "<group>"; };
 		C3776A7A1CD246ED001B0FE5 /* GroupDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupDetailTableViewController.m; sourceTree = "<group>"; };
+		C3B19BE21CE3AA2200E5F63A /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		C3BDDE8C1CBE3A4600470886 /* DeadlineModificationController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeadlineModificationController2.h; sourceTree = "<group>"; };
 		C3BDDE8D1CBE3A4600470886 /* DeadlineModificationController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeadlineModificationController2.m; sourceTree = "<group>"; };
 		C3BDDE8F1CC1BCFB00470886 /* DeleteDeadlineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteDeadlineViewController.h; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3B19BE31CE3AA2200E5F63A /* CoreFoundation.framework in Frameworks */,
 				A5DF2BC994E337394C755CE3 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,6 +441,7 @@
 		6E2DB064BD097DE5C64ECFA0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C3B19BE21CE3AA2200E5F63A /* CoreFoundation.framework */,
 				0614B55CD2387BAFD9CC2075 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -493,7 +497,7 @@
 				TargetAttributes = {
 					189D2E381C05A105002A15D5 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = R42SHF3W9T;
+						DevelopmentTeam = PMPU3CS62P;
 					};
 				};
 			};
@@ -690,7 +694,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -727,7 +731,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -741,9 +745,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = MyDDL/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.myddl.MyDDL;
+				PRODUCT_BUNDLE_IDENTIFIER = hyx.org.myddl.MyDDL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -755,9 +759,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = MyDDL/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.myddl.MyDDL;
+				PRODUCT_BUNDLE_IDENTIFIER = hyx.org.myddl.MyDDL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

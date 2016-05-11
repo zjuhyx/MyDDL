@@ -29,6 +29,7 @@
     
     self.navigationItem.title=@"Deadline列表";
     //_dataArray = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5",nil];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -85,10 +86,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    DeadlineDetailController *deadlineDetailController=[DeadlineDetailController alloc];
-//    deadlineDetailController.deadline=[data objectAtIndex:indexPath.row];
-//    [self.navigationController pushViewController:deadlineDetailController animated:YES];
-    [self.navigationController pushViewController:[[DeadlineDetailController alloc] init] animated:YES];
+    DeadlineDetailController* deadlineDetailController=[DeadlineDetailController alloc];
+    deadlineDetailController.deadline=[_dataArray objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:[deadlineDetailController init] animated:YES];
 }
 
 // Override to support conditional editing of the table view.
