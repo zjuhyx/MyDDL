@@ -14,8 +14,6 @@
 
 @interface DeadlineModel ()
 
-@property (nonatomic) NSMutableArray<Deadline *> *allDeadlines;
-
 @end
 
 @implementation DeadlineModel

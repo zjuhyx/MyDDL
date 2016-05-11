@@ -12,9 +12,9 @@
 
 @interface DeadlineModel : NSObject
 
-@property (nonatomic, readonly) NSArray *allUndoneDeadlines;
-@property (nonatomic, readonly) NSArray *allDoneDeadlines;
-@property (nonatomic, readonly) NSArray *allDeadlines;
+@property (nonatomic, readonly) NSArray<Deadline *> *allUndoneDeadlines;
+@property (nonatomic, readonly) NSArray<Deadline *> *allDoneDeadlines;
+@property (nonatomic) NSMutableArray<Deadline *> *allDeadlines;
 
 - (void)clearData;
 + (instancetype)getDeadlineModel;
