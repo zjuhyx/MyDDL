@@ -23,4 +23,6 @@
 - (void)addGroupUserWithGroupId:(long)groupId user:(UserInfo *)user;
 - (void)deleteGroupUserByGroupId:(long)groupId userId:(long)userId;
 
+- (void)clearData;
+
 @end

@@ -25,5 +25,8 @@
 - (void)clearData;
 + (instancetype)getInstance;
 - (bool)loginWithUsername:(NSString *)username password:(NSString *)password;
+- (void)changeUserInfo:(UserInfo *)user;
+- (void)changeUserPassword:(NSString *)password;
+- (void)signUp:(NSString *)username password:(NSString *)password userName:(NSString *)userName;
 
 @end

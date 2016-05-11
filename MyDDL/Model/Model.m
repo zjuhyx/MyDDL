@@ -71,4 +71,28 @@
     return true;
 }
 
+- (void)changeUserInfo:(UserInfo *)user {
+    self.userInfo = user;
+    
+    NSString *urlString = [NSString stringWithFormat:@"%@/user/%ld", self.configuration.serverAddress, self.userInfo.userId];
+    NSDictionary *parameters = [user toDictionary];
+    [WebUtil webAPICallWithPostMethod:urlString parameters:parameters];
+}
+
+- (void)changeUserPassword:(NSString *)password {
+    NSString *urlString = [NSString stringWithFormat:@"%@/user/%ld", self.configuration.serverAddress, self.userInfo.userId];
+    NSDictionary *parameters = [NSDictionary dictionaryWithObject:password forKey:@"password"];
+    [WebUtil webAPICallWithPostMethod:urlString parameters:parameters];
+}
+
+- (void)signUp:(NSString *)username password:(NSString *)password userName:(NSString *)userName {
+    NSString *urlString = [NSString stringWithFormat:@"%@/user", self.configuration.serverAddress];
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    [parameters setValue:username forKey:@"username"];
+    [parameters setValue:password forKey:@"password"];
+    [parameters setValue:userName forKey:@"userName"];
+    [WebUtil webAPICallWithPutMethod:urlString parameters:parameters];
+    [self loginWithUsername:username password:password];
+}
+
 @end

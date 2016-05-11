@@ -26,4 +26,12 @@
     return self;
 }
 
+- (NSMutableDictionary *)toDictionary {
+    NSMutableDictionary *result = [[NSMutableDictionary alloc] init];
+    [result setValue:[NSString stringWithFormat:@"%ld", _courseProjectId] forKey:@"courseProjectId"];
+    [result setValue:_name forKey:@"courseProjectName"];
+    [result setValue:_detail forKey:@"courseProjectNote"];
+    return result;
+}
+
 @end

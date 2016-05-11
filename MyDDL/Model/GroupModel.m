@@ -110,4 +110,8 @@
     [WebUtil webAPICallWithDeleteMethod:urlString];
 }
 
+- (void)clearData {
+    self.groups = [[NSMutableArray alloc] init];
+}
+
 @end

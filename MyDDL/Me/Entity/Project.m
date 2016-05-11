@@ -10,4 +10,10 @@
 
 @implementation Project
 
+- (NSMutableDictionary *)toDictionary {
+    NSMutableDictionary *result = [super toDictionary];
+    [result setValue:@"project" forKey:@"courseProjectType"];
+    return result;
+}
+
 @end
