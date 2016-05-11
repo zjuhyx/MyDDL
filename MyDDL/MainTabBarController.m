@@ -13,12 +13,13 @@
 #import "MeTableViewController.h"
 #import "Configuration.h"
 #import "LoginViewController.h"
-#import "Information.h"
+#import "Model.h"
 
 @implementation MainTabBarController
 
 - (instancetype)init {
     self = [super init];
+    
     NSArray *tableViews = @[[[UndoneViewController alloc] init],
                             [[DoneViewController alloc] init],
                             [[GroupTableViewController alloc] init],
@@ -46,11 +47,12 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    NSString *username = [Information getInformation].username;
+    NSString *username = [Model getInstance].username;
     if (username == nil || [username isEqualToString:@""]) {
 //        [self presentViewController:[[LoginViewController alloc] init] animated:YES completion:nil];
-        [Information getInformation].username = @"admin";
+        [Model getInstance].username = @"admin";
     }
+    
 }
 
 @end

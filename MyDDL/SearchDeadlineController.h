@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "FilterViewController.h"
+#import "DeadlineModel.h"
 
 @interface SearchDeadlineController : UITableViewController{
     NSArray *data;
     NSArray *filterData;
     UISearchDisplayController *searchDisplayController;
 }
+
+@property(nonatomic)NSArray *dataList;
+@property(nonatomic)NSMutableArray *showData;
 @property(nonatomic,retain)FilterViewController *filterViewController;
 @end

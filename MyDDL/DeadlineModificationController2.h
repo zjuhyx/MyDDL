@@ -12,9 +12,10 @@
 
 @interface DeadlineModificationController2 : XLFormViewController
 
+@property (nonatomic) Deadline *deadline;
+
 @property (nonatomic, readonly) NSString *deadlineName;
 @property (nonatomic, readonly) NSDate *deadlineDate;
-@property (nonatomic, readonly) CourseAndProject *deadlineOwner;
 @property (nonatomic, readonly) NSString *deadlineDetail;
 
 @property (nonatomic, weak) UITextField *nameTextField;

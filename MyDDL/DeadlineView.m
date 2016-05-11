@@ -46,7 +46,7 @@
         
         Configuration *config = [Configuration getConfiguration];
         UIColor *pointInnerColor;
-        if ([deadline.owner isKindOfClass:[Course class]]) {
+        if ([deadline.courseProjectType compare:@"course"] == NSOrderedSame) {
             pointInnerColor = config.blueColor;
         } else {
             pointInnerColor = config.greenColor;
@@ -99,7 +99,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    if ([self.deadline.owner isKindOfClass:[Course class]]) {
+    if ([self.deadline.courseProjectType compare:@"course"] == NSOrderedSame) {
         self.backgroundLabel.image = [UIImage imageNamed:@"deadline_label_blue"];
     } else {
         self.backgroundLabel.image = [UIImage imageNamed:@"deadline_label_green"];

@@ -27,6 +27,8 @@
         _blueColor = [UIColor colorWithRed:85./255 green:204./255 blue:253./255 alpha:1.];
         _redColor = [UIColor colorWithRed:255./255 green:99./255 blue:71./255 alpha:1.];
         _grayColor = [UIColor colorWithRed:202./255 green:201./255 blue:207./255 alpha:1.];
+        
+        _serverAddress = @"http://139.129.53.104:8080/myddl-server";
     }
     return self;
 }

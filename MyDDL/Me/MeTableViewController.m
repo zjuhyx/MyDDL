@@ -10,10 +10,10 @@
 #import "SettingViewController.h"
 #import "CourseTableViewController.h"
 #import "ProjectTableViewController.h"
-#import "Information.h"
 #import "IntroCell.h"
 #import "ImageDetailViewController.h"
 #import "NoticeTableViewController.h"
+#import "Model.h"
 
 @implementation MeTableViewController
 
@@ -55,11 +55,12 @@
     if (indexPath.section != 0) {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-    NSString *username = [Information getInformation].username;
+    NSString *username = [Model getInstance].username;
+    NSString *userid = [NSString stringWithFormat:@"账号：%ld",[Model getInstance].userInfo.userId];
     
     if (indexPath.section == 0) {
         IntroCell *intro_cell = [[IntroCell alloc] init];
-        [intro_cell setCellLabel1:username label2:@"账号：624509"];
+        [intro_cell setCellLabel1:username label2:userid];
         [intro_cell setCellImage:nil imageName:@"avatar_default"];
         
         UITapGestureRecognizer* singleRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickImage)];
@@ -106,6 +107,7 @@
 }
 
 - (void) toLogOut{
+    [[Model getInstance] clearData];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

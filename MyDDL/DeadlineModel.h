@@ -8,17 +8,22 @@
 
 #import <Foundation/Foundation.h>
 #import "Deadline.h"
+#import "DeadlineDetail.h"
 
 @interface DeadlineModel : NSObject
 
-@property (nonatomic, readonly) NSArray *allUndoneDeadlines;
-@property (nonatomic, readonly) NSArray *allDoneDeadlines;
+@property (nonatomic, readonly) NSArray<Deadline *> *allUndoneDeadlines;
+@property (nonatomic, readonly) NSArray<Deadline *> *allDoneDeadlines;
+@property (nonatomic) NSMutableArray<Deadline *> *allDeadlines;
 
+- (void)clearData;
 + (instancetype)getDeadlineModel;
 - (void)addDeadline:(Deadline *)deadline;
-- (Deadline *)getDeadlineById:(NSInteger)deadlineId;
+- (Deadline *)getDeadlineById:(long)deadlineId;
 - (void)changeDeadline:(Deadline *)deadline;
 - (void)removeDeadlineById:(NSInteger)deadlineId;
 - (void)completeDeadline:(NSInteger)deadlineId;
+
+- (DeadlineDetail *)getDeadlineDetailById:(long)deadlineId;
 
 @end

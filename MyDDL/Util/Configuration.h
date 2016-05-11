@@ -17,6 +17,8 @@
 @property (nonatomic, readonly) UIColor *redColor;
 @property (nonatomic, readonly) UIColor *grayColor;
 
+@property (nonatomic, readonly) NSString *serverAddress;
+
 + (Configuration *)getConfiguration;
 
 @end

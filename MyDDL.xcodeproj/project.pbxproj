@@ -13,11 +13,11 @@
 		18386BAA1C0849AC00F44092 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18386BA91C0849AC00F44092 /* MainTabBarController.m */; };
 		18386BAD1C08B3A000F44092 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18386BAC1C08B3A000F44092 /* LoginViewController.m */; };
 		18386BB01C08BC4400F44092 /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 18386BAF1C08BC4400F44092 /* Configuration.m */; };
-		18386BB31C08C83F00F44092 /* Information.m in Sources */ = {isa = PBXBuildFile; fileRef = 18386BB21C08C83F00F44092 /* Information.m */; };
 		185C51E41C09F3B70034A88A /* AddCourseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185C51E31C09F3B70034A88A /* AddCourseController.m */; };
 		185C51E71C09FCE30034A88A /* EditCourseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185C51E61C09FCE30034A88A /* EditCourseController.m */; };
 		185C51EA1C0A00110034A88A /* AddProjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185C51E91C0A00110034A88A /* AddProjectController.m */; };
 		185C51ED1C0A00270034A88A /* EditProjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185C51EC1C0A00270034A88A /* EditProjectController.m */; };
+		188FA7C01CE1F1F8009D3132 /* DeadlineDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 188FA7BF1CE1F1F8009D3132 /* DeadlineDetail.m */; };
 		189138931C10A6FB003B347A /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 189138921C10A6FB003B347A /* Group.m */; };
 		189138961C111890003B347A /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 189138951C111890003B347A /* Person.m */; };
 		189D2E3E1C05A105002A15D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D2E3D1C05A105002A15D5 /* main.m */; };
@@ -43,6 +43,9 @@
 		18A4DA131C0CB1B8001CD648 /* PointView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A4DA121C0CB1B8001CD648 /* PointView.m */; };
 		18A4DA161C0CB645001CD648 /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A4DA151C0CB645001CD648 /* Circle.m */; };
 		18A4DA191C0CE1D9001CD648 /* DeadlineDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A4DA181C0CE1D9001CD648 /* DeadlineDetailController.m */; };
+		18B031D51CDE62990086E9EC /* WebUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B031D41CDE62990086E9EC /* WebUtil.m */; };
+		18B031DC1CDE66B40086E9EC /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B031DB1CDE66B40086E9EC /* Model.m */; };
+		18B031E01CDE6C700086E9EC /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B031DF1CDE6C700086E9EC /* UserInfo.m */; };
 		18BAB9DF1C0CE79900B41D61 /* CreateProjectDeadlineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BAB9DE1C0CE79900B41D61 /* CreateProjectDeadlineController.m */; };
 		18BAB9E21C0CE8A500B41D61 /* DeadlineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BAB9E11C0CE8A500B41D61 /* DeadlineController.m */; };
 		18BAB9E81C0CF00C00B41D61 /* EditDeadlineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BAB9E71C0CF00C00B41D61 /* EditDeadlineController.m */; };
@@ -50,23 +53,25 @@
 		18BAB9F41C0CFCAF00B41D61 /* LineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BAB9F31C0CFCAF00B41D61 /* LineView.m */; };
 		18BAB9F71C0D792E00B41D61 /* DeadlineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BAB9F61C0D792E00B41D61 /* DeadlineModel.m */; };
 		18BAB9FC1C0D796600B41D61 /* Deadline.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BAB9FB1C0D796600B41D61 /* Deadline.m */; };
+		18D910D61CE0C1EA0010218F /* GroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D910D51CE0C1EA0010218F /* GroupModel.m */; };
+		18D910D91CE0C2A50010218F /* CourseProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D910D81CE0C2A50010218F /* CourseProjectModel.m */; };
 		A5DF2BC994E337394C755CE3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0614B55CD2387BAFD9CC2075 /* libPods.a */; };
-		C30F2E291CD2EB0500068C37 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C30F2E281CD2EB0500068C37 /* RegisterViewController.m */; settings = {ASSET_TAGS = (); }; };
-		C3776A721CD2370B001B0FE5 /* QRcodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3776A711CD2370B001B0FE5 /* QRcodeViewController.m */; settings = {ASSET_TAGS = (); }; };
-		C3776A751CD23DED001B0FE5 /* NoticeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3776A741CD23DED001B0FE5 /* NoticeTableViewController.m */; settings = {ASSET_TAGS = (); }; };
-		C3776A781CD24657001B0FE5 /* UpdatesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3776A771CD24657001B0FE5 /* UpdatesTableViewController.m */; settings = {ASSET_TAGS = (); }; };
-		C3776A7B1CD246ED001B0FE5 /* GroupDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3776A7A1CD246ED001B0FE5 /* GroupDetailTableViewController.m */; settings = {ASSET_TAGS = (); }; };
-		C3776A7E1CD24BD2001B0FE5 /* GroupSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3776A7D1CD24BD2001B0FE5 /* GroupSettingViewController.m */; settings = {ASSET_TAGS = (); }; };
-		C38C68441CBDFFA300932369 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38C68431CBDFFA300932369 /* FilterViewController.m */; settings = {ASSET_TAGS = (); }; };
-		C3BDDE8E1CBE3A4600470886 /* DeadlineModificationController2.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDE8D1CBE3A4600470886 /* DeadlineModificationController2.m */; settings = {ASSET_TAGS = (); }; };
-		C3BDDE911CC1BCFB00470886 /* DeleteDeadlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDE901CC1BCFB00470886 /* DeleteDeadlineViewController.m */; settings = {ASSET_TAGS = (); }; };
-		C3BDDE971CC6209700470886 /* CourseProjectModificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDE961CC6209700470886 /* CourseProjectModificationViewController.m */; settings = {ASSET_TAGS = (); }; };
-		C3BDDE9A1CC6253800470886 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDE991CC6253800470886 /* SettingViewController.m */; settings = {ASSET_TAGS = (); }; };
-		C3BDDE9E1CC7290600470886 /* DeadlineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDE9D1CC7290600470886 /* DeadlineCell.m */; settings = {ASSET_TAGS = (); }; };
-		C3BDDEA11CC7298900470886 /* IntroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDEA01CC7298900470886 /* IntroCell.m */; settings = {ASSET_TAGS = (); }; };
-		C3BDDEA41CC730DE00470886 /* ImageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDEA31CC730DE00470886 /* ImageDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
-		C3BDDEAD1CC7540600470886 /* DeadlineListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDEAC1CC7540600470886 /* DeadlineListViewController.m */; settings = {ASSET_TAGS = (); }; };
-		C3BDDEB01CC75A2500470886 /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDEAF1CC75A2500470886 /* UserDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C30F2E291CD2EB0500068C37 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C30F2E281CD2EB0500068C37 /* RegisterViewController.m */; };
+		C3776A721CD2370B001B0FE5 /* QRcodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3776A711CD2370B001B0FE5 /* QRcodeViewController.m */; };
+		C3776A751CD23DED001B0FE5 /* NoticeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3776A741CD23DED001B0FE5 /* NoticeTableViewController.m */; };
+		C3776A781CD24657001B0FE5 /* UpdatesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3776A771CD24657001B0FE5 /* UpdatesTableViewController.m */; };
+		C3776A7B1CD246ED001B0FE5 /* GroupDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3776A7A1CD246ED001B0FE5 /* GroupDetailTableViewController.m */; };
+		C3776A7E1CD24BD2001B0FE5 /* GroupSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3776A7D1CD24BD2001B0FE5 /* GroupSettingViewController.m */; };
+		C38C68441CBDFFA300932369 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38C68431CBDFFA300932369 /* FilterViewController.m */; };
+		C3BDDE8E1CBE3A4600470886 /* DeadlineModificationController2.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDE8D1CBE3A4600470886 /* DeadlineModificationController2.m */; };
+		C3BDDE911CC1BCFB00470886 /* DeleteDeadlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDE901CC1BCFB00470886 /* DeleteDeadlineViewController.m */; };
+		C3BDDE971CC6209700470886 /* CourseProjectModificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDE961CC6209700470886 /* CourseProjectModificationViewController.m */; };
+		C3BDDE9A1CC6253800470886 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDE991CC6253800470886 /* SettingViewController.m */; };
+		C3BDDE9E1CC7290600470886 /* DeadlineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDE9D1CC7290600470886 /* DeadlineCell.m */; };
+		C3BDDEA11CC7298900470886 /* IntroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDEA01CC7298900470886 /* IntroCell.m */; };
+		C3BDDEA41CC730DE00470886 /* ImageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDEA31CC730DE00470886 /* ImageDetailViewController.m */; };
+		C3BDDEAD1CC7540600470886 /* DeadlineListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDEAC1CC7540600470886 /* DeadlineListViewController.m */; };
+		C3BDDEB01CC75A2500470886 /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDEAF1CC75A2500470886 /* UserDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,8 +88,6 @@
 		18386BAC1C08B3A000F44092 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		18386BAE1C08BC4400F44092 /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Configuration.h; path = Util/Configuration.h; sourceTree = "<group>"; };
 		18386BAF1C08BC4400F44092 /* Configuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Configuration.m; path = Util/Configuration.m; sourceTree = "<group>"; };
-		18386BB11C08C83F00F44092 /* Information.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Information.h; path = Util/Information.h; sourceTree = "<group>"; };
-		18386BB21C08C83F00F44092 /* Information.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Information.m; path = Util/Information.m; sourceTree = "<group>"; };
 		185C51E21C09F3B70034A88A /* AddCourseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddCourseController.h; path = Me/CourseAndProjectModification/AddCourseController.h; sourceTree = "<group>"; };
 		185C51E31C09F3B70034A88A /* AddCourseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddCourseController.m; path = Me/CourseAndProjectModification/AddCourseController.m; sourceTree = "<group>"; };
 		185C51E51C09FCE30034A88A /* EditCourseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditCourseController.h; path = Me/CourseAndProjectModification/EditCourseController.h; sourceTree = "<group>"; };
@@ -93,6 +96,8 @@
 		185C51E91C0A00110034A88A /* AddProjectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddProjectController.m; path = Me/CourseAndProjectModification/AddProjectController.m; sourceTree = "<group>"; };
 		185C51EB1C0A00270034A88A /* EditProjectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditProjectController.h; path = Me/CourseAndProjectModification/EditProjectController.h; sourceTree = "<group>"; };
 		185C51EC1C0A00270034A88A /* EditProjectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditProjectController.m; path = Me/CourseAndProjectModification/EditProjectController.m; sourceTree = "<group>"; };
+		188FA7BE1CE1F1F8009D3132 /* DeadlineDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeadlineDetail.h; path = Entity/DeadlineDetail.h; sourceTree = "<group>"; };
+		188FA7BF1CE1F1F8009D3132 /* DeadlineDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeadlineDetail.m; path = Entity/DeadlineDetail.m; sourceTree = "<group>"; };
 		189138911C10A6FB003B347A /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Group.h; path = Group/Entity/Group.h; sourceTree = "<group>"; };
 		189138921C10A6FB003B347A /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Group.m; path = Group/Entity/Group.m; sourceTree = "<group>"; };
 		189138941C111890003B347A /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Person.h; path = Group/Entity/Person.h; sourceTree = "<group>"; };
@@ -142,6 +147,12 @@
 		18A4DA151C0CB645001CD648 /* Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Circle.m; sourceTree = "<group>"; };
 		18A4DA171C0CE1D9001CD648 /* DeadlineDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeadlineDetailController.h; sourceTree = "<group>"; };
 		18A4DA181C0CE1D9001CD648 /* DeadlineDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeadlineDetailController.m; sourceTree = "<group>"; };
+		18B031D31CDE62990086E9EC /* WebUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebUtil.h; path = Util/WebUtil.h; sourceTree = "<group>"; };
+		18B031D41CDE62990086E9EC /* WebUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebUtil.m; path = Util/WebUtil.m; sourceTree = "<group>"; };
+		18B031DA1CDE66B40086E9EC /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Model.h; path = Model/Model.h; sourceTree = "<group>"; };
+		18B031DB1CDE66B40086E9EC /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Model.m; path = Model/Model.m; sourceTree = "<group>"; };
+		18B031DE1CDE6C700086E9EC /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfo.h; path = Entity/UserInfo.h; sourceTree = "<group>"; };
+		18B031DF1CDE6C700086E9EC /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfo.m; path = Entity/UserInfo.m; sourceTree = "<group>"; };
 		18BAB9DD1C0CE79900B41D61 /* CreateProjectDeadlineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateProjectDeadlineController.h; sourceTree = "<group>"; };
 		18BAB9DE1C0CE79900B41D61 /* CreateProjectDeadlineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateProjectDeadlineController.m; sourceTree = "<group>"; };
 		18BAB9E01C0CE8A500B41D61 /* DeadlineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeadlineController.h; sourceTree = "<group>"; };
@@ -156,6 +167,10 @@
 		18BAB9F61C0D792E00B41D61 /* DeadlineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeadlineModel.m; sourceTree = "<group>"; };
 		18BAB9FA1C0D796600B41D61 /* Deadline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deadline.h; sourceTree = "<group>"; };
 		18BAB9FB1C0D796600B41D61 /* Deadline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deadline.m; sourceTree = "<group>"; };
+		18D910D41CE0C1EA0010218F /* GroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GroupModel.h; path = Model/GroupModel.h; sourceTree = "<group>"; };
+		18D910D51CE0C1EA0010218F /* GroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroupModel.m; path = Model/GroupModel.m; sourceTree = "<group>"; };
+		18D910D71CE0C2A50010218F /* CourseProjectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CourseProjectModel.h; path = Model/CourseProjectModel.h; sourceTree = "<group>"; };
+		18D910D81CE0C2A50010218F /* CourseProjectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CourseProjectModel.m; path = Model/CourseProjectModel.m; sourceTree = "<group>"; };
 		19FD0105F71C1C7F905E1A1F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C30F2E271CD2EB0500068C37 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		C30F2E281CD2EB0500068C37 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
@@ -262,6 +277,8 @@
 		189D2E3B1C05A105002A15D5 /* MyDDL */ = {
 			isa = PBXGroup;
 			children = (
+				18B031DD1CDE6C1E0086E9EC /* Entity */,
+				18B031D61CDE66530086E9EC /* Model */,
 				C3BDDE9B1CC7288000470886 /* Cells */,
 				18A4DA071C0C3914001CD648 /* DoneAndUndone */,
 				189D2E861C05A671002A15D5 /* Util */,
@@ -370,10 +387,10 @@
 		189D2E861C05A671002A15D5 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				18386BB11C08C83F00F44092 /* Information.h */,
-				18386BB21C08C83F00F44092 /* Information.m */,
 				18386BAE1C08BC4400F44092 /* Configuration.h */,
 				18386BAF1C08BC4400F44092 /* Configuration.m */,
+				18B031D31CDE62990086E9EC /* WebUtil.h */,
+				18B031D41CDE62990086E9EC /* WebUtil.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -407,7 +424,6 @@
 		18A4DA071C0C3914001CD648 /* DoneAndUndone */ = {
 			isa = PBXGroup;
 			children = (
-				18BAB9F91C0D795300B41D61 /* Entity */,
 				18BAB9F81C0D793F00B41D61 /* Model */,
 				1832468D1C0B59370002A61A /* DeadlineView.h */,
 				1832468E1C0B59370002A61A /* DeadlineView.m */,
@@ -433,6 +449,32 @@
 			name = DoneAndUndone;
 			sourceTree = "<group>";
 		};
+		18B031D61CDE66530086E9EC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18B031DA1CDE66B40086E9EC /* Model.h */,
+				18B031DB1CDE66B40086E9EC /* Model.m */,
+				18D910D41CE0C1EA0010218F /* GroupModel.h */,
+				18D910D51CE0C1EA0010218F /* GroupModel.m */,
+				18D910D71CE0C2A50010218F /* CourseProjectModel.h */,
+				18D910D81CE0C2A50010218F /* CourseProjectModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		18B031DD1CDE6C1E0086E9EC /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				18B031DE1CDE6C700086E9EC /* UserInfo.h */,
+				18B031DF1CDE6C700086E9EC /* UserInfo.m */,
+				18BAB9FA1C0D796600B41D61 /* Deadline.h */,
+				18BAB9FB1C0D796600B41D61 /* Deadline.m */,
+				188FA7BE1CE1F1F8009D3132 /* DeadlineDetail.h */,
+				188FA7BF1CE1F1F8009D3132 /* DeadlineDetail.m */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
 		18BAB9F81C0D793F00B41D61 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -440,15 +482,6 @@
 				18BAB9F61C0D792E00B41D61 /* DeadlineModel.m */,
 			);
 			name = Model;
-			sourceTree = "<group>";
-		};
-		18BAB9F91C0D795300B41D61 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				18BAB9FA1C0D796600B41D61 /* Deadline.h */,
-				18BAB9FB1C0D796600B41D61 /* Deadline.m */,
-			);
-			name = Entity;
 			sourceTree = "<group>";
 		};
 		6E2DB064BD097DE5C64ECFA0 /* Frameworks */ = {
@@ -596,13 +629,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				189D2E411C05A105002A15D5 /* AppDelegate.m in Sources */,
+				18D910D61CE0C1EA0010218F /* GroupModel.m in Sources */,
 				1832468F1C0B59370002A61A /* DeadlineView.m in Sources */,
+				18B031D51CDE62990086E9EC /* WebUtil.m in Sources */,
 				185C51EA1C0A00110034A88A /* AddProjectController.m in Sources */,
 				18A4DA0D1C0C434D001CD648 /* CreateDeadlineController.m in Sources */,
 				183246831C0AEE570002A61A /* CreateGroupController.m in Sources */,
 				189D2EB71C07001C002A15D5 /* Course.m in Sources */,
 				189D2ECB1C0772C1002A15D5 /* ProjectDetailTableViewController.m in Sources */,
-				18386BB31C08C83F00F44092 /* Information.m in Sources */,
 				185C51ED1C0A00270034A88A /* EditProjectController.m in Sources */,
 				189D2E5B1C05A171002A15D5 /* DoneViewController.m in Sources */,
 				18BAB9F11C0CF20B00B41D61 /* SearchDeadlineController.m in Sources */,
@@ -620,8 +654,10 @@
 				C3776A721CD2370B001B0FE5 /* QRcodeViewController.m in Sources */,
 				18BAB9DF1C0CE79900B41D61 /* CreateProjectDeadlineController.m in Sources */,
 				189D2EBA1C070029002A15D5 /* Project.m in Sources */,
+				188FA7C01CE1F1F8009D3132 /* DeadlineDetail.m in Sources */,
 				C38C68441CBDFFA300932369 /* FilterViewController.m in Sources */,
 				C3BDDEA11CC7298900470886 /* IntroCell.m in Sources */,
+				18B031E01CDE6C700086E9EC /* UserInfo.m in Sources */,
 				18386BB01C08BC4400F44092 /* Configuration.m in Sources */,
 				18BAB9F71C0D792E00B41D61 /* DeadlineModel.m in Sources */,
 				189D2EC81C076F80002A15D5 /* CourseDetailTableViewController.m in Sources */,
@@ -635,10 +671,12 @@
 				189D2EC51C076370002A15D5 /* GroupTableViewController.m in Sources */,
 				18386BAA1C0849AC00F44092 /* MainTabBarController.m in Sources */,
 				185C51E41C09F3B70034A88A /* AddCourseController.m in Sources */,
+				18D910D91CE0C2A50010218F /* CourseProjectModel.m in Sources */,
 				189D2EAC1C05B42E002A15D5 /* CourseAndProjectTableViewController.m in Sources */,
 				C3776A7E1CD24BD2001B0FE5 /* GroupSettingViewController.m in Sources */,
 				C3BDDE9A1CC6253800470886 /* SettingViewController.m in Sources */,
 				189D2EAD1C05B42E002A15D5 /* CourseTableViewController.m in Sources */,
+				18B031DC1CDE66B40086E9EC /* Model.m in Sources */,
 				18A4DA0A1C0C3944001CD648 /* AxisView.m in Sources */,
 				189D2EAF1C05B42E002A15D5 /* ProjectTableViewController.m in Sources */,
 				C30F2E291CD2EB0500068C37 /* RegisterViewController.m in Sources */,

@@ -30,19 +30,20 @@
         section.footerTitle = @"注：用户账号一经设定，无法修改。";
         // 账号
         row = [XLFormRowDescriptor formRowDescriptorWithTag:@"id" rowType:XLFormRowDescriptorTypeText];
-        row.title=@"账号";
-        row.value=@"123456";
+        row.title=[NSString stringWithFormat:@"%ld",[Model getInstance].userInfo.userId];;
+        
+        row.value=[Model getInstance].username;
         row.disabled=@(YES);
         [section addFormRow:row];
         //昵称
         row = [XLFormRowDescriptor formRowDescriptorWithTag:@"name" rowType:XLFormRowDescriptorTypeText];
         row.title=@"昵称";
-        row.value=@"hehe";
+        row.value=[Model getInstance].username;
         [section addFormRow:row];
         //密码
         row = [XLFormRowDescriptor formRowDescriptorWithTag:@"password" rowType:XLFormRowDescriptorTypePassword];
         row.title=@"密码";
-        row.value=@"123456";
+        row.value=@"123456";//密码在哪里？！
         [section addFormRow:row];
         
         
@@ -52,19 +53,19 @@
         // 账号
         row = [XLFormRowDescriptor formRowDescriptorWithTag:@"phone" rowType:XLFormRowDescriptorTypeText];
         row.title=@"电话";
-        row.value=@"18868101111";
+        row.value=[Model getInstance].userInfo.userPhone;
         [section addFormRow:row];
         //昵称
         row = [XLFormRowDescriptor formRowDescriptorWithTag:@"email" rowType:XLFormRowDescriptorTypeText];
         row.title=@"邮箱";
-        row.value=@"hehe@hotmail.com";
+        row.value=[Model getInstance].userInfo.userEmail;
         [section addFormRow:row];
         
         //头像
         section = [XLFormSectionDescriptor formSection];
         [form addFormSection:section];
         row = [XLFormRowDescriptor formRowDescriptorWithTag:@"kImage" rowType:XLFormRowDescriptorTypeImage title:@"头像"];
-        row.value = [UIImage imageNamed:@"pickImage_default"];
+        row.value = [UIImage imageNamed:@"pickImage_default"];//头像在哪呢？！
         [section addFormRow:row];
         
         self.form=form;//前面加了self = [super init];就可以用这一句了！！
@@ -107,6 +108,8 @@
 }
 
 - (void) saveEdit{
+    
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 

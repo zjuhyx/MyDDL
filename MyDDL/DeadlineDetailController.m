@@ -13,6 +13,8 @@
 #import "DoneViewController.h"
 #import "ImageDetailViewController.h"
 #import "QRcodeViewController.h"
+#import "WebUtil.h"
+#import "Configuration.h"
 
 @interface DeadlineDetailController ()
 
@@ -41,6 +43,7 @@
         self.deadlineController = deadlineController;
         self.deadline = deadline;
         self.navigationItem.title = deadline.name;
+        NSString *urlString = [NSString stringWithFormat:@"%@/deadline/%ld", [Configuration getConfiguration].serverAddress, deadline.deadlineId];
     }
     return self;
 }
@@ -86,7 +89,7 @@
             cell.textLabel.font = [UIFont systemFontOfSize:25];
             //cell.textLabel.textColor=_blueColor;
             
-            NSString *detailStr=self.deadline.owner.name;
+            NSString *detailStr=self.deadline.courseProjectName;
             NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
             cell.detailTextLabel.numberOfLines = 0;//要多行显示 则设置为零
             formatter.dateFormat = @"\n截止时间：yyyy/MM/dd HH:mm";
@@ -173,6 +176,10 @@
 }
 
 - (void)editDeadline {
+    //DeadlineModificationController2* deadlineModificationController=[DeadlineModificationController2 alloc];
+    //deadlineModificationController.deadline=_deadline;
+    //[self.navigationController pushViewController:deadlineModificationController animated:YES];
+    
     [self.navigationController pushViewController:[[EditDeadlineController alloc] initWithDeadlineController:self.deadlineController deadline:self.deadline] animated:YES];
 }
 

@@ -42,7 +42,6 @@
     Deadline *newDeadline = [[Deadline alloc] init];
     newDeadline.name = self.nameTextField.text;
     newDeadline.date = self.datePicker.date;
-    newDeadline.owner = self.deadlineOwner;
     newDeadline.detail = self.detailTextView.text;
     [deadlineModel addDeadline:newDeadline];
     self.deadlineController.dataIsChanged = YES;

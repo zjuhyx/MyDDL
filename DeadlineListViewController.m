@@ -68,6 +68,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    DeadlineDetailController *deadlineDetailController=[DeadlineDetailController alloc];
+//    deadlineDetailController.deadline=[data objectAtIndex:indexPath.row];
+//    [self.navigationController pushViewController:deadlineDetailController animated:YES];
     [self.navigationController pushViewController:[[DeadlineDetailController alloc] init] animated:YES];
 }
 

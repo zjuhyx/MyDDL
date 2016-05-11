@@ -8,7 +8,8 @@
 
 #import "SearchDeadlineController.h"
 #import "Configuration.h"
-
+#import "DeadlineCell.h"
+#import "DeadlineDetailController.h"
 
 @interface SearchDeadlineController ()
 
@@ -18,36 +19,18 @@
 
 @implementation SearchDeadlineController
 
-//- (instancetype)init {
-//    self = [super init];
-//    if (self) {
-//        self.navigationItem.title = @"搜索deadline";
-//        self.view.frame = [UIScreen mainScreen].bounds;
-//        self.view.backgroundColor = [Configuration getConfiguration].grayColor;
-//        
-//        CGSize screenSize = [UIScreen mainScreen].bounds.size;
-//        self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(5, 70, screenSize.width - 10, 35)];
-//        UISearchBar *searchBar = self.searchBar;
-//        searchBar.barStyle = UIBarStyleDefault;
-//        searchBar.placeholder = @"输入关键词来进行搜索";
-//        
-//        [self.view addSubview:self.searchBar];
-//    }
-//    return self;
-//}
-
 - (void)viewDidLoad{
     [super viewDidLoad];
     self.navigationItem.title = @"搜索deadline";
     
     
-    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width
-                                                                        , 44)];
+    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
     //searchBar.prompt=@"输入搜索关键词";
     searchBar.placeholder = @"输入搜索关键词";
     
     // 添加 searchbar 到 headerview
     self.tableView.tableHeaderView = searchBar;
+    searchBar.delegate=self;//加了这个才能输出搜索框中的数字！！
     
     // 用 searchbar 初始化 SearchDisplayController
     // 并把 searchDisplayController 和当前 controller 关联起来
@@ -58,31 +41,11 @@
     // searchResultsDelegate 就是 UITableViewDelegate
     searchDisplayController.searchResultsDelegate = self;
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"筛选" style:UIBarButtonItemStylePlain target:self action:@selector(filterData)];
+    //self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"筛选" style:UIBarButtonItemStylePlain target:self action:@selector(filterData)];
     
+    _dataList=[DeadlineModel getDeadlineModel].allDeadlines;
+    _showData=[DeadlineModel getDeadlineModel].allDeadlines;
 }
-
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-//    
-//    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width
-//                                                                           , 44)];
-//    //searchBar.prompt=@"输入搜索关键词";
-//    searchBar.placeholder = @"输入搜索关键词";
-//    
-//    // 添加 searchbar 到 headerview
-//    UIView *headerView = searchBar;
-//    
-//    // 用 searchbar 初始化 SearchDisplayController
-//    // 并把 searchDisplayController 和当前 controller 关联起来
-//    searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
-//    
-//    // searchResultsDataSource 就是 UITableViewDataSource
-//    searchDisplayController.searchResultsDataSource = self;
-//    // searchResultsDelegate 就是 UITableViewDelegate
-//    searchDisplayController.searchResultsDelegate = self;
-//    
-//    return headerView;
-//}
 
 /*
  * 如果原 TableView 和 SearchDisplayController 中的 TableView 的 delete 指向同一个对象
@@ -90,38 +53,77 @@
  */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (tableView == self.tableView) {
-        return data.count;
-    }else{
-        // 谓词搜索
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self contains [cd] %@",searchDisplayController.searchBar.text];
-        filterData =  [[NSArray alloc] initWithArray:[data filteredArrayUsingPredicate:predicate]];
-        return filterData.count;
-    }
+    return [_showData count]>0?[_showData count]:0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellId = @"mycell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    //static NSString *cellId = @"mycell";
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+
+    DeadlineCell *cell=[[DeadlineCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"reuseIdentifier"];
     
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-    }
+    Deadline* deadline=[_showData objectAtIndex:indexPath.row];
     
-    if (tableView == self.tableView) {
-        cell.textLabel.text = data[indexPath.row];
-    }else{
-        cell.textLabel.text = filterData[indexPath.row];
+    NSDate *date = [NSDate date];//获取当前时间
+    if(deadline.isCompleted==YES){
+        if([[deadline.date earlierDate:date] isEqualToDate:date]){
+            [cell setDDLStatus:2];//晚于现在的已完成
+        }
+        else{
+            [cell setDDLStatus:4];
+        }
     }
+    else{
+        if([[deadline.date earlierDate:date] isEqualToDate:date]){
+            [cell setDDLStatus:1];
+        }
+        else{
+            [cell setDDLStatus:3];
+        }
+    }
+        
+    cell.textLabel.text = deadline.name;
+    NSDateFormatter* dateFormat = [[NSDateFormatter alloc] init];//实例化一个NSDateFormatter对象
+    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];//设定时间格式
+    cell.detailTextLabel.text = [dateFormat stringFromDate:deadline.date];
     
     return cell;
 }
 
-//UISearchBar有个代理方法
-//- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
-//每次文字变化的时候就会调用
-//在这里处理数据然后重载UITableView就可以了
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    DeadlineDetailController *deadlineDetailController=[[DeadlineDetailController alloc]init];
+    deadlineDetailController.deadline=[_showData objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:deadlineDetailController animated:YES];
+}
+
+//-(void)searchBarSearchButtonClicked:(UISearchBar*) searchBar{
+//   
+//}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar{
+    _showData=[DeadlineModel getDeadlineModel].allDeadlines;
+    [self.tableView reloadData];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    if (searchText!=nil && searchText.length>0) {
+        _showData= [NSMutableArray array];
+        for (int i=0;i<_dataList.count;i++) {
+            Deadline* deadline=[_dataList objectAtIndex:i];
+            NSString *tempStr=deadline.name;
+            if ([tempStr rangeOfString:searchText options:NSCaseInsensitiveSearch].length >0 ) {
+                [_showData addObject:deadline];
+                NSLog(@"%lu",(unsigned long)[_showData count]);
+            }
+        }
+        [self.tableView reloadData];
+    }
+    else{
+        self.showData = [NSMutableArray arrayWithArray:_dataList];
+        [self.tableView reloadData];
+    }
+}
 
 - (void) filterData{
     FilterViewController *filterViewController = [[FilterViewController alloc] init];
