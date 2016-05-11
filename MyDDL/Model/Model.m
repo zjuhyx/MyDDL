@@ -95,4 +95,34 @@
     [self loginWithUsername:username password:password];
 }
 
+- (NSArray<Deadline *> *)getPushDeadlines {
+    NSMutableArray<Deadline *> *result = [[NSMutableArray alloc] init];
+    NSString *urlString = [NSString stringWithFormat:@"%@/user/%ld/pushDeadline", [Configuration getConfiguration].serverAddress, self.userInfo.userId];
+    NSDictionary *jsonObject = [WebUtil webAPICallWithGetMethod:urlString];
+    NSArray *pushDeadlinesJSON = [jsonObject objectForKey:@"result"];
+    for (NSDictionary *pushDeadlineJSON in pushDeadlinesJSON) {
+        Deadline *deadline = [[Deadline alloc] initWithJSON:pushDeadlineJSON];
+        [result addObject:deadline];
+    }
+    return result;
+}
+
+- (void)deletePushDeadline:(long)deadlineId {
+    NSString *urlString = [NSString stringWithFormat:@"%@/user/%ld/pushDeadline/%ld", [Configuration getConfiguration].serverAddress, self.userInfo.userId, deadlineId];
+    [WebUtil webAPICallWithDeleteMethod:urlString];
+}
+
+- (void)rejectPushDeadline:(long)deadlineId {
+    [self deletePushDeadline:deadlineId];
+}
+
+- (void)receivePushDeadline:(Deadline *)deadline {
+    [[DeadlineModel getDeadlineModel] addDeadline:deadline];
+    
+    [self deletePushDeadline:deadline.deadlineId];
+    NSString *urlString = [NSString stringWithFormat:@"%@/user/%ld/deadline", [Configuration getConfiguration].serverAddress, self.userInfo.userId];
+    NSDictionary *parameters = [NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%ld", deadline.deadlineId] forKey:@"deadlineId"];
+    [WebUtil webAPICallWithPutMethod:urlString parameters:parameters];
+}
+
 @end
