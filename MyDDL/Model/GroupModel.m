@@ -9,6 +9,7 @@
 #import "GroupModel.h"
 #import "Configuration.h"
 #import "WebUtil.h"
+#import "Model.h"
 
 @implementation GroupModel
 
@@ -71,7 +72,9 @@
     [group.deadlines addObject:deadline];
     
     long deadlineId = deadline.deadlineId;
-    NSDictionary *parameter = [NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%ld", deadlineId] forKey:@"deadlineId"];
+    NSMutableDictionary *parameter = [[NSMutableDictionary alloc] init];
+    [parameter setValue:[NSString stringWithFormat:@"%ld", deadlineId] forKey:@"deadlineId"];
+    [parameter setValue:[NSString stringWithFormat:@"%ld", [Model getInstance].userInfo.userId] forKey:@"userId"];
     NSString *urlString = [NSString stringWithFormat:@"%@/group/%ld/deadline", [Configuration getConfiguration].serverAddress, groupId];
     [WebUtil webAPICallWithPutMethod:urlString parameters:parameter];
 }
@@ -108,6 +111,17 @@
     
     NSString *urlString = [NSString stringWithFormat:@"%@/group/%ld/user/%ld", [Configuration getConfiguration].serverAddress, groupId, userId];
     [WebUtil webAPICallWithDeleteMethod:urlString];
+}
+
+- (NSArray<GroupMessage *> *)getGroupMessages:(long)groupId {
+    NSString *urlString = [NSString stringWithFormat:@"%@/group/%ld/message", [Configuration getConfiguration].serverAddress, groupId];
+    NSDictionary *jsonObject = [WebUtil webAPICallWithGetMethod:urlString];
+    NSArray *messages = [jsonObject objectForKey:@"result"];
+    NSMutableArray *result = [[NSMutableArray alloc] init];
+    for (NSDictionary *message in messages) {
+        [result addObject:[[GroupMessage alloc] initWithJSON:message]];
+    }
+    return result;
 }
 
 - (void)clearData {

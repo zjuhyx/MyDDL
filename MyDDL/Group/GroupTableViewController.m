@@ -80,7 +80,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if(buttonIndex==1){
         //- (void)addGroupDeadlineWithGroupId:(long)groupId deadlineId:(long)deadlineId;
-        [[GroupModel getInstance] addGroupDeadlineWithGroupId:_groupId deadlineId:_deadlineId];
+//        [[GroupModel getInstance] addGroupDeadlineWithGroupId:_groupId deadlineId:_deadlineId];
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
