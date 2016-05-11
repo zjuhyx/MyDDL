@@ -126,7 +126,7 @@
 
 - (void)toLogin {
     [Information getInformation].username = self.usernameTextField.text;
-
+    
     MainTabBarController *mainViewController = [[MainTabBarController alloc] init];
     mainViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;//设置动画效果
     [self presentViewController:mainViewController animated:YES completion:^{//备注2
