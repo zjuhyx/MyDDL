@@ -22,7 +22,6 @@
     self = [super initWithStyle:UITableViewStyleGrouped];
     if (self) {
         self.group = group;
-        
         self.navigationItem.title = group.name;
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(toEdit)];
     }
@@ -133,7 +132,10 @@
         [self.navigationController pushViewController:[[UpdatesTableViewController alloc] init] animated:YES];
     }
     else if (indexPath.section == 2) {
-        [self.navigationController pushViewController:[[DeadlineListViewController alloc] init] animated:YES];
+        DeadlineListViewController* deadlineListViewController=[DeadlineListViewController alloc];
+        deadlineListViewController.dataArray=_group.deadlines;
+        deadlineListViewController=[deadlineListViewController init];
+        [self.navigationController pushViewController:deadlineListViewController animated:YES];
     }
     else if(indexPath.section==3){
         UserDetailViewController* userDetailViewController=[UserDetailViewController alloc];

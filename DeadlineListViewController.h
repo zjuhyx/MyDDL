@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Deadline.h"
 
 @interface DeadlineListViewController : UITableViewController
 
-@property (nonatomic, retain) NSMutableArray *dataArray; 
+@property (nonatomic, retain) NSMutableArray<Deadline*>* dataArray;
 
 @end

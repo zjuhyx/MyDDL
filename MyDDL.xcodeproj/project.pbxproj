@@ -59,7 +59,6 @@
 		C3776A751CD23DED001B0FE5 /* NoticeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3776A741CD23DED001B0FE5 /* NoticeTableViewController.m */; };
 		C3776A781CD24657001B0FE5 /* UpdatesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3776A771CD24657001B0FE5 /* UpdatesTableViewController.m */; };
 		C3776A7B1CD246ED001B0FE5 /* GroupDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3776A7A1CD246ED001B0FE5 /* GroupDetailTableViewController.m */; };
-		C38C68441CBDFFA300932369 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38C68431CBDFFA300932369 /* FilterViewController.m */; };
 		C3BDDE8E1CBE3A4600470886 /* DeadlineModificationController2.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDE8D1CBE3A4600470886 /* DeadlineModificationController2.m */; };
 		C3BDDE911CC1BCFB00470886 /* DeleteDeadlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDE901CC1BCFB00470886 /* DeleteDeadlineViewController.m */; };
 		C3BDDE971CC6209700470886 /* CourseProjectModificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDE961CC6209700470886 /* CourseProjectModificationViewController.m */; };
@@ -175,8 +174,6 @@
 		C3776A771CD24657001B0FE5 /* UpdatesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatesTableViewController.m; sourceTree = "<group>"; };
 		C3776A791CD246ED001B0FE5 /* GroupDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupDetailTableViewController.h; sourceTree = "<group>"; };
 		C3776A7A1CD246ED001B0FE5 /* GroupDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupDetailTableViewController.m; sourceTree = "<group>"; };
-		C38C68421CBDFFA300932369 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
-		C38C68431CBDFFA300932369 /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
 		C3BDDE8C1CBE3A4600470886 /* DeadlineModificationController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeadlineModificationController2.h; sourceTree = "<group>"; };
 		C3BDDE8D1CBE3A4600470886 /* DeadlineModificationController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeadlineModificationController2.m; sourceTree = "<group>"; };
 		C3BDDE8F1CC1BCFB00470886 /* DeleteDeadlineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteDeadlineViewController.h; sourceTree = "<group>"; };
@@ -352,8 +349,6 @@
 				18BAB9DE1C0CE79900B41D61 /* CreateProjectDeadlineController.m */,
 				18BAB9EF1C0CF20B00B41D61 /* SearchDeadlineController.h */,
 				18BAB9F01C0CF20B00B41D61 /* SearchDeadlineController.m */,
-				C38C68421CBDFFA300932369 /* FilterViewController.h */,
-				C38C68431CBDFFA300932369 /* FilterViewController.m */,
 			);
 			name = Undone;
 			sourceTree = "<group>";
@@ -630,7 +625,6 @@
 				18BAB9DF1C0CE79900B41D61 /* CreateProjectDeadlineController.m in Sources */,
 				189D2EBA1C070029002A15D5 /* Project.m in Sources */,
 				188FA7C01CE1F1F8009D3132 /* Deadline.m in Sources */,
-				C38C68441CBDFFA300932369 /* FilterViewController.m in Sources */,
 				C3BDDEA11CC7298900470886 /* IntroCell.m in Sources */,
 				18B031E01CDE6C700086E9EC /* UserInfo.m in Sources */,
 				18386BB01C08BC4400F44092 /* Configuration.m in Sources */,

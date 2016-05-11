@@ -125,11 +125,11 @@
     }
 }
 
-- (void) filterData{
-    FilterViewController *filterViewController = [[FilterViewController alloc] init];
-    [self presentViewController:filterViewController animated:YES completion:^{//备注2
-        NSLog(@"show InfoView!");
-    }];
-}
+//- (void) filterData{
+//    FilterViewController *filterViewController = [[FilterViewController alloc] init];
+//    [self presentViewController:filterViewController animated:YES completion:^{//备注2
+//        NSLog(@"show InfoView!");
+//    }];
+//}
 
 @end

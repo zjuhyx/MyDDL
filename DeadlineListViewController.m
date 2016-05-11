@@ -28,7 +28,7 @@
     [super viewDidLoad];
     
     self.navigationItem.title=@"Deadline列表";
-    _dataArray = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5",nil];
+    //_dataArray = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5",nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,14 +55,31 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     DeadlineCell *cell=[[DeadlineCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"reuseIdentifier"];
-    NSInteger n=[_dataArray count];
-    if(indexPath.row<=4 && indexPath.row>0)
-        [cell setDDLStatus:indexPath.row];
+    
+    Deadline* deadline=[_dataArray objectAtIndex:indexPath.row];
+    
+    NSDate *date = [NSDate date];//获取当前时间
+    if(deadline.isCompleted==YES){
+        if([[deadline.date earlierDate:date] isEqualToDate:date]){
+            [cell setDDLStatus:2];//晚于现在的已完成
+        }
+        else{
+            [cell setDDLStatus:4];
+        }
+    }
     else{
-        [cell setDDLStatus:1];
+        if([[deadline.date earlierDate:date] isEqualToDate:date]){
+            [cell setDDLStatus:1];
+        }
+        else{
+            [cell setDDLStatus:3];
+        }
     }
     
-    cell.textLabel.text = [_dataArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = deadline.name;
+    NSDateFormatter* dateFormat = [[NSDateFormatter alloc] init];//实例化一个NSDateFormatter对象
+    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];//设定时间格式
+    cell.detailTextLabel.text = [dateFormat stringFromDate:deadline.date];
     
     return cell;
 }
