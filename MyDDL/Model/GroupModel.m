@@ -66,24 +66,46 @@
     [WebUtil webAPICallWithDeleteMethod:urlString];
 }
 
-- (void)addGroupDeadlineWithGroupId:(long)groupId deadlineId:(long)deadlineId {
+- (void)addGroupDeadlineWithGroupId:(long)groupId deadline:(Deadline *)deadline {
+    Group *group = [self getGroupById:groupId];
+    [group.deadlines addObject:deadline];
+    
+    long deadlineId = deadline.deadlineId;
     NSDictionary *parameter = [NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%ld", deadlineId] forKey:@"deadlineId"];
     NSString *urlString = [NSString stringWithFormat:@"%@/group/%ld/deadline", [Configuration getConfiguration].serverAddress, groupId];
     [WebUtil webAPICallWithPutMethod:urlString parameters:parameter];
 }
 
 - (void)deleteGroupDeadlineByGroupId:(long)groupId deadlineId:(long)deadlineId {
+    Group *group = [self getGroupById:groupId];
+    for (int i = 0; i < group.deadlines.count; ++i) {
+        if (group.deadlines[i].deadlineId == deadlineId) {
+            [group.deadlines removeObjectAtIndex:i];
+        }
+    }
+    
     NSString *urlString = [NSString stringWithFormat:@"%@/group/%ld/deadline/%ld", [Configuration getConfiguration].serverAddress, groupId, deadlineId];
     [WebUtil webAPICallWithDeleteMethod:urlString];
 }
 
-- (void)addGroupUserWithGroupId:(long)groupId userId:(long)userId {
+- (void)addGroupUserWithGroupId:(long)groupId user:(UserInfo *)user {
+    Group *group = [self getGroupById:groupId];
+    [group.members addObject:user];
+    
+    long userId = user.userId;
     NSDictionary *parameter = [NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%ld", userId] forKey:@"userId"];
     NSString *urlString = [NSString stringWithFormat:@"%@/group/%ld/user", [Configuration getConfiguration].serverAddress, groupId];
     [WebUtil webAPICallWithPutMethod:urlString parameters:parameter];
 }
 
 - (void)deleteGroupUserByGroupId:(long)groupId userId:(long)userId {
+    Group *group = [self getGroupById:groupId];
+    for (int i = 0; i < group.members.count; ++i) {
+        if (group.members[i].userId == userId) {
+            [group.members removeObjectAtIndex:i];
+        }
+    }
+    
     NSString *urlString = [NSString stringWithFormat:@"%@/group/%ld/user/%ld", [Configuration getConfiguration].serverAddress, groupId, userId];
     [WebUtil webAPICallWithDeleteMethod:urlString];
 }
