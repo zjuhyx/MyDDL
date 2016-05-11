@@ -66,4 +66,10 @@
     [WebUtil webAPICallWithDeleteMethod:urlString];
 }
 
+- (void)addGroupDeadlineWithGroupId:(long)groupId deadlineId:(long)deadlineId {
+    NSDictionary *parameter = [NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%ld", deadlineId] forKey:@"deadlineId"];
+    NSString *urlString = [NSString stringWithFormat:@"%@/group/%ld/deadline", [Configuration getConfiguration].serverAddress, groupId];
+    [WebUtil webAPICallWithPutMethod:urlString parameters:parameter];
+}
+
 @end
