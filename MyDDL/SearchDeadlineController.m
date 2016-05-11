@@ -9,7 +9,6 @@
 #import "SearchDeadlineController.h"
 #import "Configuration.h"
 
-
 @interface SearchDeadlineController ()
 
 @property (nonatomic) UISearchBar *searchBar;

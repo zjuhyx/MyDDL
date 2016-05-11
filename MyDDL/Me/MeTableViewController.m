@@ -56,10 +56,11 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     NSString *username = [Model getInstance].username;
+    NSString *userid = [NSString stringWithFormat:@"账号：%ld",[Model getInstance].userInfo.userId];
     
     if (indexPath.section == 0) {
         IntroCell *intro_cell = [[IntroCell alloc] init];
-        [intro_cell setCellLabel1:username label2:@"账号：624509"];
+        [intro_cell setCellLabel1:username label2:userid];
         [intro_cell setCellImage:nil imageName:@"avatar_default"];
         
         UITapGestureRecognizer* singleRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickImage)];

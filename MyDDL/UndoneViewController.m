@@ -35,6 +35,7 @@
 
 - (void)addDeadline {
     [self.navigationController pushViewController:[[CreateDeadlineController alloc] initWithDeadlineController:self] animated:YES];
+    
 //    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"创建课程deadline", @"创建项目deadline", nil];
 //    actionSheet.tag=1;
 //    [actionSheet showInView:self.view];
