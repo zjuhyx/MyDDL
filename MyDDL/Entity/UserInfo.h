@@ -6,15 +6,17 @@
 //  Copyright © 2016 柯瀚仰. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface UserInfo : NSObject
 
 @property (nonatomic) long userId;
 @property (nonatomic) NSString *userName;
-@property (nonatomic) NSString *userImage;
+@property (nonatomic) UIImage *userImage;
 @property (nonatomic) NSString *userPhone;
 @property (nonatomic) NSString *userEmail;
 @property (nonatomic) int mainScreenImage;
+
+- (instancetype)initWithJSON:(NSDictionary *)json;
 
 @end

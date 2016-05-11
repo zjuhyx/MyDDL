@@ -49,14 +49,7 @@
     NSDictionary *jsonResult = [jsonObject objectForKey:@"result"];
     
     self.username = [NSString stringWithString:username];
-    self.userInfo = [[UserInfo alloc] init];
-    UserInfo *userInfo = self.userInfo;
-    userInfo.userId = [[jsonResult objectForKey:@"userId"] longValue];
-    userInfo.userName = [jsonResult objectForKey:@"userName"];
-    userInfo.userImage = [jsonResult objectForKey:@"userImage"];
-    userInfo.userPhone = [jsonResult objectForKey:@"userPhone"];
-    userInfo.userEmail = [jsonResult objectForKey:@"userEmail"];
-    userInfo.mainScreenImage = [[jsonResult objectForKey:@"mainScreenImage"] intValue];
+    self.userInfo = [[UserInfo alloc] initWithJSON:jsonResult];
     
     NSArray *deadlines = [jsonResult objectForKey:@"deadlines"];
     for (NSDictionary *deadline in deadlines) {
