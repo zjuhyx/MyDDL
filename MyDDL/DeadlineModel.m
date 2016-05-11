@@ -125,6 +125,9 @@
 
 - (void)addDeadline:(Deadline *)deadline {
     [self.allDeadlines addObject:deadline];
+    
+    NSString *urlString = [NSString stringWithFormat:@"%@/deadline", [Configuration getConfiguration].serverAddress];
+    [WebUtil webAPICallWithPutMethod:urlString parameters:[deadline toDictionary]];
 }
 
 - (Deadline *)getDeadlineById:(long)deadlineId {
@@ -142,22 +145,30 @@
             self.allDeadlines[i] = deadline;
         }
     }
+    NSDictionary *parameters = [deadline toDictionary];
+    NSString *urlString = [NSString stringWithFormat:@"%@/deadline/%ld", [Configuration getConfiguration].serverAddress, deadline.deadlineId];
+    [WebUtil webAPICallWithPostMethod:urlString parameters:parameters];
 }
 
-- (void)removeDeadlineById:(NSInteger)deadlineId {
+- (void)removeDeadlineById:(long)deadlineId {
     for (int i = 0; i < self.allDeadlines.count; i++) {
         if (self.allDeadlines[i].deadlineId == deadlineId) {
             [self.allDeadlines removeObjectAtIndex:i];
         }
     }
+    NSString *urlString = [NSString stringWithFormat:@"%@/deadline/%ld", [Configuration getConfiguration].serverAddress, deadlineId];
+    [WebUtil webAPICallWithDeleteMethod:urlString];
 }
 
-- (void)completeDeadline:(NSInteger)deadlineId {
+- (void)completeDeadline:(long)deadlineId {
     for (int i = 0; i < self.allDeadlines.count; i++) {
         if (self.allDeadlines[i].deadlineId == deadlineId) {
             self.allDeadlines[i].isCompleted = YES;
         }
     }
+    NSString *urlString = [NSString stringWithFormat:@"%@/deadline/%ld", [Configuration getConfiguration].serverAddress, deadlineId];
+    NSDictionary *parameters = [NSDictionary dictionaryWithObject:@"complete" forKey:@"true"];
+    [WebUtil webAPICallWithPostMethod:urlString parameters:parameters];
 }
 
 

@@ -7,6 +7,7 @@
 //
 
 #import "Deadline.h"
+#import "Configuration.h"
 
 @implementation Deadline
 
@@ -15,6 +16,7 @@
     
     _deadlineId = [[json objectForKey:@"deadlineId"] intValue];
     _name = [json objectForKey:@"deadlineName"];
+    _courseProjectId = [[[json objectForKey:@"courseProject"] objectForKey:@"courseProjectId"] intValue];
     _courseProjectName = [[json objectForKey:@"courseProject"] objectForKey:@"courseProjectName"];
     _courseProjectType = [[json objectForKey:@"courseProject"] objectForKey:@"courseProjectType"];
     _contactName = [json objectForKey:@"contactName"];
@@ -23,14 +25,29 @@
     _detail = [json objectForKey:@"deadlineNote"];
     _isCompleted = [[json objectForKey:@"complete"] intValue];
     
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    NSTimeZone *timeZone = [NSTimeZone localTimeZone];
-    [formatter setTimeZone:timeZone];
-    [formatter setDateFormat : @"yyyy-MM-dd/HH:mm"];
+    NSDateFormatter *formatter = [Configuration getConfiguration].formatter;
     _date = [formatter dateFromString:[json objectForKey:@"time"]];
     
-    
     return self;
+}
+
+- (NSDictionary *)toDictionary {
+    NSMutableDictionary *result = [[NSMutableDictionary alloc] init];
+    [result setValue:[NSString stringWithFormat:@"%ld", _deadlineId] forKey:@"deadlineId"];
+    [result setValue:_name forKey:@"deadlineName"];
+    [result setValue:[NSString stringWithFormat:@"%ld", _courseProjectId] forKey:@"courseProjectId"];
+    [result setValue:_contactName forKey:@"contactName"];
+    [result setValue:_contactPhone forKey:@"contactPhone"];
+    [result setValue:_contactEmail forKey:@"contactEmail"];
+    [result setValue:_detail forKey:@"deadlineNote"];
+    
+    NSString *complete = _isCompleted ? @"true" : @"false";
+    [result setValue:complete forKey:@"complete"];
+    
+    NSDateFormatter *formatter = [Configuration getConfiguration].formatter;
+    NSString *time = [formatter stringFromDate:_date];
+    [result setValue:time forKey:@"time"];
+    return result;
 }
 
 @end

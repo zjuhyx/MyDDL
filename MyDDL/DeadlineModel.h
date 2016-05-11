@@ -20,7 +20,7 @@
 - (void)addDeadline:(Deadline *)deadline;
 - (Deadline *)getDeadlineById:(long)deadlineId;
 - (void)changeDeadline:(Deadline *)deadline;
-- (void)removeDeadlineById:(NSInteger)deadlineId;
-- (void)completeDeadline:(NSInteger)deadlineId;
+- (void)removeDeadlineById:(long)deadlineId;
+- (void)completeDeadline:(long)deadlineId;
 
 @end

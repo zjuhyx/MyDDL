@@ -19,6 +19,8 @@
 
 @property (nonatomic, readonly) NSString *serverAddress;
 
+@property (nonatomic, readonly) NSDateFormatter *formatter;
+
 + (Configuration *)getConfiguration;
 
 @end

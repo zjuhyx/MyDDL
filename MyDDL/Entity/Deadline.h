@@ -13,6 +13,7 @@
 @property (nonatomic) long deadlineId;
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSDate *date;
+@property (nonatomic) long courseProjectId;
 @property (nonatomic) NSString *courseProjectName;
 @property (nonatomic) NSString *courseProjectType;
 @property (nonatomic) NSString *contactName;
@@ -22,5 +23,6 @@
 @property (nonatomic) bool isCompleted;
 
 - (instancetype)initWithJSON:(NSDictionary *)json;
+- (NSDictionary *)toDictionary;
 
 @end

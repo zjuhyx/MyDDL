@@ -12,5 +12,8 @@
 
 + (NSDictionary *)webAPICallWithRequest:(NSURLRequest *)request;
 + (NSDictionary *)webAPICallWithGetMethod:(NSString *)urlString;
++ (NSDictionary *)webAPICallWithDeleteMethod:(NSString *)urlString;
++ (NSDictionary *)webAPICallWithPostMethod:(NSString *)urlString parameters:(NSDictionary *)parameters;
++ (NSDictionary *)webAPICallWithPutMethod:(NSString *)urlString parameters:(NSDictionary *)parameters;
 
 @end
