@@ -68,8 +68,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.section==0 && indexPath.row==0){
         IntroCell *intro_cell = [[IntroCell alloc] init];
-        [intro_cell setCellLabel1:self.group.name label2:@"xx课程"];
-        [intro_cell setCellImage:self.group.avatar imageName:nil];
+        [intro_cell setCellLabel1:_group.name label2:[NSString stringWithFormat:@"群号：%ld",_group.groupId]];
+        [intro_cell setCellImage:_group.avatar imageName:nil];
         
         UITapGestureRecognizer* singleRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickImage)];
         singleRecognizer.numberOfTapsRequired = 1; // 单击

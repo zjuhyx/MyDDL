@@ -21,6 +21,7 @@
     self = [super initWithDeadlineController:deadlineController];
     if (self) {
         self.navigationItem.title = @"创建deadline";
+        [self afterInit];
     }
     return self;
 }
@@ -52,9 +53,9 @@
 - (void)commit {
     DeadlineModel *deadlineModel = [DeadlineModel getDeadlineModel];
     Deadline *newDeadline = [[Deadline alloc] init];
-    newDeadline.name = self.nameTextField.text;
-    newDeadline.date = self.datePicker.date;
-    newDeadline.detail = self.detailTextView.text;
+    newDeadline.name = [self.form formRowWithTag:@"title"].value;
+    newDeadline.date = [self.form formRowWithTag:@"date"].value;
+    newDeadline.detail = [self.form formRowWithTag:@"detail"].value;
     [deadlineModel addDeadline:newDeadline];
     self.deadlineController.dataIsChanged = YES;
     [self.navigationController popToRootViewControllerAnimated:YES];

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		183246831C0AEE570002A61A /* BeforeCreateGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183246821C0AEE570002A61A /* BeforeCreateGroupViewController.m */; };
 		1832468F1C0B59370002A61A /* DeadlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1832468E1C0B59370002A61A /* DeadlineView.m */; };
 		18386BAA1C0849AC00F44092 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18386BA91C0849AC00F44092 /* MainTabBarController.m */; };
 		18386BAD1C08B3A000F44092 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18386BAC1C08B3A000F44092 /* LoginViewController.m */; };
@@ -73,8 +72,6 @@
 
 /* Begin PBXFileReference section */
 		0614B55CD2387BAFD9CC2075 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		183246811C0AEE570002A61A /* BeforeCreateGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeforeCreateGroupViewController.h; path = Group/BeforeCreateGroupViewController.h; sourceTree = "<group>"; };
-		183246821C0AEE570002A61A /* BeforeCreateGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BeforeCreateGroupViewController.m; path = Group/BeforeCreateGroupViewController.m; sourceTree = "<group>"; };
 		1832468D1C0B59370002A61A /* DeadlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeadlineView.h; sourceTree = "<group>"; };
 		1832468E1C0B59370002A61A /* DeadlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeadlineView.m; sourceTree = "<group>"; };
 		18386BA81C0849AC00F44092 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
@@ -323,8 +320,6 @@
 				189D2EC41C076370002A15D5 /* GroupTableViewController.m */,
 				C3776A791CD246ED001B0FE5 /* GroupDetailTableViewController.h */,
 				C3776A7A1CD246ED001B0FE5 /* GroupDetailTableViewController.m */,
-				183246811C0AEE570002A61A /* BeforeCreateGroupViewController.h */,
-				183246821C0AEE570002A61A /* BeforeCreateGroupViewController.m */,
 				C3BDDEAE1CC75A2500470886 /* UserDetailViewController.h */,
 				C3BDDEAF1CC75A2500470886 /* UserDetailViewController.m */,
 			);
@@ -603,7 +598,6 @@
 				18B031D51CDE62990086E9EC /* WebUtil.m in Sources */,
 				185C51EA1C0A00110034A88A /* AddProjectController.m in Sources */,
 				18A4DA0D1C0C434D001CD648 /* CreateDeadlineController.m in Sources */,
-				183246831C0AEE570002A61A /* BeforeCreateGroupViewController.m in Sources */,
 				189D2EB71C07001C002A15D5 /* Course.m in Sources */,
 				189D2ECB1C0772C1002A15D5 /* ProjectDetailTableViewController.m in Sources */,
 				185C51ED1C0A00270034A88A /* EditProjectController.m in Sources */,

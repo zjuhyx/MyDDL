@@ -90,8 +90,10 @@
     XLFormRowDescriptor* row=[self.form formRowWithTag:@"name"];
     NSLog(row.value);
     row=[self.form formRowWithTag:@"image"];
-    row=[self.form formRowWithTag:@"nickname"];
-    row=[self.form formRowWithTag:@"leader"];
+    if(_isCreate==NO){
+        row=[self.form formRowWithTag:@"nickname"];
+        row=[self.form formRowWithTag:@"leader"];
+    }
 
     [self.navigationController popViewControllerAnimated:YES];
 }

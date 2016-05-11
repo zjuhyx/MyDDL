@@ -48,9 +48,11 @@
 - (void)commit {
     DeadlineModel *deadlineModel = [DeadlineModel getDeadlineModel];
     Deadline *editedDeadline = self.deadline;
-    editedDeadline.name = self.nameTextField.text;
-    editedDeadline.date = self.datePicker.date;
-    editedDeadline.detail = self.detailTextView.text;
+    editedDeadline.name = [self.form formRowWithTag:@"title"].value;
+    editedDeadline.date = [self.form formRowWithTag:@"date"].value;
+    editedDeadline.detail = [self.form formRowWithTag:@"detail"].value;
+    //NSLog(@"%@, %@", [self.form formRowWithTag:@"date"].value, [self.form formRowWithTag:@"time"].value);
+    //"date"和"time"是一样的
     [deadlineModel changeDeadline:editedDeadline];
     self.deadlineController.dataIsChanged = YES;
     [self.navigationController popToRootViewControllerAnimated:YES];
