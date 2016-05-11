@@ -51,14 +51,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
     
-    //NSArray<NSString *> *groupName = @[@"毛概讨论组", @"软件工程小组", @"省创", @"国创"];
-    //NSArray<NSString *> *groupImageName = @[@"毛概讨论组", @"软件工程小组", @"省创", @"group_default"];
-    
     cell.textLabel.text = _groups[indexPath.row].name;
-    if(_isShare){
-        cell.userInteractionEnabled=NO;
-    }
-    else{
+    if(_isShare==NO){
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     //cell.imageView.image = [UIImage imageNamed:groupImageName[indexPath.row]];
@@ -73,6 +67,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if(_isShare==YES){
+        _groupId=_groups[indexPath.row].groupId;
         UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:nil message:@"确定共享该deadline？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
         [alertview show];
     }
@@ -84,7 +79,8 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if(buttonIndex==1){
-        //。。。
+        //- (void)addGroupDeadlineWithGroupId:(long)groupId deadlineId:(long)deadlineId;
+        [[GroupModel getInstance] addGroupDeadlineWithGroupId:_groupId deadlineId:_deadlineId];
         [self.navigationController popViewControllerAnimated:YES];
     }
 }

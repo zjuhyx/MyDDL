@@ -14,4 +14,7 @@
 @property(nonatomic)NSArray<Group*>* groups;
 @property(nonatomic)bool isShare;
 
+@property(nonatomic)long groupId;
+@property(nonatomic)long deadlineId;
+
 @end
