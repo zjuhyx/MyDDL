@@ -9,6 +9,8 @@
 #import "XLForm.h"
 #import "XLFormViewController.h"
 
+#import "Model.h"
+
 @interface SettingViewController : XLFormViewController
 
 @end

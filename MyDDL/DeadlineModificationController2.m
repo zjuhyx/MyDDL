@@ -36,6 +36,7 @@ NSString *const kCountDownTimer = @"countDownTimer";
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(commit)];
         _deadlineController = deadlineController;
         
+        
         XLFormDescriptor * form;
         XLFormSectionDescriptor * section;
         XLFormRowDescriptor * row;
@@ -49,6 +50,7 @@ NSString *const kCountDownTimer = @"countDownTimer";
         row = [XLFormRowDescriptor formRowDescriptorWithTag:@"title" rowType:XLFormRowDescriptorTypeText];
         [row.cellConfig setObject:[UIFont systemFontOfSize:20] forKey:@"textField.font"];
         [row.cellConfigAtConfigure setObject:@"标题" forKey:@"textField.placeholder"];
+        row.value=_deadline.name;
         
         [section addFormRow:row];
         

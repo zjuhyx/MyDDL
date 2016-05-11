@@ -173,6 +173,10 @@
 }
 
 - (void)editDeadline {
+    //DeadlineModificationController2* deadlineModificationController=[DeadlineModificationController2 alloc];
+    //deadlineModificationController.deadline=_deadline;
+    //[self.navigationController pushViewController:deadlineModificationController animated:YES];
+    
     [self.navigationController pushViewController:[[EditDeadlineController alloc] initWithDeadlineController:self.deadlineController deadline:self.deadline] animated:YES];
 }
 
