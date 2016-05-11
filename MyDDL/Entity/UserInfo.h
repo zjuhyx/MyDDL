@@ -17,4 +17,6 @@
 @property (nonatomic) NSString *userEmail;
 @property (nonatomic) int mainScreenImage;
 
+- (instancetype)initWithJSON:(NSDictionary *)json;
+
 @end

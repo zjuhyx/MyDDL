@@ -15,5 +15,6 @@
 
 + (instancetype)getInstance;
 - (Group *)getGroupById:(long)groupId;
+- (Group *)getGroupDetailById:(long)groupId;
 
 @end

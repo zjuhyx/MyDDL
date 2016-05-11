@@ -7,6 +7,8 @@
 //
 
 #import "GroupModel.h"
+#import "Configuration.h"
+#import "WebUtil.h"
 
 @implementation GroupModel
 
@@ -31,6 +33,13 @@
         }
     }
     return nil;
+}
+
+- (Group *)getGroupDetailById:(long)groupId {
+    NSString *urlString = [NSString stringWithFormat:@"%@/group/%ld", [Configuration getConfiguration].serverAddress, groupId];
+    NSDictionary *jsonObject = [WebUtil webAPICallWithGetMethod:urlString];
+    NSDictionary *json = [jsonObject objectForKey:@"result"];
+    return [[Group alloc] initWithJSON:json];
 }
 
 @end

@@ -60,7 +60,6 @@
 
 - (void)loadDeadlineViews {
     [self.scrollView removeFromSuperview];
-    
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.frame];
     [self.view addSubview:scrollView];
     self.scrollView = scrollView;

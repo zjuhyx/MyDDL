@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "Deadline.h"
-#import "Person.h"
+#import "UserInfo.h"
 
 @interface Group : NSObject
 
 @property (nonatomic) long groupId;
 @property (nonatomic) NSString *name;
 @property (nonatomic) UIImage *avatar;
-@property (nonatomic) NSArray<Deadline *> *deadlines;
-@property (nonatomic) NSArray<Person *> *members;
+@property (nonatomic) NSMutableArray<Deadline *> *deadlines;
+@property (nonatomic) NSMutableArray<UserInfo *> *members;
 
 - (instancetype)initWithName:(NSString *)name deadlines:(NSArray *)deadlines;
 - (instancetype)initWithJSON:(NSDictionary *)json;
