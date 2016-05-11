@@ -51,6 +51,8 @@ NSString *const kCountDownTimer = @"countDownTimer";
         [row.cellConfig setObject:[UIFont systemFontOfSize:20] forKey:@"textField.font"];
         [row.cellConfigAtConfigure setObject:@"标题" forKey:@"textField.placeholder"];
         row.value=_deadline.name;
+        NSLog(@"hehehe");
+        NSLog(_deadline.name);
         
         [section addFormRow:row];
         
@@ -93,22 +95,25 @@ NSString *const kCountDownTimer = @"countDownTimer";
         
         //section2
         section = [XLFormSectionDescriptor formSectionWithTitle:@"联系信息"];
-        //section.footerTitle = @"This is a long text that will appear on section footer";
         [form addFormSection:section];
         //联系人
         row = [XLFormRowDescriptor formRowDescriptorWithTag:@"teacher" rowType:XLFormRowDescriptorTypeText title:@"联系人"];
         [row.cellConfigAtConfigure setObject:@"（选填）" forKey:@"textField.placeholder"];
+        row.value=_deadline.contactName;
         
         [section addFormRow:row];
         //联系方式-手机
         row = [XLFormRowDescriptor formRowDescriptorWithTag:@"integer" rowType:XLFormRowDescriptorTypeInteger title:@"联系电话"];
         [row.cellConfigAtConfigure setObject:@"（选填）" forKey:@"textField.placeholder"];
+        row.value=_deadline.contactPhone;
         [section addFormRow:row];
+        
         // Email
         row = [XLFormRowDescriptor formRowDescriptorWithTag:@"email" rowType:XLFormRowDescriptorTypeEmail title:@"邮箱"];
         [row.cellConfigAtConfigure setObject:@"（选填）" forKey:@"textField.placeholder"];
         // validate the email
         [row addValidator:[XLFormValidator emailValidator]];
+        row.value=_deadline.contactEmail;
         [section addFormRow:row];
         
         //section3

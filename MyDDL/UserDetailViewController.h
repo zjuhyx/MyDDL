@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Person.h"
 
 @interface UserDetailViewController : UITableViewController
 
-@property(nonatomic)UIImage *avater_image;
+@property(nonatomic)UIImage* avater_image;
+@property(nonatomic)Person* user;
 
 @end

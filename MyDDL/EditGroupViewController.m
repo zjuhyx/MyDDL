@@ -30,16 +30,17 @@
         row = [XLFormRowDescriptor formRowDescriptorWithTag:@"name" rowType:XLFormRowDescriptorTypeText];
         row.title=@"群名称";
         if(_isCreate==NO){
-            row.value=@"hehe";
+            row.value=_groupName;
         }
-        else
+        else{
             [row.cellConfigAtConfigure setObject:@"输入群名称" forKey:@"textField.placeholder"];
+        }
         
         [section addFormRow:row];
         //群头像
-        row = [XLFormRowDescriptor formRowDescriptorWithTag:@"kImage" rowType:XLFormRowDescriptorTypeImage title:@"群头像"];
-        if(_isCreate)
-            row.value = [UIImage imageNamed:@"pickImage_default"];
+        row = [XLFormRowDescriptor formRowDescriptorWithTag:@"image" rowType:XLFormRowDescriptorTypeImage title:@"群头像"];
+        if(_isCreate==NO)
+            row.value = _groupImage;
         else{
             row.value = [UIImage imageNamed:@"pickImage_default"];
         }
@@ -49,23 +50,23 @@
             section = [XLFormSectionDescriptor formSection];
             [form addFormSection:section];
             //群名片
-            row = [XLFormRowDescriptor formRowDescriptorWithTag:@"email" rowType:XLFormRowDescriptorTypeText];
+            row = [XLFormRowDescriptor formRowDescriptorWithTag:@"nickname" rowType:XLFormRowDescriptorTypeText];
             row.title=@"群名片";
-            row.value=@"heheda";
+            row.value=_groupNickname;
             [section addFormRow:row];
             
             section = [XLFormSectionDescriptor formSection];
             [form addFormSection:section];
             //转让群
             // Selector Push
-            row = [XLFormRowDescriptor formRowDescriptorWithTag:@"push" rowType:XLFormRowDescriptorTypeSelectorPush title:@"群主"];
-            row.selectorOptions = @[[XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"Option 1"],
+            row = [XLFormRowDescriptor formRowDescriptorWithTag:@"leader" rowType:XLFormRowDescriptorTypeSelectorPush title:@"群主"];
+            row.selectorOptions = @[[XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:_groupLeader],
                                     [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Option 2"],
                                     [XLFormOptionsObject formOptionsObjectWithValue:@(2) displayText:@"Option 3"],
                                     [XLFormOptionsObject formOptionsObjectWithValue:@(3) displayText:@"Option 4"],
                                     [XLFormOptionsObject formOptionsObjectWithValue:@(4) displayText:@"Option 5"]
                                     ];
-            row.value = [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Option 2"];
+            row.value = [XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:_groupLeader];
             [section addFormRow:row];
         }
         
@@ -86,6 +87,12 @@
 
 - (void) toSave{
     //...保存编辑内容
+    XLFormRowDescriptor* row=[self.form formRowWithTag:@"name"];
+    NSLog(row.value);
+    row=[self.form formRowWithTag:@"image"];
+    row=[self.form formRowWithTag:@"nickname"];
+    row=[self.form formRowWithTag:@"leader"];
+
     [self.navigationController popViewControllerAnimated:YES];
 }
 

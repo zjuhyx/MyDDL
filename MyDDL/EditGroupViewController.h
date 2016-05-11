@@ -14,4 +14,9 @@
 @property (nonatomic)NSString* formTitle;
 @property (nonatomic)bool isCreate;
 
+@property (nonatomic)NSString* groupName;
+@property (nonatomic)UIImage* groupImage;
+@property (nonatomic)NSString* groupNickname;
+@property (nonatomic)NSString* groupLeader;
+
 @end

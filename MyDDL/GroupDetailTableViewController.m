@@ -14,6 +14,7 @@
 #import "QRcodeViewController.h"
 #import "UpdatesTableViewController.h"
 #import "EditGroupViewController.h"
+#import "Model.h"
 
 @implementation GroupDetailTableViewController
 
@@ -135,7 +136,10 @@
         [self.navigationController pushViewController:[[DeadlineListViewController alloc] init] animated:YES];
     }
     else if(indexPath.section==3){
-        [self.navigationController pushViewController:[[UserDetailViewController alloc] init] animated:YES];
+        UserDetailViewController* userDetailViewController=[UserDetailViewController alloc];
+        userDetailViewController.user=_group.members[indexPath.row];
+        userDetailViewController=[userDetailViewController init];
+        [self.navigationController pushViewController:userDetailViewController animated:YES];
     }
 }
 
@@ -152,6 +156,10 @@
     EditGroupViewController *editGroupViewController=[EditGroupViewController alloc];
     editGroupViewController.formTitle=@"编辑群信息";
     editGroupViewController.isCreate=NO;
+    editGroupViewController.groupName=_group.name;
+    editGroupViewController.groupImage=_group.avatar;
+    editGroupViewController.groupNickname=[Model getInstance].username;
+    editGroupViewController.groupLeader=@"组长xxx";
     editGroupViewController=[editGroupViewController init];
     [self.navigationController pushViewController:editGroupViewController animated:YES];
 }

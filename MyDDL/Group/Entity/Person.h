@@ -10,6 +10,7 @@
 
 @interface Person : NSObject
 
+@property (nonatomic) long id;
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSString *phone;
 @property (nonatomic) NSString *email;
