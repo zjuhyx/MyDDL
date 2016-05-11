@@ -16,6 +16,7 @@
     if (self) {
         self.deadline = deadline;
         self.navigationItem.title = [[NSString alloc] initWithFormat:@"编辑%@", deadline.name];
+        [self afterInit];
     }
     return self;
 }
