@@ -8,7 +8,7 @@
 
 #import "GroupTableViewController.h"
 #import "GroupDetailTableViewController.h"
-#import "BeforeCreateGroupViewController.h"
+#import "EditGroupViewController.h"
 #import "GroupModel.h"
 
 @interface GroupTableViewController () <UIActionSheetDelegate>
@@ -72,7 +72,11 @@
 }
 
 - (void)addGroup {
-    [self.navigationController pushViewController:[[BeforeCreateGroupViewController alloc] init] animated:YES];
+    EditGroupViewController *editGroupViewController=[EditGroupViewController alloc];
+    editGroupViewController.formTitle=@"创建群";
+    editGroupViewController.isCreate=YES;
+    editGroupViewController=[editGroupViewController init];
+    [self.navigationController pushViewController:editGroupViewController animated:YES];
 }
 
 

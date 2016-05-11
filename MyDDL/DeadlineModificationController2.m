@@ -7,6 +7,9 @@
 //
 
 #import "DeadlineModificationController2.h"
+#import "Model.h"
+#import "Course.h"
+#import "Project.h"
 
 NSString *const kDateInline = @"dateInline";
 NSString *const kTimeInline = @"timeInline";
@@ -62,38 +65,44 @@ NSString *const kCountDownTimer = @"countDownTimer";
     /////////////
     // Selector Left Right
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"kSelectorLeftRight" rowType:XLFormRowDescriptorTypeSelectorLeftRight title:@"Left Right"];
-    row.leftRightSelectorLeftOptionSelected = [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"课程"];
+    row.leftRightSelectorLeftOptionSelected = [XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"课程"];
     
-    NSArray * rightOptions =  @[[XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"Right Option 1"],
-                                [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Right Option 2"],
-                                [XLFormOptionsObject formOptionsObjectWithValue:@(2) displayText:@"Right Option 3"],
-                                [XLFormOptionsObject formOptionsObjectWithValue:@(3) displayText:@"Right Option 4"],
-                                [XLFormOptionsObject formOptionsObjectWithValue:@(4) displayText:@"Right Option 5"]
-                                ];
     // create right selectors
     NSMutableArray * leftRightSelectorOptions = [[NSMutableArray alloc] init];
-    NSMutableArray * mutableRightOptions = [rightOptions mutableCopy];
-    [mutableRightOptions removeObjectAtIndex:0];
-    XLFormLeftRightSelectorOption * leftRightSelectorOption = [XLFormLeftRightSelectorOption formLeftRightSelectorOptionWithLeftValue:[XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"课程"] httpParameterKey:@"option_1" rightOptions:mutableRightOptions];
+    
+    NSMutableArray* courseOptions = [Model getInstance].courseProjectModel.courses;
+    //[mutableRightOptions1 removeObjectAtIndex:0];
+    NSMutableArray* courseNames=[[NSMutableArray alloc] init];
+    for(int i=0;i<courseOptions.count;i++){
+        Course* course=[courseOptions objectAtIndex:i];
+        [courseNames addObject:course.name];
+    }
+    XLFormLeftRightSelectorOption * leftRightSelectorOption = [XLFormLeftRightSelectorOption formLeftRightSelectorOptionWithLeftValue:[XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"课程"] httpParameterKey:@"option_1" rightOptions:courseNames];
     [leftRightSelectorOptions addObject:leftRightSelectorOption];
     
-    mutableRightOptions = [rightOptions mutableCopy];
-    [mutableRightOptions removeObjectAtIndex:1];
-    leftRightSelectorOption = [XLFormLeftRightSelectorOption formLeftRightSelectorOptionWithLeftValue:[XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"科研"] httpParameterKey:@"option_2" rightOptions:mutableRightOptions];
+    NSMutableArray* projectOptions = [Model getInstance].courseProjectModel.projects;
+    NSMutableArray* projectNames=[[NSMutableArray alloc] init];
+    for(int i=0;i<projectOptions.count;i++){
+        Project* project=[projectOptions objectAtIndex:i];
+        [projectNames addObject:project.name];
+    }
+    //[mutableRightOptions removeObjectAtIndex:1];
+    leftRightSelectorOption = [XLFormLeftRightSelectorOption formLeftRightSelectorOptionWithLeftValue:[XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"科研"] httpParameterKey:@"option_2" rightOptions:projectNames];
     [leftRightSelectorOptions addObject:leftRightSelectorOption];
     
     row.selectorOptions  = leftRightSelectorOptions;
-    row.value = [XLFormOptionsObject formOptionsObjectWithValue:@(3) displayText:@"Right Option 4"];
+    row.value = [XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:_deadline.courseProjectName];
+    
     [section addFormRow:row];
     /////////////
     
     // 日期
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kDateInline rowType:XLFormRowDescriptorTypeDateInline title:@"Deadline日期"];
-    row.value = [NSDate new];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"date" rowType:XLFormRowDescriptorTypeDateInline title:@"Deadline日期"];
+    row.value = _deadline.date;
     [section addFormRow:row];
     // 时间
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kTimeInline rowType:XLFormRowDescriptorTypeTimeInline title:@"Deadline时间"];
-    row.value = [NSDate new];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"time" rowType:XLFormRowDescriptorTypeTimeInline title:@"Deadline时间"];
+    row.value = _deadline.date;
     [section addFormRow:row];
     
     //section2
@@ -103,14 +112,17 @@ NSString *const kCountDownTimer = @"countDownTimer";
     //联系人
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"teacher" rowType:XLFormRowDescriptorTypeText title:@"联系人"];
     [row.cellConfigAtConfigure setObject:@"（选填）" forKey:@"textField.placeholder"];
+    row.value=_deadline.contactName;
     [section addFormRow:row];
     //联系方式-手机
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"integer" rowType:XLFormRowDescriptorTypeInteger title:@"联系电话"];
     [row.cellConfigAtConfigure setObject:@"（选填）" forKey:@"textField.placeholder"];
+    row.value=_deadline.contactPhone;
     [section addFormRow:row];
     // Email
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"email" rowType:XLFormRowDescriptorTypeEmail title:@"邮箱"];
     [row.cellConfigAtConfigure setObject:@"（选填）" forKey:@"textField.placeholder"];
+    row.value=_deadline.contactEmail;
     // validate the email
     [row addValidator:[XLFormValidator emailValidator]];
     [section addFormRow:row];
@@ -119,7 +131,7 @@ NSString *const kCountDownTimer = @"countDownTimer";
     section = [XLFormSectionDescriptor formSectionWithTitle:@"详情"];
     [form addFormSection:section];
     
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"note" rowType:XLFormRowDescriptorTypeTextView];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"detail" rowType:XLFormRowDescriptorTypeTextView];
     [row.cellConfigAtConfigure setObject:@"添加注释" forKey:@"textView.placeholder"];
     [section addFormRow:row];
     

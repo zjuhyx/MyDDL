@@ -14,13 +14,13 @@
 
 @property (nonatomic) Deadline *deadline;
 
-@property (nonatomic, readonly) NSString *deadlineName;
-@property (nonatomic, readonly) NSDate *deadlineDate;
-@property (nonatomic, readonly) NSString *deadlineDetail;
-
-@property (nonatomic, weak) UITextField *nameTextField;
-@property (nonatomic, weak) UITextView *detailTextView;
-@property (nonatomic, weak) UIDatePicker *datePicker;
+//@property (nonatomic, readonly) NSString *deadlineName;
+//@property (nonatomic, readonly) NSDate *deadlineDate;
+//@property (nonatomic, readonly) NSString *deadlineDetail;
+//
+//@property (nonatomic, weak) UITextField *nameTextField;
+//@property (nonatomic, weak) UITextView *detailTextView;
+//@property (nonatomic, weak) UIDatePicker *datePicker;
 
 @property (nonatomic, weak, readonly) DeadlineController *deadlineController;
 
