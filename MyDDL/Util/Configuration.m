@@ -29,6 +29,11 @@
         _grayColor = [UIColor colorWithRed:202./255 green:201./255 blue:207./255 alpha:1.];
         
         _serverAddress = @"http://139.129.53.104:8080/myddl-server";
+        
+        _formatter = [[NSDateFormatter alloc] init];
+        NSTimeZone *timeZone = [NSTimeZone localTimeZone];
+        [_formatter setTimeZone:timeZone];
+        [_formatter setDateFormat : @"yyyy-MM-dd/HH:mm"];
     }
     return self;
 }

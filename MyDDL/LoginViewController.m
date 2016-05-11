@@ -125,8 +125,13 @@
 }
 
 - (void)toLogin {
-    NSString *username = self.usernameTextField.text;
-    NSString *password = self.passwordTextField.text;
+//    NSString *username = self.usernameTextField.text;
+//    NSString *password = self.passwordTextField.text;
+    // for test
+    NSString *username = @"Admin";
+    NSString *password = @"123";
+    
+    
     if (!(username != nil && username.length > 0 && password != nil && password.length > 0)) {
         return;
     }

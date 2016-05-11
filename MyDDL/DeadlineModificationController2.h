@@ -25,6 +25,7 @@
 @property (nonatomic, weak, readonly) DeadlineController *deadlineController;
 
 - (instancetype)initWithDeadlineController:(DeadlineController *)deadlineController;
+- (void)afterInit;
 
 - (void)commit;
 
