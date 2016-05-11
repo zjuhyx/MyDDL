@@ -15,6 +15,7 @@
 #import "QRcodeViewController.h"
 #import "WebUtil.h"
 #import "Configuration.h"
+#import "GroupTableViewController.h"
 
 @interface DeadlineDetailController ()
 
@@ -171,6 +172,11 @@
                 NSLog(@"showQR!");
             }];
         }
+    }
+    else if(indexPath.section==3){
+        GroupTableViewController* groupTableViewController=[[GroupTableViewController alloc] init];
+        groupTableViewController.isShare=YES;
+        [self.navigationController pushViewController:groupTableViewController animated:YES];
     }
     else if (indexPath.section == 4) {//删除ddl
         //[switchView setOn:NO animated:YES];

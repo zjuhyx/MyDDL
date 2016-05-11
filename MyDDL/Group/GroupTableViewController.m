@@ -21,10 +21,15 @@
     self = [super initWithStyle:UITableViewStyleGrouped];
     if (self) {
         self.navigationItem.title = @"小组";
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addGroup)];
+        _isShare=NO;
     }
     _groups=[GroupModel getInstance].groups;
     return self;
+}
+
+-(void) viewDidLoad{
+    if(_isShare==NO)
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addGroup)];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -50,7 +55,12 @@
     //NSArray<NSString *> *groupImageName = @[@"毛概讨论组", @"软件工程小组", @"省创", @"group_default"];
     
     cell.textLabel.text = _groups[indexPath.row].name;
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    if(_isShare){
+        cell.userInteractionEnabled=NO;
+    }
+    else{
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
     //cell.imageView.image = [UIImage imageNamed:groupImageName[indexPath.row]];
     cell.imageView.image = _groups[indexPath.row].avatar;
     CALayer *layer = cell.imageView.layer;
@@ -62,13 +72,21 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    //NSArray<NSString *> *groupName = @[@"毛概讨论组", @"软件工程小组", @"省创", @"国创"];
-    //NSArray<NSString *> *groupImageName = @[@"毛概讨论组", @"软件工程小组", @"省创", @"group_default"];
-    
-    //Group *group = [[Group alloc] initWithName:groupName[indexPath.row] deadlines:nil];
-    //group.avatar = [UIImage imageNamed:groupImageName[indexPath.row]];
-    GroupDetailTableViewController *detailViewController = [[GroupDetailTableViewController alloc] initWithGroup:_groups[indexPath.row]];
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    if(_isShare==YES){
+        UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:nil message:@"确定共享该deadline？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [alertview show];
+    }
+    else{
+        GroupDetailTableViewController *detailViewController = [[GroupDetailTableViewController alloc] initWithGroup:_groups[indexPath.row]];
+        [self.navigationController pushViewController:detailViewController animated:YES];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex==1){
+        //。。。
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (void)addGroup {

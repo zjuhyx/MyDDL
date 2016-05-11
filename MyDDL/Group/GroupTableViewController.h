@@ -12,5 +12,6 @@
 @interface GroupTableViewController : UITableViewController
 
 @property(nonatomic)NSArray<Group*>* groups;
+@property(nonatomic)bool isShare;
 
 @end

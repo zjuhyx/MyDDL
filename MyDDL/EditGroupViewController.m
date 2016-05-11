@@ -7,6 +7,8 @@
 //
 
 #import "EditGroupViewController.h"
+#import "GroupModel.h"
+#import "Group.h"
 
 @interface EditGroupViewController() <XLFormDescriptorDelegate>
 
@@ -88,13 +90,20 @@
 - (void) toSave{
     //...保存编辑内容
     XLFormRowDescriptor* row=[self.form formRowWithTag:@"name"];
-    NSLog(row.value);
+    GroupModel* groupModel=[GroupModel getInstance];
+    Group* group=[[Group alloc] initWithName:row.value deadlines:nil];
     row=[self.form formRowWithTag:@"image"];
+    group.avatar=row.value;
     if(_isCreate==NO){
-        row=[self.form formRowWithTag:@"nickname"];
-        row=[self.form formRowWithTag:@"leader"];
+        //row=[self.form formRowWithTag:@"nickname"];
+        //group.name=row.value;
+        //row=[self.form formRowWithTag:@"leader"];
+        [groupModel changeGroup:group];
     }
-
+    else{
+        [groupModel addGroup:group];
+    }
+   
     [self.navigationController popViewControllerAnimated:YES];
 }
 
