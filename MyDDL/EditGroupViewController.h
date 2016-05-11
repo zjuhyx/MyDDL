@@ -9,6 +9,9 @@
 #import "XLForm.h"
 #import "XLFormViewController.h"
 
-@interface GroupSettingViewController : XLFormViewController
+@interface EditGroupViewController : XLFormViewController
+
+@property (nonatomic)NSString* formTitle;
+@property (nonatomic)bool isCreate;
 
 @end

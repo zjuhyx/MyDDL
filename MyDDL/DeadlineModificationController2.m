@@ -98,6 +98,7 @@ NSString *const kCountDownTimer = @"countDownTimer";
         //联系人
         row = [XLFormRowDescriptor formRowDescriptorWithTag:@"teacher" rowType:XLFormRowDescriptorTypeText title:@"联系人"];
         [row.cellConfigAtConfigure setObject:@"（选填）" forKey:@"textField.placeholder"];
+        
         [section addFormRow:row];
         //联系方式-手机
         row = [XLFormRowDescriptor formRowDescriptorWithTag:@"integer" rowType:XLFormRowDescriptorTypeInteger title:@"联系电话"];

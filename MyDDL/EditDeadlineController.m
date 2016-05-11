@@ -32,6 +32,7 @@
     return self.deadline.detail;
 }
 
+
 - (void)commit {
     DeadlineModel *deadlineModel = [DeadlineModel getDeadlineModel];
     Deadline *editedDeadline = self.deadline;

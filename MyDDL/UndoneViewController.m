@@ -36,27 +36,15 @@
 - (void)addDeadline {
     [self.navigationController pushViewController:[[CreateDeadlineController alloc] initWithDeadlineController:self] animated:YES];
     
-//    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"创建课程deadline", @"创建项目deadline", nil];
-//    actionSheet.tag=1;
-//    [actionSheet showInView:self.view];
 }
 
-//- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-//    if(actionSheet.tag==1){
-//        if (buttonIndex == 0) {
-//            [self.navigationController pushViewController:[[CreateCourseDeadlineController alloc] initWithDeadlineController:self] animated:YES];
-//        } else if (buttonIndex == 1) {
-//            [self.navigationController pushViewController:[[CreateProjectDeadlineController alloc] initWithDeadlineController:self] animated:YES];
-//        }
-//    }
-//    if(actionSheet.tag==2){//改背景
-//        if (buttonIndex == 0) {
-//            [self LocalPhoto];
-//        }else if (buttonIndex == 1) {
-//            [self takePhoto];
-//        }
-//    }
-//}
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        [self LocalPhoto];
+    }else if (buttonIndex == 1) {
+        [self takePhoto];
+    }
+}
 
 -(void)LocalPhoto{
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];

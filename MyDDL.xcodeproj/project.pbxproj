@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		183246831C0AEE570002A61A /* CreateGroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183246821C0AEE570002A61A /* CreateGroupController.m */; };
-		183246861C0AEF0C0002A61A /* JoinGroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183246851C0AEF0C0002A61A /* JoinGroupController.m */; };
+		183246831C0AEE570002A61A /* BeforeCreateGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183246821C0AEE570002A61A /* BeforeCreateGroupViewController.m */; };
 		1832468F1C0B59370002A61A /* DeadlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1832468E1C0B59370002A61A /* DeadlineView.m */; };
 		18386BAA1C0849AC00F44092 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18386BA91C0849AC00F44092 /* MainTabBarController.m */; };
 		18386BAD1C08B3A000F44092 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18386BAC1C08B3A000F44092 /* LoginViewController.m */; };
@@ -57,11 +56,11 @@
 		18D910D91CE0C2A50010218F /* CourseProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D910D81CE0C2A50010218F /* CourseProjectModel.m */; };
 		A5DF2BC994E337394C755CE3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0614B55CD2387BAFD9CC2075 /* libPods.a */; };
 		C30F2E291CD2EB0500068C37 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C30F2E281CD2EB0500068C37 /* RegisterViewController.m */; };
+		C36A433E1CE31B8D0039187C /* EditGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C36A433D1CE31B8D0039187C /* EditGroupViewController.m */; settings = {ASSET_TAGS = (); }; };
 		C3776A721CD2370B001B0FE5 /* QRcodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3776A711CD2370B001B0FE5 /* QRcodeViewController.m */; };
 		C3776A751CD23DED001B0FE5 /* NoticeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3776A741CD23DED001B0FE5 /* NoticeTableViewController.m */; };
 		C3776A781CD24657001B0FE5 /* UpdatesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3776A771CD24657001B0FE5 /* UpdatesTableViewController.m */; };
 		C3776A7B1CD246ED001B0FE5 /* GroupDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3776A7A1CD246ED001B0FE5 /* GroupDetailTableViewController.m */; };
-		C3776A7E1CD24BD2001B0FE5 /* GroupSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3776A7D1CD24BD2001B0FE5 /* GroupSettingViewController.m */; };
 		C38C68441CBDFFA300932369 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38C68431CBDFFA300932369 /* FilterViewController.m */; };
 		C3BDDE8E1CBE3A4600470886 /* DeadlineModificationController2.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDE8D1CBE3A4600470886 /* DeadlineModificationController2.m */; };
 		C3BDDE911CC1BCFB00470886 /* DeleteDeadlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BDDE901CC1BCFB00470886 /* DeleteDeadlineViewController.m */; };
@@ -76,10 +75,8 @@
 
 /* Begin PBXFileReference section */
 		0614B55CD2387BAFD9CC2075 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		183246811C0AEE570002A61A /* CreateGroupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateGroupController.h; path = Group/CreateGroupController.h; sourceTree = "<group>"; };
-		183246821C0AEE570002A61A /* CreateGroupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateGroupController.m; path = Group/CreateGroupController.m; sourceTree = "<group>"; };
-		183246841C0AEF0C0002A61A /* JoinGroupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JoinGroupController.h; path = Group/JoinGroupController.h; sourceTree = "<group>"; };
-		183246851C0AEF0C0002A61A /* JoinGroupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JoinGroupController.m; path = Group/JoinGroupController.m; sourceTree = "<group>"; };
+		183246811C0AEE570002A61A /* BeforeCreateGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeforeCreateGroupViewController.h; path = Group/BeforeCreateGroupViewController.h; sourceTree = "<group>"; };
+		183246821C0AEE570002A61A /* BeforeCreateGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BeforeCreateGroupViewController.m; path = Group/BeforeCreateGroupViewController.m; sourceTree = "<group>"; };
 		1832468D1C0B59370002A61A /* DeadlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeadlineView.h; sourceTree = "<group>"; };
 		1832468E1C0B59370002A61A /* DeadlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeadlineView.m; sourceTree = "<group>"; };
 		18386BA81C0849AC00F44092 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
@@ -174,6 +171,8 @@
 		19FD0105F71C1C7F905E1A1F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C30F2E271CD2EB0500068C37 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		C30F2E281CD2EB0500068C37 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		C36A433C1CE31B8D0039187C /* EditGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditGroupViewController.h; sourceTree = "<group>"; };
+		C36A433D1CE31B8D0039187C /* EditGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditGroupViewController.m; sourceTree = "<group>"; };
 		C3776A701CD2370B001B0FE5 /* QRcodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRcodeViewController.h; sourceTree = "<group>"; };
 		C3776A711CD2370B001B0FE5 /* QRcodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRcodeViewController.m; sourceTree = "<group>"; };
 		C3776A731CD23DED001B0FE5 /* NoticeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeTableViewController.h; sourceTree = "<group>"; };
@@ -182,8 +181,6 @@
 		C3776A771CD24657001B0FE5 /* UpdatesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatesTableViewController.m; sourceTree = "<group>"; };
 		C3776A791CD246ED001B0FE5 /* GroupDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupDetailTableViewController.h; sourceTree = "<group>"; };
 		C3776A7A1CD246ED001B0FE5 /* GroupDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupDetailTableViewController.m; sourceTree = "<group>"; };
-		C3776A7C1CD24BD2001B0FE5 /* GroupSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupSettingViewController.h; sourceTree = "<group>"; };
-		C3776A7D1CD24BD2001B0FE5 /* GroupSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupSettingViewController.m; sourceTree = "<group>"; };
 		C38C68421CBDFFA300932369 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
 		C38C68431CBDFFA300932369 /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
 		C3BDDE8C1CBE3A4600470886 /* DeadlineModificationController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeadlineModificationController2.h; sourceTree = "<group>"; };
@@ -335,8 +332,8 @@
 		189D2E601C05A196002A15D5 /* Group */ = {
 			isa = PBXGroup;
 			children = (
-				C3776A7C1CD24BD2001B0FE5 /* GroupSettingViewController.h */,
-				C3776A7D1CD24BD2001B0FE5 /* GroupSettingViewController.m */,
+				C36A433C1CE31B8D0039187C /* EditGroupViewController.h */,
+				C36A433D1CE31B8D0039187C /* EditGroupViewController.m */,
 				C3776A761CD24657001B0FE5 /* UpdatesTableViewController.h */,
 				C3776A771CD24657001B0FE5 /* UpdatesTableViewController.m */,
 				189138901C10A6DF003B347A /* Entity */,
@@ -344,10 +341,8 @@
 				189D2EC41C076370002A15D5 /* GroupTableViewController.m */,
 				C3776A791CD246ED001B0FE5 /* GroupDetailTableViewController.h */,
 				C3776A7A1CD246ED001B0FE5 /* GroupDetailTableViewController.m */,
-				183246811C0AEE570002A61A /* CreateGroupController.h */,
-				183246821C0AEE570002A61A /* CreateGroupController.m */,
-				183246841C0AEF0C0002A61A /* JoinGroupController.h */,
-				183246851C0AEF0C0002A61A /* JoinGroupController.m */,
+				183246811C0AEE570002A61A /* BeforeCreateGroupViewController.h */,
+				183246821C0AEE570002A61A /* BeforeCreateGroupViewController.m */,
 				C3BDDEAE1CC75A2500470886 /* UserDetailViewController.h */,
 				C3BDDEAF1CC75A2500470886 /* UserDetailViewController.m */,
 			);
@@ -359,8 +354,6 @@
 			children = (
 				189D2E591C05A171002A15D5 /* UndoneViewController.h */,
 				189D2E5A1C05A171002A15D5 /* UndoneViewController.m */,
-				18A4DA0B1C0C434D001CD648 /* CreateDeadlineController.h */,
-				18A4DA0C1C0C434D001CD648 /* CreateDeadlineController.m */,
 				18A4DA0E1C0C45A5001CD648 /* CreateCourseDeadlineController.h */,
 				18A4DA0F1C0C45A5001CD648 /* CreateCourseDeadlineController.m */,
 				18BAB9DD1C0CE79900B41D61 /* CreateProjectDeadlineController.h */,
@@ -443,6 +436,8 @@
 				C3BDDE8D1CBE3A4600470886 /* DeadlineModificationController2.m */,
 				18BAB9E61C0CF00C00B41D61 /* EditDeadlineController.h */,
 				18BAB9E71C0CF00C00B41D61 /* EditDeadlineController.m */,
+				18A4DA0B1C0C434D001CD648 /* CreateDeadlineController.h */,
+				18A4DA0C1C0C434D001CD648 /* CreateDeadlineController.m */,
 				189D2E611C05A1A6002A15D5 /* Undone */,
 				189D2E621C05A1AD002A15D5 /* Done */,
 			);
@@ -634,7 +629,7 @@
 				18B031D51CDE62990086E9EC /* WebUtil.m in Sources */,
 				185C51EA1C0A00110034A88A /* AddProjectController.m in Sources */,
 				18A4DA0D1C0C434D001CD648 /* CreateDeadlineController.m in Sources */,
-				183246831C0AEE570002A61A /* CreateGroupController.m in Sources */,
+				183246831C0AEE570002A61A /* BeforeCreateGroupViewController.m in Sources */,
 				189D2EB71C07001C002A15D5 /* Course.m in Sources */,
 				189D2ECB1C0772C1002A15D5 /* ProjectDetailTableViewController.m in Sources */,
 				185C51ED1C0A00270034A88A /* EditProjectController.m in Sources */,
@@ -646,7 +641,6 @@
 				C3BDDE911CC1BCFB00470886 /* DeleteDeadlineViewController.m in Sources */,
 				18386BAD1C08B3A000F44092 /* LoginViewController.m in Sources */,
 				C3BDDEB01CC75A2500470886 /* UserDetailViewController.m in Sources */,
-				183246861C0AEF0C0002A61A /* JoinGroupController.m in Sources */,
 				C3BDDEAD1CC7540600470886 /* DeadlineListViewController.m in Sources */,
 				18BAB9E21C0CE8A500B41D61 /* DeadlineController.m in Sources */,
 				185C51E71C09FCE30034A88A /* EditCourseController.m in Sources */,
@@ -673,13 +667,13 @@
 				185C51E41C09F3B70034A88A /* AddCourseController.m in Sources */,
 				18D910D91CE0C2A50010218F /* CourseProjectModel.m in Sources */,
 				189D2EAC1C05B42E002A15D5 /* CourseAndProjectTableViewController.m in Sources */,
-				C3776A7E1CD24BD2001B0FE5 /* GroupSettingViewController.m in Sources */,
 				C3BDDE9A1CC6253800470886 /* SettingViewController.m in Sources */,
 				189D2EAD1C05B42E002A15D5 /* CourseTableViewController.m in Sources */,
 				18B031DC1CDE66B40086E9EC /* Model.m in Sources */,
 				18A4DA0A1C0C3944001CD648 /* AxisView.m in Sources */,
 				189D2EAF1C05B42E002A15D5 /* ProjectTableViewController.m in Sources */,
 				C30F2E291CD2EB0500068C37 /* RegisterViewController.m in Sources */,
+				C36A433E1CE31B8D0039187C /* EditGroupViewController.m in Sources */,
 				18BAB9E81C0CF00C00B41D61 /* EditDeadlineController.m in Sources */,
 				189D2EAE1C05B42E002A15D5 /* MeTableViewController.m in Sources */,
 				C3776A781CD24657001B0FE5 /* UpdatesTableViewController.m in Sources */,

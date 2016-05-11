@@ -107,35 +107,30 @@
         Deadline* deadline=[deadlines objectAtIndex:i];
         NSDate *date = [NSDate date];
         NSTimeInterval interval=[deadline.date timeIntervalSinceNow];
-        NSLog(@"%lld", (long long int)interval);
+        //NSLog(@"%lld", (long long int)interval);
         switch (choice) {
             case 0:
                 if((long long int)interval<-3600*3){
                     [[DeadlineModel getDeadlineModel] removeDeadlineById:deadline.deadlineId];
-                    NSLog(@"0");
                 }
                 break;
             case 1:
                 if((long long int)interval<-3600*7){
                     [[DeadlineModel getDeadlineModel] removeDeadlineById:deadline.deadlineId];
-                    NSLog(deadline.name);
                 }
                 break;
             case 2:
                 if((long long int)interval<-3600*30){
                     [[DeadlineModel getDeadlineModel] removeDeadlineById:deadline.deadlineId];
-                    NSLog(@"2");
                 }
                 break;
             case 3:
                 if((long long int)interval<-3600*365){
                     [[DeadlineModel getDeadlineModel] removeDeadlineById:deadline.deadlineId];
-                    NSLog(@"3");
                 }
                 break;
             case 4:
                 [[DeadlineModel getDeadlineModel] removeDeadlineById:deadline.deadlineId];
-                NSLog(@"4");
                 break;
         }
     }

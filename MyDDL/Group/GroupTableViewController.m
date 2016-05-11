@@ -8,8 +8,7 @@
 
 #import "GroupTableViewController.h"
 #import "GroupDetailTableViewController.h"
-#import "CreateGroupController.h"
-#import "JoinGroupController.h"
+#import "BeforeCreateGroupViewController.h"
 
 @interface GroupTableViewController () <UIActionSheetDelegate>
 
@@ -70,16 +69,8 @@
 }
 
 - (void)addGroup {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"创建小组", @"加入小组", nil];
-    [actionSheet showInView:self.view];
+    [self.navigationController pushViewController:[[BeforeCreateGroupViewController alloc] init] animated:YES];
 }
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) {
-        [self.navigationController pushViewController:[[CreateGroupController alloc] init] animated:YES];
-    } else if (buttonIndex == 1) {
-        [self.navigationController pushViewController:[[JoinGroupController alloc] init] animated:YES];
-    }
-}
 
 @end

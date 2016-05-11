@@ -13,7 +13,7 @@
 #import "ImageDetailViewController.h"
 #import "QRcodeViewController.h"
 #import "UpdatesTableViewController.h"
-#import "GroupSettingViewController.h"
+#import "EditGroupViewController.h"
 
 @implementation GroupDetailTableViewController
 
@@ -149,7 +149,11 @@
 }
 
 -(void)toEdit{
-    [self.navigationController pushViewController:[[GroupSettingViewController alloc] init] animated:YES];
+    EditGroupViewController *editGroupViewController=[EditGroupViewController alloc];
+    editGroupViewController.formTitle=@"编辑群信息";
+    editGroupViewController.isCreate=NO;
+    editGroupViewController=[editGroupViewController init];
+    [self.navigationController pushViewController:editGroupViewController animated:YES];
 }
 
 @end
