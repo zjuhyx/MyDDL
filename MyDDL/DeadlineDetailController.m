@@ -13,6 +13,8 @@
 #import "DoneViewController.h"
 #import "ImageDetailViewController.h"
 #import "QRcodeViewController.h"
+#import "WebUtil.h"
+#import "Configuration.h"
 
 @interface DeadlineDetailController ()
 
@@ -41,6 +43,7 @@
         self.deadlineController = deadlineController;
         self.deadline = deadline;
         self.navigationItem.title = deadline.name;
+        NSString *urlString = [NSString stringWithFormat:@"%@/deadline/%ld", [Configuration getConfiguration].serverAddress, deadline.deadlineId];
     }
     return self;
 }

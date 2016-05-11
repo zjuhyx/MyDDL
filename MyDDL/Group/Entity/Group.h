@@ -18,6 +18,7 @@
 @property (nonatomic) NSArray<Deadline *> *deadlines;
 @property (nonatomic) NSArray<Person *> *members;
 
+- (instancetype)initWithName:(NSString *)name deadlines:(NSArray *)deadlines;
 - (instancetype)initWithJSON:(NSDictionary *)json;
 
 @end

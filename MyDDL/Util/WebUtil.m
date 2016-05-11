@@ -18,4 +18,10 @@
     return jsonObject;
 }
 
++ (NSDictionary *)webAPICallWithGetMethod:(NSString *)urlString {
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:5];
+    return [WebUtil webAPICallWithRequest:request];
+}
+
 @end

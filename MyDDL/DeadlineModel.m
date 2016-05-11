@@ -9,6 +9,8 @@
 #import "DeadlineModel.h"
 #import "Course.h"
 #import "Project.h"
+#import "WebUtil.h"
+#import "Configuration.h"
 
 @interface DeadlineModel ()
 
@@ -127,7 +129,7 @@
     [self.allDeadlines addObject:deadline];
 }
 
-- (Deadline *)getDeadlineById:(NSInteger)deadlineId {
+- (Deadline *)getDeadlineById:(long)deadlineId {
     for (Deadline *deadline in self.allDeadlines) {
         if (deadline.deadlineId == deadlineId) {
             return deadline;
@@ -158,6 +160,13 @@
             self.allDeadlines[i].isCompleted = YES;
         }
     }
+}
+
+
+- (DeadlineDetail *)getDeadlineDetailById:(long)deadlineId {
+    NSString *urlString = [NSString stringWithFormat:@"%@/deadline/%ld", [Configuration getConfiguration].serverAddress, deadlineId];
+    NSDictionary *jsonResult = [[WebUtil webAPICallWithGetMethod:urlString] objectForKey:@"result"];
+    return [[DeadlineDetail alloc] initWithJSON:jsonResult];
 }
 
 @end

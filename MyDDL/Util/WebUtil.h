@@ -11,5 +11,6 @@
 @interface WebUtil : NSObject
 
 + (NSDictionary *)webAPICallWithRequest:(NSURLRequest *)request;
++ (NSDictionary *)webAPICallWithGetMethod:(NSString *)urlString;
 
 @end

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Deadline.h"
+#import "DeadlineDetail.h"
 
 @interface DeadlineModel : NSObject
 
@@ -17,9 +18,11 @@
 - (void)clearData;
 + (instancetype)getDeadlineModel;
 - (void)addDeadline:(Deadline *)deadline;
-- (Deadline *)getDeadlineById:(NSInteger)deadlineId;
+- (Deadline *)getDeadlineById:(long)deadlineId;
 - (void)changeDeadline:(Deadline *)deadline;
 - (void)removeDeadlineById:(NSInteger)deadlineId;
 - (void)completeDeadline:(NSInteger)deadlineId;
+
+- (DeadlineDetail *)getDeadlineDetailById:(long)deadlineId;
 
 @end

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DeadlineController.h"
+#import "DeadlineDetail.h"
 
 @interface DeadlineDetailController : UITableViewController
 
