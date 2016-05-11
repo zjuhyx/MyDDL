@@ -33,6 +33,18 @@
     return self.deadline.detail;
 }
 
+- (NSString *)deadlineContactName {
+    return self.deadline.contactName;
+}
+
+- (NSString *)deadlineContactPhone {
+    return self.deadline.contactPhone;
+}
+
+- (NSString *)deadlineContactEmail {
+    return self.deadline.contactEmail;
+}
+
 - (void)commit {
     DeadlineModel *deadlineModel = [DeadlineModel getDeadlineModel];
     Deadline *editedDeadline = self.deadline;

@@ -30,7 +30,8 @@
         section.footerTitle = @"注：用户账号一经设定，无法修改。";
         // 账号
         row = [XLFormRowDescriptor formRowDescriptorWithTag:@"id" rowType:XLFormRowDescriptorTypeText];
-        row.title=[NSString stringWithFormat:@"%ld",[Model getInstance].userInfo.userId];;
+        row.title=@"账号";
+        row.value=[NSString stringWithFormat:@"%ld",[Model getInstance].userInfo.userId];
         
         row.value=[Model getInstance].username;
         row.disabled=@(YES);
@@ -55,7 +56,7 @@
         row.title=@"电话";
         row.value=[Model getInstance].userInfo.userPhone;
         [section addFormRow:row];
-        //昵称
+        //邮箱
         row = [XLFormRowDescriptor formRowDescriptorWithTag:@"email" rowType:XLFormRowDescriptorTypeText];
         row.title=@"邮箱";
         row.value=[Model getInstance].userInfo.userEmail;

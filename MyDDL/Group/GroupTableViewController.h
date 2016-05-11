@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Group.h"
 
 @interface GroupTableViewController : UITableViewController
+
+@property(nonatomic)NSArray<Group*>* groups;
 
 @end

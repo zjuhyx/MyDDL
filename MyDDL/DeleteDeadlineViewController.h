@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DeadlineController.h"
 
 @interface DeleteDeadlineViewController : UITableViewController
+
+@property (nonatomic) DeadlineController* deadlineController;
+-(void) toDelete:(int) choice;
 
 @end

@@ -42,7 +42,9 @@
 }
 
 - (void)deleteDoneDeadline {
-    [self.navigationController pushViewController:[[DeleteDeadlineViewController alloc] init] animated:YES];
+    DeleteDeadlineViewController* deleteViewController=[[DeleteDeadlineViewController alloc] init];
+    deleteViewController.deadlineController=self;
+    [self.navigationController pushViewController:deleteViewController animated:YES];
 }
 
 @end

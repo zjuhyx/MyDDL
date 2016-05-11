@@ -7,6 +7,8 @@
 //
 
 #import "DeleteDeadlineViewController.h"
+#import "DeadlineModel.h"
+#import "Deadline.h"
 
 @implementation DeleteDeadlineViewController
 
@@ -77,5 +79,61 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];//取消点击cell之后显示的灰色
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex==1){
+        if([alertView.message isEqualToString:@"确定删除3天前的所有Deadline？"]==YES){
+            [self toDelete:0];
+        }
+        else if([alertView.message isEqualToString:@"确定删除一周前的所有Deadline？"]==YES){
+            [self toDelete:1];
+        }
+        else if([alertView.message isEqualToString:@"确定删除一个月前的所有Deadline？"]==YES){
+            [self toDelete:2];
+        }
+        else if([alertView.message isEqualToString:@"确定删除一年前的所有Deadline？"]==YES){
+            [self toDelete:3];
+        }
+        else if([alertView.message isEqualToString:@"确定删除所有Deadline？"]==YES){
+            [self toDelete:4];
+        }
+        _deadlineController.dataIsChanged=YES;
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+-(void) toDelete:(int) choice{
+    NSMutableArray* deadlines=[DeadlineModel getDeadlineModel].allDoneDeadlines;
+    for(int i=0;i<deadlines.count;i++){
+        Deadline* deadline=[deadlines objectAtIndex:i];
+        NSDate *date = [NSDate date];
+        NSTimeInterval interval=[deadline.date timeIntervalSinceNow];
+        //NSLog(@"%lld", (long long int)interval);
+        switch (choice) {
+            case 0:
+                if((long long int)interval<-3600*3){
+                    [[DeadlineModel getDeadlineModel] removeDeadlineById:deadline.deadlineId];
+                }
+                break;
+            case 1:
+                if((long long int)interval<-3600*7){
+                    [[DeadlineModel getDeadlineModel] removeDeadlineById:deadline.deadlineId];
+                }
+                break;
+            case 2:
+                if((long long int)interval<-3600*30){
+                    [[DeadlineModel getDeadlineModel] removeDeadlineById:deadline.deadlineId];
+                }
+                break;
+            case 3:
+                if((long long int)interval<-3600*365){
+                    [[DeadlineModel getDeadlineModel] removeDeadlineById:deadline.deadlineId];
+                }
+                break;
+            case 4:
+                [[DeadlineModel getDeadlineModel] removeDeadlineById:deadline.deadlineId];
+                break;
+        }
+    }
+}
 
 @end

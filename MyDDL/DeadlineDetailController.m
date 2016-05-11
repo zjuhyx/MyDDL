@@ -193,7 +193,7 @@
 
 -(void) valueChanged:(UISwitch *) switchView{
     NSString *mesg;
-    if ([switchView isOn]) {
+    if ([switchView isOn]){
         mesg=@"完成该Deadline？";
     }
     else{

@@ -60,8 +60,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.section==0){
         IntroCell *intro_cell = [[IntroCell alloc] init];
-        [intro_cell setCellLabel1:@"UserName" label2:@"账号：624509"];
-        [intro_cell setCellImage:nil imageName:@"background2"];
+        [intro_cell setCellLabel1:_user.name label2:[NSString stringWithFormat:@"%ld", _user.id]];
+        [intro_cell setCellImage:_user.avatar imageName:nil];//@"background2"
         
         UITapGestureRecognizer* singleRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickImage)];
         singleRecognizer.numberOfTapsRequired = 1; // 单击
@@ -76,11 +76,11 @@
         UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
         if(indexPath.row==0){
              cell.imageView.image=[UIImage imageNamed:@"phone"];
-            cell.textLabel.text=@"18868101111";
+            cell.textLabel.text=_user.phone;
         }
         else{
             cell.imageView.image=[UIImage imageNamed:@"email"];
-            cell.textLabel.text=@"hehe@hotmail.com";
+            cell.textLabel.text=_user.email;
         }
         return cell;
     }

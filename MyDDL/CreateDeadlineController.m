@@ -26,15 +26,27 @@
 }
 
 - (NSString *)deadlineName {
-    return @"输入deadline名称";
+    return nil;
 }
 
 - (NSString *)deadlineDetail {
-    return @"输入备注";
+    return nil;
 }
 
 - (NSDate *)deadlineDate {
     return [NSDate date];
+}
+
+- (NSString *)deadlineContactName {
+    return nil;
+}
+
+- (NSString *)deadlineContactPhone {
+    return nil;
+}
+
+- (NSString *)deadlineContactEmail {
+    return nil;
 }
 
 - (void)commit {
