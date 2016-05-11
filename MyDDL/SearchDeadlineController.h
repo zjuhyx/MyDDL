@@ -16,5 +16,7 @@
     UISearchDisplayController *searchDisplayController;
 }
 
+@property(nonatomic)NSArray *dataList;
+@property(nonatomic)NSMutableArray *showData;
 @property(nonatomic,retain)FilterViewController *filterViewController;
 @end
