@@ -72,4 +72,20 @@
     [WebUtil webAPICallWithPutMethod:urlString parameters:parameter];
 }
 
+- (void)deleteGroupDeadlineByGroupId:(long)groupId deadlineId:(long)deadlineId {
+    NSString *urlString = [NSString stringWithFormat:@"%@/group/%ld/deadline/%ld", [Configuration getConfiguration].serverAddress, groupId, deadlineId];
+    [WebUtil webAPICallWithDeleteMethod:urlString];
+}
+
+- (void)addGroupUserWithGroupId:(long)groupId userId:(long)userId {
+    NSDictionary *parameter = [NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%ld", userId] forKey:@"userId"];
+    NSString *urlString = [NSString stringWithFormat:@"%@/group/%ld/user", [Configuration getConfiguration].serverAddress, groupId];
+    [WebUtil webAPICallWithPutMethod:urlString parameters:parameter];
+}
+
+- (void)deleteGroupUserByGroupId:(long)groupId userId:(long)userId {
+    NSString *urlString = [NSString stringWithFormat:@"%@/group/%ld/user/%ld", [Configuration getConfiguration].serverAddress, groupId, userId];
+    [WebUtil webAPICallWithDeleteMethod:urlString];
+}
+
 @end

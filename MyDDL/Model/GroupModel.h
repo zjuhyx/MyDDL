@@ -19,5 +19,8 @@
 - (void)addGroup:(Group *)group;
 - (void)deleteGroup:(long)groupId;
 - (void)addGroupDeadlineWithGroupId:(long)groupId deadlineId:(long)deadlineId;
+- (void)deleteGroupDeadlineByGroupId:(long)groupId deadlineId:(long)deadlineId;
+- (void)addGroupUserWithGroupId:(long)groupId userId:(long)userId;
+- (void)deleteGroupUserByGroupId:(long)groupId userId:(long)userId;
 
 @end
