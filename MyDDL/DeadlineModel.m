@@ -161,10 +161,4 @@
 }
 
 
-- (DeadlineDetail *)getDeadlineDetailById:(long)deadlineId {
-    NSString *urlString = [NSString stringWithFormat:@"%@/deadline/%ld", [Configuration getConfiguration].serverAddress, deadlineId];
-    NSDictionary *jsonResult = [[WebUtil webAPICallWithGetMethod:urlString] objectForKey:@"result"];
-    return [[DeadlineDetail alloc] initWithJSON:jsonResult];
-}
-
 @end

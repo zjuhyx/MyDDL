@@ -11,8 +11,6 @@
 
 @interface EditDeadlineController : DeadlineModificationController2
 
-@property (nonatomic) Deadline *deadline;
-
 - (instancetype)initWithDeadlineController:(DeadlineController *)deadlineController deadline:(Deadline *)deadline;
 
 @end
