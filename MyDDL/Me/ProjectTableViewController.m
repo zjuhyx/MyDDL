@@ -9,6 +9,7 @@
 #import "ProjectTableViewController.h"
 #import "ProjectDetailTableViewController.h"
 #import "AddProjectController.h"
+#import "Model.h"
 
 @implementation ProjectTableViewController
 
@@ -16,6 +17,8 @@
     self = [super init];
     if (self) {
         self.navigationItem.title = @"项目";
+        Model* user=[Model getInstance];
+        self.data=user.courseProjectModel.projects;
     }
     return self;
 }

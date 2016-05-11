@@ -7,6 +7,9 @@
 //
 
 #import "CourseAndProjectTableViewController.h"
+#import "CourseDetailTableViewController.h"
+#import "ProjectDetailTableViewController.h"
+
 
 @implementation CourseAndProjectTableViewController
 
@@ -19,7 +22,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return _data.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -29,22 +32,20 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.text = @"test";
-//    cell.imageView.image = [self cellImageAtIndexPath:indexPath];
-//    CALayer *layer = cell.imageView.layer;
-//    layer.masksToBounds = YES;
-//    layer.cornerRadius = 25.0;
+    CourseAndProject* cp=[_data objectAtIndex:indexPath.row];
+    cell.textLabel.text = cp.name;
     return cell;
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
-}
+//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return YES;
+//}
+//
+//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+//}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.nextViewController.courseAndProject=[_data objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:self.nextViewController animated:YES];
 }
 

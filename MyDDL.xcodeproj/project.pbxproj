@@ -376,12 +376,12 @@
 		189D2EBC1C0701C4002A15D5 /* CourseAndProjectDetail */ = {
 			isa = PBXGroup;
 			children = (
+				189D2ECC1C07FDD8002A15D5 /* CourseAndProjectDetailTableViewController.h */,
+				189D2ECD1C07FDD8002A15D5 /* CourseAndProjectDetailTableViewController.m */,
 				189D2EC61C076F80002A15D5 /* CourseDetailTableViewController.h */,
 				189D2EC71C076F80002A15D5 /* CourseDetailTableViewController.m */,
 				189D2EC91C0772C1002A15D5 /* ProjectDetailTableViewController.h */,
 				189D2ECA1C0772C1002A15D5 /* ProjectDetailTableViewController.m */,
-				189D2ECC1C07FDD8002A15D5 /* CourseAndProjectDetailTableViewController.h */,
-				189D2ECD1C07FDD8002A15D5 /* CourseAndProjectDetailTableViewController.m */,
 			);
 			name = CourseAndProjectDetail;
 			sourceTree = "<group>";

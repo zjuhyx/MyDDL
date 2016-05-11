@@ -110,12 +110,12 @@ NSString *const kCountDownTimer = @"countDownTimer";
     //section.footerTitle = @"This is a long text that will appear on section footer";
     [form addFormSection:section];
     //联系人
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"teacher" rowType:XLFormRowDescriptorTypeText title:@"联系人"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"contact" rowType:XLFormRowDescriptorTypeText title:@"联系人"];
     [row.cellConfigAtConfigure setObject:@"（选填）" forKey:@"textField.placeholder"];
     row.value=_deadline.contactName;
     [section addFormRow:row];
     //联系方式-手机
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"integer" rowType:XLFormRowDescriptorTypeInteger title:@"联系电话"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"phone" rowType:XLFormRowDescriptorTypeInteger title:@"联系电话"];
     [row.cellConfigAtConfigure setObject:@"（选填）" forKey:@"textField.placeholder"];
     row.value=_deadline.contactPhone;
     [section addFormRow:row];

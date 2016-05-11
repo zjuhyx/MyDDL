@@ -9,6 +9,7 @@
 #import "CourseTableViewController.h"
 #import "CourseDetailTableViewController.h"
 #import "AddCourseController.h"
+#import "Model.h"
 
 @implementation CourseTableViewController
 
@@ -16,11 +17,13 @@
     self = [super init];
     if (self) {
         self.navigationItem.title = @"课程";
+        Model* user=[Model getInstance];
+        self.data=user.courseProjectModel.courses;
     }
     return self;
 }
 
-- (UITableViewController *)nextViewController {
+- (CourseDetailTableViewController *)nextViewController {
     return [[CourseDetailTableViewController alloc] init];
 }
 

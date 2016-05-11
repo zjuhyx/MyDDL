@@ -47,13 +47,13 @@
     _showData=[DeadlineModel getDeadlineModel].allDeadlines;
 }
 
-/*
- * 如果原 TableView 和 SearchDisplayController 中的 TableView 的 delete 指向同一个对象
- * 需要在回调中区分出当前是哪个 TableView
- */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [_showData count]>0?[_showData count]:0;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 50;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

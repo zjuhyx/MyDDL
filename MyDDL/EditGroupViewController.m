@@ -55,19 +55,19 @@
             row.value=_groupNickname;
             [section addFormRow:row];
             
-            section = [XLFormSectionDescriptor formSection];
-            [form addFormSection:section];
-            //转让群
-            // Selector Push
-            row = [XLFormRowDescriptor formRowDescriptorWithTag:@"leader" rowType:XLFormRowDescriptorTypeSelectorPush title:@"群主"];
-            row.selectorOptions = @[[XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:_groupLeader],
-                                    [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Option 2"],
-                                    [XLFormOptionsObject formOptionsObjectWithValue:@(2) displayText:@"Option 3"],
-                                    [XLFormOptionsObject formOptionsObjectWithValue:@(3) displayText:@"Option 4"],
-                                    [XLFormOptionsObject formOptionsObjectWithValue:@(4) displayText:@"Option 5"]
-                                    ];
-            row.value = [XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:_groupLeader];
-            [section addFormRow:row];
+//            section = [XLFormSectionDescriptor formSection];
+//            [form addFormSection:section];
+//            //转让群
+//            // Selector Push
+//            row = [XLFormRowDescriptor formRowDescriptorWithTag:@"leader" rowType:XLFormRowDescriptorTypeSelectorPush title:@"群主"];
+//            row.selectorOptions = @[[XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:_groupLeader],
+//                                    [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Option 2"],
+//                                    [XLFormOptionsObject formOptionsObjectWithValue:@(2) displayText:@"Option 3"],
+//                                    [XLFormOptionsObject formOptionsObjectWithValue:@(3) displayText:@"Option 4"],
+//                                    [XLFormOptionsObject formOptionsObjectWithValue:@(4) displayText:@"Option 5"]
+//                                    ];
+//            row.value = [XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:_groupLeader];
+//            [section addFormRow:row];
         }
         
         self.form=form;//前面加了self = [super init];就可以用这一句了！！

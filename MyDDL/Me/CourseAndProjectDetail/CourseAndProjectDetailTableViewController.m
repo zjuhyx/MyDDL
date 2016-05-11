@@ -17,7 +17,7 @@
 - (instancetype)init {
     self = [super initWithStyle:UITableViewStyleGrouped];
     if (self) {
-        self.navigationItem.title = self.itemName;
+        self.navigationItem.title = self.courseAndProject.name;
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(editItem)];
         _blueColor = [UIColor colorWithRed:0 green:91./255 blue:255./255 alpha:1.];
     }
@@ -47,7 +47,7 @@
     
     if (indexPath.section == 0) {
         if(indexPath.row==0){
-            cell.textLabel.text = self.itemName;
+            cell.textLabel.text = self.courseAndProject.name;
             cell.textLabel.font = [UIFont systemFontOfSize:25];
         }
         else if(indexPath.row==1){

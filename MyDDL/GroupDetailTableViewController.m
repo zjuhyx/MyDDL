@@ -21,8 +21,10 @@
 - (instancetype)initWithGroup:(Group *)group {
     self = [super initWithStyle:UITableViewStyleGrouped];
     if (self) {
-        self.group = group;
-        self.navigationItem.title = group.name;
+        _group = group;
+        GroupModel* groupModel=[GroupModel getInstance];
+        _group=[groupModel getGroupDetailById:_group.groupId];
+        self.navigationItem.title = _group.name;
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(toEdit)];
     }
     return self;
@@ -39,8 +41,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     int numberOfRows[5] = {2, 1, 1, 0, 1};
-    int numberOfMembers = 2;    // 获取小组成员数量
-    numberOfRows[3] = numberOfMembers;
+    // 获取小组成员数量
+    numberOfRows[3] = (int)_group.members.count;
     return numberOfRows[section];
 }
 
@@ -101,14 +103,17 @@
             cell.textLabel.textAlignment=NSTextAlignmentCenter;
         } else {
             cell=[cell initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"UITableViewCell"];
-            if (indexPath.row == 0) {
-                cell.textLabel.text = @"胡译心";
-                cell.detailTextLabel.text=@"群主";
-            } else {
-                cell.textLabel.text = @"柯瀚仰";
-                cell.detailTextLabel.text=@"成员";
-            }
-            cell.detailTextLabel.textColor=[UIColor grayColor];
+            cell.textLabel.text = _group.members[indexPath.row].userName;
+            //cell.detailTextLabel.text=_group.members[indexPath.row].userName;
+            
+//            if (indexPath.row == 0) {
+//                //cell.textLabel.text = @"胡译心";
+//                cell.detailTextLabel.text=@"群主";
+//            } else {
+//                //cell.textLabel.text = @"柯瀚仰";
+//                cell.detailTextLabel.text=@"成员";
+//            }
+//            cell.detailTextLabel.textColor=[UIColor grayColor];
             cell.imageView.image = [UIImage imageNamed:@"avatar_default"];
             CALayer *layer = cell.imageView.layer;
             layer.masksToBounds = YES;

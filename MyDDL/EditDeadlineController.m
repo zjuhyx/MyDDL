@@ -51,8 +51,10 @@
     editedDeadline.name = [self.form formRowWithTag:@"title"].value;
     editedDeadline.date = [self.form formRowWithTag:@"date"].value;
     editedDeadline.detail = [self.form formRowWithTag:@"detail"].value;
-    //NSLog(@"%@, %@", [self.form formRowWithTag:@"date"].value, [self.form formRowWithTag:@"time"].value);
-    //"date"和"time"是一样的
+    editedDeadline.contactName = [self.form formRowWithTag:@"contact"].value;
+    editedDeadline.contactPhone = [self.form formRowWithTag:@"phone"].value;
+    editedDeadline.contactEmail = [self.form formRowWithTag:@"email"].value;
+    
     [deadlineModel changeDeadline:editedDeadline];
     self.deadlineController.dataIsChanged = YES;
     [self.navigationController popToRootViewControllerAnimated:YES];

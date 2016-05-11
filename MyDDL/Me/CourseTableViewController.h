@@ -10,4 +10,6 @@
 
 @interface CourseTableViewController : CourseAndProjectTableViewController
 
+@property(nonatomic)NSArray* courses;
+
 @end

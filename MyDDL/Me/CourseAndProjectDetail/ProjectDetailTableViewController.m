@@ -11,10 +11,6 @@
 
 @implementation ProjectDetailTableViewController
 
-- (NSString *)itemName {
-    return @"项目名称";
-}
-
 //- (NSString *)itemImageName {
 //    return @"project_default";
 //}
@@ -34,9 +30,9 @@
 
 - (void)editItem {
     EditProjectController *editController = [[EditProjectController alloc] init];
-    editController.itemName = self.itemName;
-    editController.itemImageName = self.itemImageName;
-    editController.itemDetail = self.itemDetail;
+    editController.itemName = self.courseAndProject.name;
+    //editController.itemImageName = self.itemImageName;
+    editController.itemDetail = self.courseAndProject.detail;
     [self.navigationController pushViewController:editController animated:YES];
 }
 

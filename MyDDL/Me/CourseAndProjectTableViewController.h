@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CourseAndProject.h"
+#import "CourseAndProjectDetailTableViewController.h"
 
 @interface CourseAndProjectTableViewController : UITableViewController
 
-@property (nonatomic, readonly) UITableViewController *nextViewController;
+@property (nonatomic, readonly) CourseAndProjectDetailTableViewController *nextViewController;
+@property(nonatomic)NSArray<CourseAndProject*>* data;
 
 //- (UIImage *)cellImageAtIndexPath:(NSIndexPath *)indexPath;
 - (void)addNewItem;

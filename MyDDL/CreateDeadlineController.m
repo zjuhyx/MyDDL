@@ -56,6 +56,10 @@
     newDeadline.name = [self.form formRowWithTag:@"title"].value;
     newDeadline.date = [self.form formRowWithTag:@"date"].value;
     newDeadline.detail = [self.form formRowWithTag:@"detail"].value;
+    newDeadline.contactName = [self.form formRowWithTag:@"contact"].value;
+    newDeadline.contactPhone = [self.form formRowWithTag:@"phone"].value;
+    newDeadline.contactEmail = [self.form formRowWithTag:@"email"].value;
+    
     [deadlineModel addDeadline:newDeadline];
     self.deadlineController.dataIsChanged = YES;
     [self.navigationController popToRootViewControllerAnimated:YES];

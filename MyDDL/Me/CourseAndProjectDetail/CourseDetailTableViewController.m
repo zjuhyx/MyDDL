@@ -11,10 +11,6 @@
 
 @implementation CourseDetailTableViewController
 
-- (NSString *)itemName {
-    return @"课程名称";
-}
-
 //- (NSString *)itemImageName {
 //    return @"course_default";
 //}
@@ -29,9 +25,9 @@
 
 - (void)editItem {
     EditCourseController *editController = [[EditCourseController alloc] init];
-    editController.itemName = self.itemName;
-    editController.itemImageName = self.itemImageName;
-    editController.itemDetail = self.itemDetail;
+    editController.itemName = self.courseAndProject.name;
+    //editController.itemImageName = self.courseAndProject.;
+    editController.itemDetail = self.courseAndProject.detail;
     [self.navigationController pushViewController:editController animated:YES];
 }
 
