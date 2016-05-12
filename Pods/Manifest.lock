@@ -1,10 +1,27 @@
 PODS:
+  - LBXScan (1.1.2):
+    - ZXingObjC (~> 3.0)
   - XLForm (3.1.1)
+  - ZXingObjC (3.1.0):
+    - ZXingObjC/All (= 3.1.0)
+  - ZXingObjC/All (3.1.0)
 
 DEPENDENCIES:
+  - LBXScan (from `https://github.com/MxABC/LBXScan.git`)
   - XLForm (~> 3.0)
 
+EXTERNAL SOURCES:
+  LBXScan:
+    :git: https://github.com/MxABC/LBXScan.git
+
+CHECKOUT OPTIONS:
+  LBXScan:
+    :commit: 32efa3cf0c7dc061d7830d5e1b31a6f58e0dc554
+    :git: https://github.com/MxABC/LBXScan.git
+
 SPEC CHECKSUMS:
+  LBXScan: 30153fa9c57bbe63d93cc6bf35c047ec1b63260c
   XLForm: c9ee7e0f859341279bfd894f9589a9d25c23e4df
+  ZXingObjC: bf15b3814f7a105b6d99f47da2333c93a063650a
 
 COCOAPODS: 0.39.0
