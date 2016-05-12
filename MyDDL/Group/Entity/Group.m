@@ -41,12 +41,19 @@
             NSLog(@"%lu", self.deadlines.count);
         }
     }
+    NSString *imageNumber = [json objectForKey:@"groupImage"];
+    if (imageNumber == nil) {
+        self.image = 0;
+    } else {
+        self.image = [imageNumber intValue];
+    }
     return self;
 }
 
 - (NSDictionary *)toDictionary {
     NSMutableDictionary *result = [[NSMutableDictionary alloc] init];
     [result setValue:[NSString stringWithFormat:@"%ld", _groupId] forKey:@"groupId"];
+    [result setValue:[NSString stringWithFormat:@"%ld", _image] forKey:@"groupImage"];
     [result setValue:_name forKey:@"groupName"];
     return result;
 }

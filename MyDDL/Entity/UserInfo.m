@@ -15,6 +15,11 @@
     self.userId = [[json objectForKey:@"userId"] longValue];
     self.userName = [json objectForKey:@"userName"];
     NSString *imageNumber = [json objectForKey:@"userImage"];
+    if (imageNumber == nil) {
+        self.userImage = 0;
+    } else {
+        self.userImage = [imageNumber intValue];
+    }
     self.userPhone = [json objectForKey:@"userPhone"];
     self.userEmail = [json objectForKey:@"userEmail"];
     self.mainScreenImage = [[json objectForKey:@"mainScreenImage"] intValue];
@@ -27,6 +32,7 @@
     [result setValue:_userName forKey:@"userName"];
     [result setValue:_userPhone forKey:@"userPhone"];
     [result setValue:_userEmail forKey:@"userEmail"];
+    [result setValue:[NSString stringWithFormat:@"%ld", _userImage] forKey:@"userImage"];
     [result setValue:[NSString stringWithFormat:@"%d", _mainScreenImage] forKey:@"mainScreenImage"];
     return result;
 }
