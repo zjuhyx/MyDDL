@@ -10,6 +10,7 @@
 #import "CourseAndProject.h"
 #import "Course.h"
 #import "Project.h"
+#import "Deadline.h"
 
 @interface CourseProjectModel : NSObject
 
@@ -22,6 +23,7 @@
 - (void)deleteCourseProject:(CourseAndProject *)courseProject;
 - (CourseAndProject *)getCourseProjectById:(long)courseProjectId;
 - (CourseAndProject *)getCourseProjectByName:(NSString *)name;
+- (NSMutableArray<Deadline *> *)getDeadlinesByCourseProjectId:(long)courseProjectId;
 
 - (void)clearData;
 

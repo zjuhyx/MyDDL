@@ -102,6 +102,18 @@
     return nil;
 }
 
+- (NSMutableArray<Deadline *> *)getDeadlinesByCourseProjectId:(long)courseProjectId {
+    NSString *urlString = [NSString stringWithFormat:@"%@/courseProject/%ld", [Configuration getConfiguration].serverAddress, courseProjectId];
+    NSDictionary *jsonObject = [WebUtil webAPICallWithGetMethod:urlString];
+    NSDictionary *json = [jsonObject objectForKey:@"result"];
+    NSArray *deadlinesJSON = [json objectForKey:@"deadlines"];
+    NSMutableArray<Deadline *> *result = [[NSMutableArray alloc] init];
+    for (NSDictionary *deadlineJSON in deadlinesJSON) {
+        [result addObject:[[Deadline alloc] initWithJSON:deadlineJSON]];
+    }
+    return result;
+}
+
 - (void)clearData {
     self.courses = [[NSMutableArray alloc] init];
     self.projects = [[NSMutableArray alloc] init];
