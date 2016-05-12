@@ -178,6 +178,7 @@
     if(indexPath.section==0){
         if(indexPath.row==1){
             QRcodeViewController *QRViewController = [[QRcodeViewController alloc] init];
+            QRViewController.deadlineId = [NSString stringWithFormat:@"%ld", _deadline.deadlineId];
             [self presentViewController:QRViewController animated:YES completion:^{//备注2
                 NSLog(@"showQR!");
             }];

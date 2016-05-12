@@ -10,6 +10,7 @@
 
 @interface QRcodeViewController : UIViewController
 
-@property(nonatomic) UIImageView* imgView;
+@property (nonatomic) UIImageView *imgView;
+@property (nonatomic) NSString *deadlineId;
 
 @end

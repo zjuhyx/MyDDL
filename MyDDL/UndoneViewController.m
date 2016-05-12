@@ -116,6 +116,7 @@
         Deadline *deadline = [[DeadlineModel getDeadlineModel] getRemoteDeadlineById:[obj.stringValue intValue]];
         [[DeadlineModel getDeadlineModel] addDeadline:deadline];
     }
+    [self loadDeadlineViews];
     
 }
 
