@@ -50,7 +50,7 @@
     return self;
 }
 
-- (NSDictionary *)toDictionary {
+- (NSMutableDictionary *)toDictionary {
     NSMutableDictionary *result = [[NSMutableDictionary alloc] init];
     [result setValue:[NSString stringWithFormat:@"%ld", _groupId] forKey:@"groupId"];
     [result setValue:[NSString stringWithFormat:@"%ld", _image] forKey:@"groupImage"];

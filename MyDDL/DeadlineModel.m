@@ -11,6 +11,7 @@
 #import "Project.h"
 #import "WebUtil.h"
 #import "Configuration.h"
+#import "Model.h"
 
 @interface DeadlineModel ()
 
@@ -35,60 +36,6 @@
     if (self) {
         self.allDeadlines = [[NSMutableArray alloc] init];
     }
-    
-//    // for test
-//    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-//    formatter.dateFormat = @"yyyy-MM-dd HH:mm";
-//    
-//    Deadline *deadline1 = [[Deadline alloc] init];
-//    deadline1.name = @"testDeadline";
-//    deadline1.date = [formatter dateFromString:@"2015-12-03 13:30"];
-//    deadline1.owner = [[Course alloc] initWithName:@"testCourse"];
-//    deadline1.detail = @"testDetail";
-//    deadline1.isCompleted = NO;
-//    
-//    Deadline *deadline2 = [[Deadline alloc] init];
-//    deadline2.name = @"testDeadline2";
-//    deadline2.date = [formatter dateFromString:@"2015-12-04 17:50"];
-//    deadline2.owner = [[Project alloc] initWithName:@"testProject"];
-//    deadline2.detail = @"testDetail";
-//    deadline2.isCompleted = NO;
-//    
-//    Deadline *deadline3 = [[Deadline alloc] init];
-//    deadline3.name = @"testDeadline3";
-//    deadline3.date = [formatter dateFromString:@"2015-12-11 13:30"];
-//    deadline3.owner = [[Course alloc] initWithName:@"testCourse2"];
-//    deadline3.detail = @"testDetail";
-//    deadline3.isCompleted = NO;
-//    
-//    Deadline *deadline4 = [[Deadline alloc] init];
-//    deadline4.name = @"testDeadline4";
-//    deadline4.date = [formatter dateFromString:@"2016-01-04 13:30"];
-//    deadline4.owner = [[Course alloc] initWithName:@"testCourse2"];
-//    deadline4.detail = @"testDetail";
-//    deadline4.isCompleted = YES;
-//    
-//    Deadline *deadline5 = [[Deadline alloc] init];
-//    deadline5.name = @"testDeadline5";
-//    deadline5.date = [formatter dateFromString:@"2016-3-04 13:30"];
-//    deadline5.owner = [[Course alloc] initWithName:@"testCourse2"];
-//    deadline5.detail = @"testDetail";
-//    deadline5.isCompleted = NO;
-//    
-//    Deadline *deadline6 = [[Deadline alloc] init];
-//    deadline6.name = @"testDeadline6";
-//    deadline6.date = [formatter dateFromString:@"2016-12-04 13:30"];
-//    deadline6.owner = [[Course alloc] initWithName:@"testCourse2"];
-//    deadline6.detail = @"testDetail";
-//    deadline6.isCompleted = NO;
-//    
-//    [_allDeadlines addObject:deadline1];
-//    [_allDeadlines addObject:deadline2];
-//    [_allDeadlines addObject:deadline3];
-//    [_allDeadlines addObject:deadline4];
-//    [_allDeadlines addObject:deadline5];
-//    [_allDeadlines addObject:deadline6];
-    
     return self;
 }
 
@@ -127,7 +74,10 @@
     [self.allDeadlines addObject:deadline];
     
     NSString *urlString = [NSString stringWithFormat:@"%@/deadline", [Configuration getConfiguration].serverAddress];
-    [WebUtil webAPICallWithPutMethod:urlString parameters:[deadline toDictionary]];
+    NSMutableDictionary *parameters = [deadline toDictionary];
+    [parameters setValue:[NSString stringWithFormat:@"%ld", [Model getInstance].userInfo.userId] forKey:@"userId"];
+    NSDictionary *addResult = [WebUtil webAPICallWithPutMethod:urlString parameters:parameters];
+    deadline.deadlineId = [[addResult objectForKey:@"deadlineId"] intValue];
 }
 
 - (Deadline *)getDeadlineById:(long)deadlineId {

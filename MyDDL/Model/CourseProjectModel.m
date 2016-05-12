@@ -9,6 +9,7 @@
 #import "CourseProjectModel.h"
 #import "Configuration.h"
 #import "WebUtil.h"
+#import "Model.h"
 
 @implementation CourseProjectModel
 
@@ -42,8 +43,10 @@
     [target addObject:courseProject];
     
     NSString *urlString = [NSString stringWithFormat:@"%@/courseProject", [Configuration getConfiguration].serverAddress];
-    NSDictionary *parameters = [courseProject toDictionary];
-    [WebUtil webAPICallWithPutMethod:urlString parameters:parameters];
+    NSMutableDictionary *parameters = [courseProject toDictionary];
+    [parameters setValue:[NSString stringWithFormat:@"%ld", [Model getInstance].userInfo.userId] forKey:@"userId"];
+    NSDictionary *addResult = [WebUtil webAPICallWithPutMethod:urlString parameters:parameters];
+    courseProject.courseProjectId = [[addResult objectForKey:@"courseProjectId"] intValue];
 }
 
 - (void)changeCourseProject:(CourseAndProject *)courseProject {

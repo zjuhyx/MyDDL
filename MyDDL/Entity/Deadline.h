@@ -24,6 +24,6 @@
 @property (nonatomic) bool isCompleted;
 
 - (instancetype)initWithJSON:(NSDictionary *)json;
-- (NSDictionary *)toDictionary;
+- (NSMutableDictionary *)toDictionary;
 
 @end
