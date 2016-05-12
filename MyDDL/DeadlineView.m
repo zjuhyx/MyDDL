@@ -12,6 +12,7 @@
 #import "DeadlineDetailController.h"
 #import "Course.h"
 #import "Project.h"
+#import "AxisView.h"
 
 @interface DeadlineView ()
 
@@ -25,7 +26,7 @@
 
 - (instancetype)initWithOriginY:(CGFloat)y deadline:(Deadline *)deadline {
     CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
-    CGRect frame = CGRectMake(screenWidth / 2 -20, y, screenWidth / 2, 55);
+    CGRect frame = CGRectMake(screenWidth / 2 - 20 - LEFT_OFFSET, y, screenWidth / 2 + 20, 55);
     self = [super initWithFrame:frame];
     if (self) {
         

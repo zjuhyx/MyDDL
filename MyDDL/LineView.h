@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define AXIS_WIDTH 8
+#define AXIS_WIDTH 2
 
 @interface LineView : UIView
 

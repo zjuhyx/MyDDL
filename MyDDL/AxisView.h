@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define LEFT_OFFSET 50
+
 @interface AxisView : UIImageView
 
 - (instancetype)initWithLength:(CGFloat)length redLength:(CGFloat)redLength;
