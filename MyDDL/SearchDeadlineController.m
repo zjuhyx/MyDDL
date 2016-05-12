@@ -114,7 +114,6 @@
             NSString *tempStr=deadline.name;
             if ([tempStr rangeOfString:searchText options:NSCaseInsensitiveSearch].length >0 ) {
                 [_showData addObject:deadline];
-                NSLog(@"%lu",(unsigned long)[_showData count]);
             }
         }
         [self.tableView reloadData];
