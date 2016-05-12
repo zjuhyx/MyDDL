@@ -7,6 +7,7 @@
 //
 
 #import "SettingViewController.h"
+#import "Model.h"
 
 @interface SettingViewController() <XLFormDescriptorDelegate>
 
@@ -65,8 +66,12 @@
         //头像
         section = [XLFormSectionDescriptor formSection];
         [form addFormSection:section];
-        row = [XLFormRowDescriptor formRowDescriptorWithTag:@"kImage" rowType:XLFormRowDescriptorTypeImage title:@"头像"];
-        row.value = [UIImage imageNamed:@"pickImage_default"];//头像在哪呢？！
+        row = [XLFormRowDescriptor formRowDescriptorWithTag:@"image" rowType:XLFormRowDescriptorTypeImage title:@"头像"];
+        UIImage* tmp_image=[[Model getInstance] getImage:[Model getInstance].userInfo.userImageId];
+        if(tmp_image==nil)
+            row.value = [UIImage imageNamed:@"pickImage_default"];//头像在哪呢？！
+        else
+            row.value =tmp_image;
         [section addFormRow:row];
         
         self.form=form;//前面加了self = [super init];就可以用这一句了！！
@@ -94,7 +99,7 @@
         UITextField *tf=[alertView textFieldAtIndex:0];//获得输入框
         NSString *text=tf.text;//获得值
         //NSLog(text);
-        if([text isEqual:@"123456"]){//验证密码
+        if([[Model getInstance] loginWithUsername:[Model getInstance].username password:text]==YES){//验证密码
             self.form.disabled = !self.form.disabled;
             [self.tableView endEditing:YES];
             [self.tableView reloadData];
@@ -109,7 +114,18 @@
 }
 
 - (void) saveEdit{
-    
+    UserInfo* userInfo=[UserInfo alloc];
+    XLFormRowDescriptor* row=[self.form formRowWithTag:@"name"];
+    userInfo.userName=row.value;
+    row=[self.form formRowWithTag:@"password"];
+    [[Model getInstance] changeUserPassword:row.value];
+    row=[self.form formRowWithTag:@"phone"];
+    userInfo.userPhone=row.value;
+    row=[self.form formRowWithTag:@"email"];
+    userInfo.userEmail=row.value;
+    row=[self.form formRowWithTag:@"image"];
+    userInfo.userImageId=[[Model getInstance] addImage:row.value];
+    [[Model getInstance] changeUserInfo:userInfo];
     
     [self.navigationController popViewControllerAnimated:YES];
 }

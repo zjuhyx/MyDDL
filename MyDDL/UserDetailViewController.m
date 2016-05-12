@@ -10,6 +10,7 @@
 
 #import "IntroCell.h"
 #import "ImageDetailViewController.h"
+#import "Model.h"
 
 @interface UserDetailViewController ()
 
@@ -61,7 +62,7 @@
     if(indexPath.section==0){
         IntroCell *intro_cell = [[IntroCell alloc] init];
         [intro_cell setCellLabel1:_user.userName label2:@"该用户还没有填写自我介绍"];
-        [intro_cell setCellImage:_user.userImage imageName:nil];//@"background2"
+        [intro_cell setCellImage:[[Model getInstance] getImage:_user.userImageId] imageName:nil];//@"background2"
         
         UITapGestureRecognizer* singleRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickImage)];
         singleRecognizer.numberOfTapsRequired = 1; // 单击

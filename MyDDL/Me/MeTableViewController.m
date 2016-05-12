@@ -61,7 +61,10 @@
     if (indexPath.section == 0) {
         IntroCell *intro_cell = [[IntroCell alloc] init];
         [intro_cell setCellLabel1:username label2:@"该用户现在还没有介绍"];
-        [intro_cell setCellImage:nil imageName:@"avatar_default"];
+        if([Model getInstance].userInfo.userImageId==0)
+            [intro_cell setCellImage:nil imageName:@"avatar_default"];
+        else
+            [intro_cell setCellImage:[[Model getInstance] getImage:[Model getInstance].userInfo.userImageId] imageName:nil];
         
         UITapGestureRecognizer* singleRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickImage)];
         singleRecognizer.numberOfTapsRequired = 1; // 单击

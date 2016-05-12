@@ -12,7 +12,7 @@
 
 @property (nonatomic) long userId;
 @property (nonatomic) NSString *userName;
-@property (nonatomic) UIImage *userImage;
+@property (nonatomic) long userImageId;
 @property (nonatomic) NSString *userPhone;
 @property (nonatomic) NSString *userEmail;
 @property (nonatomic) int mainScreenImage;

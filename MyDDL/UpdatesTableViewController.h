@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GroupMessage.h"
 
 @interface UpdatesTableViewController : UITableViewController
+
+@property(nonatomic)long groupId;
+@property(nonatomic)NSArray<GroupMessage *> *messages;
 
 @end
