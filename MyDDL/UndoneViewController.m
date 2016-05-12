@@ -113,6 +113,8 @@
         AVMetadataMachineReadableCodeObject *obj = metadataObjects[0];
         // 提示：如果需要对url或者名片等信息进行扫描，可以在此进行扩展！
         NSLog(@"%@", obj.stringValue);
+        Deadline *deadline = [[DeadlineModel getDeadlineModel] getRemoteDeadlineById:[obj.stringValue intValue]];
+        [[DeadlineModel getDeadlineModel] addDeadline:deadline];
     }
     
 }

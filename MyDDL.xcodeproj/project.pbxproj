@@ -490,7 +490,7 @@
 				TargetAttributes = {
 					189D2E381C05A105002A15D5 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = PMPU3CS62P;
+						DevelopmentTeam = R42SHF3W9T;
 					};
 				};
 			};
@@ -737,7 +737,7 @@
 				INFOPLIST_FILE = MyDDL/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = hyx.org.myddl.MyDDL;
+				PRODUCT_BUNDLE_IDENTIFIER = khy.org.myddl.MyDDL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -751,7 +751,7 @@
 				INFOPLIST_FILE = MyDDL/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = hyx.org.myddl.MyDDL;
+				PRODUCT_BUNDLE_IDENTIFIER = khy.org.myddl.MyDDL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
