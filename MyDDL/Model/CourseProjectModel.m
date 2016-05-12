@@ -88,6 +88,20 @@
     return nil;
 }
 
+- (CourseAndProject *)getCourseProjectByName:(NSString *)name {
+    for (int i = 0; i < self.courses.count; ++i) {
+        if ([self.courses[i].name compare:name] == NSOrderedSame) {
+            return self.courses[i];
+        }
+    }
+    for (int i = 0; i < self.projects.count; ++i) {
+        if ([self.projects[i].name compare:name] == NSOrderedSame) {
+            return self.projects[i];
+        }
+    }
+    return nil;
+}
+
 - (void)clearData {
     self.courses = [[NSMutableArray alloc] init];
     self.projects = [[NSMutableArray alloc] init];

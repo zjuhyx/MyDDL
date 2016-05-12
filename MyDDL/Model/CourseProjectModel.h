@@ -21,6 +21,7 @@
 - (void)changeCourseProject:(CourseAndProject *)courseProject;
 - (void)deleteCourseProject:(CourseAndProject *)courseProject;
 - (CourseAndProject *)getCourseProjectById:(long)courseProjectId;
+- (CourseAndProject *)getCourseProjectByName:(NSString *)name;
 
 - (void)clearData;
 
