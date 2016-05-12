@@ -60,7 +60,9 @@
     NSURL *url = [NSURL URLWithString:wholeURL];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:5];
     request.HTTPMethod = @"PUT";
-    return [WebUtil webAPICallWithRequest:request];
+    NSLog(@"%@", wholeURL);
+    NSDictionary *addResult = [[WebUtil webAPICallWithRequest:request] objectForKey:@"result"];
+    return addResult;
 }
 
 @end

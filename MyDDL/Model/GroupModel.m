@@ -53,7 +53,8 @@
     
     NSString *urlString = [NSString stringWithFormat:@"%@/group", [Configuration getConfiguration].serverAddress];
     NSDictionary *parameters = [group toDictionary];
-    [WebUtil webAPICallWithPutMethod:urlString parameters:parameters];
+    NSDictionary *addResult = [WebUtil webAPICallWithPutMethod:urlString parameters:parameters];
+    group.groupId = [[addResult objectForKey:@"groupId"] intValue];
 }
 
 - (void)deleteGroup:(long)groupId {

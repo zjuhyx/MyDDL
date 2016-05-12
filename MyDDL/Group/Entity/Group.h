@@ -20,6 +20,6 @@
 
 - (instancetype)initWithName:(NSString *)name deadlines:(NSArray *)deadlines;
 - (instancetype)initWithJSON:(NSDictionary *)json;
-- (NSDictionary *)toDictionary;
+- (NSMutableDictionary *)toDictionary;
 
 @end

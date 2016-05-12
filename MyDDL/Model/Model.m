@@ -53,7 +53,7 @@
     
     NSArray *deadlines = [jsonResult objectForKey:@"deadlines"];
     for (NSDictionary *deadline in deadlines) {
-        [self.deadlineModel addDeadline:[[Deadline alloc] initWithJSON:deadline]];
+        [self.deadlineModel.allDeadlines addObject:[[Deadline alloc] initWithJSON:deadline]];
     }
     NSArray *groups = [jsonResult objectForKey:@"groups"];
     for (NSDictionary *group in groups) {

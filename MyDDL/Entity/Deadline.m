@@ -38,7 +38,7 @@
     return self;
 }
 
-- (NSDictionary *)toDictionary {
+- (NSMutableDictionary *)toDictionary {
     NSMutableDictionary *result = [[NSMutableDictionary alloc] init];
     [result setValue:[NSString stringWithFormat:@"%ld", _deadlineId] forKey:@"deadlineId"];
     [result setValue:_name forKey:@"deadlineName"];

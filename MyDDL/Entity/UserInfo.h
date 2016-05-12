@@ -20,6 +20,6 @@
 @property (nonatomic) int mainScreenImage;
 
 - (instancetype)initWithJSON:(NSDictionary *)json;
-- (NSDictionary *)toDictionary;
+- (NSMutableDictionary *)toDictionary;
 
 @end
