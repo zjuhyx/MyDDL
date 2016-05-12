@@ -34,6 +34,10 @@
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];//???
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self.tableView reloadData];
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 5;
 }
@@ -69,7 +73,8 @@
     if(indexPath.section==0 && indexPath.row==0){
         IntroCell *intro_cell = [[IntroCell alloc] init];
         [intro_cell setCellLabel1:_group.name label2:[NSString stringWithFormat:@"群号：%ld",_group.groupId]];
-        [intro_cell setCellImage:_group.avatar imageName:nil];
+        
+        [intro_cell setCellImage:[[Model getInstance] getImage:_group.image] imageName:nil];
         
         UITapGestureRecognizer* singleRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickImage)];
         singleRecognizer.numberOfTapsRequired = 1; // 单击
@@ -168,10 +173,11 @@
     EditGroupViewController *editGroupViewController=[EditGroupViewController alloc];
     editGroupViewController.formTitle=@"编辑群信息";
     editGroupViewController.isCreate=NO;
-    editGroupViewController.groupName=_group.name;
-    editGroupViewController.groupImage=_group.avatar;
-    editGroupViewController.groupNickname=[Model getInstance].username;
-    editGroupViewController.groupLeader=@"组长xxx";
+    editGroupViewController.group=_group;
+    //editGroupViewController.groupName=_group.name;
+    //editGroupViewController.groupImage=[[Model getInstance] getImage:_group.image];
+    //editGroupViewController.groupNickname=[Model getInstance].username;
+    //editGroupViewController.groupLeader=@"组长xxx";
     editGroupViewController=[editGroupViewController init];
     [self.navigationController pushViewController:editGroupViewController animated:YES];
 }
