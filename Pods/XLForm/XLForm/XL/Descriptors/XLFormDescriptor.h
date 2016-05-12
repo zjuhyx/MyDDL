@@ -56,6 +56,7 @@ typedef NS_OPTIONS(NSUInteger, XLFormRowNavigationOptions) {
 @property (nonatomic) BOOL addAsteriskToRequiredRowsTitle;
 @property (getter=isDisabled) BOOL disabled;
 @property (nonatomic) XLFormRowNavigationOptions rowNavigationOptions;
+//@property (nonatomic, nullable) NSString* IIId;
 
 @property (weak, nullable) id<XLFormDescriptorDelegate> delegate;
 

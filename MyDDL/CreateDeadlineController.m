@@ -59,6 +59,7 @@
     newDeadline.contactName = [self.form formRowWithTag:@"contact"].value;
     newDeadline.contactPhone = [self.form formRowWithTag:@"phone"].value;
     newDeadline.contactEmail = [self.form formRowWithTag:@"email"].value;
+    newDeadline.courseProjectName=[self.form formRowWithTag:@"kSelectorLeftRight"].value;
     
     [deadlineModel addDeadline:newDeadline];
     self.deadlineController.dataIsChanged = YES;

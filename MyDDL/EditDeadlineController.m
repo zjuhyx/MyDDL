@@ -54,6 +54,9 @@
     editedDeadline.contactName = [self.form formRowWithTag:@"contact"].value;
     editedDeadline.contactPhone = [self.form formRowWithTag:@"phone"].value;
     editedDeadline.contactEmail = [self.form formRowWithTag:@"email"].value;
+    //NSLog(@"%@", [[self.form formRowWithTag:@"kSelectorLeftRight"].leftRightSelectorLeftOptionSelected displayText]);//null
+    editedDeadline.courseProjectName=[self.form formRowWithTag:@"kSelectorLeftRight"].value;
+    //editedDeadline.courseProjectType=[self.form formRowWithTag:@"kSelectorLeftRight"].title;
     
     [deadlineModel changeDeadline:editedDeadline];
     self.deadlineController.dataIsChanged = YES;
