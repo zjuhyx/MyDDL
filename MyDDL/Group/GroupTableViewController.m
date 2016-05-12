@@ -61,9 +61,7 @@
     }
     //cell.imageView.image = [UIImage imageNamed:groupImageName[indexPath.row]];
     cell.imageView.image = [[Model getInstance] getImage:_groups[indexPath.row].image];
-    CALayer *layer = cell.imageView.layer;
-    layer.masksToBounds = YES;
-    
+
     CGSize size = CGSizeMake(58, 58);
     // 创建一个bitmap的context
     // 并把它设置成为当前正在使用的context
@@ -76,6 +74,9 @@
     UIGraphicsEndImageContext();
     // 返回新的改变大小后的图片
     //image=scaledImage;
+    
+    CALayer *layer = cell.imageView.layer;
+    layer.masksToBounds = YES;
     layer.cornerRadius = 29;
     
     return cell;
@@ -106,11 +107,30 @@
 }
 
 - (void)addGroup {
-    EditGroupViewController *editGroupViewController=[EditGroupViewController alloc];
-    editGroupViewController.formTitle=@"创建群";
-    editGroupViewController.isCreate=YES;
-    editGroupViewController=[editGroupViewController init];
-    [self.navigationController pushViewController:editGroupViewController animated:YES];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:nil
+                                  delegate:self
+                                  cancelButtonTitle:@"取消"
+                                  destructiveButtonTitle:nil
+                                  otherButtonTitles:@"创建小组", @"扫描二维码加入小组",nil];
+    actionSheet.tag=1;
+    //actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+    [actionSheet showInView:self.view];
+    
+    
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if(buttonIndex==0){
+        EditGroupViewController *editGroupViewController=[EditGroupViewController alloc];
+        editGroupViewController.formTitle=@"创建群";
+        editGroupViewController.isCreate=YES;
+        editGroupViewController=[editGroupViewController init];
+        [self.navigationController pushViewController:editGroupViewController animated:YES];
+    }
+    else{
+        //扫描二维码
+    }
 }
 
 

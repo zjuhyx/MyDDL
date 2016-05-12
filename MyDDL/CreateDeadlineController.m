@@ -10,6 +10,8 @@
 #import "DeadlineModel.h"
 #import "Course.h"
 #import "Project.h"
+#import "CourseProjectModel.h"
+#import "Model.h"
 
 @interface CreateDeadlineController ()
 
@@ -54,12 +56,21 @@
     DeadlineModel *deadlineModel = [DeadlineModel getDeadlineModel];
     Deadline *newDeadline = [[Deadline alloc] init];
     newDeadline.name = [self.form formRowWithTag:@"title"].value;
+    newDeadline.image = [[Model getInstance] addOriginalImage:[self.form formRowWithTag:@"image"].value];
     newDeadline.date = [self.form formRowWithTag:@"date"].value;
     newDeadline.detail = [self.form formRowWithTag:@"detail"].value;
     newDeadline.contactName = [self.form formRowWithTag:@"contact"].value;
     newDeadline.contactPhone = [self.form formRowWithTag:@"phone"].value;
     newDeadline.contactEmail = [self.form formRowWithTag:@"email"].value;
     newDeadline.courseProjectName=[self.form formRowWithTag:@"kSelectorLeftRight"].value;
+    CourseAndProject* tmp=[[CourseProjectModel getInstance] getCourseProjectByName:newDeadline.courseProjectName];
+    newDeadline.courseProjectId=tmp.courseProjectId;
+    if([[self.form formRowWithTag:@"kSelectorLeftRight"].title isEqualToString:@"课程"]){
+        newDeadline.courseProjectType=@"course";
+    }
+    else{
+        newDeadline.courseProjectType=@"project";
+    }
     
     [deadlineModel addDeadline:newDeadline];
     self.deadlineController.dataIsChanged = YES;

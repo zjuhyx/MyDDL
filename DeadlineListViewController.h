@@ -12,5 +12,7 @@
 @interface DeadlineListViewController : UITableViewController
 
 @property (nonatomic, retain) NSMutableArray<Deadline*>* dataArray;
+@property (nonatomic) long groupId;
+@property(nonatomic)int deleteRowIndex;
 
 @end

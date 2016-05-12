@@ -144,6 +144,7 @@
     }
     else if (indexPath.section == 2) {
         DeadlineListViewController* deadlineListViewController=[DeadlineListViewController alloc];
+        deadlineListViewController.groupId=_group.groupId;
         deadlineListViewController.dataArray=_group.deadlines;
         deadlineListViewController=[deadlineListViewController init];
         [self.navigationController pushViewController:deadlineListViewController animated:YES];

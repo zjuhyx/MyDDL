@@ -9,6 +9,7 @@
 #import "DeadlineListViewController.h"
 #import "DeadlineCell.h"
 #import "DeadlineDetailController.h"
+#import "GroupModel.h"
 
 @interface DeadlineListViewController ()
 
@@ -101,11 +102,18 @@
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_dataArray removeObjectAtIndex:[indexPath row]];
+        [_dataArray removeObjectAtIndex:indexPath.row];
+        _deleteRowIndex=indexPath.row;
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationTop];
+        UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:nil message:@"确定删除？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [alertview show];
     }
 }
 
-
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex==1){
+        [[GroupModel getInstance] deleteGroupDeadlineByGroupId:_groupId deadlineId:_dataArray[_deleteRowIndex].deadlineId];
+    }
+}
 
 @end

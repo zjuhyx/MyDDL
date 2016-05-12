@@ -34,15 +34,32 @@
 }
 
 - (void)addDeadline {
-    [self.navigationController pushViewController:[[CreateDeadlineController alloc] initWithDeadlineController:self] animated:YES];
-    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:nil
+                                  delegate:self
+                                  cancelButtonTitle:@"取消"
+                                  destructiveButtonTitle:nil
+                                  otherButtonTitles:@"创建deadline", @"扫描二维码获取deadline",nil];
+    actionSheet.tag=1;
+    //actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+    [actionSheet showInView:self.view];
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) {
-        [self LocalPhoto];
-    }else if (buttonIndex == 1) {
-        [self takePhoto];
+    if(actionSheet.tag==1){//
+        if(buttonIndex==0){
+            [self.navigationController pushViewController:[[CreateDeadlineController alloc] initWithDeadlineController:self] animated:YES];
+        }
+        else{
+            //扫描二维码
+        }
+    }
+    if(actionSheet.tag==2){
+        if (buttonIndex == 0) {
+            [self LocalPhoto];
+        }else if (buttonIndex == 1) {
+            [self takePhoto];
+        }
     }
 }
 

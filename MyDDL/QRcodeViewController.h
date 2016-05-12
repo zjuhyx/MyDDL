@@ -10,4 +10,6 @@
 
 @interface QRcodeViewController : UIViewController
 
+@property(nonatomic) UIImageView* imgView;
+
 @end
