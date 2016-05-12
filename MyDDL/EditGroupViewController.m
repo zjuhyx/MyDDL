@@ -9,6 +9,8 @@
 #import "EditGroupViewController.h"
 #import "GroupModel.h"
 #import "Group.h"
+#import "Model.h"
+#import "GroupDetailTableViewController.h"
 
 @interface EditGroupViewController() <XLFormDescriptorDelegate>
 
@@ -32,7 +34,7 @@
         row = [XLFormRowDescriptor formRowDescriptorWithTag:@"name" rowType:XLFormRowDescriptorTypeText];
         row.title=@"群名称";
         if(_isCreate==NO){
-            row.value=_groupName;
+            row.value=_group.name;
         }
         else{
             [row.cellConfigAtConfigure setObject:@"输入群名称" forKey:@"textField.placeholder"];
@@ -42,35 +44,35 @@
         //群头像
         row = [XLFormRowDescriptor formRowDescriptorWithTag:@"image" rowType:XLFormRowDescriptorTypeImage title:@"群头像"];
         if(_isCreate==NO)
-            row.value = _groupImage;
+            row.value = [[Model getInstance] getImage:_group.image];
         else{
             row.value = [UIImage imageNamed:@"pickImage_default"];
         }
         [section addFormRow:row];
         
-        if(_isCreate==NO){
-            section = [XLFormSectionDescriptor formSection];
-            [form addFormSection:section];
-            //群名片
-            row = [XLFormRowDescriptor formRowDescriptorWithTag:@"nickname" rowType:XLFormRowDescriptorTypeText];
-            row.title=@"群名片";
-            row.value=_groupNickname;
-            [section addFormRow:row];
-            
+//        if(_isCreate==NO){
 //            section = [XLFormSectionDescriptor formSection];
 //            [form addFormSection:section];
-//            //转让群
-//            // Selector Push
-//            row = [XLFormRowDescriptor formRowDescriptorWithTag:@"leader" rowType:XLFormRowDescriptorTypeSelectorPush title:@"群主"];
-//            row.selectorOptions = @[[XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:_groupLeader],
-//                                    [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Option 2"],
-//                                    [XLFormOptionsObject formOptionsObjectWithValue:@(2) displayText:@"Option 3"],
-//                                    [XLFormOptionsObject formOptionsObjectWithValue:@(3) displayText:@"Option 4"],
-//                                    [XLFormOptionsObject formOptionsObjectWithValue:@(4) displayText:@"Option 5"]
-//                                    ];
-//            row.value = [XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:_groupLeader];
-//            [section addFormRow:row];
-        }
+////            //群名片
+////            row = [XLFormRowDescriptor formRowDescriptorWithTag:@"nickname" rowType:XLFormRowDescriptorTypeText];
+////            row.title=@"群名片";
+////            row.value=_groupNickname;
+////            [section addFormRow:row];
+////            
+////            section = [XLFormSectionDescriptor formSection];
+////            [form addFormSection:section];
+////            //转让群
+////            // Selector Push
+////            row = [XLFormRowDescriptor formRowDescriptorWithTag:@"leader" rowType:XLFormRowDescriptorTypeSelectorPush title:@"群主"];
+////            row.selectorOptions = @[[XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:_groupLeader],
+////                                    [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Option 2"],
+////                                    [XLFormOptionsObject formOptionsObjectWithValue:@(2) displayText:@"Option 3"],
+////                                    [XLFormOptionsObject formOptionsObjectWithValue:@(3) displayText:@"Option 4"],
+////                                    [XLFormOptionsObject formOptionsObjectWithValue:@(4) displayText:@"Option 5"]
+////                                    ];
+////            row.value = [XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:_groupLeader];
+////            [section addFormRow:row];
+//        }
         
         self.form=form;//前面加了self = [super init];就可以用这一句了！！
     }
@@ -90,16 +92,23 @@
 - (void) toSave{
     //...保存编辑内容
     XLFormRowDescriptor* row=[self.form formRowWithTag:@"name"];
-        Group* group=[[Group alloc] initWithName:row.value deadlines:nil];
-    row=[self.form formRowWithTag:@"image"];
-    group.avatar=row.value;
     if(_isCreate==NO){
         //row=[self.form formRowWithTag:@"nickname"];
         //group.name=row.value;
         //row=[self.form formRowWithTag:@"leader"];
-        [[GroupModel getInstance] changeGroup:group];
+        _group.name=row.value;
+        row=[self.form formRowWithTag:@"image"];
+        _group.image=[[Model getInstance] addImage:row.value];
+        NSLog(@"edit group:%@", _group.name);
+        [[GroupModel getInstance] changeGroup:_group];
+        GroupDetailTableViewController *groupDetailTableViewController = [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count-1];
+        groupDetailTableViewController.group = _group;
+        [self.navigationController popToViewController:groupDetailTableViewController animated:true];
     }
     else{
+        Group* group=[[Group alloc] initWithName:row.value deadlines:nil];
+        row=[self.form formRowWithTag:@"image"];
+        group.image=[[Model getInstance] addImage:row.value];
         [[GroupModel getInstance] addGroup:group];
     }
     

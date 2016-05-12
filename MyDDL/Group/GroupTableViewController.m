@@ -10,6 +10,7 @@
 #import "GroupDetailTableViewController.h"
 #import "EditGroupViewController.h"
 #import "GroupModel.h"
+#import "Model.h"
 
 @interface GroupTableViewController () <UIActionSheetDelegate>
 
@@ -32,6 +33,7 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     _groups=[GroupModel getInstance].groups;
+    [self.tableView reloadData];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -58,7 +60,7 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     //cell.imageView.image = [UIImage imageNamed:groupImageName[indexPath.row]];
-    cell.imageView.image = _groups[indexPath.row].avatar;
+    cell.imageView.image = [[Model getInstance] getImage:_groups[indexPath.row].image];
     CALayer *layer = cell.imageView.layer;
     layer.masksToBounds = YES;
     layer.cornerRadius = 25;

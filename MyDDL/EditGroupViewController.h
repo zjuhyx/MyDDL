@@ -8,15 +8,18 @@
 
 #import "XLForm.h"
 #import "XLFormViewController.h"
+#import "Group.h"
 
 @interface EditGroupViewController : XLFormViewController
 
 @property (nonatomic)NSString* formTitle;
 @property (nonatomic)bool isCreate;
 
-@property (nonatomic)NSString* groupName;
-@property (nonatomic)UIImage* groupImage;
-@property (nonatomic)NSString* groupNickname;
-@property (nonatomic)NSString* groupLeader;
+@property(nonatomic)Group* group;
+
+//@property (nonatomic)NSString* groupName;
+//@property (nonatomic)UIImage* groupImage;
+//@property (nonatomic)NSString* groupNickname;
+//@property (nonatomic)NSString* groupLeader;
 
 @end
