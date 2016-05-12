@@ -13,6 +13,8 @@
 
 @interface Model ()
 
+@property (nonatomic) NSMutableDictionary<NSNumber *, UIImage *> *imageCache;
+
 @end
 
 @implementation Model
