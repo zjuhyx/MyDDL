@@ -185,6 +185,7 @@
     NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     
     image = [UIImage imageWithData:data];
+    [self.imageCache setObject:image forKey:key];
     return image;
 }
 
