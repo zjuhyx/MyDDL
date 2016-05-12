@@ -106,8 +106,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0 && indexPath.row==1) {
         DeadlineListViewController* deadlineListViewController=[DeadlineListViewController alloc];
-        //deadlineListViewController.dataArray=_courseAndProject.
-        [self.navigationController pushViewController:[[DeadlineListViewController alloc] init] animated:YES];
+        deadlineListViewController.dataArray=[[CourseProjectModel getInstance] getDeadlinesByCourseProjectId:_courseAndProject.courseProjectId];
+        [self.navigationController pushViewController:[deadlineListViewController init] animated:YES];
     }
     if(indexPath.section==1){
         [[CourseProjectModel getInstance] deleteCourseProject:_courseAndProject];

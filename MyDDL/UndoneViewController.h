@@ -7,7 +7,7 @@
 //
 
 #import "DeadlineController.h"
-#import <AVFoundation.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface UndoneViewController : DeadlineController<AVCaptureMetadataOutputObjectsDelegate>{
     //图片2进制路径

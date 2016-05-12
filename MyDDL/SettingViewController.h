@@ -13,4 +13,6 @@
 
 @interface SettingViewController : XLFormViewController
 
+@property(nonatomic) UIImage* defualtImage;
+
 @end

@@ -40,7 +40,7 @@
         //昵称
         row = [XLFormRowDescriptor formRowDescriptorWithTag:@"name" rowType:XLFormRowDescriptorTypeText];
         row.title=@"昵称";
-        row.value=[Model getInstance].username;
+        row.value=[Model getInstance].userInfo.userName;
         [section addFormRow:row];
         //密码
         row = [XLFormRowDescriptor formRowDescriptorWithTag:@"password" rowType:XLFormRowDescriptorTypePassword];
@@ -68,10 +68,11 @@
         [form addFormSection:section];
         row = [XLFormRowDescriptor formRowDescriptorWithTag:@"image" rowType:XLFormRowDescriptorTypeImage title:@"头像"];
         UIImage* tmp_image=[[Model getInstance] getImage:[Model getInstance].userInfo.userImageId];
-        if(tmp_image==nil)
+        _defualtImage=[UIImage imageNamed:@"pickImage_default"];
+        if([Model getInstance].userInfo.userImageId==0)
             row.value = [UIImage imageNamed:@"pickImage_default"];//头像在哪呢？！
         else
-            row.value =tmp_image;
+            row.value = tmp_image;
         [section addFormRow:row];
         
         self.form=form;//前面加了self = [super init];就可以用这一句了！！
@@ -114,7 +115,8 @@
 }
 
 - (void) saveEdit{
-    UserInfo* userInfo=[UserInfo alloc];
+    UserInfo* userInfo=[[UserInfo alloc] init];
+    userInfo.userId=[Model getInstance].userInfo.userId;
     XLFormRowDescriptor* row=[self.form formRowWithTag:@"name"];
     userInfo.userName=row.value;
     row=[self.form formRowWithTag:@"password"];
@@ -124,7 +126,8 @@
     row=[self.form formRowWithTag:@"email"];
     userInfo.userEmail=row.value;
     row=[self.form formRowWithTag:@"image"];
-    userInfo.userImageId=[[Model getInstance] addImage:row.value];
+    //if([row.value isEqual:_defualtImage])
+        userInfo.userImageId=[[Model getInstance] addImage:row.value];
     [[Model getInstance] changeUserInfo:userInfo];
     
     [self.navigationController popViewControllerAnimated:YES];
