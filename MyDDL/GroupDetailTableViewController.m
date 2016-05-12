@@ -15,6 +15,7 @@
 #import "UpdatesTableViewController.h"
 #import "EditGroupViewController.h"
 #import "Model.h"
+#import "GroupModel.h"
 
 @implementation GroupDetailTableViewController
 
@@ -52,7 +53,7 @@
         return 60;
     }
     else{
-        return 50;
+        return 43;
     }
 }
 
@@ -87,10 +88,20 @@
             cell.textLabel.text = @"二维码";
             cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
         } else if(indexPath.section==1){
-            cell=[cell initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"UITableViewCell"];
-            cell.detailTextLabel.text=@"05/23/2016";
-            cell.textLabel.text=@"这是一条最新的群动态！！";
-            cell.imageView.image=[UIImage imageNamed:@"unread1"];
+            NSArray<GroupMessage *> *messages=[[GroupModel getInstance] getGroupMessages:_group.groupId];
+            if(messages.count>0){
+                cell=[cell initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"UITableViewCell"];
+                NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+                formatter.dateFormat = @"MM/dd/yyyy";
+                cell.detailTextLabel.text = [formatter stringFromDate:messages[0].date];
+                cell.textLabel.text=messages[0].content;
+                cell.imageView.image=[UIImage imageNamed:@"unread1"];
+            }
+            else{
+                cell.textLabel.text=@"目前没有群消息";
+                //cell.textLabel.textColor=[UIColor grayColor];
+                cell.imageView.image=[UIImage imageNamed:@"unread2"];
+            }
             cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
         } else if(indexPath.section==2){
             cell.textLabel.text = @"查看Deadlines";
@@ -102,17 +113,7 @@
         } else {
             cell=[cell initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"UITableViewCell"];
             cell.textLabel.text = _group.members[indexPath.row].userName;
-            //cell.detailTextLabel.text=_group.members[indexPath.row].userName;
-            
-//            if (indexPath.row == 0) {
-//                //cell.textLabel.text = @"胡译心";
-//                cell.detailTextLabel.text=@"群主";
-//            } else {
-//                //cell.textLabel.text = @"柯瀚仰";
-//                cell.detailTextLabel.text=@"成员";
-//            }
-//            cell.detailTextLabel.textColor=[UIColor grayColor];
-            cell.imageView.image = [UIImage imageNamed:@"avatar_default"];
+            cell.imageView.image = [[Model getInstance] getImage:_group.members[indexPath.row].userImageId];
             CALayer *layer = cell.imageView.layer;
             layer.masksToBounds = YES;
             layer.cornerRadius = 25;
@@ -132,7 +133,9 @@
         }];
     }
     else if(indexPath.section==1){
-        [self.navigationController pushViewController:[[UpdatesTableViewController alloc] init] animated:YES];
+        UpdatesTableViewController* updatesTableViewController=[UpdatesTableViewController alloc];
+        updatesTableViewController.groupId=_group.groupId;
+        [self.navigationController pushViewController:[updatesTableViewController init] animated:YES];
     }
     else if (indexPath.section == 2) {
         DeadlineListViewController* deadlineListViewController=[DeadlineListViewController alloc];

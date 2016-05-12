@@ -7,6 +7,7 @@
 //
 
 #import "UpdatesTableViewController.h"
+#import "GroupModel.h"
 
 @interface UpdatesTableViewController ()
 
@@ -19,6 +20,7 @@
     self = [super initWithStyle:UITableViewStylePlain];
     if (self) {
         self.navigationItem.title=@"群动态";
+        _messages=[[GroupModel getInstance] getGroupMessages:_groupId];
     }
     return self;
 }
@@ -38,38 +40,28 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Incomplete implementation, return the number of sections
-//    return 1;
-//}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 10;
+    return _messages.count;
 }
-
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-//    return 5;
-//}
-//
-//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-//    return 5;
-//}
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"UITableViewCell"];
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
     
-    cell.detailTextLabel.text=@"05/23/2016";
-    cell.textLabel.text=@"这是一条最新的群动态！！";
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"MM/dd/yyyy";
+    cell.detailTextLabel.text = [formatter stringFromDate:_messages[indexPath.row].date];
+    cell.textLabel.text=_messages[indexPath.row].content;
+
     cell.textLabel.numberOfLines=0;
-    if(indexPath.row%2==0)
+    if(indexPath.row<5)
         cell.imageView.image=[UIImage imageNamed:@"unread1"];
-    else
-        cell.imageView.image=[UIImage imageNamed:@"unread2"];
+    
+//    if(indexPath.row%2==0)
+//        cell.imageView.image=[UIImage imageNamed:@"unread1"];
+//    else
+//        cell.imageView.image=[UIImage imageNamed:@"unread2"];
     //cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
