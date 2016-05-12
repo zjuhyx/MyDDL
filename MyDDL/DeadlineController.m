@@ -27,6 +27,7 @@
     self = [super init];
     if (self) {
         self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background1"]];
+        //self.view.backgroundColor=[UIColor lightGrayColor];
         [self loadDeadlineViews];
         [self.view addGestureRecognizer:[[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(changeBackground:)]];
         //后面的:一定要有，不然不能跟参数！

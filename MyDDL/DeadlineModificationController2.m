@@ -148,7 +148,11 @@ NSString *const kCountDownTimer = @"countDownTimer";
     //        [section addFormRow:row];
     
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"image" rowType:XLFormRowDescriptorTypeImage title:@"添加图片"];
-    row.value = [UIImage imageNamed:@"pickImage_default"];
+    if(_deadline.image==0)
+        row.value = [UIImage imageNamed:@"pickImage_default"];
+    else{
+        row.value=[[Model getInstance] getImage:_deadline.image];
+    }
     
     [section addFormRow:row];
     

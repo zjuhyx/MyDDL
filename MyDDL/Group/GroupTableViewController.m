@@ -28,11 +28,12 @@
 }
 
 -(void) viewDidLoad{
-    _groups=[GroupModel getInstance].groups;
+    
     if(_isShare==NO)
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addGroup)];
 }
 -(void)viewWillAppear:(BOOL)animated{
+    _groups=[GroupModel getInstance].groups;
     [self.tableView reloadData];
 }
 

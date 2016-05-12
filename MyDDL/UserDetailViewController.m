@@ -61,7 +61,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.section==0){
         IntroCell *intro_cell = [[IntroCell alloc] init];
-        [intro_cell setCellLabel1:_user.userName label2:@"该用户还没有填写自我介绍"];
+        [intro_cell setCellLabel1:_user.userName label2:[NSString stringWithFormat:@"账号：%@", [Model getInstance].username]];
         [intro_cell setCellImage:[[Model getInstance] getImage:_user.userImageId] imageName:nil];//@"background2"
         
         UITapGestureRecognizer* singleRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickImage)];

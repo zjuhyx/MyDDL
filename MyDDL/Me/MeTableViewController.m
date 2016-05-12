@@ -64,7 +64,7 @@
     
     if (indexPath.section == 0) {
         IntroCell *intro_cell = [[IntroCell alloc] init];
-        [intro_cell setCellLabel1:username label2:@"该用户还没有填写自我介绍"];
+        [intro_cell setCellLabel1:username label2:[NSString stringWithFormat:@"账号：%@", [Model getInstance].username]];
         if([Model getInstance].userInfo.userImageId==0)
             [intro_cell setCellImage:nil imageName:@"avatar_default"];
         else

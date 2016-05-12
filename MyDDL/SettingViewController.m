@@ -101,6 +101,7 @@
         NSString *text=tf.text;//获得值
         //NSLog(text);
         if([[Model getInstance] loginWithUsername:[Model getInstance].username password:text]==YES){//验证密码
+            [self.form formRowWithTag:@"password"].value=text;
             self.form.disabled = !self.form.disabled;
             [self.tableView endEditing:YES];
             [self.tableView reloadData];
