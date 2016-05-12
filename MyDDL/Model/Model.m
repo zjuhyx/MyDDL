@@ -172,13 +172,19 @@
 }
 
 - (UIImage *)getImage:(long)imageId {
+    NSNumber *key = [NSNumber numberWithLong:imageId];
+    UIImage *image = [self.imageCache objectForKey:key];
+    if (image != nil) {
+        return image;
+    }
+    
     NSString *urlString = [NSString stringWithFormat:@"%@/image/%ld", [Configuration getConfiguration].serverAddress, imageId];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     NSURLResponse *response;
     NSError *error;
     NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     
-    UIImage *image = [UIImage imageWithData:data];
+    image = [UIImage imageWithData:data];
     return image;
 }
 
