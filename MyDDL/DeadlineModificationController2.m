@@ -92,7 +92,6 @@ NSString *const kCountDownTimer = @"countDownTimer";
     
     row.selectorOptions  = leftRightSelectorOptions;
     row.value = [XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:_deadline.courseProjectName];
-    
     [section addFormRow:row];
     /////////////
     
@@ -141,6 +140,7 @@ NSString *const kCountDownTimer = @"countDownTimer";
     
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"kImage" rowType:XLFormRowDescriptorTypeImage title:@"添加图片"];
     row.value = [UIImage imageNamed:@"pickImage_default"];
+    
     [section addFormRow:row];
     
     

@@ -131,8 +131,10 @@
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     
     if (editedImage) {
+        NSLog(@"editedImage");
         [self chooseImage:editedImage];
     } else {
+        NSLog(@"originalImage");
         [self chooseImage:originalImage];
     }
     
