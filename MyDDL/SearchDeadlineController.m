@@ -42,7 +42,9 @@
     searchDisplayController.searchResultsDelegate = self;
     
     //self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"筛选" style:UIBarButtonItemStylePlain target:self action:@selector(filterData)];
-    
+}
+
+-(void)viewWillAppear:(BOOL)animated{
     _dataList=[DeadlineModel getDeadlineModel].allDeadlines;
     _showData=[DeadlineModel getDeadlineModel].allDeadlines;
 }

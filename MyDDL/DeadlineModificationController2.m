@@ -147,6 +147,7 @@ NSString *const kCountDownTimer = @"countDownTimer";
     
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"detail" rowType:XLFormRowDescriptorTypeTextView];
     [row.cellConfigAtConfigure setObject:@"添加注释" forKey:@"textView.placeholder"];
+    row.value=_deadline.detail;
     [section addFormRow:row];
     
     // Selector Push
