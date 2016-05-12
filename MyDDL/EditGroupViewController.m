@@ -90,20 +90,19 @@
 - (void) toSave{
     //...保存编辑内容
     XLFormRowDescriptor* row=[self.form formRowWithTag:@"name"];
-    GroupModel* groupModel=[GroupModel getInstance];
-    Group* group=[[Group alloc] initWithName:row.value deadlines:nil];
+        Group* group=[[Group alloc] initWithName:row.value deadlines:nil];
     row=[self.form formRowWithTag:@"image"];
     group.avatar=row.value;
     if(_isCreate==NO){
         //row=[self.form formRowWithTag:@"nickname"];
         //group.name=row.value;
         //row=[self.form formRowWithTag:@"leader"];
-        [groupModel changeGroup:group];
+        [[GroupModel getInstance] changeGroup:group];
     }
     else{
-        [groupModel addGroup:group];
+        [[GroupModel getInstance] addGroup:group];
     }
-   
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 

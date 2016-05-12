@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "Group.h"
-
+#import "Deadline.h"
 @interface GroupTableViewController : UITableViewController
 
 @property(nonatomic)NSArray<Group*>* groups;
 @property(nonatomic)bool isShare;
 
 @property(nonatomic)long groupId;
-@property(nonatomic)long deadlineId;
+@property(nonatomic)Deadline* deadline;
 
 @end

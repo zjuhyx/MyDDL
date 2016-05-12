@@ -132,7 +132,7 @@
             NSLog(@"showQR!");
         }];
     }
-    else if(indexPath.section==1){
+    else if(indexPath.section==1){//共享
         UpdatesTableViewController* updatesTableViewController=[UpdatesTableViewController alloc];
         updatesTableViewController.groupId=_group.groupId;
         [self.navigationController pushViewController:[updatesTableViewController init] animated:YES];
@@ -148,6 +148,10 @@
         userDetailViewController.user=_group.members[indexPath.row];
         userDetailViewController=[userDetailViewController init];
         [self.navigationController pushViewController:userDetailViewController animated:YES];
+    }
+    else if(indexPath.section==4){
+        [[GroupModel getInstance] deleteGroupUserByGroupId:_group.groupId userId:[Model getInstance].userInfo.userId];
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 

@@ -23,13 +23,15 @@
         self.navigationItem.title = @"小组";
         _isShare=NO;
     }
-    _groups=[GroupModel getInstance].groups;
     return self;
 }
 
 -(void) viewDidLoad{
     if(_isShare==NO)
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addGroup)];
+}
+-(void)viewWillAppear:(BOOL)animated{
+    _groups=[GroupModel getInstance].groups;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -79,8 +81,11 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if(buttonIndex==1){
+        if(_isShare){
+            [[GroupModel getInstance] addGroupDeadlineWithGroupId:_groupId deadline:_deadline];
+            
+        }
         //- (void)addGroupDeadlineWithGroupId:(long)groupId deadlineId:(long)deadlineId;
-//        [[GroupModel getInstance] addGroupDeadlineWithGroupId:_groupId deadlineId:_deadlineId];
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
