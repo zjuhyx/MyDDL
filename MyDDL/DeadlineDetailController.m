@@ -16,6 +16,7 @@
 #import "WebUtil.h"
 #import "Configuration.h"
 #import "GroupTableViewController.h"
+#import "Model.h"
 
 @interface DeadlineDetailController ()
 
@@ -75,16 +76,31 @@
             //cell.textLabel.text = self.deadline.name;
             cell=[cell initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"UITableViewCell"];
             
-            UIImage *icon = [UIImage imageNamed:@"background2"];
-            _avater_image=icon;
-            cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
-            CGSize itemSize = CGSizeMake(70, 70);
-            UIGraphicsBeginImageContextWithOptions(itemSize, NO, 0.0);
-            CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
-            [icon drawInRect:imageRect];
-            cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
-            UIGraphicsEndImageContext();
-            
+            if(_deadline.image>0){
+                UIImage *icon = [[Model getInstance] getImage:_deadline.image];
+                
+                _avater_image=icon;
+                cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
+                CGSize itemSize = CGSizeMake(70, 70);
+                UIGraphicsBeginImageContextWithOptions(itemSize, NO, 0.0);
+                CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+                [icon drawInRect:imageRect];
+                cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+                UIGraphicsEndImageContext();
+                
+                CALayer *layer = cell.imageView.layer;
+                layer.masksToBounds = YES;
+                layer.cornerRadius = 4;
+                
+                UITapGestureRecognizer* singleRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickImage)];
+                singleRecognizer.numberOfTapsRequired = 1; // 单击
+                [cell addGestureRecognizer:singleRecognizer];//按两下才有反应？？！！
+                
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            }
+            else{
+                cell.selectionStyle=UITableViewCellSelectionStyleNone;
+            }
             cell.textLabel.text = self.deadline.name;
             cell.textLabel.font = [UIFont systemFontOfSize:25];
             //cell.textLabel.textColor=_blueColor;
@@ -96,12 +112,6 @@
             cell.detailTextLabel.text = [detailStr stringByAppendingString:[formatter stringFromDate:self.deadline.date]];
             cell.detailTextLabel.textColor=[UIColor grayColor];
             cell.detailTextLabel.font = [UIFont systemFontOfSize:13];
-            
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            
-            UITapGestureRecognizer* singleRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickImage)];
-            singleRecognizer.numberOfTapsRequired = 1; // 单击
-            [cell addGestureRecognizer:singleRecognizer];//按两下才有反应？？！！
             
         } else if (indexPath.row == 1) {
             cell.textLabel.text = @"二维码";

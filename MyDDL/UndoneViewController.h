@@ -7,12 +7,16 @@
 //
 
 #import "DeadlineController.h"
+#import <AVFoundation.h>
 
-@interface UndoneViewController : DeadlineController{
+@interface UndoneViewController : DeadlineController<AVCaptureMetadataOutputObjectsDelegate>{
     //图片2进制路径
     NSString* filePath;
 }
+
+@property (nonatomic, strong) AVCaptureSession *session;
+
+@property (nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
+
 @end
-
-
 

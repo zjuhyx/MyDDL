@@ -8,6 +8,8 @@
 
 #import "EditDeadlineController.h"
 #import "DeadlineModel.h"
+#import "CourseProjectModel.h"
+#import "Model.h"
 
 @implementation EditDeadlineController
 
@@ -49,11 +51,25 @@
     DeadlineModel *deadlineModel = [DeadlineModel getDeadlineModel];
     Deadline *editedDeadline = self.deadline;
     editedDeadline.name = [self.form formRowWithTag:@"title"].value;
+    editedDeadline.image = [[Model getInstance] addOriginalImage:[self.form formRowWithTag:@"image"].value];
     editedDeadline.date = [self.form formRowWithTag:@"date"].value;
     editedDeadline.detail = [self.form formRowWithTag:@"detail"].value;
     editedDeadline.contactName = [self.form formRowWithTag:@"contact"].value;
+    NSLog([self.form formRowWithTag:@"contact"].value);
     editedDeadline.contactPhone = [self.form formRowWithTag:@"phone"].value;
+    NSLog([self.form formRowWithTag:@"phone"].value);
     editedDeadline.contactEmail = [self.form formRowWithTag:@"email"].value;
+    //NSLog(@"%@", [[self.form formRowWithTag:@"kSelectorLeftRight"].leftRightSelectorLeftOptionSelected displayText]);//null
+    editedDeadline.courseProjectName=[self.form formRowWithTag:@"kSelectorLeftRight"].value;
+    CourseAndProject* tmp=[[CourseProjectModel getInstance] getCourseProjectByName:editedDeadline.courseProjectName];
+    editedDeadline.courseProjectId=tmp.courseProjectId;
+    if([[self.form formRowWithTag:@"kSelectorLeftRight"].title isEqualToString:@"课程"]){
+        editedDeadline.courseProjectType=@"course";
+    }
+    else{
+        editedDeadline.courseProjectType=@"project";
+    }
+    
     
     [deadlineModel changeDeadline:editedDeadline];
     self.deadlineController.dataIsChanged = YES;

@@ -130,6 +130,19 @@
 }
 
 - (long)addImage:(UIImage *)image {
+    CGSize size = CGSizeMake(100, 100);
+    // 创建一个bitmap的context
+    // 并把它设置成为当前正在使用的context
+    UIGraphicsBeginImageContext(size);
+    // 绘制改变大小的图片
+    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    // 从当前context中创建一个改变大小后的图片
+    UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+    // 使当前的context出堆栈
+    UIGraphicsEndImageContext();
+    // 返回新的改变大小后的图片
+    image=scaledImage;
+    
     NSData *data = UIImagePNGRepresentation(image);
     if (!data) {
         data = UIImageJPEGRepresentation(image, 1);
@@ -141,6 +154,21 @@
     NSDictionary *json = [WebUtil webAPICallWithRequest:request];
     long imageId = [[[json objectForKey:@"result"] objectForKey:@"imageId"] longValue];
     return imageId;
+}
+
+- (long)addOriginalImage:(UIImage *)image{
+    NSData *data = UIImagePNGRepresentation(image);
+    if (!data) {
+        data = UIImageJPEGRepresentation(image, 1);
+    }
+    NSString *urlString = [NSString stringWithFormat:@"%@/image", [Configuration getConfiguration].serverAddress];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
+    [request setHTTPMethod:@"PUT"];
+    [request setHTTPBody:data];
+    NSDictionary *json = [WebUtil webAPICallWithRequest:request];
+    long imageId = [[[json objectForKey:@"result"] objectForKey:@"imageId"] longValue];
+    return imageId;
+
 }
 
 - (UIImage *)getImage:(long)imageId {

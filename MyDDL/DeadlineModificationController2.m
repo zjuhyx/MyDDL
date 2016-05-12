@@ -65,7 +65,12 @@ NSString *const kCountDownTimer = @"countDownTimer";
     /////////////
     // Selector Left Right
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"kSelectorLeftRight" rowType:XLFormRowDescriptorTypeSelectorLeftRight title:@"Left Right"];
-    row.leftRightSelectorLeftOptionSelected = [XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"课程"];
+    if ([_deadline.courseProjectType isEqualToString:@"course"]) {
+        row.leftRightSelectorLeftOptionSelected = [XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"课程"];
+    }
+    else{
+        row.leftRightSelectorLeftOptionSelected = [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"项目"];
+    }
     
     // create right selectors
     NSMutableArray * leftRightSelectorOptions = [[NSMutableArray alloc] init];
@@ -87,11 +92,14 @@ NSString *const kCountDownTimer = @"countDownTimer";
         [projectNames addObject:project.name];
     }
     //[mutableRightOptions removeObjectAtIndex:1];
-    leftRightSelectorOption = [XLFormLeftRightSelectorOption formLeftRightSelectorOptionWithLeftValue:[XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"科研"] httpParameterKey:@"option_2" rightOptions:projectNames];
+    leftRightSelectorOption = [XLFormLeftRightSelectorOption formLeftRightSelectorOptionWithLeftValue:[XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"项目"] httpParameterKey:@"option_2" rightOptions:projectNames];
     [leftRightSelectorOptions addObject:leftRightSelectorOption];
     
     row.selectorOptions  = leftRightSelectorOptions;
-    row.value = [XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:_deadline.courseProjectName];
+    //row.value = [XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:_deadline.courseProjectName];
+    row.value=_deadline.courseProjectName;
+    //row.title=_deadline.courseProjectType;
+    NSLog(_deadline.courseProjectType);
     
     [section addFormRow:row];
     /////////////
@@ -120,11 +128,11 @@ NSString *const kCountDownTimer = @"countDownTimer";
     row.value=_deadline.contactPhone;
     [section addFormRow:row];
     // Email
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"email" rowType:XLFormRowDescriptorTypeEmail title:@"邮箱"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"email" rowType:XLFormRowDescriptorTypeText title:@"邮箱"];
     [row.cellConfigAtConfigure setObject:@"（选填）" forKey:@"textField.placeholder"];
     row.value=_deadline.contactEmail;
     // validate the email
-    [row addValidator:[XLFormValidator emailValidator]];
+    //[row addValidator:[XLFormValidator emailValidator]];
     [section addFormRow:row];
     
     //section3
@@ -139,8 +147,9 @@ NSString *const kCountDownTimer = @"countDownTimer";
     //        row = [XLFormRowDescriptor formRowDescriptorWithTag:@"kSelectorMap" rowType:XLFormRowDescriptorTypeSelectorPush title:@"添加图片"];
     //        [section addFormRow:row];
     
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"kImage" rowType:XLFormRowDescriptorTypeImage title:@"添加图片"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"image" rowType:XLFormRowDescriptorTypeImage title:@"添加图片"];
     row.value = [UIImage imageNamed:@"pickImage_default"];
+    
     [section addFormRow:row];
     
     

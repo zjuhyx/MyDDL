@@ -8,7 +8,9 @@
 
 #import "DeadlineController.h"
 
-@interface DoneViewController : DeadlineController
+@interface DoneViewController : DeadlineController{
+    NSString* filePath;
+}
 
 + (DoneViewController *)setAndGetInstance:(DoneViewController *)doneViewController;
 

@@ -291,9 +291,11 @@ NSString *const XLFormTextFieldLengthPercentage = @"textFieldLengthPercentage";
     if([self.textField.text length] > 0) {
         if ([self.rowDescriptor.rowType isEqualToString:XLFormRowDescriptorTypeNumber] || [self.rowDescriptor.rowType isEqualToString:XLFormRowDescriptorTypeDecimal]){
             self.rowDescriptor.value =  @([self.textField.text doubleValue]);
-        } else if ([self.rowDescriptor.rowType isEqualToString:XLFormRowDescriptorTypeInteger]){
-            self.rowDescriptor.value = @([self.textField.text integerValue]);
-        } else {
+        }
+//        else if ([self.rowDescriptor.rowType isEqualToString:XLFormRowDescriptorTypeInteger]){
+//            self.rowDescriptor.value = @([self.textField.text integerValue]);
+//        }
+        else {
             self.rowDescriptor.value = self.textField.text;
         }
     } else {
