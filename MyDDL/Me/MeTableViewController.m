@@ -59,12 +59,12 @@
     if (indexPath.section != 0) {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-    NSString *username = [Model getInstance].username;
+    NSString *username = [Model getInstance].userInfo.userName;//昵称
     //NSString *userid = [NSString stringWithFormat:@"账号：%ld",[Model getInstance].userInfo.userId];
     
     if (indexPath.section == 0) {
         IntroCell *intro_cell = [[IntroCell alloc] init];
-        [intro_cell setCellLabel1:username label2:@"该用户现在还没有介绍"];
+        [intro_cell setCellLabel1:username label2:@"该用户还没有填写自我介绍"];
         if([Model getInstance].userInfo.userImageId==0)
             [intro_cell setCellImage:nil imageName:@"avatar_default"];
         else

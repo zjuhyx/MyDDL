@@ -89,7 +89,7 @@
 - (void)commit {
     //改服务端
     if(_isCreate==YES){
-        if([_formTitle isEqualToString:@"课程"]){
+        if([_formTitle isEqualToString:@"课程"]==YES){
             _courseAndProject=[Course alloc];
         }
         else{
@@ -104,7 +104,7 @@
         _courseAndProject.detail=[self.form formRowWithTag:@"note"].value;
         [[CourseProjectModel getInstance] changeCourseProject:_courseAndProject];
         
-        if([_formTitle isEqualToString:@"课程"]){
+        if([_formTitle isEqualToString:@"课程"]==YES){
             CourseDetailTableViewController *courseDetailTableViewController = [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count-1];
             courseDetailTableViewController.courseAndProject = _courseAndProject;
             [self.navigationController popToViewController:courseDetailTableViewController animated:true];
