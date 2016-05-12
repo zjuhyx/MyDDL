@@ -16,5 +16,6 @@
 
 - (instancetype)initWithName:(NSString *)name;
 - (instancetype)initWithJSON:(NSDictionary *)json;
+- (NSMutableDictionary *)toDictionary;
 
 @end

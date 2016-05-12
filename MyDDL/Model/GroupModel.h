@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Group.h"
+#import "GroupMessage.h"
 
 @interface GroupModel : NSObject
 
@@ -18,6 +19,12 @@
 - (void)changeGroup:(Group *)group;
 - (void)addGroup:(Group *)group;
 - (void)deleteGroup:(long)groupId;
-- (void)addGroupDeadlineWithGroupId:(long)groupId deadlineId:(long)deadlineId;
+- (void)addGroupDeadlineWithGroupId:(long)groupId deadline:(Deadline *)deadline;
+- (void)deleteGroupDeadlineByGroupId:(long)groupId deadlineId:(long)deadlineId;
+- (void)addGroupUserWithGroupId:(long)groupId user:(UserInfo *)user;
+- (void)deleteGroupUserByGroupId:(long)groupId userId:(long)userId;
+- (NSArray<GroupMessage *> *)getGroupMessages:(long)groupId;
+
+- (void)clearData;
 
 @end

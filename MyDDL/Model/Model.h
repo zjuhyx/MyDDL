@@ -25,5 +25,14 @@
 - (void)clearData;
 + (instancetype)getInstance;
 - (bool)loginWithUsername:(NSString *)username password:(NSString *)password;
+- (void)changeUserInfo:(UserInfo *)user;
+- (void)changeUserPassword:(NSString *)password;
+- (void)signUp:(NSString *)username password:(NSString *)password userName:(NSString *)userName;
+- (NSArray<Deadline *> *)getPushDeadlines;
+- (void)rejectPushDeadline:(long)deadlineId;
+- (void)receivePushDeadline:(Deadline *)deadline;
+
+- (long)addImage:(UIImage *)image;
+- (UIImage *)getImage:(long)imageId;
 
 @end

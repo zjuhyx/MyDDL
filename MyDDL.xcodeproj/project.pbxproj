@@ -49,6 +49,7 @@
 		18BAB9F11C0CF20B00B41D61 /* SearchDeadlineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BAB9F01C0CF20B00B41D61 /* SearchDeadlineController.m */; };
 		18BAB9F41C0CFCAF00B41D61 /* LineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BAB9F31C0CFCAF00B41D61 /* LineView.m */; };
 		18BAB9F71C0D792E00B41D61 /* DeadlineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BAB9F61C0D792E00B41D61 /* DeadlineModel.m */; };
+		18D401041CE3D48D00D95C13 /* GroupMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D401031CE3D48D00D95C13 /* GroupMessage.m */; };
 		18D910D61CE0C1EA0010218F /* GroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D910D51CE0C1EA0010218F /* GroupModel.m */; };
 		18D910D91CE0C2A50010218F /* CourseProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D910D81CE0C2A50010218F /* CourseProjectModel.m */; };
 		A5DF2BC994E337394C755CE3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0614B55CD2387BAFD9CC2075 /* libPods.a */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -155,6 +156,8 @@
 		18BAB9F31C0CFCAF00B41D61 /* LineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineView.m; sourceTree = "<group>"; };
 		18BAB9F51C0D792E00B41D61 /* DeadlineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeadlineModel.h; sourceTree = "<group>"; };
 		18BAB9F61C0D792E00B41D61 /* DeadlineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeadlineModel.m; sourceTree = "<group>"; };
+		18D401021CE3D48D00D95C13 /* GroupMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GroupMessage.h; path = Entity/GroupMessage.h; sourceTree = "<group>"; };
+		18D401031CE3D48D00D95C13 /* GroupMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroupMessage.m; path = Entity/GroupMessage.m; sourceTree = "<group>"; };
 		18D910D41CE0C1EA0010218F /* GroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GroupModel.h; path = Model/GroupModel.h; sourceTree = "<group>"; };
 		18D910D51CE0C1EA0010218F /* GroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroupModel.m; path = Model/GroupModel.m; sourceTree = "<group>"; };
 		18D910D71CE0C2A50010218F /* CourseProjectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CourseProjectModel.h; path = Model/CourseProjectModel.h; sourceTree = "<group>"; };
@@ -434,6 +437,8 @@
 				189D2EB61C07001C002A15D5 /* Course.m */,
 				189D2EB81C070029002A15D5 /* Project.h */,
 				189D2EB91C070029002A15D5 /* Project.m */,
+				18D401021CE3D48D00D95C13 /* GroupMessage.h */,
+				18D401031CE3D48D00D95C13 /* GroupMessage.m */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -621,6 +626,7 @@
 				189138931C10A6FB003B347A /* Group.m in Sources */,
 				18A4DA161C0CB645001CD648 /* Circle.m in Sources */,
 				C3BDDE9E1CC7290600470886 /* DeadlineCell.m in Sources */,
+				18D401041CE3D48D00D95C13 /* GroupMessage.m in Sources */,
 				189D2EC51C076370002A15D5 /* GroupTableViewController.m in Sources */,
 				18386BAA1C0849AC00F44092 /* MainTabBarController.m in Sources */,
 				185C51E41C09F3B70034A88A /* AddCourseController.m in Sources */,

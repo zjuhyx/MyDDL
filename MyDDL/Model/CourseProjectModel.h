@@ -7,12 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CourseAndProject.h"
+#import "Course.h"
+#import "Project.h"
 
 @interface CourseProjectModel : NSObject
 
-@property (nonatomic) NSMutableArray *courses;
-@property (nonatomic) NSMutableArray *projects;
+@property (nonatomic) NSMutableArray<CourseAndProject *> *courses;
+@property (nonatomic) NSMutableArray<CourseAndProject *> *projects;
 
 + (instancetype)getInstance;
+- (void)addCourseProject:(CourseAndProject *)courseProject;
+- (void)changeCourseProject:(CourseAndProject *)courseProject;
+- (void)deleteCourseProject:(CourseAndProject *)courseProject;
+
+- (void)clearData;
 
 @end

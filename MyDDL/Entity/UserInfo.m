@@ -21,4 +21,14 @@
     return self;
 }
 
+- (NSDictionary *)toDictionary {
+    NSMutableDictionary *result = [[NSMutableDictionary alloc] init];
+    [result setValue:[NSString stringWithFormat:@"%ld", _userId] forKey:@"userId"];
+    [result setValue:_userName forKey:@"userName"];
+    [result setValue:_userPhone forKey:@"userPhone"];
+    [result setValue:_userEmail forKey:@"userEmail"];
+    [result setValue:[NSString stringWithFormat:@"%d", _mainScreenImage] forKey:@"mainScreenImage"];
+    return result;
+}
+
 @end
