@@ -52,7 +52,8 @@
     [self.groups addObject:group];
     
     NSString *urlString = [NSString stringWithFormat:@"%@/group", [Configuration getConfiguration].serverAddress];
-    NSDictionary *parameters = [group toDictionary];
+    NSMutableDictionary *parameters = [group toDictionary];
+    [parameters setValue:[NSString stringWithFormat:@"%ld", [Model getInstance].userInfo.userId] forKey:@"userId"];
     NSDictionary *addResult = [WebUtil webAPICallWithPutMethod:urlString parameters:parameters];
     group.groupId = [[addResult objectForKey:@"groupId"] intValue];
 }
