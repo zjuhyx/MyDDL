@@ -176,7 +176,7 @@
     else if(indexPath.section==3){
         GroupTableViewController* groupTableViewController=[[GroupTableViewController alloc] init];
         groupTableViewController.isShare=YES;
-        groupTableViewController.deadlineId=_deadline.deadlineId;
+        groupTableViewController.deadline=_deadline;
         [self.navigationController pushViewController:groupTableViewController animated:YES];
     }
     else if (indexPath.section == 4) {//删除ddl
