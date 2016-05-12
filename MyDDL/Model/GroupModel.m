@@ -89,7 +89,7 @@
         }
     }
     
-    NSString *urlString = [NSString stringWithFormat:@"%@/group/%ld/deadline/%ld", [Configuration getConfiguration].serverAddress, groupId, deadlineId];
+    NSString *urlString = [NSString stringWithFormat:@"%@/group/%ld/deadline/%ld/%ld", [Configuration getConfiguration].serverAddress, groupId, deadlineId, [Model getInstance].userInfo.userId];
     [WebUtil webAPICallWithDeleteMethod:urlString];
 }
 
