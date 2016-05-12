@@ -81,7 +81,7 @@
     AxisView *axis = [[AxisView alloc] initWithLength:contentSize.height redLength:redLength];
     [contentView addSubview:axis];
     
-    UIImageView *timePointLable = [[UIImageView alloc] initWithFrame:CGRectMake(140, contentSize.height - redLength - 7, 40, 20)];
+    UIImageView *timePointLable = [[UIImageView alloc] initWithFrame:CGRectMake(screenSize.width / 2 - 45 - LEFT_OFFSET, contentSize.height - redLength - 7, 40, 20)];
     timePointLable.image = [UIImage imageNamed:@"time_point"];
     [contentView addSubview:timePointLable];
     

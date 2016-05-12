@@ -19,9 +19,9 @@
         Circle *innerCircle = [[Circle alloc] initWithFrame:CGRectMake(15, 15, 10, 10)];
         innerCircle.color = innerColor;
         innerCircle.radius = 5;
-        Circle *outerCircle = [[Circle alloc] initWithFrame:CGRectMake(10, 10, 20, 20)];
+        Circle *outerCircle = [[Circle alloc] initWithFrame:CGRectMake(13, 13, 17, 17)];
         outerCircle.color = outerColor;
-        outerCircle.radius = 10;
+        outerCircle.radius = 7;
         [self addSubview:outerCircle];
         [self addSubview:innerCircle];
     }

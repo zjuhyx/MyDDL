@@ -16,7 +16,7 @@
     CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
     length += 600;
     redLength += 300;
-    self = [super initWithFrame:CGRectMake(screenWidth / 2 - AXIS_WIDTH / 2, -300, AXIS_WIDTH, length)];
+    self = [super initWithFrame:CGRectMake(screenWidth / 2 - AXIS_WIDTH / 2 - LEFT_OFFSET, -300, AXIS_WIDTH, length)];
     if (self) {
         [self addSubview:[[LineView alloc] initWithLength:length color:[UIColor whiteColor] originY:0]];
         [self addSubview:[[LineView alloc] initWithLength:redLength color:[Configuration getConfiguration].redColor originY:length - redLength]];
