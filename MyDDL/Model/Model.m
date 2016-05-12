@@ -125,4 +125,29 @@
     [WebUtil webAPICallWithPutMethod:urlString parameters:parameters];
 }
 
+- (long)addImage:(UIImage *)image {
+    NSData *data = UIImagePNGRepresentation(image);
+    if (!data) {
+        data = UIImageJPEGRepresentation(image, 1);
+    }
+    NSString *urlString = [NSString stringWithFormat:@"%@/image", [Configuration getConfiguration].serverAddress];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
+    [request setHTTPMethod:@"PUT"];
+    [request setHTTPBody:data];
+    NSDictionary *json = [WebUtil webAPICallWithRequest:request];
+    long imageId = [[[json objectForKey:@"result"] objectForKey:@"imageId"] longValue];
+    return imageId;
+}
+
+- (UIImage *)getImage:(long)imageId {
+    NSString *urlString = [NSString stringWithFormat:@"%@/image/%ld", [Configuration getConfiguration].serverAddress, imageId];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+    NSURLResponse *response;
+    NSError *error;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    
+    UIImage *image = [UIImage imageWithData:data];
+    return image;
+}
+
 @end

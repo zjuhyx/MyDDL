@@ -32,4 +32,7 @@
 - (void)rejectPushDeadline:(long)deadlineId;
 - (void)receivePushDeadline:(Deadline *)deadline;
 
+- (long)addImage:(UIImage *)image;
+- (UIImage *)getImage:(long)imageId;
+
 @end
