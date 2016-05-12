@@ -25,6 +25,13 @@
     _detail = [json objectForKey:@"deadlineNote"];
     _isCompleted = [[json objectForKey:@"complete"] intValue];
     
+    NSString *imageNumber = [json objectForKey:@"deadlineImage"];
+    if (imageNumber == nil) {
+        self.image = 0;
+    } else {
+        self.image = [imageNumber intValue];
+    }
+    
     NSDateFormatter *formatter = [Configuration getConfiguration].formatter;
     _date = [formatter dateFromString:[json objectForKey:@"time"]];
     
@@ -43,6 +50,8 @@
     
     NSString *complete = _isCompleted ? @"true" : @"false";
     [result setValue:complete forKey:@"complete"];
+    
+    [result setValue:[NSString stringWithFormat:@"%ld", _image] forKey:@"deadlineImage"];
     
     NSDateFormatter *formatter = [Configuration getConfiguration].formatter;
     NSString *time = [formatter stringFromDate:_date];

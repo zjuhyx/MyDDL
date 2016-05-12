@@ -13,6 +13,7 @@
 @property (nonatomic) long courseProjectId;
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSString *detail;
+@property (nonatomic) long image;
 
 - (instancetype)initWithName:(NSString *)name;
 - (instancetype)initWithJSON:(NSDictionary *)json;

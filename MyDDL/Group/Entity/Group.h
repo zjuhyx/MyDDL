@@ -14,7 +14,7 @@
 
 @property (nonatomic) long groupId;
 @property (nonatomic) NSString *name;
-@property (nonatomic) UIImage *avatar;
+@property (nonatomic) long image;
 @property (nonatomic) NSMutableArray<Deadline *> *deadlines;
 @property (nonatomic) NSMutableArray<UserInfo *> *members;
 

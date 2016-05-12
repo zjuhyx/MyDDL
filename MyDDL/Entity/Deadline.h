@@ -20,6 +20,7 @@
 @property (nonatomic) NSString *contactPhone;
 @property (nonatomic) NSString *contactEmail;
 @property (nonatomic) NSString *detail;
+@property (nonatomic) long image;
 @property (nonatomic) bool isCompleted;
 
 - (instancetype)initWithJSON:(NSDictionary *)json;

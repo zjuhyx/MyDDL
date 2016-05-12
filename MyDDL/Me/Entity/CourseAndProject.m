@@ -23,6 +23,13 @@
     self.courseProjectId = [[json objectForKey:@"courseProjectId"] intValue];
     self.name = [json objectForKey:@"courseProjectName"];
     self.detail = [json objectForKey:@"courseProjectNote"];
+    
+    NSString *imageNumber = [json objectForKey:@"courseProjectImage"];
+    if (imageNumber == nil) {
+        self.image = 0;
+    } else {
+        self.image = [imageNumber intValue];
+    }
     return self;
 }
 
@@ -31,6 +38,7 @@
     [result setValue:[NSString stringWithFormat:@"%ld", _courseProjectId] forKey:@"courseProjectId"];
     [result setValue:_name forKey:@"courseProjectName"];
     [result setValue:_detail forKey:@"courseProjectNote"];
+    [result setValue:[NSString stringWithFormat:@"%ld", _image] forKey:@"courseProjectImage"];
     return result;
 }
 
