@@ -7,28 +7,27 @@
 //
 
 #import "CourseDetailTableViewController.h"
-#import "EditCourseController.h"
+//#import "EditCourseController.h"
+#import "CourseProjectModificationViewController.h"
 
 @implementation CourseDetailTableViewController
-
-//- (NSString *)itemImageName {
-//    return @"course_default";
-//}
-
-- (NSString *)itemDetail {
-    return @"课程备注";
-}
 
 - (NSString *)deleteItem {
     return @"删除课程";
 }
 
 - (void)editItem {
-    EditCourseController *editController = [[EditCourseController alloc] init];
-    editController.itemName = self.courseAndProject.name;
-    //editController.itemImageName = self.courseAndProject.;
-    editController.itemDetail = self.courseAndProject.detail;
-    [self.navigationController pushViewController:editController animated:YES];
+    CourseProjectModificationViewController* courseProjectModificationViewController=[CourseProjectModificationViewController alloc];
+    courseProjectModificationViewController.courseAndProject=self.courseAndProject;
+    courseProjectModificationViewController.formTitle=@"课程";
+    courseProjectModificationViewController.isCreate=NO;
+    [self.navigationController pushViewController:[courseProjectModificationViewController init] animated:YES];
+    
+//    EditCourseController *editController = [[EditCourseController alloc] init];
+//    editController.itemName = self.courseAndProject.name;
+//    //editController.itemImageName = self.courseAndProject.;
+//    editController.itemDetail = self.courseAndProject.detail;
+//    [self.navigationController pushViewController:editController animated:YES];
 }
 
 @end

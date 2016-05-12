@@ -7,7 +7,7 @@
 //
 
 #import "CourseAndProjectDetailTableViewController.h"
-
+#import "CourseProjectModel.h"
 #import "DeadlineListViewController.h"
 #import "UserDetailViewController.h"
 
@@ -17,19 +17,30 @@
 - (instancetype)init {
     self = [super initWithStyle:UITableViewStyleGrouped];
     if (self) {
-        self.navigationItem.title = self.courseAndProject.name;
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(editItem)];
+//        self.navigationItem.title = self.courseAndProject.name;
+//        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(editItem)];
         _blueColor = [UIColor colorWithRed:0 green:91./255 blue:255./255 alpha:1.];
     }
     return self;
 }
 
+-(void)viewDidLoad{
+    self.navigationItem.title = self.courseAndProject.name;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(editItem)];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    NSLog(@"ViewDidAppear2");
+    
+    [self.tableView reloadData];
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 4;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    int numberOfRows[4] = {3, 3, 1, 1};
+    int numberOfRows[2] = {3, 1};
     return numberOfRows[section];
 }
 
@@ -55,32 +66,34 @@
             cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
         }
         else{
-            cell.textLabel.text = self.itemDetail;
+            cell.textLabel.text = self.courseAndProject.detail;
         }
         //cell.userInteractionEnabled = NO;
-    } else if (indexPath.section == 1) {        
-        cell=[cell initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"UITableViewCell"];
-        cell.textLabel.font = [UIFont systemFontOfSize:13];
-        cell.textLabel.textColor=_blueColor;
-        cell.detailTextLabel.font = [UIFont systemFontOfSize:17];
-        
-        if(indexPath.row==0){
-            cell.textLabel.text=@"联系人";
-            cell.detailTextLabel.text=@"刘老师";
-        }
-        else if(indexPath.row==1){
-            cell.textLabel.text=@"联系电话";
-            cell.detailTextLabel.text=@"18868101111";
-        }
-        else{
-            cell.textLabel.text=@"邮箱";
-            cell.detailTextLabel.text=@"liu@hotmail.com";
-        }
-        
-    } else if(indexPath.section==2) {
-        cell.textLabel.text=@"新建小组";//or @"查看小组"
-        cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
-    } else {
+    }
+//    else if (indexPath.section == 1) {
+//        cell=[cell initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"UITableViewCell"];
+//        cell.textLabel.font = [UIFont systemFontOfSize:13];
+//        cell.textLabel.textColor=_blueColor;
+//        cell.detailTextLabel.font = [UIFont systemFontOfSize:17];
+//        
+//        if(indexPath.row==0){
+//            cell.textLabel.text=@"联系人";
+//            cell.detailTextLabel.text=self.courseAndProject.
+//        }
+//        else if(indexPath.row==1){
+//            cell.textLabel.text=@"联系电话";
+//            cell.detailTextLabel.text=@"18868101111";
+//        }
+//        else{
+//            cell.textLabel.text=@"邮箱";
+//            cell.detailTextLabel.text=@"liu@hotmail.com";
+//        }
+//        
+//    } else if(indexPath.section==2) {
+//        cell.textLabel.text=@"新建小组";//or @"查看小组"
+//        cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+//    }
+    else {
         cell.textLabel.text = self.deleteItem;
         cell.textLabel.textColor = [UIColor redColor];
         cell.textLabel.textAlignment = NSTextAlignmentCenter;
@@ -95,6 +108,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0 && indexPath.row==1) {
         [self.navigationController pushViewController:[[DeadlineListViewController alloc] init] animated:YES];
+    }
+    if(indexPath.section==1){
+        [[CourseProjectModel getInstance] deleteCourseProject:_courseAndProject];
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 

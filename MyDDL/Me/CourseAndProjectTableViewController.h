@@ -14,6 +14,7 @@
 
 @property (nonatomic, readonly) CourseAndProjectDetailTableViewController *nextViewController;
 @property(nonatomic)NSArray<CourseAndProject*>* data;
+@property(nonatomic)CourseAndProject* courseAndProject;
 
 //- (UIImage *)cellImageAtIndexPath:(NSIndexPath *)indexPath;
 - (void)addNewItem;

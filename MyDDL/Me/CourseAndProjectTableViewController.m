@@ -21,6 +21,11 @@
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    NSLog(@"ViewDidAppear1");
+    [self.tableView reloadData];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _data.count;
 }
@@ -45,7 +50,7 @@
 //}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.nextViewController.courseAndProject=[_data objectAtIndex:indexPath.row];
+    _courseAndProject=[_data objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:self.nextViewController animated:YES];
 }
 

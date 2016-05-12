@@ -22,10 +22,6 @@
     return @"课程名称";
 }
 
-- (NSString *)itemImageName {
-    return @"course_default";
-}
-
 - (NSString *)itemDetail {
     return @"课程备注";
 }

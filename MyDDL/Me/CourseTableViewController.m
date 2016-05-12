@@ -8,8 +8,8 @@
 
 #import "CourseTableViewController.h"
 #import "CourseDetailTableViewController.h"
-#import "AddCourseController.h"
 #import "Model.h"
+#import "CourseProjectModificationViewController.h"
 
 @implementation CourseTableViewController
 
@@ -24,15 +24,17 @@
 }
 
 - (CourseDetailTableViewController *)nextViewController {
-    return [[CourseDetailTableViewController alloc] init];
+    CourseDetailTableViewController* courseDetailTableViewController=[CourseDetailTableViewController alloc];
+    courseDetailTableViewController.courseAndProject=self.courseAndProject;
+    return [courseDetailTableViewController init];
 }
 
-//- (UIImage *)cellImageAtIndexPath:(NSIndexPath *)indexPath {
-//    return [UIImage imageNamed:@"course_default"];
-//}
-
 - (void)addNewItem {
-    [self.navigationController pushViewController:[[AddCourseController alloc] init] animated:YES];
+    CourseProjectModificationViewController* courseProjectModificationViewController=[CourseProjectModificationViewController alloc];
+    courseProjectModificationViewController.courseAndProject=self.courseAndProject;
+    courseProjectModificationViewController.formTitle=@"课程";
+    courseProjectModificationViewController.isCreate=YES;
+    [self.navigationController pushViewController:[courseProjectModificationViewController init] animated:YES];
 }
 
 @end
