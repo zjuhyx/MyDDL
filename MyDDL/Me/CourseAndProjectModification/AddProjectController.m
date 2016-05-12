@@ -22,10 +22,6 @@
     return @"项目名称";
 }
 
-- (NSString *)itemImageName {
-    return @"project_default";
-}
-
 - (NSString *)itemDetail {
     return @"项目备注";
 }

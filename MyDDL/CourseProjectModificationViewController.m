@@ -8,6 +8,9 @@
 
 #import "CourseProjectModificationViewController.h"
 //#import "Configuration.h"
+#import "CourseProjectModel.h"
+#import "CourseDetailTableViewController.h"
+#import "ProjectDetailTableViewController.h"
 
 @interface CourseProjectModificationViewController() <XLFormDescriptorDelegate>
 
@@ -30,26 +33,28 @@
         row = [XLFormRowDescriptor formRowDescriptorWithTag:@"title" rowType:XLFormRowDescriptorTypeText];
         [row.cellConfig setObject:[UIFont systemFontOfSize:20] forKey:@"textField.font"];
         [row.cellConfigAtConfigure setObject:@"标题" forKey:@"textField.placeholder"];
+        if(_isCreate==NO)
+            row.value=_courseAndProject.name;
         [section addFormRow:row];
         
-        //section2
-        section = [XLFormSectionDescriptor formSectionWithTitle:@"联系信息"];
-        //section.footerTitle = @"This is a long text that will appear on section footer";
-        [form addFormSection:section];
-        //联系人
-        row = [XLFormRowDescriptor formRowDescriptorWithTag:@"teacher" rowType:XLFormRowDescriptorTypeText title:@"联系人"];
-        [row.cellConfigAtConfigure setObject:@"（选填）" forKey:@"textField.placeholder"];
-        [section addFormRow:row];
-        //联系方式-手机
-        row = [XLFormRowDescriptor formRowDescriptorWithTag:@"integer" rowType:XLFormRowDescriptorTypeInteger title:@"联系电话"];
-        [row.cellConfigAtConfigure setObject:@"（选填）" forKey:@"textField.placeholder"];
-        [section addFormRow:row];
-        // Email
-        row = [XLFormRowDescriptor formRowDescriptorWithTag:@"email" rowType:XLFormRowDescriptorTypeEmail title:@"邮箱"];
-        [row.cellConfigAtConfigure setObject:@"（选填）" forKey:@"textField.placeholder"];
-        // validate the email
-        [row addValidator:[XLFormValidator emailValidator]];
-        [section addFormRow:row];
+//        //section2
+//        section = [XLFormSectionDescriptor formSectionWithTitle:@"联系信息"];
+//        //section.footerTitle = @"This is a long text that will appear on section footer";
+//        [form addFormSection:section];
+//        //联系人
+//        row = [XLFormRowDescriptor formRowDescriptorWithTag:@"teacher" rowType:XLFormRowDescriptorTypeText title:@"联系人"];
+//        [row.cellConfigAtConfigure setObject:@"（选填）" forKey:@"textField.placeholder"];
+//        [section addFormRow:row];
+//        //联系方式-手机
+//        row = [XLFormRowDescriptor formRowDescriptorWithTag:@"integer" rowType:XLFormRowDescriptorTypeInteger title:@"联系电话"];
+//        [row.cellConfigAtConfigure setObject:@"（选填）" forKey:@"textField.placeholder"];
+//        [section addFormRow:row];
+//        // Email
+//        row = [XLFormRowDescriptor formRowDescriptorWithTag:@"email" rowType:XLFormRowDescriptorTypeEmail title:@"邮箱"];
+//        [row.cellConfigAtConfigure setObject:@"（选填）" forKey:@"textField.placeholder"];
+//        // validate the email
+//        [row addValidator:[XLFormValidator emailValidator]];
+//        [section addFormRow:row];
         
         //section3
         section = [XLFormSectionDescriptor formSectionWithTitle:@"详情"];
@@ -57,6 +62,8 @@
         
         row = [XLFormRowDescriptor formRowDescriptorWithTag:@"note" rowType:XLFormRowDescriptorTypeTextView];
         [row.cellConfigAtConfigure setObject:@"添加注释" forKey:@"textView.placeholder"];
+        if(_isCreate==NO)
+            row.value=_courseAndProject.detail;
         [section addFormRow:row];
         
         //self.form = form;//用这一句 表格样式会变掉。。。
@@ -65,8 +72,7 @@
     return self;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     // change cell height of a particular cell
     if ([[self.form formRowAtIndex:indexPath].tag isEqualToString:@"title"]){
         return 60.0;
@@ -81,7 +87,32 @@
 }
 
 - (void)commit {
-    @throw [NSException exceptionWithName:@"Uncallable method" reason:@"Please call the subclass' method" userInfo:nil];
+    //改服务端
+    if(_isCreate==YES){
+        _courseAndProject=[CourseAndProject alloc];
+        _courseAndProject.name=[self.form formRowWithTag:@"title"].value;
+        _courseAndProject.detail=[self.form formRowWithTag:@"note"].value;
+        [[CourseProjectModel getInstance] addCourseProject:_courseAndProject];
+    }
+    else{
+        _courseAndProject.name=[self.form formRowWithTag:@"title"].value;
+        _courseAndProject.detail=[self.form formRowWithTag:@"note"].value;
+        [[CourseProjectModel getInstance] changeCourseProject:_courseAndProject];
+        
+        if([_formTitle isEqualToString:@"课程"]){
+            CourseDetailTableViewController *courseDetailTableViewController = [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count-1];
+            courseDetailTableViewController.courseAndProject = _courseAndProject;
+            [self.navigationController popToViewController:courseDetailTableViewController animated:true];
+        }
+        else{
+            ProjectDetailTableViewController *projectDetailTableViewController = [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count-1];
+            projectDetailTableViewController.courseAndProject = _courseAndProject;
+            [self.navigationController popToViewController:projectDetailTableViewController animated:true];
+        }
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    //@throw [NSException exceptionWithName:@"Uncallable method" reason:@"Please call the subclass' method" userInfo:nil];
 }
 
 - (void)cancel {

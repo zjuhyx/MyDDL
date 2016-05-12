@@ -11,7 +11,6 @@
 
 @interface CourseAndProjectDetailTableViewController : UITableViewController
 
-//@property (nonatomic, readonly) NSString *itemImageName;
 @property (nonatomic, readonly) NSString *itemDetail;
 @property (nonatomic, readonly) NSString *deleteItem;
 

@@ -8,8 +8,8 @@
 
 #import "ProjectTableViewController.h"
 #import "ProjectDetailTableViewController.h"
-#import "AddProjectController.h"
 #import "Model.h"
+#import "CourseProjectModificationViewController.h"
 
 @implementation ProjectTableViewController
 
@@ -24,15 +24,17 @@
 }
 
 - (UITableViewController *)nextViewController {
-    return [[ProjectDetailTableViewController alloc] init];
+    ProjectDetailTableViewController* projectDetailTableViewController=[ProjectDetailTableViewController alloc];
+    projectDetailTableViewController.courseAndProject=self.courseAndProject;
+    return [projectDetailTableViewController init];
 }
 
-//- (UIImage *)cellImageAtIndexPath:(NSIndexPath *)indexPath {
-//    return [UIImage imageNamed:@"project_default"];
-//}
-
 - (void)addNewItem {
-    [self.navigationController pushViewController:[[AddProjectController alloc] init] animated:YES];
+    CourseProjectModificationViewController* courseProjectModificationViewController=[CourseProjectModificationViewController alloc];
+    courseProjectModificationViewController.courseAndProject=self.courseAndProject;
+    courseProjectModificationViewController.formTitle=@"项目";
+    courseProjectModificationViewController.isCreate=YES;
+    [self.navigationController pushViewController:[courseProjectModificationViewController init] animated:YES];
 }
 
 @end

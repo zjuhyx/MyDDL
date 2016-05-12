@@ -7,33 +7,27 @@
 //
 
 #import "ProjectDetailTableViewController.h"
-#import "EditProjectController.h"
+//#import "EditProjectController.h"
+#import "CourseProjectModificationViewController.h"
 
 @implementation ProjectDetailTableViewController
-
-//- (NSString *)itemImageName {
-//    return @"project_default";
-//}
-
-- (NSString *)itemDetail {
-    return @"项目备注";
-}
 
 - (NSString *)deleteItem {
     return @"删除项目";
 }
 
-//直接来一个type好了。。
-- (NSString *)cpType {
-    return @"项目";
-}
-
 - (void)editItem {
-    EditProjectController *editController = [[EditProjectController alloc] init];
-    editController.itemName = self.courseAndProject.name;
-    //editController.itemImageName = self.itemImageName;
-    editController.itemDetail = self.courseAndProject.detail;
-    [self.navigationController pushViewController:editController animated:YES];
+    CourseProjectModificationViewController* courseProjectModificationViewController=[CourseProjectModificationViewController alloc];
+    courseProjectModificationViewController.courseAndProject=self.courseAndProject;
+    courseProjectModificationViewController.formTitle=@"项目";
+    courseProjectModificationViewController.isCreate=NO;
+    [self.navigationController pushViewController:[courseProjectModificationViewController init] animated:YES];
+    
+//    EditProjectController *editController = [[EditProjectController alloc] init];
+//    editController.itemName = self.courseAndProject.name;
+//    //editController.itemImageName = self.itemImageName;
+//    editController.itemDetail = self.courseAndProject.detail;
+//    [self.navigationController pushViewController:editController animated:YES];
 }
 
 @end
