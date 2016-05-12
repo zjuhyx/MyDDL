@@ -107,7 +107,6 @@
         Deadline* deadline=[deadlines objectAtIndex:i];
         NSDate *date = [NSDate date];
         NSTimeInterval interval=[deadline.date timeIntervalSinceNow];
-        //NSLog(@"%lld", (long long int)interval);
         switch (choice) {
             case 0:
                 if((long long int)interval<-3600*3){

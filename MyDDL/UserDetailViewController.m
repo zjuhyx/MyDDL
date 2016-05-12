@@ -91,7 +91,6 @@
     ImageDetailViewController *imageDetailViewController = [[ImageDetailViewController alloc] init];
     imageDetailViewController.image=_avater_image;
     [self presentViewController:imageDetailViewController animated:YES completion:^{//备注2
-        NSLog(@"showImage!");
     }];
     
 }

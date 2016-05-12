@@ -99,7 +99,7 @@
         _group.name=row.value;
         row=[self.form formRowWithTag:@"image"];
         _group.image=[[Model getInstance] addImage:row.value];
-        NSLog(@"edit group:%@", _group.name);
+        //NSLog(@"edit group:%@", _group.name);
         [[GroupModel getInstance] changeGroup:_group];
         GroupDetailTableViewController *groupDetailTableViewController = [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count-1];
         groupDetailTableViewController.group = _group;

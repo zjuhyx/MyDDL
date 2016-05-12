@@ -38,7 +38,6 @@
         for (NSDictionary *deadlineJSON in deadlinesJSON) {
             Deadline *deadline = [[Deadline alloc] initWithJSON:deadlineJSON];
             [self.deadlines addObject:deadline];
-            NSLog(@"%lu", self.deadlines.count);
         }
     }
     NSString *imageNumber = [json objectForKey:@"groupImage"];

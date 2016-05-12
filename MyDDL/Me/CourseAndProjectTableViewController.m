@@ -22,7 +22,6 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    NSLog(@"ViewDidAppear1");
     [self.tableView reloadData];
 }
 

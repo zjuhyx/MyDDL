@@ -97,7 +97,6 @@
 
 //取消选择一张图片
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
-    NSLog(@"您取消了选择图片");
     [picker dismissModalViewControllerAnimated:YES];
 }
 
@@ -111,7 +110,7 @@
         picker.sourceType = sourceType;
         [self presentModalViewController:picker animated:YES];
     }else{
-        NSLog(@"模拟其中无法打开照相机,请在真机中使用");
+        //NSLog(@"模拟其中无法打开照相机,请在真机中使用");
     }
 }
 
