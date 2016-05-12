@@ -107,10 +107,16 @@ NSString *const kCountDownTimer = @"countDownTimer";
     // 日期
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"date" rowType:XLFormRowDescriptorTypeDateInline title:@"Deadline日期"];
     row.value = _deadline.date;
+    if(_deadline.date==nil){
+        row.value=[NSDate date];
+    }
     [section addFormRow:row];
     // 时间
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"time" rowType:XLFormRowDescriptorTypeTimeInline title:@"Deadline时间"];
     row.value = _deadline.date;
+    if(_deadline.date==nil){
+        row.value=[NSDate date];
+    }
     [section addFormRow:row];
     
     //section2
@@ -148,6 +154,7 @@ NSString *const kCountDownTimer = @"countDownTimer";
     //        [section addFormRow:row];
     
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"image" rowType:XLFormRowDescriptorTypeImage title:@"添加图片"];
+    _defaultImage=[UIImage imageNamed:@"pickImage_default"];
     if(_deadline.image==0)
         row.value = [UIImage imageNamed:@"pickImage_default"];
     else{

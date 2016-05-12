@@ -45,7 +45,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     int numberOfRows[5] = {2, 1, 1, 0, 1};
     // 获取小组成员数量
-    numberOfRows[3] = (int)_group.members.count;
+    numberOfRows[3] = (int)_group.members.count+1;
     return numberOfRows[section];
 }
 
@@ -53,7 +53,7 @@
     if(indexPath.section==0 && indexPath.row==0){
         return 180;
     }
-    else if(indexPath.section==3){
+    else if(indexPath.section==3 && indexPath.row>0){
         return 60;
     }
     else{
@@ -116,14 +116,31 @@
             cell.textLabel.textColor=[UIColor redColor];
             cell.textLabel.textAlignment=NSTextAlignmentCenter;
         } else {
-            cell=[cell initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"UITableViewCell"];
-            cell.textLabel.text = _group.members[indexPath.row].userName;
-            cell.imageView.image = [[Model getInstance] getImage:_group.members[indexPath.row].userImageId];
-            CALayer *layer = cell.imageView.layer;
-            layer.masksToBounds = YES;
-            layer.cornerRadius = 25;
-            cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
-            //cell.userInteractionEnabled = NO;
+            if(indexPath.row==0)
+                cell.textLabel.text = @"群成员";
+            else{
+                cell=[cell initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"UITableViewCell"];
+                cell.textLabel.text = _group.members[indexPath.row-1].userName;
+                cell.imageView.image = [[Model getInstance] getImage:_group.members[indexPath.row-1].userImageId];
+                
+                CGSize size = CGSizeMake(50, 50);
+                // 创建一个bitmap的context
+                // 并把它设置成为当前正在使用的context
+                UIGraphicsBeginImageContext(size);
+                // 绘制改变大小的图片
+                [cell.imageView.image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+                // 从当前context中创建一个改变大小后的图片
+                cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+                // 使当前的context出堆栈
+                UIGraphicsEndImageContext();
+                // 返回新的改变大小后的图片
+                //image=scaledImage;
+                CALayer *layer = cell.imageView.layer;
+                layer.masksToBounds = YES;
+                layer.cornerRadius = 25;
+                cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+                //cell.userInteractionEnabled = NO;
+            }
         }
         return cell;
     }
@@ -149,9 +166,9 @@
         deadlineListViewController=[deadlineListViewController init];
         [self.navigationController pushViewController:deadlineListViewController animated:YES];
     }
-    else if(indexPath.section==3){
+    else if(indexPath.section==3 && indexPath.row>0){
         UserDetailViewController* userDetailViewController=[UserDetailViewController alloc];
-        userDetailViewController.user=_group.members[indexPath.row];
+        userDetailViewController.user=_group.members[indexPath.row-1];
         userDetailViewController=[userDetailViewController init];
         [self.navigationController pushViewController:userDetailViewController animated:YES];
     }

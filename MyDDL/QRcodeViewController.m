@@ -57,13 +57,14 @@
     CIImage *outputImage=[filter outputImage];
     
     //将CIImage转换成UIImage,并放大显示
-    _imgView.image=[self createNonInterpolatedUIImageFormCIImage:outputImage withSize:100.0];
+    CGRect r = [UIScreen mainScreen].applicationFrame;
+    _imgView.image=[self createNonInterpolatedUIImageFormCIImage:outputImage withSize:r.size.width];
     
     //如果还想加上阴影，就在ImageView的Layer上使用下面代码添加阴影
-    _imgView.layer.shadowOffset=CGSizeMake(0, 0.5);//设置阴影的偏移量
-    _imgView.layer.shadowRadius=1;//设置阴影的半径
-    _imgView.layer.shadowColor=[UIColor blackColor].CGColor;//设置阴影的颜色为黑色
-    _imgView.layer.shadowOpacity=0.3;
+//    _imgView.layer.shadowOffset=CGSizeMake(0, 0.5);//设置阴影的偏移量
+//    _imgView.layer.shadowRadius=1;//设置阴影的半径
+//    _imgView.layer.shadowColor=[UIColor blackColor].CGColor;//设置阴影的颜色为黑色
+//    _imgView.layer.shadowOpacity=0.3;
 }
 
 

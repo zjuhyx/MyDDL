@@ -17,6 +17,7 @@
 
 @property (nonatomic) NSString *username;
 @property (nonatomic) UserInfo *userInfo;
+@property (nonatomic) NSString *password;
 @property (nonatomic) DeadlineModel *deadlineModel;
 @property (nonatomic) GroupModel *groupModel;
 @property (nonatomic) CourseProjectModel *courseProjectModel;

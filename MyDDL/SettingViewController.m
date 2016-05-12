@@ -100,7 +100,7 @@
         UITextField *tf=[alertView textFieldAtIndex:0];//获得输入框
         NSString *text=tf.text;//获得值
         //NSLog(text);
-        if([[Model getInstance] loginWithUsername:[Model getInstance].username password:text]==YES){//验证密码
+        if([[Model getInstance].password isEqualToString:text]==YES){//验证密码
             [self.form formRowWithTag:@"password"].value=text;
             self.form.disabled = !self.form.disabled;
             [self.tableView endEditing:YES];
