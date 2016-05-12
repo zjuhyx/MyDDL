@@ -51,13 +51,14 @@
     DeadlineModel *deadlineModel = [DeadlineModel getDeadlineModel];
     Deadline *editedDeadline = self.deadline;
     editedDeadline.name = [self.form formRowWithTag:@"title"].value;
-    editedDeadline.image = [[Model getInstance] addOriginalImage:[self.form formRowWithTag:@"image"].value];
+    if([self.defaultImage isEqual:[self.form formRowWithTag:@"image"].value]==NO)
+        editedDeadline.image = [[Model getInstance] addOriginalImage:[self.form formRowWithTag:@"image"].value];
+    
     editedDeadline.date = [self.form formRowWithTag:@"date"].value;
+    //editedDeadline.date = [self.form formRowWithTag:@"time"].value;
     editedDeadline.detail = [self.form formRowWithTag:@"detail"].value;
     editedDeadline.contactName = [self.form formRowWithTag:@"contact"].value;
-    NSLog([self.form formRowWithTag:@"contact"].value);
     editedDeadline.contactPhone = [self.form formRowWithTag:@"phone"].value;
-    NSLog([self.form formRowWithTag:@"phone"].value);
     editedDeadline.contactEmail = [self.form formRowWithTag:@"email"].value;
     //NSLog(@"%@", [[self.form formRowWithTag:@"kSelectorLeftRight"].leftRightSelectorLeftOptionSelected displayText]);//null
     editedDeadline.courseProjectName=[self.form formRowWithTag:@"kSelectorLeftRight"].value;

@@ -234,7 +234,8 @@
                 [DoneViewController setAndGetInstance:nil].dataIsChanged = YES;
             }
             else{//该ddl已完成
-                
+                self.deadlineController.dataIsChanged = YES;
+                //[UndoneDoneViewController setAndGetInstance:nil].dataIsChanged = YES;
             }
             [self.navigationController popViewControllerAnimated:YES];
             

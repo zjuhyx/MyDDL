@@ -56,7 +56,8 @@
     DeadlineModel *deadlineModel = [DeadlineModel getDeadlineModel];
     Deadline *newDeadline = [[Deadline alloc] init];
     newDeadline.name = [self.form formRowWithTag:@"title"].value;
-    newDeadline.image = [[Model getInstance] addOriginalImage:[self.form formRowWithTag:@"image"].value];
+    if([self.defaultImage isEqual:[self.form formRowWithTag:@"image"].value]==NO)
+        newDeadline.image = [[Model getInstance] addOriginalImage:[self.form formRowWithTag:@"image"].value];
     newDeadline.date = [self.form formRowWithTag:@"date"].value;
     newDeadline.detail = [self.form formRowWithTag:@"detail"].value;
     newDeadline.contactName = [self.form formRowWithTag:@"contact"].value;
