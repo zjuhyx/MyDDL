@@ -89,7 +89,12 @@
 - (void)commit {
     //改服务端
     if(_isCreate==YES){
-        _courseAndProject=[CourseAndProject alloc];
+        if([_formTitle isEqualToString:@"课程"]){
+            _courseAndProject=[Course alloc];
+        }
+        else{
+            _courseAndProject=[Project alloc];
+        }
         _courseAndProject.name=[self.form formRowWithTag:@"title"].value;
         _courseAndProject.detail=[self.form formRowWithTag:@"note"].value;
         [[CourseProjectModel getInstance] addCourseProject:_courseAndProject];
