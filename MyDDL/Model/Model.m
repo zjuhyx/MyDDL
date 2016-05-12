@@ -21,6 +21,8 @@
     self.username = nil;
     self.userInfo = nil;
     [self.deadlineModel clearData];
+    [self.groupModel clearData];
+    [self.courseProjectModel clearData];
 }
 
 - (instancetype)initPrivate {
