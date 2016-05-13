@@ -48,7 +48,12 @@
     [filter setDefaults];
     
     //将字符串转换成NSData
-    NSData *data=[@"www.baidu.com" dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *data;
+    if (_deadlineId != nil) {
+        data = [_deadlineId dataUsingEncoding:NSUTF8StringEncoding];
+    } else if (_groupId != nil) {
+        data = [_groupId dataUsingEncoding:NSUTF8StringEncoding];
+    }
     
     //通过KVO设置滤镜inputmessage数据
     [filter setValue:data forKey:@"inputMessage"];

@@ -121,5 +121,12 @@
     [WebUtil webAPICallWithPostMethod:urlString parameters:parameters];
 }
 
+- (Deadline *)getRemoteDeadlineById:(long)deadlineId {
+    NSString *urlString = [NSString stringWithFormat:@"%@/deadline/%ld", [Configuration getConfiguration].serverAddress, deadlineId];
+    NSDictionary *json = [[WebUtil webAPICallWithGetMethod:urlString] objectForKey:@"result"];
+    Deadline *deadline = [[Deadline alloc] initWithJSON:json];
+    return deadline;
+}
+
 
 @end

@@ -22,5 +22,6 @@
 - (void)changeDeadline:(Deadline *)deadline;
 - (void)removeDeadlineById:(long)deadlineId;
 - (void)completeDeadline:(long)deadlineId;
+- (Deadline *)getRemoteDeadlineById:(long)deadlineId;
 
 @end

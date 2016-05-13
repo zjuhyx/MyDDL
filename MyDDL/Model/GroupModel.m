@@ -126,6 +126,13 @@
     return result;
 }
 
+- (Group *)getRemoteGroupById:(long)groupId {
+    NSString *urlString = [NSString stringWithFormat:@"%@/group/%ld", [Configuration getConfiguration].serverAddress, groupId];
+    NSDictionary *json = [[WebUtil webAPICallWithGetMethod:urlString] objectForKey:@"result"];
+    Group *group = [[Group alloc] initWithJSON:json];
+    return group;
+}
+
 - (void)clearData {
     self.groups = [[NSMutableArray alloc] init];
 }

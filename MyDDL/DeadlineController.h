@@ -15,5 +15,6 @@
 @property (nonatomic) BOOL dataIsChanged;
 
 - (void)enterDeadlineDetail:(Deadline *)deadline;
+- (void)loadDeadlineViews;
 
 @end
