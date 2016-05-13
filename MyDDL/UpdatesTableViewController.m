@@ -52,7 +52,12 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"MM/dd/yyyy";
     cell.detailTextLabel.text = [formatter stringFromDate:_messages[indexPath.row].date];
-    cell.textLabel.text=_messages[indexPath.row].content;
+    
+    if(_messages[indexPath.row].content.length>=25){
+        cell.textLabel.text=[NSString stringWithFormat:@"%@...", [_messages[indexPath.row].content substringWithRange:NSMakeRange(0,25)]];
+    }
+    else
+        cell.textLabel.text=_messages[indexPath.row].content;
 
     cell.textLabel.numberOfLines=0;
     if(indexPath.row<5)

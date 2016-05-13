@@ -133,6 +133,16 @@
     return group;
 }
 
+- (Group *)flushGroup:(long)groupId {
+    Group *group = [self getRemoteGroupById:groupId];
+    for (int i = 0; i < self.groups.count; ++i) {
+        if (self.groups[i].groupId == groupId) {
+            self.groups[i] = group;
+        }
+    }
+    return group;
+}
+
 - (void)clearData {
     self.groups = [[NSMutableArray alloc] init];
 }

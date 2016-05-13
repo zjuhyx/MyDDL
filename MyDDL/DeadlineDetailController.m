@@ -240,6 +240,7 @@
             if(self.deadline.isCompleted == YES){//ddl未完成。alert出来时，switch的状态就已经变了
                 self.deadlineController.dataIsChanged = YES;
                 [DoneViewController setAndGetInstance:nil].dataIsChanged = YES;
+                [[DeadlineModel getDeadlineModel] completeDeadline:_deadline.deadlineId];
             }
             else{//该ddl已完成
                 self.deadlineController.dataIsChanged = YES;

@@ -127,6 +127,10 @@
             [distances addObject:[NSNumber numberWithDouble:[distances[i - 1] doubleValue] + [self timeIntervalToDistance:[currentDate timeIntervalSinceDate:previousDate]]]];
         }
     }
+    if (nowDistance == -1) {
+        NSDate *lastDate = deadlines[deadlines.count - 1].date;
+        nowDistance = [distances[distances.count - 1] doubleValue] + [[NSDate date] timeIntervalSinceDate:lastDate];
+    }
     [distances addObject:[NSNumber numberWithDouble:nowDistance]]; // 把当前时间放在最后
     return distances;
 }

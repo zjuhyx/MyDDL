@@ -91,6 +91,7 @@
         [alertview show];
     }
     else{
+        [[GroupModel getInstance] flushGroup:_groups[indexPath.row].groupId];
         GroupDetailTableViewController *detailViewController = [[GroupDetailTableViewController alloc] initWithGroup:_groups[indexPath.row]];
         [self.navigationController pushViewController:detailViewController animated:YES];
     }
