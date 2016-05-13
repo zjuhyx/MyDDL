@@ -51,7 +51,7 @@
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     picker.delegate = self;
     //设置选择后的图片可被编辑
-    picker.allowsEditing = YES;
+    //picker.allowsEditing = YES;
     [self presentModalViewController:picker animated:YES];
 }
 

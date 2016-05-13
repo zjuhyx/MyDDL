@@ -119,6 +119,10 @@
         } else {
             //cell.textLabel.text = self.deadline.owner.name;
             cell.textLabel.text = self.deadline.detail;
+            if(cell.textLabel.text==nil){
+                cell.textLabel.text=@"未填写deadline详情";
+                cell.textLabel.textColor=[UIColor lightGrayColor];
+            }
         }
         //cell.userInteractionEnabled = NO;
     } else if (indexPath.section == 1) {
@@ -132,21 +136,24 @@
             cell.textLabel.text=@"联系人";
             cell.detailTextLabel.text=self.deadline.contactName;
             if (cell.detailTextLabel.text == nil) {
-                cell.detailTextLabel.text = @"未填";
+                cell.detailTextLabel.text = @"未填写";
+                cell.detailTextLabel.textColor=[UIColor lightGrayColor];
             }
         }
         else if(indexPath.row==1){
             cell.textLabel.text=@"联系电话";
             cell.detailTextLabel.text=self.deadline.contactPhone;
             if (cell.detailTextLabel.text == nil) {
-                cell.detailTextLabel.text = @"未填";
+                cell.detailTextLabel.text = @"未填写";
+                cell.detailTextLabel.textColor=[UIColor lightGrayColor];
             }
         }
         else{
             cell.textLabel.text=@"邮箱";
             cell.detailTextLabel.text=self.deadline.contactEmail;
             if (cell.detailTextLabel.text == nil) {
-                cell.detailTextLabel.text = @"未填";
+                cell.detailTextLabel.text = @"未填写";
+                cell.detailTextLabel.textColor=[UIColor lightGrayColor];
             }
         }
     } else if (indexPath.section == 2) {

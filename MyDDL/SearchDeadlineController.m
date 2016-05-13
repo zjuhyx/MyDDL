@@ -47,6 +47,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     _dataList=[DeadlineModel getDeadlineModel].allDeadlines;
     _showData=[DeadlineModel getDeadlineModel].allDeadlines;
+    [self.tableView reloadData];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

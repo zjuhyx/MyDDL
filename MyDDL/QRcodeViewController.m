@@ -57,9 +57,8 @@
     CIImage *outputImage=[filter outputImage];
     
     //将CIImage转换成UIImage,并放大显示
-    CGRect r = [UIScreen mainScreen].applicationFrame;
-    _imgView.image=[self createNonInterpolatedUIImageFormCIImage:outputImage withSize:r.size.width];
-    
+    _imgView.image=[self createNonInterpolatedUIImageFormCIImage:outputImage withSize:[UIScreen mainScreen].bounds.size.width];
+    NSLog(@"%f", [UIScreen mainScreen].bounds.size.width);
     //如果还想加上阴影，就在ImageView的Layer上使用下面代码添加阴影
 //    _imgView.layer.shadowOffset=CGSizeMake(0, 0.5);//设置阴影的偏移量
 //    _imgView.layer.shadowRadius=1;//设置阴影的半径
@@ -72,10 +71,12 @@
 - (UIImage *)createNonInterpolatedUIImageFormCIImage:(CIImage *)image withSize:(CGFloat) size {
     CGRect extent = CGRectIntegral(image.extent);
     CGFloat scale = MIN(size/CGRectGetWidth(extent), size/CGRectGetHeight(extent));
+    NSLog(@"%f", scale);
     
     // 创建bitmap;
     size_t width = CGRectGetWidth(extent) * scale;
     size_t height = CGRectGetHeight(extent) * scale;
+    NSLog(@"%f, %f", (float)width, (float)height);
     CGColorSpaceRef cs = CGColorSpaceCreateDeviceGray();
     CGContextRef bitmapRef = CGBitmapContextCreate(nil, width, height, 8, 0, cs, (CGBitmapInfo)kCGImageAlphaNone);
     CIContext *context = [CIContext contextWithOptions:nil];
