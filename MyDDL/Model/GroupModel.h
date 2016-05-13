@@ -24,6 +24,7 @@
 - (void)addGroupUserWithGroupId:(long)groupId user:(UserInfo *)user;
 - (void)deleteGroupUserByGroupId:(long)groupId userId:(long)userId;
 - (NSArray<GroupMessage *> *)getGroupMessages:(long)groupId;
+- (Group *)getRemoteGroupById:(long)groupId;
 
 - (void)clearData;
 

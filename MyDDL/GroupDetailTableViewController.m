@@ -150,6 +150,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.section==0 && indexPath.row==1){
         QRcodeViewController *QRViewController = [[QRcodeViewController alloc] init];
+        QRViewController.groupId = [NSString stringWithFormat:@"%ld", _group.groupId];
         [self presentViewController:QRViewController animated:YES completion:^{//备注2
             NSLog(@"showQR!");
         }];
